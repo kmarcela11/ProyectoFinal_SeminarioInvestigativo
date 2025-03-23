@@ -58,6 +58,7 @@
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'etl';</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Diccionario de variable" href="variables.html" />
@@ -437,12 +438,12 @@ document.write(`
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>La información utilizada para este estudio está basada en el Certificado de Defunción del Ministerio de Salud de Colombia
-<span id="id1">[<a class="reference internal" href="#id3" title="Ministerio de Salud de Colombia. Certificado de defunción. s.f. URL: https://www.minsalud.gov.co/Documentos%20y%20Publicaciones/Certificado%20Defuncion.pdf.">de Salud de Colombia, s.f.</a>]</span> . En este caso, observaciones sobre casos de defunción relacionados con el cáncer de mama.</p>
+<span id="id1">[<a class="reference internal" href="#id3" title="Ministerio de Salud de Colombia. Certificado de defunción. s.f. URL: https://www.minsalud.gov.co/Documentos%20y%20Publicaciones/Certificado%20Defuncion.pdf.">1</a>]</span> . En este caso, observaciones sobre casos de defunción relacionados con el cáncer de mama.</p>
 </div>
 <p>Inicialmente, se importa el primer conjunto de datos que contiene información detallada sobre la defunción de pacientes debido al cáncer de mama.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">url</span> <span class="o">=</span> <span class="sa">r</span><span class="s2">&quot;C:\Users\kamac\OneDrive - Universidad del Norte\UNINORTE\SEMESTRE VII. 2025 - 10\U - Seminario investigativo\Proyecto Final\Datos\data.xlsx&quot;</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">url</span> <span class="o">=</span> <span class="sa">r</span><span class="s2">&quot;https://github.com/sePerezAlbor/Data/blob/main/data.xlsx?raw=true&quot;</span>
 <span class="n">data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_excel</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">na_values</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot; &quot;</span><span class="p">])</span>
 </pre></div>
 </div>
@@ -865,6 +866,7 @@ La cantidad de variables con menos del 70% de datos faltantes es de:  40
 </div>
 </div>
 </div>
+<p>Veamos esto gráficamente:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">color_scale</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;#F8BBD0&quot;</span><span class="p">,</span> <span class="s2">&quot;#F48FB1&quot;</span><span class="p">,</span> <span class="s2">&quot;#F06292&quot;</span><span class="p">,</span> <span class="s2">&quot;#EC407A&quot;</span><span class="p">,</span> <span class="s2">&quot;#D81B60&quot;</span><span class="p">]</span>
@@ -889,7 +891,7 @@ La cantidad de variables con menos del 70% de datos faltantes es de:  40
 <div class="cell_output docutils container">
 </div>
 </div>
-<p>COMENTAR</p>
+<p>Al observar el gráfico, se puede decir que algunas variables presentan un alto porcentaje de datos faltantes, con varias de ellas superando el 90%, como <code class="docutils literal notranslate"><span class="pre">codcur</span></code> y <code class="docutils literal notranslate"><span class="pre">codmunoc</span></code>, que tienen un 100% de datos ausentes. Otras variables también muestran valores significativos de ausencia, como <code class="docutils literal notranslate"><span class="pre">SIMURATEP</span></code> (93.35%) y <code class="docutils literal notranslate"><span class="pre">carf3</span></code> (85.7%). Sin embargo, a medida que avanzamos en la gráfica, notamos que ciertas variables tienen menor cantidad de datos faltantes, con algunas en torno al 27%. Finalmente, hay un conjunto de variables sin valores faltantes (0%), lo que indica que esos datos están completamente disponibles en el conjunto analizado.</p>
 </section>
 <section id="eliminacion-de-variables">
 <h3><strong>Eliminación de variables</strong><a class="headerlink" href="#eliminacion-de-variables" title="Link to this heading">#</a></h3>
@@ -1239,6 +1241,7 @@ Estas variables NO serán utilizadas en el enfoque de este estudio y, además, p
 <p>5 rows × 23 columns</p>
 </div></div></div>
 </div>
+<p>Ahora los nombres de cada variable son más legibles y ordenados. Lo que facilita el análisis de estos datos. <a class="reference external" href="https://kmarcela11.github.io/ProyectoFinal_SeminarioInvestigativo/variables.html">Diccionario de Variables</a></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">missing_percent</span> <span class="o">=</span> <span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">isnull</span><span class="p">()</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="n">data</span><span class="p">))</span> <span class="o">*</span> <span class="mi">100</span>
@@ -1269,6 +1272,7 @@ Estas variables NO serán utilizadas en el enfoque de este estudio y, además, p
 </section>
 <section id="re-estructuracion-de-categorias-por-variables">
 <h3><strong>Re-estructuración de categorías por variables</strong><a class="headerlink" href="#re-estructuracion-de-categorias-por-variables" title="Link to this heading">#</a></h3>
+<p>En esta sección, se realizarán ajustes para mejorar la claridad de los datos. Primero, se cambiarán los nombres de las variables por categorías más legibles y comprensibles, facilitando su interpretación. Además, en algunas variables con datos faltantes, estos se agruparán en una  categoría denominada <code class="docutils literal notranslate"><span class="pre">Sin</span> <span class="pre">información</span></code>, lo que permitirá un análisis más estructurado y evitará la pérdida de información valiosa. Estos cambios ayudarán a mejorar la comprensión y usabilidad del conjunto de datos.</p>
 <section id="variable-sexo">
 <h4><strong>Variable: sexo</strong><a class="headerlink" href="#variable-sexo" title="Link to this heading">#</a></h4>
 <div class="cell docutils container">
@@ -1948,6 +1952,7 @@ memory usage: 503.5+ KB
 </section>
 <section id="conjunto-de-datos-final">
 <h2><strong>Conjunto de datos final</strong><a class="headerlink" href="#conjunto-de-datos-final" title="Link to this heading">#</a></h2>
+<p>Tras analizar los dos conjuntos de datos previamente, procederemos a reemplazar los códigos de departamentos y municipios utilizando el conjunto de datos <code class="docutils literal notranslate"><span class="pre">DIVIPOLA</span></code>. El objetivo de este proceso es mejorar la claridad y comprensión de la información, asignando a cada código su departamento y municipio correspondiente. Esto permitirá un análisis más preciso, estructurado y fácil de interpretar en el conjunto de datos general.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">departamento_dict</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="nb">zip</span><span class="p">(</span><span class="n">data2</span><span class="p">[</span><span class="s1">&#39;Código Departamento&#39;</span><span class="p">],</span> <span class="n">data2</span><span class="p">[</span><span class="s1">&#39;Nombre Departamento&#39;</span><span class="p">]))</span>
@@ -2176,45 +2181,8 @@ memory usage: 8.3+ MB
     <span class="s1">&#39;Nombre_Departamento&#39;</span><span class="p">,</span> <span class="s1">&#39;Nombre_Municipio&#39;</span><span class="p">,</span> <span class="s1">&#39;sitio_def&#39;</span><span class="p">,</span> <span class="s1">&#39;año_def&#39;</span><span class="p">,</span> 
     <span class="s1">&#39;mes_def&#39;</span><span class="p">,</span> <span class="s1">&#39;sexo&#39;</span><span class="p">,</span> <span class="s1">&#39;estado_civil&#39;</span><span class="p">,</span> <span class="s1">&#39;grupo_edad&#39;</span><span class="p">,</span> <span class="s1">&#39;nivel_edu&#39;</span><span class="p">,</span> <span class="s1">&#39;grupo_etnico&#39;</span><span class="p">,</span><span class="s1">&#39;rec_etnico&#39;</span><span class="p">,</span>
     <span class="s1">&#39;depto_res&#39;</span><span class="p">,</span> <span class="s1">&#39;seg_social&#39;</span><span class="p">,</span> <span class="s1">&#39;ent_salud_cod&#39;</span><span class="p">,</span> <span class="s1">&#39;prob_muerte&#39;</span><span class="p">,</span> <span class="s1">&#39;cert_medica&#39;</span><span class="p">,</span> <span class="s1">&#39;asistencia_med&#39;</span><span class="p">,</span>
-    <span class="s1">&#39;causa_directa&#39;</span><span class="p">,</span> <span class="s1">&#39;causa_ant_1&#39;</span><span class="p">,</span> <span class="s1">&#39;causa_ant_2&#39;</span><span class="p">,</span> <span class="s1">&#39;causa_basica&#39;</span><span class="p">,</span> <span class="s1">&#39;causa_OPS&#39;</span><span class="p">,</span> <span class="s1">&#39;region&#39;</span><span class="p">,</span> <span class="s1">&#39;depto_ocurr&#39;</span><span class="p">,</span> <span class="s1">&#39;municipio&#39;</span>
-<span class="p">]</span>
+    <span class="s1">&#39;causa_directa&#39;</span><span class="p">,</span> <span class="s1">&#39;causa_ant_1&#39;</span><span class="p">,</span> <span class="s1">&#39;causa_ant_2&#39;</span><span class="p">,</span> <span class="s1">&#39;causa_basica&#39;</span><span class="p">,</span> <span class="s1">&#39;causa_OPS&#39;</span><span class="p">,</span> <span class="s1">&#39;region&#39;</span><span class="p">]</span>
 <span class="n">data_analisis</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="n">columnas_ordenadas</span><span class="p">]</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">KeyError</span><span class="g g-Whitespace">                                  </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">669</span><span class="p">],</span> <span class="n">line</span> <span class="mi">7</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="n">columnas_ordenadas</span> <span class="o">=</span> <span class="p">[</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span>     <span class="s1">&#39;Nombre_Departamento&#39;</span><span class="p">,</span> <span class="s1">&#39;Nombre_Municipio&#39;</span><span class="p">,</span> <span class="s1">&#39;sitio_def&#39;</span><span class="p">,</span> <span class="s1">&#39;año_def&#39;</span><span class="p">,</span> 
-<span class="g g-Whitespace">      </span><span class="mi">3</span>     <span class="s1">&#39;mes_def&#39;</span><span class="p">,</span> <span class="s1">&#39;sexo&#39;</span><span class="p">,</span> <span class="s1">&#39;estado_civil&#39;</span><span class="p">,</span> <span class="s1">&#39;grupo_edad&#39;</span><span class="p">,</span> <span class="s1">&#39;nivel_edu&#39;</span><span class="p">,</span> <span class="s1">&#39;grupo_etnico&#39;</span><span class="p">,</span><span class="s1">&#39;rec_etnico&#39;</span><span class="p">,</span>
-<span class="g g-Whitespace">      </span><span class="mi">4</span>     <span class="s1">&#39;depto_res&#39;</span><span class="p">,</span> <span class="s1">&#39;seg_social&#39;</span><span class="p">,</span> <span class="s1">&#39;ent_salud_cod&#39;</span><span class="p">,</span> <span class="s1">&#39;prob_muerte&#39;</span><span class="p">,</span> <span class="s1">&#39;cert_medica&#39;</span><span class="p">,</span> <span class="s1">&#39;asistencia_med&#39;</span><span class="p">,</span>
-<span class="g g-Whitespace">      </span><span class="mi">5</span>     <span class="s1">&#39;causa_directa&#39;</span><span class="p">,</span> <span class="s1">&#39;causa_ant_1&#39;</span><span class="p">,</span> <span class="s1">&#39;causa_ant_2&#39;</span><span class="p">,</span> <span class="s1">&#39;causa_basica&#39;</span><span class="p">,</span> <span class="s1">&#39;causa_OPS&#39;</span><span class="p">,</span> <span class="s1">&#39;region&#39;</span><span class="p">,</span> <span class="s1">&#39;depto_ocurr&#39;</span><span class="p">,</span> <span class="s1">&#39;municipio&#39;</span>
-<span class="g g-Whitespace">      </span><span class="mi">6</span> <span class="p">]</span>
-<span class="ne">----&gt; </span><span class="mi">7</span> <span class="n">data_analisis</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="n">columnas_ordenadas</span><span class="p">]</span>
-
-<span class="nn">File c:\Users\kamac\miniconda3\envs\data_viz\lib\site-packages\pandas\core\frame.py:4108,</span> in <span class="ni">DataFrame.__getitem__</span><span class="nt">(self, key)</span>
-<span class="g g-Whitespace">   </span><span class="mi">4106</span>     <span class="k">if</span> <span class="n">is_iterator</span><span class="p">(</span><span class="n">key</span><span class="p">):</span>
-<span class="g g-Whitespace">   </span><span class="mi">4107</span>         <span class="n">key</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">key</span><span class="p">)</span>
-<span class="ne">-&gt; </span><span class="mi">4108</span>     <span class="n">indexer</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">columns</span><span class="o">.</span><span class="n">_get_indexer_strict</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="s2">&quot;columns&quot;</span><span class="p">)[</span><span class="mi">1</span><span class="p">]</span>
-<span class="g g-Whitespace">   </span><span class="mi">4110</span> <span class="c1"># take() does not accept boolean indexers</span>
-<span class="g g-Whitespace">   </span><span class="mi">4111</span> <span class="k">if</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">indexer</span><span class="p">,</span> <span class="s2">&quot;dtype&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span> <span class="o">==</span> <span class="nb">bool</span><span class="p">:</span>
-
-<span class="nn">File c:\Users\kamac\miniconda3\envs\data_viz\lib\site-packages\pandas\core\indexes\base.py:6200,</span> in <span class="ni">Index._get_indexer_strict</span><span class="nt">(self, key, axis_name)</span>
-<span class="g g-Whitespace">   </span><span class="mi">6197</span> <span class="k">else</span><span class="p">:</span>
-<span class="g g-Whitespace">   </span><span class="mi">6198</span>     <span class="n">keyarr</span><span class="p">,</span> <span class="n">indexer</span><span class="p">,</span> <span class="n">new_indexer</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_reindex_non_unique</span><span class="p">(</span><span class="n">keyarr</span><span class="p">)</span>
-<span class="ne">-&gt; </span><span class="mi">6200</span> <span class="bp">self</span><span class="o">.</span><span class="n">_raise_if_missing</span><span class="p">(</span><span class="n">keyarr</span><span class="p">,</span> <span class="n">indexer</span><span class="p">,</span> <span class="n">axis_name</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">6202</span> <span class="n">keyarr</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">take</span><span class="p">(</span><span class="n">indexer</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">6203</span> <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="n">Index</span><span class="p">):</span>
-<span class="g g-Whitespace">   </span><span class="mi">6204</span>     <span class="c1"># GH 42790 - Preserve name from an Index</span>
-
-<span class="nn">File c:\Users\kamac\miniconda3\envs\data_viz\lib\site-packages\pandas\core\indexes\base.py:6252,</span> in <span class="ni">Index._raise_if_missing</span><span class="nt">(self, key, indexer, axis_name)</span>
-<span class="g g-Whitespace">   </span><span class="mi">6249</span>     <span class="k">raise</span> <span class="ne">KeyError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;None of [</span><span class="si">{</span><span class="n">key</span><span class="si">}</span><span class="s2">] are in the [</span><span class="si">{</span><span class="n">axis_name</span><span class="si">}</span><span class="s2">]&quot;</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">6251</span> <span class="n">not_found</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">ensure_index</span><span class="p">(</span><span class="n">key</span><span class="p">)[</span><span class="n">missing_mask</span><span class="o">.</span><span class="n">nonzero</span><span class="p">()[</span><span class="mi">0</span><span class="p">]]</span><span class="o">.</span><span class="n">unique</span><span class="p">())</span>
-<span class="ne">-&gt; </span><span class="mi">6252</span> <span class="k">raise</span> <span class="ne">KeyError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">not_found</span><span class="si">}</span><span class="s2"> not in index&quot;</span><span class="p">)</span>
-
-<span class="ne">KeyError</span>: &quot;[&#39;depto_ocurr&#39;, &#39;municipio&#39;] not in index&quot;
 </pre></div>
 </div>
 </div>
@@ -2255,6 +2223,8 @@ memory usage: 8.3+ MB
       <th>nivel_edu</th>
       <th>grupo_etnico</th>
       <th>...</th>
+      <th>ent_salud_cod</th>
+      <th>prob_muerte</th>
       <th>cert_medica</th>
       <th>asistencia_med</th>
       <th>causa_directa</th>
@@ -2263,8 +2233,6 @@ memory usage: 8.3+ MB
       <th>causa_basica</th>
       <th>causa_OPS</th>
       <th>region</th>
-      <th>depto_ocurr</th>
-      <th>municipio</th>
     </tr>
   </thead>
   <tbody>
@@ -2281,6 +2249,8 @@ memory usage: 8.3+ MB
       <td>Secundaria</td>
       <td>Ninguno de los anteriores</td>
       <td>...</td>
+      <td>EPS - Subsidiado</td>
+      <td>Natural</td>
       <td>Historia clínica</td>
       <td>SI</td>
       <td>J969</td>
@@ -2289,8 +2259,6 @@ memory usage: 8.3+ MB
       <td>C509</td>
       <td>Tumor Maligno</td>
       <td>ANDINA</td>
-      <td>05</td>
-      <td>05001</td>
     </tr>
     <tr>
       <th>1</th>
@@ -2307,14 +2275,14 @@ memory usage: 8.3+ MB
       <td>...</td>
       <td>Sin información</td>
       <td>Sin información</td>
+      <td>Sin información</td>
+      <td>Sin información</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>C509</td>
       <td>Tumor Maligno</td>
       <td>ANDINA</td>
-      <td>05</td>
-      <td>05045</td>
     </tr>
     <tr>
       <th>2</th>
@@ -2331,14 +2299,14 @@ memory usage: 8.3+ MB
       <td>...</td>
       <td>Sin información</td>
       <td>Sin información</td>
+      <td>Sin información</td>
+      <td>Sin información</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>1749</td>
       <td>Tumor Maligno</td>
       <td>ANDINA</td>
-      <td>05</td>
-      <td>05266</td>
     </tr>
     <tr>
       <th>3</th>
@@ -2355,14 +2323,14 @@ memory usage: 8.3+ MB
       <td>...</td>
       <td>Sin información</td>
       <td>Sin información</td>
+      <td>Sin información</td>
+      <td>Sin información</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>1749</td>
       <td>Tumor Maligno</td>
       <td>ATLANTICA</td>
-      <td>08</td>
-      <td>08001</td>
     </tr>
     <tr>
       <th>4</th>
@@ -2377,6 +2345,8 @@ memory usage: 8.3+ MB
       <td>Secundaria</td>
       <td>Sin información</td>
       <td>...</td>
+      <td>Sin información</td>
+      <td>Natural</td>
       <td>Historia clínica</td>
       <td>SI</td>
       <td>J969</td>
@@ -2385,14 +2355,13 @@ memory usage: 8.3+ MB
       <td>C509</td>
       <td>Tumor Maligno</td>
       <td>ATLANTICA</td>
-      <td>08</td>
-      <td>08001</td>
     </tr>
   </tbody>
 </table>
-<p>5 rows × 25 columns</p>
+<p>5 rows × 23 columns</p>
 </div></div></div>
 </div>
+<p>Finalmente, obtenemos un conjunto de datos más claro, comprensible y estructurado, lo que facilita su interpretación y lo deja listo para el análisis exploratorio.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data_analisis</span><span class="o">.</span><span class="n">to_excel</span><span class="p">(</span><span class="s1">&#39;C:</span><span class="se">\\</span><span class="s1">Users</span><span class="se">\\</span><span class="s1">kamac</span><span class="se">\\</span><span class="s1">OneDrive</span><span class="se">\\</span><span class="s1">Desktop</span><span class="se">\\</span><span class="s1">SeminarioInvestigativoUN</span><span class="se">\\</span><span class="s1">docs</span><span class="se">\\</span><span class="s1">data_analisis.xlsx&#39;</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">engine</span><span class="o">=</span><span class="s1">&#39;openpyxl&#39;</span><span class="p">)</span>
