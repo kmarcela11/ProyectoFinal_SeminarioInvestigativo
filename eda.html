@@ -1,0 +1,1622 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>ETL &#8212; Proyecto Final - Seminario Investigativo</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'eda';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="Proyecto Final - Seminario Investigativo" href="intro.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/uninorte.jpg" class="logo__image only-light" alt="Proyecto Final - Seminario Investigativo - Home"/>
+    <script>document.write(`<img src="_static/uninorte.jpg" class="logo__image only-dark" alt="Proyecto Final - Seminario Investigativo - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    Proyecto Final - Seminario Investigativo
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active"><a class="current reference internal" href="#"><strong>ETL</strong></a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/kmarcela11/ProyectoFinal_SeminarioInvestigativo" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/kmarcela11/ProyectoFinal_SeminarioInvestigativo/issues/new?title=Issue%20on%20page%20%2Feda.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/eda.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>ETL</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#librerias-y-modulos-necesarios"><strong>Líbrerias y módulos necesarios</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conjunto-de-datos-1"><strong>Conjunto de datos 1</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#datos-faltantes"><strong>Datos Faltantes</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#eliminacion-de-columnas"><strong>Eliminación de columnas</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#renombrado-de-variables"><strong>Renombrado de variables</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conjunto-de-datos-2"><strong>Conjunto de datos 2</strong></a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="etl">
+<h1><strong>ETL</strong><a class="headerlink" href="#etl" title="Link to this heading">#</a></h1>
+<section id="librerias-y-modulos-necesarios">
+<h2><strong>Líbrerias y módulos necesarios</strong><a class="headerlink" href="#librerias-y-modulos-necesarios" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">warnings</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="n">warnings</span><span class="o">.</span><span class="n">filterwarnings</span><span class="p">(</span><span class="s1">&#39;ignore&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="conjunto-de-datos-1">
+<h2><strong>Conjunto de datos 1</strong><a class="headerlink" href="#conjunto-de-datos-1" title="Link to this heading">#</a></h2>
+<p>Inicialmente, se importa el primer conjunto de datos que contiene información detallada sobre la defunción de pacientes debido al cáncer de mama.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;https://raw.githubusercontent.com/sePerezAlbor/Data/refs/heads/main/datoscancermama.csv&quot;</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">delimiter</span> <span class="o">=</span> <span class="s2">&quot;,&quot;</span><span class="p">,</span> <span class="n">na_values</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot; &quot;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Veamos las primeras cinco observaciones para realizar un análisis inicial del conjunto de datos.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>COD_DPTO</th>
+      <th>cod_munic</th>
+      <th>a_defun</th>
+      <th>sit_defun</th>
+      <th>cod_inst</th>
+      <th>nom_inst</th>
+      <th>ano</th>
+      <th>mes</th>
+      <th>sexo</th>
+      <th>est_civil</th>
+      <th>...</th>
+      <th>causa_666</th>
+      <th>cau_homol</th>
+      <th>EDAD</th>
+      <th>llave</th>
+      <th>CODPTO</th>
+      <th>filter_$</th>
+      <th>AÑOL</th>
+      <th>MAMA</th>
+      <th>quinquenio</th>
+      <th>REGION</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>05</td>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>5.001021e+10</td>
+      <td>HOSPITAL PABLO TOBON URIBE</td>
+      <td>2014.0</td>
+      <td>7.0</td>
+      <td>2.0</td>
+      <td>1.0</td>
+      <td>...</td>
+      <td>208.0</td>
+      <td>24.0</td>
+      <td>NaN</td>
+      <td>0500111201407  21103</td>
+      <td>5.0</td>
+      <td>1.0</td>
+      <td>a</td>
+      <td>mama</td>
+      <td>2010a201</td>
+      <td>1.0</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>05</td>
+      <td>45.0</td>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>1997.0</td>
+      <td>8.0</td>
+      <td>2.0</td>
+      <td>5.0</td>
+      <td>...</td>
+      <td>NaN</td>
+      <td>24.0</td>
+      <td>NaN</td>
+      <td>0504511199708  25109</td>
+      <td>5.0</td>
+      <td>0.0</td>
+      <td>a</td>
+      <td>mama</td>
+      <td>1995a199</td>
+      <td>1.0</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>05</td>
+      <td>266.0</td>
+      <td>1.0</td>
+      <td>2.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>1986.0</td>
+      <td>4.0</td>
+      <td>2.0</td>
+      <td>1.0</td>
+      <td>...</td>
+      <td>NaN</td>
+      <td>24.0</td>
+      <td>NaN</td>
+      <td>0526612198604  21109</td>
+      <td>5.0</td>
+      <td>0.0</td>
+      <td>a</td>
+      <td>mama</td>
+      <td>1985a198</td>
+      <td>1.0</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>08</td>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>1989.0</td>
+      <td>7.0</td>
+      <td>2.0</td>
+      <td>2.0</td>
+      <td>...</td>
+      <td>NaN</td>
+      <td>24.0</td>
+      <td>NaN</td>
+      <td>0800111198907  22109</td>
+      <td>8.0</td>
+      <td>0.0</td>
+      <td>a</td>
+      <td>mama</td>
+      <td>1985a198</td>
+      <td>2.0</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>08</td>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>1998.0</td>
+      <td>8.0</td>
+      <td>2.0</td>
+      <td>2.0</td>
+      <td>...</td>
+      <td>208.0</td>
+      <td>24.0</td>
+      <td>10.0</td>
+      <td>0800111199808  22103</td>
+      <td>8.0</td>
+      <td>1.0</td>
+      <td>a</td>
+      <td>mama</td>
+      <td>1995a199</td>
+      <td>2.0</td>
+    </tr>
+  </tbody>
+</table>
+<p>5 rows × 53 columns</p>
+</div></div></div>
+</div>
+<p>Las primeras cinco observaciones muestran datos con valores faltantes en varias columnas, diferencias en la codificación de variables y posibles inconsistencias en los identificadores de municipios e instituciones de salud.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span><span class="o">.</span><span class="n">shape</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(46869, 53)
+</pre></div>
+</div>
+</div>
+</div>
+<p>El conjunto de datos inicial cuenta con <strong>53</strong> columnas (variables) y <strong>46869</strong> filas (observaciones).</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span><span class="o">.</span><span class="n">info</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;class &#39;pandas.core.frame.DataFrame&#39;&gt;
+RangeIndex: 46869 entries, 0 to 46868
+Data columns (total 53 columns):
+ #   Column      Non-Null Count  Dtype  
+---  ------      --------------  -----  
+ 0   COD_DPTO    46869 non-null  object 
+ 1   cod_munic   46833 non-null  float64
+ 2   a_defun     46833 non-null  float64
+ 3   sit_defun   46833 non-null  float64
+ 4   cod_inst    19126 non-null  float64
+ 5   nom_inst    19287 non-null  object 
+ 6   ano         46833 non-null  float64
+ 7   mes         46833 non-null  float64
+ 8   sexo        46833 non-null  float64
+ 9   est_civil   46833 non-null  float64
+ 10  gru_ed1     46833 non-null  float64
+ 11  nivel_edu   46833 non-null  float64
+ 12  MUERTEPORO  16839 non-null  float64
+ 13  SIMUERTEPO  917 non-null    float64
+ 14  OCUPACION   11317 non-null  object 
+ 15  IDPERTET    16839 non-null  float64
+ 16  codpres     29332 non-null  float64
+ 17  codptore    46833 non-null  float64
+ 18  codmunre    46833 non-null  float64
+ 19  area_res    33916 non-null  float64
+ 20  seg_social  33934 non-null  float64
+ 21  IDADMISALU  16156 non-null  float64
+ 22  IDCLASADMI  16095 non-null  object 
+ 23  pman_muer   33934 non-null  float64
+ 24  cons_exp    46833 non-null  float64
+ 25  man_muer    3115 non-null   float64
+ 26  codocur     0 non-null      float64
+ 27  codmunoc    0 non-null      float64
+ 28  c_muerte    33685 non-null  float64
+ 29  asis_med    33934 non-null  float64
+ 30  c_dir1      33841 non-null  object 
+ 31  C_DIR12     294 non-null    object 
+ 32  c_ant1      29033 non-null  object 
+ 33  C_ANT12     656 non-null    object 
+ 34  c_ant2      19715 non-null  object 
+ 35  C_ANT22     479 non-null    object 
+ 36  c_ant3      6692 non-null   object 
+ 37  C_ANT32     169 non-null    object 
+ 38  c_pat1      7104 non-null   object 
+ 39  C_PAT2      711 non-null    object 
+ 40  c_bas1      46833 non-null  object 
+ 41  c_mcm1      70 non-null     object 
+ 42  IDPROFCER   16839 non-null  float64
+ 43  causa_666   33934 non-null  float64
+ 44  cau_homol   46833 non-null  float64
+ 45  EDAD        17095 non-null  float64
+ 46  llave       46833 non-null  object 
+ 47  CODPTO      46833 non-null  float64
+ 48  filter_$    46833 non-null  float64
+ 49  AÑOL        46833 non-null  object 
+ 50  MAMA        46833 non-null  object 
+ 51  quinquenio  46833 non-null  object 
+ 52  REGION      46833 non-null  float64
+dtypes: float64(33), object(20)
+memory usage: 19.0+ MB
+</pre></div>
+</div>
+</div>
+</div>
+<p>A primera vista, observamos que las variables tienen nombres poco descriptivos, lo que dificulta la comprensión de su significado. Además, muchas de ellas están representadas como valores numéricos de tipo <em>float64</em>, aunque en realidad corresponden a categorías. Por ello, procederemos a redefinir los tipos de datos en función del significado de cada variable. También identificamos una alta presencia de datos faltantes en algunas columnas (incluyendo dos columnas que en su totalidad son datos faltantes), lo que requerirá un tratamiento adecuado.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">column_types</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;COD_DPTO&quot;</span><span class="p">:</span> <span class="s2">&quot;object&quot;</span><span class="p">,</span> <span class="s2">&quot;cod_munic&quot;</span><span class="p">:</span> <span class="s2">&quot;object&quot;</span><span class="p">,</span> <span class="s2">&quot;a_defun&quot;</span><span class="p">:</span> <span class="s2">&quot;object&quot;</span><span class="p">,</span> <span class="s2">&quot;sit_defun&quot;</span><span class="p">:</span> <span class="s2">&quot;object&quot;</span><span class="p">,</span> <span class="s2">&quot;cod_inst&quot;</span><span class="p">:</span> <span class="s2">&quot;Int64&quot;</span><span class="p">,</span> <span class="s2">&quot;nom_inst&quot;</span><span class="p">:</span> <span class="s2">&quot;object&quot;</span><span class="p">,</span> 
+                <span class="s2">&quot;ano&quot;</span><span class="p">:</span> <span class="s2">&quot;Int64&quot;</span><span class="p">,</span> <span class="s2">&quot;mes&quot;</span><span class="p">:</span> <span class="s2">&quot;float64&quot;</span><span class="p">,</span> <span class="s2">&quot;sexo&quot;</span><span class="p">:</span> <span class="s2">&quot;object&quot;</span><span class="p">,</span> <span class="s2">&quot;est_civil&quot;</span><span class="p">:</span> <span class="s2">&quot;object&quot;</span><span class="p">,</span> <span class="s2">&quot;gru_ed1&quot;</span><span class="p">:</span> <span class="s2">&quot;object&quot;</span><span class="p">,</span> <span class="s2">&quot;nivel_edu&quot;</span><span class="p">:</span> <span class="s2">&quot;object&quot;</span><span class="p">,</span> 
+                <span class="s2">&quot;MUERTEPORO&quot;</span><span class="p">:</span> <span class="s2">&quot;object&quot;</span><span class="p">,</span> <span class="s2">&quot;SIMUERTEPO&quot;</span><span class="p">:</span> <span class="s2">&quot;object&quot;</span><span class="p">,</span> <span class="s2">&quot;OCUPACION&quot;</span><span class="p">:</span> <span class="s2">&quot;object&quot;</span><span class="p">,</span> <span class="s2">&quot;IDPERTET&quot;</span><span class="p">:</span> <span class="s2">&quot;object&quot;</span><span class="p">,</span> <span class="s2">&quot;codpres&quot;</span><span class="p">:</span> <span class="s2">&quot;object&quot;</span><span class="p">,</span> 
+                <span class="s2">&quot;codptore&quot;</span><span class="p">:</span> <span class="s2">&quot;object&quot;</span><span class="p">,</span> <span class="s2">&quot;codmunre&quot;</span><span class="p">:</span> <span class="s2">&quot;object&quot;</span><span class="p">,</span> <span class="s2">&quot;area_res&quot;</span><span class="p">:</span> <span class="s2">&quot;object&quot;</span><span class="p">,</span> <span class="s2">&quot;seg_social&quot;</span><span class="p">:</span> <span class="s2">&quot;object&quot;</span><span class="p">,</span> <span class="s2">&quot;IDADMISALU&quot;</span><span class="p">:</span> <span class="s2">&quot;object&quot;</span><span class="p">,</span> 
+                <span class="s2">&quot;IDCLASADMI&quot;</span><span class="p">:</span> <span class="s2">&quot;object&quot;</span><span class="p">,</span> <span class="s2">&quot;pman_muer&quot;</span><span class="p">:</span> <span class="s2">&quot;object&quot;</span><span class="p">,</span> <span class="s2">&quot;cons_exp&quot;</span><span class="p">:</span> <span class="s2">&quot;object&quot;</span><span class="p">,</span> <span class="s2">&quot;man_muer&quot;</span><span class="p">:</span> <span class="s2">&quot;object&quot;</span><span class="p">,</span> <span class="s2">&quot;c_muerte&quot;</span><span class="p">:</span> <span class="s2">&quot;object&quot;</span><span class="p">,</span> 
+                <span class="s2">&quot;asis_med&quot;</span><span class="p">:</span> <span class="s2">&quot;object&quot;</span><span class="p">,</span> <span class="s2">&quot;IDPROFCER&quot;</span><span class="p">:</span> <span class="s2">&quot;object&quot;</span><span class="p">,</span> <span class="s2">&quot;causa_666&quot;</span><span class="p">:</span> <span class="s2">&quot;object&quot;</span><span class="p">,</span> <span class="s2">&quot;cau_homol&quot;</span><span class="p">:</span> <span class="s2">&quot;object&quot;</span><span class="p">,</span> <span class="s2">&quot;filter_$&quot;</span><span class="p">:</span> <span class="s2">&quot;object&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;quinquenio&quot;</span><span class="p">:</span> <span class="s2">&quot;object&quot;</span><span class="p">,</span> <span class="s2">&quot;REGION&quot;</span><span class="p">:</span> <span class="s2">&quot;object&quot;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">delimiter</span> <span class="o">=</span> <span class="s2">&quot;,&quot;</span><span class="p">,</span> <span class="n">na_values</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot; &quot;</span><span class="p">],</span> <span class="n">dtype</span> <span class="o">=</span> <span class="n">column_types</span><span class="p">)</span>
+<span class="n">data</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>COD_DPTO</th>
+      <th>cod_munic</th>
+      <th>a_defun</th>
+      <th>sit_defun</th>
+      <th>cod_inst</th>
+      <th>nom_inst</th>
+      <th>ano</th>
+      <th>mes</th>
+      <th>sexo</th>
+      <th>est_civil</th>
+      <th>...</th>
+      <th>causa_666</th>
+      <th>cau_homol</th>
+      <th>EDAD</th>
+      <th>llave</th>
+      <th>CODPTO</th>
+      <th>filter_$</th>
+      <th>AÑOL</th>
+      <th>MAMA</th>
+      <th>quinquenio</th>
+      <th>REGION</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>05</td>
+      <td>001</td>
+      <td>1</td>
+      <td>1</td>
+      <td>50010210401</td>
+      <td>HOSPITAL PABLO TOBON URIBE</td>
+      <td>2014</td>
+      <td>7.0</td>
+      <td>2</td>
+      <td>1</td>
+      <td>...</td>
+      <td>208</td>
+      <td>024</td>
+      <td>NaN</td>
+      <td>0500111201407  21103</td>
+      <td>5.0</td>
+      <td>1</td>
+      <td>a</td>
+      <td>mama</td>
+      <td>2010a201</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>05</td>
+      <td>045</td>
+      <td>1</td>
+      <td>1</td>
+      <td>&lt;NA&gt;</td>
+      <td>NaN</td>
+      <td>1997</td>
+      <td>8.0</td>
+      <td>2</td>
+      <td>5</td>
+      <td>...</td>
+      <td>NaN</td>
+      <td>024</td>
+      <td>NaN</td>
+      <td>0504511199708  25109</td>
+      <td>5.0</td>
+      <td>0</td>
+      <td>a</td>
+      <td>mama</td>
+      <td>1995a199</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>05</td>
+      <td>266</td>
+      <td>1</td>
+      <td>2</td>
+      <td>&lt;NA&gt;</td>
+      <td>NaN</td>
+      <td>1986</td>
+      <td>4.0</td>
+      <td>2</td>
+      <td>1</td>
+      <td>...</td>
+      <td>NaN</td>
+      <td>024</td>
+      <td>NaN</td>
+      <td>0526612198604  21109</td>
+      <td>5.0</td>
+      <td>0</td>
+      <td>a</td>
+      <td>mama</td>
+      <td>1985a198</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>08</td>
+      <td>001</td>
+      <td>1</td>
+      <td>1</td>
+      <td>&lt;NA&gt;</td>
+      <td>NaN</td>
+      <td>1989</td>
+      <td>7.0</td>
+      <td>2</td>
+      <td>2</td>
+      <td>...</td>
+      <td>NaN</td>
+      <td>024</td>
+      <td>NaN</td>
+      <td>0800111198907  22109</td>
+      <td>8.0</td>
+      <td>0</td>
+      <td>a</td>
+      <td>mama</td>
+      <td>1985a198</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>08</td>
+      <td>001</td>
+      <td>1</td>
+      <td>1</td>
+      <td>&lt;NA&gt;</td>
+      <td>NaN</td>
+      <td>1998</td>
+      <td>8.0</td>
+      <td>2</td>
+      <td>2</td>
+      <td>...</td>
+      <td>208</td>
+      <td>024</td>
+      <td>10.0</td>
+      <td>0800111199808  22103</td>
+      <td>8.0</td>
+      <td>1</td>
+      <td>a</td>
+      <td>mama</td>
+      <td>1995a199</td>
+      <td>2</td>
+    </tr>
+  </tbody>
+</table>
+<p>5 rows × 53 columns</p>
+</div></div></div>
+</div>
+</section>
+<section id="datos-faltantes">
+<h2><strong>Datos Faltantes</strong><a class="headerlink" href="#datos-faltantes" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">missing_percent</span> <span class="o">=</span> <span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">isnull</span><span class="p">()</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="n">data</span><span class="p">))</span> <span class="o">*</span> <span class="mi">100</span>
+<span class="n">missing_percent</span> <span class="o">=</span> <span class="n">missing_percent</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">missing_percent</span><span class="p">[</span><span class="n">missing_percent</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>codocur       100.000000
+codmunoc      100.000000
+c_mcm1         99.850648
+C_ANT32        99.639421
+C_DIR12        99.372720
+C_ANT22        98.978003
+C_ANT12        98.600354
+C_PAT2         98.483006
+SIMUERTEPO     98.043483
+man_muer       93.353816
+c_ant3         85.721906
+c_pat1         84.842860
+OCUPACION      75.853976
+IDCLASADMI     65.659604
+IDADMISALU     65.529454
+MUERTEPORO     64.072201
+IDPERTET       64.072201
+IDPROFCER      64.072201
+EDAD           63.525998
+cod_inst       59.192643
+nom_inst       58.849133
+c_ant2         57.935949
+c_ant1         38.055004
+codpres        37.417056
+c_muerte       28.129467
+c_dir1         27.796625
+area_res       27.636604
+asis_med       27.598199
+pman_muer      27.598199
+seg_social     27.598199
+causa_666      27.598199
+filter_$        0.076810
+c_bas1          0.076810
+cau_homol       0.076810
+AÑOL            0.076810
+llave           0.076810
+MAMA            0.076810
+quinquenio      0.076810
+CODPTO          0.076810
+REGION          0.076810
+cod_munic       0.076810
+cons_exp        0.076810
+codmunre        0.076810
+codptore        0.076810
+nivel_edu       0.076810
+gru_ed1         0.076810
+est_civil       0.076810
+sexo            0.076810
+mes             0.076810
+ano             0.076810
+sit_defun       0.076810
+a_defun         0.076810
+dtype: float64
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">missing_count</span> <span class="o">=</span> <span class="n">missing_percent</span><span class="p">[</span><span class="n">missing_percent</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">count</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;La cantidad de variables con datos faltantes es de: &quot;</span><span class="p">,</span> <span class="n">missing_count</span><span class="p">)</span>
+<span class="n">missing_above_70</span> <span class="o">=</span> <span class="n">missing_percent</span><span class="p">[</span><span class="n">missing_percent</span> <span class="o">&gt;</span> <span class="mi">70</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;La cantidad de variables con más del 70</span><span class="si">% d</span><span class="s2">e datos faltantes es de: &quot;</span><span class="p">,</span> <span class="n">missing_above_70</span><span class="o">.</span><span class="n">count</span><span class="p">())</span>
+<span class="n">missing_below_70</span> <span class="o">=</span> <span class="n">missing_percent</span><span class="p">[</span><span class="n">missing_percent</span> <span class="o">&lt;=</span> <span class="mi">70</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;La cantidad de variables con menos del 70</span><span class="si">% d</span><span class="s2">e datos faltantes es de: &quot;</span><span class="p">,</span> <span class="n">missing_below_70</span><span class="o">.</span><span class="n">count</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>La cantidad de variables con datos faltantes es de:  52
+La cantidad de variables con más del 70% de datos faltantes es de:  13
+La cantidad de variables con menos del 70% de datos faltantes es de:  40
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">axes</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">18</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
+
+<span class="n">sns</span><span class="o">.</span><span class="n">barplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">missing_above_70</span><span class="o">.</span><span class="n">values</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="n">missing_above_70</span><span class="o">.</span><span class="n">index</span><span class="p">,</span> <span class="n">palette</span><span class="o">=</span><span class="s2">&quot;RdPu_r&quot;</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+<span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">&quot;Porcentaje de datos faltantes&quot;</span><span class="p">)</span>
+<span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">&quot;Variables&quot;</span><span class="p">)</span>
+<span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">&quot;Variables con más del 70</span><span class="si">% d</span><span class="s2">e datos faltantes&quot;</span><span class="p">)</span>
+<span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_xlim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
+<span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="s2">&quot;x&quot;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s2">&quot;--&quot;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.1</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">index</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">missing_above_70</span><span class="o">.</span><span class="n">values</span><span class="p">):</span>
+    <span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="n">value</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">index</span><span class="p">,</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">value</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">%&quot;</span><span class="p">,</span> <span class="n">va</span><span class="o">=</span><span class="s2">&quot;center&quot;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+
+<span class="n">sns</span><span class="o">.</span><span class="n">barplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">missing_below_70</span><span class="o">.</span><span class="n">values</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="n">missing_below_70</span><span class="o">.</span><span class="n">index</span><span class="p">,</span> <span class="n">palette</span><span class="o">=</span><span class="s2">&quot;RdPu_r&quot;</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+<span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">&quot;Porcentaje de datos faltantes&quot;</span><span class="p">)</span>
+<span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">&quot;Variables&quot;</span><span class="p">)</span>
+<span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">&quot;Variables con menos del 70</span><span class="si">% d</span><span class="s2">e datos faltantes&quot;</span><span class="p">)</span>
+<span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_xlim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">50</span><span class="p">)</span>
+<span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="s2">&quot;x&quot;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s2">&quot;--&quot;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.1</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">index</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">missing_below_70</span><span class="o">.</span><span class="n">values</span><span class="p">):</span>
+    <span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="n">value</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">index</span><span class="p">,</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">value</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">%&quot;</span><span class="p">,</span> <span class="n">va</span><span class="o">=</span><span class="s2">&quot;center&quot;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/b2873172c1aadd5f6507808f8c9969c878e7cdc7027a862ffaa4b7aa97905926.png" src="_images/b2873172c1aadd5f6507808f8c9969c878e7cdc7027a862ffaa4b7aa97905926.png" />
+</div>
+</div>
+</section>
+<section id="eliminacion-de-columnas">
+<h2><strong>Eliminación de columnas</strong><a class="headerlink" href="#eliminacion-de-columnas" title="Link to this heading">#</a></h2>
+<p>Para optimizar el análisis, eliminamos ciertas variables que no aportan valor significativo. La decisión se tomó con base en los siguientes criterios:</p>
+<p><strong>1. Variables eliminadas por recomendación de expertos</strong><br />
+Los especialistas en cáncer de mama recomendaron eliminar estas variables, ya que en este conjunto de datos NO son relevantes para el estudio:<br />
+(<code class="docutils literal notranslate"><span class="pre">cau_homol</span></code>, <code class="docutils literal notranslate"><span class="pre">EDAD</span></code>, <code class="docutils literal notranslate"><span class="pre">llave</span></code>, <code class="docutils literal notranslate"><span class="pre">filter_$</span></code>, <code class="docutils literal notranslate"><span class="pre">AÑOL</span></code>, <code class="docutils literal notranslate"><span class="pre">MAMA</span></code>)</p>
+<p><strong>2. Variables eliminadas por contener 100% de valores nulos</strong><br />
+Estas variables no tienen ninguna observación registrada, por lo que se descartan:<br />
+(<code class="docutils literal notranslate"><span class="pre">codocur</span></code>, <code class="docutils literal notranslate"><span class="pre">codmunoc</span></code>)</p>
+<p><strong>3. Variables eliminadas por más del 75% de datos faltantes</strong><br />
+Estas variables tienen un porcentaje muy alto de valores nulos, lo que dificulta su uso sin introducir sesgos en el análisis:</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Variable</p></th>
+<th class="head"><p>% de valores nulos</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">C_ANT12</span></code></p></td>
+<td><p>98.60%</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">C_PAT2</span></code></p></td>
+<td><p>98.48%</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">SIMUERTEPO</span></code></p></td>
+<td><p>98.04%</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">man_muer</span></code></p></td>
+<td><p>93.35%</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">c_ant3</span></code></p></td>
+<td><p>85.72%</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">c_pat1</span></code></p></td>
+<td><p>84.84%</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">OCUPACION</span></code></p></td>
+<td><p>75.85%</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><strong>4. Irrelevante</strong>
+<code class="docutils literal notranslate"><span class="pre">quinquenio</span></code></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">[</span>
+    <span class="s1">&#39;a_defun&#39;</span><span class="p">,</span><span class="s1">&#39;cod_inst&#39;</span><span class="p">,</span> <span class="s1">&#39;nom_inst&#39;</span><span class="p">,</span> <span class="s1">&#39;MUERTEPORO&#39;</span><span class="p">,</span> <span class="s1">&#39;SIMUERTEPO&#39;</span><span class="p">,</span> <span class="s1">&#39;OCUPACION&#39;</span><span class="p">,</span> 
+    <span class="s1">&#39;codpres&#39;</span><span class="p">,</span><span class="s1">&#39;codmunre&#39;</span><span class="p">,</span> <span class="s1">&#39;area_res&#39;</span><span class="p">,</span> <span class="s1">&#39;IDCLASADMI&#39;</span><span class="p">,</span> <span class="s1">&#39;cons_exp&#39;</span><span class="p">,</span> <span class="s1">&#39;man_muer&#39;</span> <span class="p">,</span><span class="s1">&#39;codocur&#39;</span><span class="p">,</span> <span class="s1">&#39;codmunoc&#39;</span><span class="p">,</span><span class="s1">&#39;C_DIR12&#39;</span><span class="p">,</span> 
+    <span class="s1">&#39;C_ANT12&#39;</span><span class="p">,</span> <span class="s1">&#39;C_ANT22&#39;</span><span class="p">,</span><span class="s1">&#39;c_ant3&#39;</span><span class="p">,</span> <span class="s1">&#39;C_ANT32&#39;</span><span class="p">,</span> <span class="s1">&#39;c_pat1&#39;</span><span class="p">,</span> <span class="s1">&#39;C_PAT2&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;c_mcm1&#39;</span><span class="p">,</span> <span class="s1">&#39;IDPROFCER&#39;</span><span class="p">,</span>  <span class="s1">&#39;cau_homol&#39;</span><span class="p">,</span> <span class="s1">&#39;EDAD&#39;</span><span class="p">,</span> <span class="s1">&#39;llave&#39;</span><span class="p">,</span> <span class="s1">&#39;filter_$&#39;</span><span class="p">,</span><span class="s1">&#39;AÑOL&#39;</span><span class="p">,</span> <span class="s1">&#39;MAMA&#39;</span><span class="p">,</span> <span class="s1">&#39;quinquenio&#39;</span>
+<span class="p">])</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span><span class="o">.</span><span class="n">shape</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(46869, 23)
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="renombrado-de-variables">
+<h2><strong>Renombrado de variables</strong><a class="headerlink" href="#renombrado-de-variables" title="Link to this heading">#</a></h2>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>La información utilizada para este estudio está basada en el Certificado de Defunción del Ministerio de Salud de Colombia <span id="id1">[]</span>. En este caso, observaciones sobre casos de defunción relacionados con el cáncer de mama.</p>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">{</span>
+    <span class="s1">&#39;COD_DPTO&#39;</span><span class="p">:</span> <span class="s1">&#39;depto_ocurr&#39;</span><span class="p">,</span>  <span class="c1"># Departamento donde ocurrió la defunción (DIVIPOLA)</span>
+    <span class="s1">&#39;cod_munic&#39;</span><span class="p">:</span> <span class="s1">&#39;munic_ocurr&#39;</span><span class="p">,</span>  <span class="c1"># Municipio donde ocurrió la defunción (DIVIPOLA)</span>
+    <span class="s1">&#39;sit_defun&#39;</span><span class="p">:</span> <span class="s1">&#39;sitio_def&#39;</span><span class="p">,</span>  <span class="c1"># Sitio de la defunción</span>
+    <span class="s1">&#39;ano&#39;</span><span class="p">:</span> <span class="s1">&#39;año_def&#39;</span><span class="p">,</span>  <span class="c1"># Año en que ocurrió la defunción</span>
+    <span class="s1">&#39;mes&#39;</span><span class="p">:</span> <span class="s1">&#39;mes_def&#39;</span><span class="p">,</span>  <span class="c1"># Mes en que ocurrió la defunción</span>
+    <span class="s1">&#39;sexo&#39;</span><span class="p">:</span> <span class="s1">&#39;sexo&#39;</span><span class="p">,</span>  <span class="c1"># Sexo del fallecido</span>
+    <span class="s1">&#39;est_civil&#39;</span><span class="p">:</span> <span class="s1">&#39;estado_civil&#39;</span><span class="p">,</span>  <span class="c1"># Estado conyugal del fallecido</span>
+    <span class="s1">&#39;gru_ed1&#39;</span><span class="p">:</span> <span class="s1">&#39;grupo_edad&#39;</span><span class="p">,</span>  <span class="c1"># Agrupación de edades del fallecido</span>
+    <span class="s1">&#39;nivel_edu&#39;</span><span class="p">:</span> <span class="s1">&#39;nivel_edu&#39;</span><span class="p">,</span>  <span class="c1"># Nivel educativo del fallecido</span>
+    <span class="s1">&#39;IDPERTET&#39;</span><span class="p">:</span> <span class="s1">&#39;grupo_etnico&#39;</span><span class="p">,</span>  <span class="c1"># Pertenencia étnica del fallecido</span>
+    <span class="s1">&#39;codptore&#39;</span><span class="p">:</span> <span class="s1">&#39;depto_res&#39;</span><span class="p">,</span>  <span class="c1"># Departamento de residencia habitual del fallecido</span>
+    <span class="s1">&#39;seg_social&#39;</span><span class="p">:</span> <span class="s1">&#39;seg_social&#39;</span><span class="p">,</span>  <span class="c1"># Régimen de seguridad social del fallecido</span>
+    <span class="s1">&#39;IDADMISALU&#39;</span><span class="p">:</span> <span class="s1">&#39;ent_salud_cod&#39;</span><span class="p">,</span>  <span class="c1"># Código de la Entidad Administradora en Salud</span>
+    <span class="s1">&#39;pman_muer&#39;</span><span class="p">:</span> <span class="s1">&#39;prob_muerte&#39;</span><span class="p">,</span>  <span class="c1"># Probable manera de muerte</span>
+    <span class="s1">&#39;c_muerte&#39;</span><span class="p">:</span> <span class="s1">&#39;cert_medica&#39;</span><span class="p">,</span>  <span class="c1"># Cómo se determinó la causa de muerte</span>
+    <span class="s1">&#39;asis_med&#39;</span><span class="p">:</span> <span class="s1">&#39;asistencia_med&#39;</span><span class="p">,</span>  <span class="c1"># Recibió asistencia médica antes de fallecer</span>
+    <span class="s1">&#39;c_dir1&#39;</span><span class="p">:</span> <span class="s1">&#39;causa_directa&#39;</span><span class="p">,</span>  <span class="c1"># Causa directa de la defunción</span>
+    <span class="s1">&#39;c_ant1&#39;</span><span class="p">:</span> <span class="s1">&#39;causa_ant_1&#39;</span><span class="p">,</span>  <span class="c1"># Primera causa antecedente</span>
+    <span class="s1">&#39;c_ant2&#39;</span><span class="p">:</span> <span class="s1">&#39;causa_ant_2&#39;</span><span class="p">,</span>  <span class="c1"># Segunda causa antecedente</span>
+    <span class="s1">&#39;c_bas1&#39;</span><span class="p">:</span> <span class="s1">&#39;causa_basica&#39;</span><span class="p">,</span>  <span class="c1"># Código de la causa básica de la defunción</span>
+    <span class="s1">&#39;causa_666&#39;</span><span class="p">:</span> <span class="s1">&#39;causa_OPS&#39;</span><span class="p">,</span>  <span class="c1"># Causa agrupada según la lista OPS 6/67</span>
+    <span class="s1">&#39;CODPTO&#39;</span><span class="p">:</span> <span class="s1">&#39;depto_res&#39;</span><span class="p">,</span>  <span class="c1"># Departamento de residencia habitual del fallecido</span>
+    <span class="s1">&#39;REGION&#39;</span><span class="p">:</span> <span class="s1">&#39;region&#39;</span>  <span class="c1"># Región del país donde ocurrió la defunción</span>
+<span class="p">})</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>depto_ocurr</th>
+      <th>munic_ocurr</th>
+      <th>sitio_def</th>
+      <th>año_def</th>
+      <th>mes_def</th>
+      <th>sexo</th>
+      <th>estado_civil</th>
+      <th>grupo_edad</th>
+      <th>nivel_edu</th>
+      <th>grupo_etnico</th>
+      <th>...</th>
+      <th>prob_muerte</th>
+      <th>cert_medica</th>
+      <th>asistencia_med</th>
+      <th>causa_directa</th>
+      <th>causa_ant_1</th>
+      <th>causa_ant_2</th>
+      <th>causa_basica</th>
+      <th>causa_OPS</th>
+      <th>depto_res</th>
+      <th>region</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>05</td>
+      <td>001</td>
+      <td>1</td>
+      <td>2014</td>
+      <td>7.0</td>
+      <td>2</td>
+      <td>1</td>
+      <td>10</td>
+      <td>3</td>
+      <td>6</td>
+      <td>...</td>
+      <td>1</td>
+      <td>2</td>
+      <td>1</td>
+      <td>J969</td>
+      <td>C782</td>
+      <td>C509</td>
+      <td>C509</td>
+      <td>208</td>
+      <td>5.0</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>05</td>
+      <td>045</td>
+      <td>1</td>
+      <td>1997</td>
+      <td>8.0</td>
+      <td>2</td>
+      <td>5</td>
+      <td>10</td>
+      <td>9</td>
+      <td>NaN</td>
+      <td>...</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>C509</td>
+      <td>NaN</td>
+      <td>5.0</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>05</td>
+      <td>266</td>
+      <td>2</td>
+      <td>1986</td>
+      <td>4.0</td>
+      <td>2</td>
+      <td>1</td>
+      <td>10</td>
+      <td>9</td>
+      <td>NaN</td>
+      <td>...</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>1749</td>
+      <td>NaN</td>
+      <td>5.0</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>08</td>
+      <td>001</td>
+      <td>1</td>
+      <td>1989</td>
+      <td>7.0</td>
+      <td>2</td>
+      <td>2</td>
+      <td>10</td>
+      <td>9</td>
+      <td>NaN</td>
+      <td>...</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>1749</td>
+      <td>NaN</td>
+      <td>8.0</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>08</td>
+      <td>001</td>
+      <td>1</td>
+      <td>1998</td>
+      <td>8.0</td>
+      <td>2</td>
+      <td>2</td>
+      <td>10</td>
+      <td>3</td>
+      <td>NaN</td>
+      <td>...</td>
+      <td>1</td>
+      <td>2</td>
+      <td>1</td>
+      <td>J969</td>
+      <td>C780</td>
+      <td>C509</td>
+      <td>C509</td>
+      <td>208</td>
+      <td>8.0</td>
+      <td>2</td>
+    </tr>
+  </tbody>
+</table>
+<p>5 rows × 23 columns</p>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span><span class="o">.</span><span class="n">info</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;class &#39;pandas.core.frame.DataFrame&#39;&gt;
+RangeIndex: 46869 entries, 0 to 46868
+Data columns (total 23 columns):
+ #   Column          Non-Null Count  Dtype  
+---  ------          --------------  -----  
+ 0   depto_ocurr     46869 non-null  object 
+ 1   munic_ocurr     46833 non-null  object 
+ 2   sitio_def       46833 non-null  object 
+ 3   año_def         46833 non-null  Int64  
+ 4   mes_def         46833 non-null  float64
+ 5   sexo            46833 non-null  object 
+ 6   estado_civil    46833 non-null  object 
+ 7   grupo_edad      46833 non-null  object 
+ 8   nivel_edu       46833 non-null  object 
+ 9   grupo_etnico    16839 non-null  object 
+ 10  depto_res       46833 non-null  object 
+ 11  seg_social      33934 non-null  object 
+ 12  ent_salud_cod   16156 non-null  object 
+ 13  prob_muerte     33934 non-null  object 
+ 14  cert_medica     33685 non-null  object 
+ 15  asistencia_med  33934 non-null  object 
+ 16  causa_directa   33841 non-null  object 
+ 17  causa_ant_1     29033 non-null  object 
+ 18  causa_ant_2     19715 non-null  object 
+ 19  causa_basica    46833 non-null  object 
+ 20  causa_OPS       33934 non-null  object 
+ 21  depto_res       46833 non-null  float64
+ 22  region          46833 non-null  object 
+dtypes: Int64(1), float64(2), object(20)
+memory usage: 8.3+ MB
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="conjunto-de-datos-2">
+<h2><strong>Conjunto de datos 2</strong><a class="headerlink" href="#conjunto-de-datos-2" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">column_types</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;Código Departamento&quot;</span><span class="p">:</span> <span class="s2">&quot;object&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Código Municipio&quot;</span><span class="p">:</span> <span class="s2">&quot;object&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Código Centro Poblado&quot;</span><span class="p">:</span> <span class="s2">&quot;object&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Nombre Departamento&quot;</span><span class="p">:</span> <span class="s2">&quot;object&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Nombre Municipio&quot;</span><span class="p">:</span> <span class="s2">&quot;object&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Nombre Centro Poblado	&quot;</span><span class="p">:</span> <span class="s2">&quot;object&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Tipo&quot;</span><span class="p">:</span> <span class="s2">&quot;object&quot;</span>
+<span class="p">}</span>
+<span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;https://raw.githubusercontent.com/sePerezAlbor/Data/refs/heads/main/Divipola.csv&quot;</span>
+<span class="n">dfp</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">delimiter</span> <span class="o">=</span> <span class="s2">&quot;,&quot;</span><span class="p">,</span> <span class="n">na_values</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot; &quot;</span><span class="p">],</span> <span class="n">dtype</span><span class="o">=</span><span class="n">column_types</span><span class="p">)</span>
+<span class="n">display</span><span class="p">(</span><span class="n">dfp</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Código Departamento</th>
+      <th>Código Municipio</th>
+      <th>Código Centro Poblado</th>
+      <th>Nombre Departamento</th>
+      <th>Nombre Municipio</th>
+      <th>Nombre Centro Poblado</th>
+      <th>Tipo</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>05</td>
+      <td>05001</td>
+      <td>05001000</td>
+      <td>ANTIOQUIA</td>
+      <td>MEDELLÍN</td>
+      <td>MEDELLÍN</td>
+      <td>CM</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>05</td>
+      <td>05001</td>
+      <td>05001001</td>
+      <td>ANTIOQUIA</td>
+      <td>MEDELLÍN</td>
+      <td>PALMITAS</td>
+      <td>C</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>05</td>
+      <td>05001</td>
+      <td>05001004</td>
+      <td>ANTIOQUIA</td>
+      <td>MEDELLÍN</td>
+      <td>SANTA ELENA</td>
+      <td>C</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>05</td>
+      <td>05001</td>
+      <td>05001005</td>
+      <td>ANTIOQUIA</td>
+      <td>MEDELLÍN</td>
+      <td>PEDREGAL ALTO</td>
+      <td>IPM</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>05</td>
+      <td>05001</td>
+      <td>05001009</td>
+      <td>ANTIOQUIA</td>
+      <td>MEDELLÍN</td>
+      <td>ALTAVISTA</td>
+      <td>C</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>9200</th>
+      <td>99</td>
+      <td>99773</td>
+      <td>99773019</td>
+      <td>VICHADA</td>
+      <td>CUMARIBO</td>
+      <td>EL CAÑAVERAL</td>
+      <td>CAS</td>
+    </tr>
+    <tr>
+      <th>9201</th>
+      <td>99</td>
+      <td>99773</td>
+      <td>99773020</td>
+      <td>VICHADA</td>
+      <td>CUMARIBO</td>
+      <td>EL PROGRESO</td>
+      <td>CAS</td>
+    </tr>
+    <tr>
+      <th>9202</th>
+      <td>99</td>
+      <td>99773</td>
+      <td>99773021</td>
+      <td>VICHADA</td>
+      <td>CUMARIBO</td>
+      <td>EL TUPARRO</td>
+      <td>IP</td>
+    </tr>
+    <tr>
+      <th>9203</th>
+      <td>99</td>
+      <td>99773</td>
+      <td>99773022</td>
+      <td>VICHADA</td>
+      <td>CUMARIBO</td>
+      <td>LA 14</td>
+      <td>CAS</td>
+    </tr>
+    <tr>
+      <th>9204</th>
+      <td>99</td>
+      <td>99773</td>
+      <td>99773023</td>
+      <td>VICHADA</td>
+      <td>CUMARIBO</td>
+      <td>WERIMA</td>
+      <td>IP</td>
+    </tr>
+  </tbody>
+</table>
+<p>9205 rows × 7 columns</p>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dfp</span><span class="o">.</span><span class="n">info</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;class &#39;pandas.core.frame.DataFrame&#39;&gt;
+RangeIndex: 9205 entries, 0 to 9204
+Data columns (total 7 columns):
+ #   Column                 Non-Null Count  Dtype 
+---  ------                 --------------  ----- 
+ 0   Código Departamento    9205 non-null   object
+ 1   Código Municipio       9205 non-null   object
+ 2   Código Centro Poblado  9205 non-null   object
+ 3   Nombre Departamento    9205 non-null   object
+ 4   Nombre Municipio       9205 non-null   object
+ 5   Nombre Centro Poblado  9205 non-null   object
+ 6   Tipo                   9205 non-null   object
+dtypes: object(7)
+memory usage: 503.5+ KB
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="intro.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title"><strong>Proyecto Final - Seminario Investigativo</strong></p>
+      </div>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#librerias-y-modulos-necesarios"><strong>Líbrerias y módulos necesarios</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conjunto-de-datos-1"><strong>Conjunto de datos 1</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#datos-faltantes"><strong>Datos Faltantes</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#eliminacion-de-columnas"><strong>Eliminación de columnas</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#renombrado-de-variables"><strong>Renombrado de variables</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conjunto-de-datos-2"><strong>Conjunto de datos 2</strong></a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Kanery Camargo. Emanuel Carbonell. Sebastián Pérez.
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
