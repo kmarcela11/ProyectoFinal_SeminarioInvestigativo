@@ -882,8 +882,15 @@ La cantidad de variables con menos del 70% de datos faltantes es de:  40
     <span class="n">yaxis</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="nb">range</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="n">missing_percent</span><span class="o">.</span><span class="n">max</span><span class="p">()</span> <span class="o">+</span> <span class="mi">10</span><span class="p">]))</span>
 
 <span class="n">fig</span><span class="o">.</span><span class="n">update_traces</span><span class="p">(</span><span class="n">textposition</span> <span class="o">=</span><span class="s1">&#39;outside&#39;</span><span class="p">)</span> <span class="c1"># Para que el porcentaje se muestre fuera de la barra</span>
-
-<span class="n">fig</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
@@ -1962,6 +1969,173 @@ memory usage: 503.5+ KB
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>sitio_def</th>
+      <th>año_def</th>
+      <th>mes_def</th>
+      <th>sexo</th>
+      <th>estado_civil</th>
+      <th>grupo_edad</th>
+      <th>nivel_edu</th>
+      <th>grupo_etnico</th>
+      <th>rec_etnico</th>
+      <th>seg_social</th>
+      <th>...</th>
+      <th>asistencia_med</th>
+      <th>causa_directa</th>
+      <th>causa_ant_1</th>
+      <th>causa_ant_2</th>
+      <th>causa_basica</th>
+      <th>causa_OPS</th>
+      <th>depto_res</th>
+      <th>region</th>
+      <th>Nombre_Departamento</th>
+      <th>Nombre_Municipio</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Hospital o Clínica</td>
+      <td>2014</td>
+      <td>Julio</td>
+      <td>Femenino</td>
+      <td>Soltero</td>
+      <td>15-19 años</td>
+      <td>Secundaria</td>
+      <td>Ninguno de los anteriores</td>
+      <td>NaN</td>
+      <td>Subsidiado</td>
+      <td>...</td>
+      <td>SI</td>
+      <td>J969</td>
+      <td>C782</td>
+      <td>C509</td>
+      <td>C509</td>
+      <td>Tumor Maligno</td>
+      <td>ANTIOQUIA</td>
+      <td>ANDINA</td>
+      <td>ANTIOQUIA</td>
+      <td>MEDELLÍN</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Hospital o Clínica</td>
+      <td>1997</td>
+      <td>Agosto</td>
+      <td>Femenino</td>
+      <td>Sin información</td>
+      <td>15-19 años</td>
+      <td>Sin información</td>
+      <td>Sin información</td>
+      <td>NaN</td>
+      <td>Sin información</td>
+      <td>...</td>
+      <td>Sin información</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>C509</td>
+      <td>Tumor Maligno</td>
+      <td>ANTIOQUIA</td>
+      <td>ANDINA</td>
+      <td>ANTIOQUIA</td>
+      <td>APARTADÓ</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Casa</td>
+      <td>1986</td>
+      <td>Abril</td>
+      <td>Femenino</td>
+      <td>Soltero</td>
+      <td>15-19 años</td>
+      <td>Sin información</td>
+      <td>Sin información</td>
+      <td>NaN</td>
+      <td>Sin información</td>
+      <td>...</td>
+      <td>Sin información</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>1749</td>
+      <td>Tumor Maligno</td>
+      <td>ANTIOQUIA</td>
+      <td>ANDINA</td>
+      <td>ANTIOQUIA</td>
+      <td>ENVIGADO</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Hospital o Clínica</td>
+      <td>1989</td>
+      <td>Julio</td>
+      <td>Femenino</td>
+      <td>Casado</td>
+      <td>15-19 años</td>
+      <td>Sin información</td>
+      <td>Sin información</td>
+      <td>NaN</td>
+      <td>Sin información</td>
+      <td>...</td>
+      <td>Sin información</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>1749</td>
+      <td>Tumor Maligno</td>
+      <td>ATLÁNTICO</td>
+      <td>ATLANTICA</td>
+      <td>ATLÁNTICO</td>
+      <td>BARRANQUILLA</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>Hospital o Clínica</td>
+      <td>1998</td>
+      <td>Agosto</td>
+      <td>Femenino</td>
+      <td>Casado</td>
+      <td>15-19 años</td>
+      <td>Secundaria</td>
+      <td>Sin información</td>
+      <td>ATLÁNTICO</td>
+      <td>Sin información</td>
+      <td>...</td>
+      <td>SI</td>
+      <td>J969</td>
+      <td>C780</td>
+      <td>C509</td>
+      <td>C509</td>
+      <td>Tumor Maligno</td>
+      <td>ATLÁNTICO</td>
+      <td>ATLANTICA</td>
+      <td>ATLÁNTICO</td>
+      <td>BARRANQUILLA</td>
+    </tr>
+  </tbody>
+</table>
+<p>5 rows × 23 columns</p>
+</div></div></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1972,36 +2146,34 @@ memory usage: 503.5+ KB
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;class &#39;pandas.core.frame.DataFrame&#39;&gt;
 RangeIndex: 46869 entries, 0 to 46868
-Data columns (total 25 columns):
+Data columns (total 23 columns):
  #   Column               Non-Null Count  Dtype 
 ---  ------               --------------  ----- 
- 0   depto_ocurr          46869 non-null  object
- 1   sitio_def            46869 non-null  object
- 2   año_def              46869 non-null  Int64 
- 3   mes_def              46869 non-null  object
- 4   sexo                 46869 non-null  object
- 5   estado_civil         46869 non-null  object
- 6   grupo_edad           46869 non-null  object
- 7   nivel_edu            46869 non-null  object
- 8   grupo_etnico         46869 non-null  object
- 9   rec_etnico           17066 non-null  object
- 10  seg_social           46869 non-null  object
- 11  ent_salud_cod        46869 non-null  object
- 12  prob_muerte          46869 non-null  object
- 13  cert_medica          46869 non-null  object
- 14  asistencia_med       46869 non-null  object
- 15  causa_directa        33877 non-null  object
- 16  causa_ant_1          29066 non-null  object
- 17  causa_ant_2          19737 non-null  object
- 18  causa_basica         46869 non-null  object
- 19  causa_OPS            46869 non-null  object
- 20  depto_res            46869 non-null  object
- 21  region               46869 non-null  object
- 22  municipio            46869 non-null  object
- 23  Nombre_Departamento  46869 non-null  object
- 24  Nombre_Municipio     46867 non-null  object
-dtypes: Int64(1), object(24)
-memory usage: 9.0+ MB
+ 0   sitio_def            46869 non-null  object
+ 1   año_def              46869 non-null  Int64 
+ 2   mes_def              46869 non-null  object
+ 3   sexo                 46869 non-null  object
+ 4   estado_civil         46869 non-null  object
+ 5   grupo_edad           46869 non-null  object
+ 6   nivel_edu            46869 non-null  object
+ 7   grupo_etnico         46869 non-null  object
+ 8   rec_etnico           17066 non-null  object
+ 9   seg_social           46869 non-null  object
+ 10  ent_salud_cod        46869 non-null  object
+ 11  prob_muerte          46869 non-null  object
+ 12  cert_medica          46869 non-null  object
+ 13  asistencia_med       46869 non-null  object
+ 14  causa_directa        33877 non-null  object
+ 15  causa_ant_1          29066 non-null  object
+ 16  causa_ant_2          19737 non-null  object
+ 17  causa_basica         46869 non-null  object
+ 18  causa_OPS            46869 non-null  object
+ 19  depto_res            46869 non-null  object
+ 20  region               46869 non-null  object
+ 21  Nombre_Departamento  46869 non-null  object
+ 22  Nombre_Municipio     46867 non-null  object
+dtypes: Int64(1), object(22)
+memory usage: 8.3+ MB
 </pre></div>
 </div>
 </div>
@@ -2015,6 +2187,42 @@ memory usage: 9.0+ MB
     <span class="s1">&#39;causa_directa&#39;</span><span class="p">,</span> <span class="s1">&#39;causa_ant_1&#39;</span><span class="p">,</span> <span class="s1">&#39;causa_ant_2&#39;</span><span class="p">,</span> <span class="s1">&#39;causa_basica&#39;</span><span class="p">,</span> <span class="s1">&#39;causa_OPS&#39;</span><span class="p">,</span> <span class="s1">&#39;region&#39;</span><span class="p">,</span> <span class="s1">&#39;depto_ocurr&#39;</span><span class="p">,</span> <span class="s1">&#39;municipio&#39;</span>
 <span class="p">]</span>
 <span class="n">data_analisis</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="n">columnas_ordenadas</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">KeyError</span><span class="g g-Whitespace">                                  </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">561</span><span class="p">],</span> <span class="n">line</span> <span class="mi">7</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="n">columnas_ordenadas</span> <span class="o">=</span> <span class="p">[</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span>     <span class="s1">&#39;Nombre_Departamento&#39;</span><span class="p">,</span> <span class="s1">&#39;Nombre_Municipio&#39;</span><span class="p">,</span> <span class="s1">&#39;sitio_def&#39;</span><span class="p">,</span> <span class="s1">&#39;año_def&#39;</span><span class="p">,</span> 
+<span class="g g-Whitespace">      </span><span class="mi">3</span>     <span class="s1">&#39;mes_def&#39;</span><span class="p">,</span> <span class="s1">&#39;sexo&#39;</span><span class="p">,</span> <span class="s1">&#39;estado_civil&#39;</span><span class="p">,</span> <span class="s1">&#39;grupo_edad&#39;</span><span class="p">,</span> <span class="s1">&#39;nivel_edu&#39;</span><span class="p">,</span> <span class="s1">&#39;grupo_etnico&#39;</span><span class="p">,</span><span class="s1">&#39;rec_etnico&#39;</span><span class="p">,</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span>     <span class="s1">&#39;depto_res&#39;</span><span class="p">,</span> <span class="s1">&#39;seg_social&#39;</span><span class="p">,</span> <span class="s1">&#39;ent_salud_cod&#39;</span><span class="p">,</span> <span class="s1">&#39;prob_muerte&#39;</span><span class="p">,</span> <span class="s1">&#39;cert_medica&#39;</span><span class="p">,</span> <span class="s1">&#39;asistencia_med&#39;</span><span class="p">,</span>
+<span class="g g-Whitespace">      </span><span class="mi">5</span>     <span class="s1">&#39;causa_directa&#39;</span><span class="p">,</span> <span class="s1">&#39;causa_ant_1&#39;</span><span class="p">,</span> <span class="s1">&#39;causa_ant_2&#39;</span><span class="p">,</span> <span class="s1">&#39;causa_basica&#39;</span><span class="p">,</span> <span class="s1">&#39;causa_OPS&#39;</span><span class="p">,</span> <span class="s1">&#39;region&#39;</span><span class="p">,</span> <span class="s1">&#39;depto_ocurr&#39;</span><span class="p">,</span> <span class="s1">&#39;municipio&#39;</span>
+<span class="g g-Whitespace">      </span><span class="mi">6</span> <span class="p">]</span>
+<span class="ne">----&gt; </span><span class="mi">7</span> <span class="n">data_analisis</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="n">columnas_ordenadas</span><span class="p">]</span>
+
+<span class="nn">File c:\Users\kamac\miniconda3\envs\data_viz\lib\site-packages\pandas\core\frame.py:4108,</span> in <span class="ni">DataFrame.__getitem__</span><span class="nt">(self, key)</span>
+<span class="g g-Whitespace">   </span><span class="mi">4106</span>     <span class="k">if</span> <span class="n">is_iterator</span><span class="p">(</span><span class="n">key</span><span class="p">):</span>
+<span class="g g-Whitespace">   </span><span class="mi">4107</span>         <span class="n">key</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">key</span><span class="p">)</span>
+<span class="ne">-&gt; </span><span class="mi">4108</span>     <span class="n">indexer</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">columns</span><span class="o">.</span><span class="n">_get_indexer_strict</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="s2">&quot;columns&quot;</span><span class="p">)[</span><span class="mi">1</span><span class="p">]</span>
+<span class="g g-Whitespace">   </span><span class="mi">4110</span> <span class="c1"># take() does not accept boolean indexers</span>
+<span class="g g-Whitespace">   </span><span class="mi">4111</span> <span class="k">if</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">indexer</span><span class="p">,</span> <span class="s2">&quot;dtype&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span> <span class="o">==</span> <span class="nb">bool</span><span class="p">:</span>
+
+<span class="nn">File c:\Users\kamac\miniconda3\envs\data_viz\lib\site-packages\pandas\core\indexes\base.py:6200,</span> in <span class="ni">Index._get_indexer_strict</span><span class="nt">(self, key, axis_name)</span>
+<span class="g g-Whitespace">   </span><span class="mi">6197</span> <span class="k">else</span><span class="p">:</span>
+<span class="g g-Whitespace">   </span><span class="mi">6198</span>     <span class="n">keyarr</span><span class="p">,</span> <span class="n">indexer</span><span class="p">,</span> <span class="n">new_indexer</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_reindex_non_unique</span><span class="p">(</span><span class="n">keyarr</span><span class="p">)</span>
+<span class="ne">-&gt; </span><span class="mi">6200</span> <span class="bp">self</span><span class="o">.</span><span class="n">_raise_if_missing</span><span class="p">(</span><span class="n">keyarr</span><span class="p">,</span> <span class="n">indexer</span><span class="p">,</span> <span class="n">axis_name</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">6202</span> <span class="n">keyarr</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">take</span><span class="p">(</span><span class="n">indexer</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">6203</span> <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="n">Index</span><span class="p">):</span>
+<span class="g g-Whitespace">   </span><span class="mi">6204</span>     <span class="c1"># GH 42790 - Preserve name from an Index</span>
+
+<span class="nn">File c:\Users\kamac\miniconda3\envs\data_viz\lib\site-packages\pandas\core\indexes\base.py:6252,</span> in <span class="ni">Index._raise_if_missing</span><span class="nt">(self, key, indexer, axis_name)</span>
+<span class="g g-Whitespace">   </span><span class="mi">6249</span>     <span class="k">raise</span> <span class="ne">KeyError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;None of [</span><span class="si">{</span><span class="n">key</span><span class="si">}</span><span class="s2">] are in the [</span><span class="si">{</span><span class="n">axis_name</span><span class="si">}</span><span class="s2">]&quot;</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">6251</span> <span class="n">not_found</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">ensure_index</span><span class="p">(</span><span class="n">key</span><span class="p">)[</span><span class="n">missing_mask</span><span class="o">.</span><span class="n">nonzero</span><span class="p">()[</span><span class="mi">0</span><span class="p">]]</span><span class="o">.</span><span class="n">unique</span><span class="p">())</span>
+<span class="ne">-&gt; </span><span class="mi">6252</span> <span class="k">raise</span> <span class="ne">KeyError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">not_found</span><span class="si">}</span><span class="s2"> not in index&quot;</span><span class="p">)</span>
+
+<span class="ne">KeyError</span>: &quot;[&#39;depto_ocurr&#39;, &#39;municipio&#39;] not in index&quot;
 </pre></div>
 </div>
 </div>
