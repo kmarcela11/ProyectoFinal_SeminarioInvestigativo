@@ -61,7 +61,8 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="prev" title="ETL: Limpieza del conjunto de datos" href="etl.html" />
+    <link rel="next" title="Bibliografía" href="citas.html" />
+    <link rel="prev" title="EDA: Caracterización y distribución de los datos" href="eda.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -180,8 +181,11 @@
             </li>
         </ul>
         <ul class="current nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="etl.html"><strong>ETL: Limpieza del conjunto de datos</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="context.html"><strong>Contextualización</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="etl.html"><strong>ETL: Limpieza y preparación de los datos</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="eda.html"><strong>EDA: Caracterización y distribución de los datos</strong></a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#"><strong>Diccionario de variable</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="citas.html"><strong>Bibliografía</strong></a></li>
 </ul>
 
     </div>
@@ -415,7 +419,7 @@ document.write(`
 </tr>
 <tr class="row-even"><td class="text-center"><p><code class="docutils literal notranslate"><span class="pre">estado_civil</span></code></p></td>
 <td class="text-center"><p>Estado civil de la persona.</p></td>
-<td class="text-center"><p>Soltero<br> Sin información <br> Casado <br> Unión Libre<br> Divorciado/Otro<br> Viudo</p></td>
+<td class="text-center"><p>Soltero <br> Casado <br> Unión Libre<br> Divorciado/Otro<br> Viudo</p></td>
 </tr>
 <tr class="row-odd"><td class="text-center"><p><code class="docutils literal notranslate"><span class="pre">grupo_edad</span></code></p></td>
 <td class="text-center"><p>Rango de edad de la persona.</p></td>
@@ -423,42 +427,42 @@ document.write(`
 </tr>
 <tr class="row-even"><td class="text-center"><p><code class="docutils literal notranslate"><span class="pre">nivel_edu</span></code></p></td>
 <td class="text-center"><p>Nivel educativo de la persona.</p></td>
-<td class="text-center"><p>Secundaria<br> Sin información<br> Primaria <br> Superior<br> Ninguno<br> Preescolar</p></td>
+<td class="text-center"><p>Secundaria<br> Primaria <br> Superior<br> Ninguno<br> Preescolar</p></td>
 </tr>
 <tr class="row-odd"><td class="text-center"><p><code class="docutils literal notranslate"><span class="pre">grupo_etnico</span></code></p></td>
 <td class="text-center"><p>Grupo étnico de la persona.</p></td>
-<td class="text-center"><p>Indígena<br>Rom - Gitano<br>Raizal de San Andrés y Providencia<br>Palenquero de San Basilio<br>Afrocolombiano/a<br>Ninguno de los anteriores<br>Sin información</p></td>
+<td class="text-center"><p>Indígena<br>Gitano<br>Raizal <br>Palenquero<br>Afrodescendiente<br>Ninguno<br></p></td>
 </tr>
 <tr class="row-even"><td class="text-center"><p><code class="docutils literal notranslate"><span class="pre">seg_social</span></code></p></td>
 <td class="text-center"><p>Tipo de régimen de seguridad social.</p></td>
-<td class="text-center"><p>Subsidiado<br> Sin información<br> Contributivo<br> Particular<br> Vinculado <br> Otro<br> Ignorado</p></td>
+<td class="text-center"><p>Subsidiado<br>  Contributivo<br> Particular<br> Vinculado <br> Otro<br> Ignorado</p></td>
 </tr>
 <tr class="row-odd"><td class="text-center"><p><code class="docutils literal notranslate"><span class="pre">ent_salud_cod</span></code></p></td>
 <td class="text-center"><p>Código de la entidad de salud.</p></td>
-<td class="text-center"><p>EPS Subsidiado<br>EPS (Entidad Promotora de Salud) <br>EESS (Establecimientoo de Salud) <br>ESE (Empresa Social del Estado) <br>EAPB (Entidad Administradora de Planes de Beneficios) <br>Sin información</p></td>
+<td class="text-center"><p>EPS Subsidiado<br>EPS (Entidad Promotora de Salud) <br>EESS (Establecimientoo de Salud) <br>ESE (Empresa Social del Estado) <br>EAPB (Entidad Administradora de Planes de Beneficios)</p></td>
 </tr>
 <tr class="row-even"><td class="text-center"><p><code class="docutils literal notranslate"><span class="pre">prob_muerte</span></code></p></td>
 <td class="text-center"><p>Tipo de causa de muerte.</p></td>
-<td class="text-center"><p>Natural<br> Sin información</p></td>
+<td class="text-center"><p>Natural  <br> Violenta <br> En estudio</p></td>
 </tr>
 <tr class="row-odd"><td class="text-center"><p><code class="docutils literal notranslate"><span class="pre">cert_medica</span></code></p></td>
 <td class="text-center"><p>Tipo de certificación médica de la defunción.</p></td>
-<td class="text-center"><p>Historia clínica<br> Sin información<br> Interrogatorio a familiares o testigos<br> Necropsia<br> Pruebas de laboratorio</p></td>
+<td class="text-center"><p>Historia clínica<br>  Interrogatorio a familiares o testigos<br> Necropsia<br> Pruebas de laboratorio</p></td>
 </tr>
 <tr class="row-even"><td class="text-center"><p><code class="docutils literal notranslate"><span class="pre">asistencia_med</span></code></p></td>
 <td class="text-center"><p>Asistencia médica durante la defunción.</p></td>
-<td class="text-center"><p>SI<br> NO<br> Sin información<br> Ignorado</p></td>
+<td class="text-center"><p>SI<br> NO<br>Ignorado</p></td>
 </tr>
 <tr class="row-odd"><td class="text-center"><p><code class="docutils literal notranslate"><span class="pre">causa_directa</span></code></p></td>
 <td class="text-center"><p>Causa directa de la defunción</p></td>
 <td class="text-center"><p>Código CIE-10</p></td>
 </tr>
 <tr class="row-even"><td class="text-center"><p><code class="docutils literal notranslate"><span class="pre">causa_ant_1</span></code></p></td>
-<td class="text-center"><p>Primera causa asociada de la defunción.</p></td>
+<td class="text-center"><p>Primera causa asociada de la defunción por antecedentes.</p></td>
 <td class="text-center"><p>Código CIE-10</p></td>
 </tr>
 <tr class="row-odd"><td class="text-center"><p><code class="docutils literal notranslate"><span class="pre">causa_ant_2</span></code></p></td>
-<td class="text-center"><p>Segunda causa asociada de la defunción.</p></td>
+<td class="text-center"><p>Segunda causa asociada de la defunción por antecedentes.</p></td>
 <td class="text-center"><p>Código CIE-10</p></td>
 </tr>
 <tr class="row-even"><td class="text-center"><p><code class="docutils literal notranslate"><span class="pre">causa_basica</span></code></p></td>
@@ -471,7 +475,7 @@ document.write(`
 </tr>
 <tr class="row-even"><td class="text-center"><p><code class="docutils literal notranslate"><span class="pre">region</span></code></p></td>
 <td class="text-center"><p>Región geográfica del país.</p></td>
-<td class="text-center"><p>ANDINA<br> ATLANTICA<br> PACIFICA<br> ORINOQUIA</p></td>
+<td class="text-center"><p>Andina<br> Atlántica<br> Pacífica<br> Orinoquía</p></td>
 </tr>
 </tbody>
 </table>
@@ -509,13 +513,22 @@ document.write(`
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="etl.html"
+       href="eda.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title"><strong>ETL: Limpieza del conjunto de datos</strong></p>
+        <p class="prev-next-title"><strong>EDA: Caracterización y distribución de los datos</strong></p>
       </div>
+    </a>
+    <a class="right-next"
+       href="citas.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title"><strong>Bibliografía</strong></p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
     </a>
 </div>
                 </footer>

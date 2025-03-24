@@ -61,6 +61,8 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Diccionario de variable" href="variables.html" />
+    <link rel="prev" title="ETL: Limpieza y preparación de los datos" href="etl.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -123,8 +125,6 @@
       
       
       
-        
-      
       <div class="bd-sidebar-primary bd-sidebar">
         
 
@@ -180,10 +180,12 @@
                 </a>
             </li>
         </ul>
-        <ul class="nav bd-sidenav">
+        <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="context.html"><strong>Contextualización</strong></a></li>
 <li class="toctree-l1"><a class="reference internal" href="etl.html"><strong>ETL: Limpieza y preparación de los datos</strong></a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#"><strong>EDA: Caracterización y distribución de los datos</strong></a></li>
 <li class="toctree-l1"><a class="reference internal" href="variables.html"><strong>Diccionario de variable</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="citas.html"><strong>Bibliografía</strong></a></li>
 </ul>
 
     </div>
@@ -381,6 +383,31 @@ document.write(`
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#librerias-y-modulos-necesarios"><strong>Líbrerias y modulos necesarios</strong></a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conjunto-de-datos"><strong>Conjunto de datos</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#analisis-general-del-conjunto-de-datos"><strong>Análisis general del conjunto de datos</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tratamiento-de-datos-faltantes"><strong>Tratamiento de datos faltantes</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#variable-grupo-etnico-grupo-etnico"><strong>Variable: Grupo étnico (<code class="docutils literal notranslate"><span class="pre">grupo_etnico</span></code>)</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#variable-entidad-de-salud-del-paciente-ent-salud-cod"><strong>Variable: Entidad de salud del paciente (<code class="docutils literal notranslate"><span class="pre">ent_salud_cod</span></code>)</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#variable-primera-causa-asociada-a-la-defuncion-por-antecendentes-causa-ant-1"><strong>Variable: Primera causa asociada a la defunción por antecendentes (<code class="docutils literal notranslate"><span class="pre">causa_ant_1</span></code>)</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#variable-nivel-de-educacion-nivel-edu"><strong>Variable: Nivel de educación (<code class="docutils literal notranslate"><span class="pre">nivel_edu</span></code>)</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#variable-tipo-de-certificacion-medica-de-la-defuncion-cert-medica"><strong>Variable: Tipo de certificación médica de la defunción (<code class="docutils literal notranslate"><span class="pre">cert_medica</span></code>)</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#variable-tipo-de-regimen-de-seguridad-social-seg-social"><strong>Variable: Tipo de régimen de seguridad social (<code class="docutils literal notranslate"><span class="pre">seg_social</span></code>)</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#variable-causa-directa-de-la-defuncion-causa-directa"><strong>Variable: Causa directa de la defunción (<code class="docutils literal notranslate"><span class="pre">causa_directa</span></code>)</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#variable-asistencia-medica-durante-la-defuncion-asistencia-med"><strong>Variable: Asistencia médica durante la defunción (<code class="docutils literal notranslate"><span class="pre">asistencia_med</span></code>)</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#variable-causa-segun-clasificacion-ops-causa-ops"><strong>Variable: Causa según clasificación OPS (<code class="docutils literal notranslate"><span class="pre">causa_OPS</span></code>)</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#variable-tipo-de-causa-muerte-prob-muerte"><strong>Variable: Tipo de causa muerte (<code class="docutils literal notranslate"><span class="pre">prob_muerte</span></code>)</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#variable-estado-civil-estado-civil"><strong>Variable: Estado civil (<code class="docutils literal notranslate"><span class="pre">estado_civil</span></code>)</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#variable-sitio-de-defuncion-sitio-def"><strong>Variable: Sitio de defunción (<code class="docutils literal notranslate"><span class="pre">sitio_def</span></code>)</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#resultados-de-imputacion"><strong>Resultados de imputación</strong></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#analisis-univariado"><strong>Análisis Univariado</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#tabla-de-caracterizacion"><strong>Tabla de caracterización</strong></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#analisis-bivariado"><strong>Análisis Bivariado</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#analisis-de-casos-a-lo-largo-del-tiempo"><strong>Análisis de casos a lo largo del tiempo</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mapa-de-casos-por-departamento"><strong>Mapa de casos por departamento</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pendientes"><strong>Pendientes</strong></a></li>
 </ul>
             </nav>
         </div>
@@ -398,7 +425,15 @@ document.write(`
 <h2><strong>Líbrerias y modulos necesarios</strong><a class="headerlink" href="#librerias-y-modulos-necesarios" title="Link to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">json</span>
+<span class="kn">import</span> <span class="nn">warnings</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">plotly.express</span> <span class="k">as</span> <span class="nn">px</span>
+<span class="n">warnings</span><span class="o">.</span><span class="n">filterwarnings</span><span class="p">(</span><span class="s1">&#39;ignore&#39;</span><span class="p">)</span>
+<span class="kn">import</span> <span class="nn">plotly.graph_objects</span> <span class="k">as</span> <span class="nn">go</span>
+<span class="kn">from</span> <span class="nn">urllib.request</span> <span class="kn">import</span> <span class="n">urlopen</span>
+<span class="kn">from</span> <span class="nn">funciones</span> <span class="kn">import</span> <span class="n">grafico_datos_faltantes</span>
+<span class="kn">from</span> <span class="nn">funciones</span> <span class="kn">import</span> <span class="n">grafico_barras_categoricas</span>
 </pre></div>
 </div>
 </div>
@@ -450,13 +485,13 @@ document.write(`
       <th>nivel_edu</th>
       <th>grupo_etnico</th>
       <th>...</th>
+      <th>seg_social</th>
       <th>ent_salud_cod</th>
       <th>prob_muerte</th>
       <th>cert_medica</th>
       <th>asistencia_med</th>
       <th>causa_directa</th>
       <th>causa_ant_1</th>
-      <th>causa_ant_2</th>
       <th>causa_basica</th>
       <th>causa_OPS</th>
       <th>region</th>
@@ -474,8 +509,9 @@ document.write(`
       <td>Soltero</td>
       <td>15-19 años</td>
       <td>Secundaria</td>
-      <td>Ninguno de los anteriores</td>
+      <td>Ninguno</td>
       <td>...</td>
+      <td>Subsidiado</td>
       <td>EPS - Subsidiado</td>
       <td>Natural</td>
       <td>Historia clínica</td>
@@ -483,9 +519,8 @@ document.write(`
       <td>J969</td>
       <td>C782</td>
       <td>C509</td>
-      <td>C509</td>
       <td>Tumor Maligno</td>
-      <td>ANDINA</td>
+      <td>Andina</td>
     </tr>
     <tr>
       <th>1</th>
@@ -495,21 +530,21 @@ document.write(`
       <td>1997</td>
       <td>Agosto</td>
       <td>Femenino</td>
-      <td>Sin información</td>
+      <td>NaN</td>
       <td>15-19 años</td>
-      <td>Sin información</td>
-      <td>Sin información</td>
+      <td>NaN</td>
+      <td>NaN</td>
       <td>...</td>
-      <td>Sin información</td>
-      <td>Sin información</td>
-      <td>Sin información</td>
-      <td>Sin información</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>C509</td>
-      <td>Tumor Maligno</td>
-      <td>ANDINA</td>
+      <td>NaN</td>
+      <td>Andina</td>
     </tr>
     <tr>
       <th>2</th>
@@ -521,19 +556,19 @@ document.write(`
       <td>Femenino</td>
       <td>Soltero</td>
       <td>15-19 años</td>
-      <td>Sin información</td>
-      <td>Sin información</td>
+      <td>NaN</td>
+      <td>NaN</td>
       <td>...</td>
-      <td>Sin información</td>
-      <td>Sin información</td>
-      <td>Sin información</td>
-      <td>Sin información</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>1749</td>
-      <td>Tumor Maligno</td>
-      <td>ANDINA</td>
+      <td>NaN</td>
+      <td>Andina</td>
     </tr>
     <tr>
       <th>3</th>
@@ -545,19 +580,19 @@ document.write(`
       <td>Femenino</td>
       <td>Casado</td>
       <td>15-19 años</td>
-      <td>Sin información</td>
-      <td>Sin información</td>
+      <td>NaN</td>
+      <td>NaN</td>
       <td>...</td>
-      <td>Sin información</td>
-      <td>Sin información</td>
-      <td>Sin información</td>
-      <td>Sin información</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>1749</td>
-      <td>Tumor Maligno</td>
-      <td>ATLANTICA</td>
+      <td>NaN</td>
+      <td>Atlántica</td>
     </tr>
     <tr>
       <th>4</th>
@@ -570,24 +605,1715 @@ document.write(`
       <td>Casado</td>
       <td>15-19 años</td>
       <td>Secundaria</td>
-      <td>Sin información</td>
+      <td>NaN</td>
       <td>...</td>
-      <td>Sin información</td>
+      <td>NaN</td>
+      <td>NaN</td>
       <td>Natural</td>
       <td>Historia clínica</td>
       <td>SI</td>
       <td>J969</td>
       <td>C780</td>
       <td>C509</td>
-      <td>C509</td>
       <td>Tumor Maligno</td>
-      <td>ATLANTICA</td>
+      <td>Atlántica</td>
     </tr>
   </tbody>
 </table>
-<p>5 rows × 23 columns</p>
+<p>5 rows × 21 columns</p>
 </div></div></div>
 </div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">data</span><span class="o">.</span><span class="n">shape</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(46869, 21)
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="analisis-general-del-conjunto-de-datos">
+<h2><strong>Análisis general del conjunto de datos</strong><a class="headerlink" href="#analisis-general-del-conjunto-de-datos" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Dividir en dos grupos (ajusta según necesidad)</span>
+<span class="n">categorical_columns</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">select_dtypes</span><span class="p">(</span><span class="n">include</span><span class="o">=</span><span class="s1">&#39;object&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">columns</span>
+<span class="n">grupo1</span> <span class="o">=</span> <span class="n">categorical_columns</span><span class="p">[:</span><span class="mi">11</span><span class="p">]</span>  <span class="c1"># Primeras 12 columnas</span>
+<span class="n">grupo2</span> <span class="o">=</span> <span class="n">categorical_columns</span><span class="p">[</span><span class="mi">11</span><span class="p">:]</span>  <span class="c1"># Resto de columnas</span>
+<span class="n">display</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="n">grupo1</span><span class="p">]</span><span class="o">.</span><span class="n">describe</span><span class="p">())</span>
+<span class="n">display</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="n">grupo2</span><span class="p">]</span><span class="o">.</span><span class="n">describe</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Nombre_Departamento</th>
+      <th>Nombre_Municipio</th>
+      <th>sitio_def</th>
+      <th>mes_def</th>
+      <th>sexo</th>
+      <th>estado_civil</th>
+      <th>grupo_edad</th>
+      <th>nivel_edu</th>
+      <th>grupo_etnico</th>
+      <th>depto_res</th>
+      <th>seg_social</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>count</th>
+      <td>46869</td>
+      <td>46867</td>
+      <td>46208</td>
+      <td>46869</td>
+      <td>46869</td>
+      <td>44256</td>
+      <td>46869</td>
+      <td>29214</td>
+      <td>15590</td>
+      <td>46869</td>
+      <td>33403</td>
+    </tr>
+    <tr>
+      <th>unique</th>
+      <td>33</td>
+      <td>872</td>
+      <td>3</td>
+      <td>12</td>
+      <td>1</td>
+      <td>4</td>
+      <td>14</td>
+      <td>5</td>
+      <td>6</td>
+      <td>33</td>
+      <td>6</td>
+    </tr>
+    <tr>
+      <th>top</th>
+      <td>BOGOTA DC</td>
+      <td>BOGOTA DC</td>
+      <td>Casa</td>
+      <td>Mayo</td>
+      <td>Femenino</td>
+      <td>Casado</td>
+      <td>50-54 años</td>
+      <td>Primaria</td>
+      <td>Ninguno</td>
+      <td>BOGOTA DC</td>
+      <td>Contributivo</td>
+    </tr>
+    <tr>
+      <th>freq</th>
+      <td>10877</td>
+      <td>10877</td>
+      <td>24275</td>
+      <td>4095</td>
+      <td>46869</td>
+      <td>17585</td>
+      <td>8052</td>
+      <td>14445</td>
+      <td>14549</td>
+      <td>9686</td>
+      <td>17658</td>
+    </tr>
+  </tbody>
+</table>
+</div></div><div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>ent_salud_cod</th>
+      <th>prob_muerte</th>
+      <th>cert_medica</th>
+      <th>asistencia_med</th>
+      <th>causa_directa</th>
+      <th>causa_ant_1</th>
+      <th>causa_basica</th>
+      <th>causa_OPS</th>
+      <th>region</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>count</th>
+      <td>15685</td>
+      <td>33970</td>
+      <td>32963</td>
+      <td>33268</td>
+      <td>33877</td>
+      <td>29066</td>
+      <td>46869</td>
+      <td>33970</td>
+      <td>46869</td>
+    </tr>
+    <tr>
+      <th>unique</th>
+      <td>5</td>
+      <td>2</td>
+      <td>4</td>
+      <td>3</td>
+      <td>398</td>
+      <td>615</td>
+      <td>17</td>
+      <td>1</td>
+      <td>4</td>
+    </tr>
+    <tr>
+      <th>top</th>
+      <td>EPS</td>
+      <td>Natural</td>
+      <td>Historia clínica</td>
+      <td>SI</td>
+      <td>C509</td>
+      <td>C509</td>
+      <td>C509</td>
+      <td>Tumor Maligno</td>
+      <td>Andina</td>
+    </tr>
+    <tr>
+      <th>freq</th>
+      <td>8497</td>
+      <td>33965</td>
+      <td>28059</td>
+      <td>30717</td>
+      <td>6843</td>
+      <td>8782</td>
+      <td>35166</td>
+      <td>33970</td>
+      <td>29448</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</section>
+<section id="tratamiento-de-datos-faltantes">
+<h2><strong>Tratamiento de datos faltantes</strong><a class="headerlink" href="#tratamiento-de-datos-faltantes" title="Link to this heading">#</a></h2>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>En esta sección del proyecto <strong>(EDA)</strong>, se analizarán los patrones de los valores faltantes previamente identificados en la fase de <strong>ETL</strong>. Se explorará su distribución a lo largo del dataset y su posible relación con otras variables, determinando si la ausencia de datos sigue algún patrón específico o es aleatoria. Además, se evaluarán diferentes estrategias de imputación, como el uso de la <strong>media, mediana, moda o modelos predictivos</strong>, según la naturaleza de cada variable. Este análisis permitirá minimizar el impacto de los datos faltantes y mejorar la calidad de las conclusiones obtenidas a partir del conjunto de datos.</p>
+</div>
+<p>Veamos primero, la cantidad de datos faltantes en general.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">grafico_datos_faltantes</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+</div>
+</div>
+<section id="variable-grupo-etnico-grupo-etnico">
+<h3><strong>Variable: Grupo étnico (<code class="docutils literal notranslate"><span class="pre">grupo_etnico</span></code>)</strong><a class="headerlink" href="#variable-grupo-etnico-grupo-etnico" title="Link to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">display</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;grupo_etnico&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">(</span><span class="n">dropna</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span><span class="o">.</span><span class="n">to_frame</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>count</th>
+    </tr>
+    <tr>
+      <th>grupo_etnico</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>NaN</th>
+      <td>31279</td>
+    </tr>
+    <tr>
+      <th>Ninguno</th>
+      <td>14549</td>
+    </tr>
+    <tr>
+      <th>Afrodescendiente</th>
+      <td>894</td>
+    </tr>
+    <tr>
+      <th>Indígena</th>
+      <td>87</td>
+    </tr>
+    <tr>
+      <th>Gitano</th>
+      <td>33</td>
+    </tr>
+    <tr>
+      <th>Raizal</th>
+      <td>21</td>
+    </tr>
+    <tr>
+      <th>Palenquero</th>
+      <td>6</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;grupo_etnico&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;grupo_etnico&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="s1">&#39;Ninguno&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="variable-entidad-de-salud-del-paciente-ent-salud-cod">
+<h3><strong>Variable: Entidad de salud del paciente (<code class="docutils literal notranslate"><span class="pre">ent_salud_cod</span></code>)</strong><a class="headerlink" href="#variable-entidad-de-salud-del-paciente-ent-salud-cod" title="Link to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">display</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;ent_salud_cod&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">(</span><span class="n">dropna</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span><span class="o">.</span><span class="n">to_frame</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>count</th>
+    </tr>
+    <tr>
+      <th>ent_salud_cod</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>NaN</th>
+      <td>31184</td>
+    </tr>
+    <tr>
+      <th>EPS</th>
+      <td>8497</td>
+    </tr>
+    <tr>
+      <th>EPS - Subsidiado</th>
+      <td>6375</td>
+    </tr>
+    <tr>
+      <th>EESS</th>
+      <td>659</td>
+    </tr>
+    <tr>
+      <th>ESE</th>
+      <td>110</td>
+    </tr>
+    <tr>
+      <th>EAPB</th>
+      <td>44</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;ent_salud_cod&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="s2">&quot;No especificado&quot;</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="variable-primera-causa-asociada-a-la-defuncion-por-antecendentes-causa-ant-1">
+<h3><strong>Variable: Primera causa asociada a la defunción por antecendentes (<code class="docutils literal notranslate"><span class="pre">causa_ant_1</span></code>)</strong><a class="headerlink" href="#variable-primera-causa-asociada-a-la-defuncion-por-antecendentes-causa-ant-1" title="Link to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">display</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;causa_ant_1&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">(</span><span class="n">dropna</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span><span class="o">.</span><span class="n">to_frame</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>count</th>
+    </tr>
+    <tr>
+      <th>causa_ant_1</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>NaN</th>
+      <td>17803</td>
+    </tr>
+    <tr>
+      <th>C509</th>
+      <td>8782</td>
+    </tr>
+    <tr>
+      <th>C780</th>
+      <td>3904</td>
+    </tr>
+    <tr>
+      <th>C80X</th>
+      <td>1192</td>
+    </tr>
+    <tr>
+      <th>C793</th>
+      <td>980</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>K291</th>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>I742</th>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>I311</th>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>J91</th>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>J188</th>
+      <td>1</td>
+    </tr>
+  </tbody>
+</table>
+<p>616 rows × 1 columns</p>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">moda</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;causa_ant_1&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">mode</span><span class="p">()[</span><span class="mi">0</span><span class="p">]</span>  
+<span class="n">data</span><span class="p">[</span><span class="s1">&#39;causa_ant_1&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="n">moda</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="variable-nivel-de-educacion-nivel-edu">
+<h3><strong>Variable: Nivel de educación (<code class="docutils literal notranslate"><span class="pre">nivel_edu</span></code>)</strong><a class="headerlink" href="#variable-nivel-de-educacion-nivel-edu" title="Link to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">display</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;nivel_edu&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">(</span><span class="n">dropna</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span><span class="o">.</span><span class="n">to_frame</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>count</th>
+    </tr>
+    <tr>
+      <th>nivel_edu</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>NaN</th>
+      <td>17655</td>
+    </tr>
+    <tr>
+      <th>Primaria</th>
+      <td>14445</td>
+    </tr>
+    <tr>
+      <th>Secundaria</th>
+      <td>8775</td>
+    </tr>
+    <tr>
+      <th>Superior</th>
+      <td>3417</td>
+    </tr>
+    <tr>
+      <th>Ninguno</th>
+      <td>2411</td>
+    </tr>
+    <tr>
+      <th>Preescolar</th>
+      <td>166</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;nivel_edu&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="s2">&quot;No especificado&quot;</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="variable-tipo-de-certificacion-medica-de-la-defuncion-cert-medica">
+<h3><strong>Variable: Tipo de certificación médica de la defunción (<code class="docutils literal notranslate"><span class="pre">cert_medica</span></code>)</strong><a class="headerlink" href="#variable-tipo-de-certificacion-medica-de-la-defuncion-cert-medica" title="Link to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">display</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;cert_medica&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">(</span><span class="n">dropna</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span><span class="o">.</span><span class="n">to_frame</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>count</th>
+    </tr>
+    <tr>
+      <th>cert_medica</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Historia clínica</th>
+      <td>28059</td>
+    </tr>
+    <tr>
+      <th>NaN</th>
+      <td>13906</td>
+    </tr>
+    <tr>
+      <th>Interrogatorio a familiares o testigos</th>
+      <td>4715</td>
+    </tr>
+    <tr>
+      <th>Necropsia</th>
+      <td>122</td>
+    </tr>
+    <tr>
+      <th>Pruebas de laboratorio</th>
+      <td>67</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;cert_medica&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="s2">&quot;No especificado&quot;</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="variable-tipo-de-regimen-de-seguridad-social-seg-social">
+<h3><strong>Variable: Tipo de régimen de seguridad social (<code class="docutils literal notranslate"><span class="pre">seg_social</span></code>)</strong><a class="headerlink" href="#variable-tipo-de-regimen-de-seguridad-social-seg-social" title="Link to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">display</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;seg_social&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">(</span><span class="n">dropna</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span><span class="o">.</span><span class="n">to_frame</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>count</th>
+    </tr>
+    <tr>
+      <th>seg_social</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Contributivo</th>
+      <td>17658</td>
+    </tr>
+    <tr>
+      <th>NaN</th>
+      <td>13466</td>
+    </tr>
+    <tr>
+      <th>Subsidiado</th>
+      <td>11095</td>
+    </tr>
+    <tr>
+      <th>Vinculado</th>
+      <td>2706</td>
+    </tr>
+    <tr>
+      <th>Otro</th>
+      <td>969</td>
+    </tr>
+    <tr>
+      <th>Particular</th>
+      <td>854</td>
+    </tr>
+    <tr>
+      <th>Ignorado</th>
+      <td>121</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;seg_social&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="s2">&quot;No especificado&quot;</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="variable-causa-directa-de-la-defuncion-causa-directa">
+<h3><strong>Variable: Causa directa de la defunción (<code class="docutils literal notranslate"><span class="pre">causa_directa</span></code>)</strong><a class="headerlink" href="#variable-causa-directa-de-la-defuncion-causa-directa" title="Link to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">display</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;causa_directa&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">(</span><span class="n">dropna</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span><span class="o">.</span><span class="n">to_frame</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>count</th>
+    </tr>
+    <tr>
+      <th>causa_directa</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>NaN</th>
+      <td>12992</td>
+    </tr>
+    <tr>
+      <th>C509</th>
+      <td>6843</td>
+    </tr>
+    <tr>
+      <th>I469</th>
+      <td>4155</td>
+    </tr>
+    <tr>
+      <th>J969</th>
+      <td>4018</td>
+    </tr>
+    <tr>
+      <th>J960</th>
+      <td>3481</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>C969</th>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>K469</th>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>K570</th>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>I808</th>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>J952</th>
+      <td>1</td>
+    </tr>
+  </tbody>
+</table>
+<p>399 rows × 1 columns</p>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">moda</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;causa_directa&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">mode</span><span class="p">()[</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">data</span><span class="p">[</span><span class="s1">&#39;causa_directa&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="n">moda</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="variable-asistencia-medica-durante-la-defuncion-asistencia-med">
+<h3><strong>Variable: Asistencia médica durante la defunción (<code class="docutils literal notranslate"><span class="pre">asistencia_med</span></code>)</strong><a class="headerlink" href="#variable-asistencia-medica-durante-la-defuncion-asistencia-med" title="Link to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">display</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;asistencia_med&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">(</span><span class="n">dropna</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span><span class="o">.</span><span class="n">to_frame</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>count</th>
+    </tr>
+    <tr>
+      <th>asistencia_med</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>SI</th>
+      <td>30717</td>
+    </tr>
+    <tr>
+      <th>NaN</th>
+      <td>13601</td>
+    </tr>
+    <tr>
+      <th>NO</th>
+      <td>2458</td>
+    </tr>
+    <tr>
+      <th>Ignorado</th>
+      <td>93</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;asistencia_med&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="s2">&quot;NO&quot;</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">data</span><span class="p">[</span><span class="s1">&#39;asistencia_med&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">replace</span><span class="p">({</span><span class="s2">&quot;Ignorado&quot;</span><span class="p">:</span> <span class="s2">&quot;NO&quot;</span><span class="p">},</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="variable-causa-segun-clasificacion-ops-causa-ops">
+<h3><strong>Variable: Causa según clasificación OPS (<code class="docutils literal notranslate"><span class="pre">causa_OPS</span></code>)</strong><a class="headerlink" href="#variable-causa-segun-clasificacion-ops-causa-ops" title="Link to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">display</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;causa_OPS&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">(</span><span class="n">dropna</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span><span class="o">.</span><span class="n">to_frame</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>count</th>
+    </tr>
+    <tr>
+      <th>causa_OPS</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Tumor Maligno</th>
+      <td>33970</td>
+    </tr>
+    <tr>
+      <th>NaN</th>
+      <td>12899</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;causa_OPS&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="s2">&quot;Diferente a Tumor&quot;</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="variable-tipo-de-causa-muerte-prob-muerte">
+<h3><strong>Variable: Tipo de causa muerte (<code class="docutils literal notranslate"><span class="pre">prob_muerte</span></code>)</strong><a class="headerlink" href="#variable-tipo-de-causa-muerte-prob-muerte" title="Link to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">display</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;prob_muerte&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">(</span><span class="n">dropna</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span><span class="o">.</span><span class="n">to_frame</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>count</th>
+    </tr>
+    <tr>
+      <th>prob_muerte</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Natural</th>
+      <td>33965</td>
+    </tr>
+    <tr>
+      <th>NaN</th>
+      <td>12899</td>
+    </tr>
+    <tr>
+      <th>En estudio</th>
+      <td>5</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">data</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="s1">&#39;prob_muerte&#39;</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="variable-estado-civil-estado-civil">
+<h3><strong>Variable: Estado civil (<code class="docutils literal notranslate"><span class="pre">estado_civil</span></code>)</strong><a class="headerlink" href="#variable-estado-civil-estado-civil" title="Link to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">display</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;estado_civil&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">(</span><span class="n">dropna</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span><span class="o">.</span><span class="n">to_frame</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>count</th>
+    </tr>
+    <tr>
+      <th>estado_civil</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Casado</th>
+      <td>17585</td>
+    </tr>
+    <tr>
+      <th>Soltero</th>
+      <td>10428</td>
+    </tr>
+    <tr>
+      <th>Viudo</th>
+      <td>9303</td>
+    </tr>
+    <tr>
+      <th>Unión Libre, Divorciado/Otro</th>
+      <td>6940</td>
+    </tr>
+    <tr>
+      <th>NaN</th>
+      <td>2613</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;estado_civil&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="s2">&quot;No especificado&quot;</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="variable-sitio-de-defuncion-sitio-def">
+<h3><strong>Variable: Sitio de defunción (<code class="docutils literal notranslate"><span class="pre">sitio_def</span></code>)</strong><a class="headerlink" href="#variable-sitio-de-defuncion-sitio-def" title="Link to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">display</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;sitio_def&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">(</span><span class="n">dropna</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span><span class="o">.</span><span class="n">to_frame</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>count</th>
+    </tr>
+    <tr>
+      <th>sitio_def</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Casa</th>
+      <td>24275</td>
+    </tr>
+    <tr>
+      <th>Hospital o Clínica</th>
+      <td>21425</td>
+    </tr>
+    <tr>
+      <th>NaN</th>
+      <td>661</td>
+    </tr>
+    <tr>
+      <th>Otro Sitio</th>
+      <td>508</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">moda</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;sitio_def&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">mode</span><span class="p">()[</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">data</span><span class="p">[</span><span class="s1">&#39;sitio_def&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="n">moda</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="resultados-de-imputacion">
+<h3><strong>Resultados de imputación</strong><a class="headerlink" href="#resultados-de-imputacion" title="Link to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">grafico_datos_faltantes</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">data</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Nombre_Departamento</th>
+      <th>Nombre_Municipio</th>
+      <th>sitio_def</th>
+      <th>año_def</th>
+      <th>mes_def</th>
+      <th>sexo</th>
+      <th>estado_civil</th>
+      <th>grupo_edad</th>
+      <th>nivel_edu</th>
+      <th>grupo_etnico</th>
+      <th>depto_res</th>
+      <th>seg_social</th>
+      <th>ent_salud_cod</th>
+      <th>cert_medica</th>
+      <th>asistencia_med</th>
+      <th>causa_directa</th>
+      <th>causa_ant_1</th>
+      <th>causa_basica</th>
+      <th>causa_OPS</th>
+      <th>region</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>ANTIOQUIA</td>
+      <td>MEDELLÍN</td>
+      <td>Hospital o Clínica</td>
+      <td>2014</td>
+      <td>Julio</td>
+      <td>Femenino</td>
+      <td>Soltero</td>
+      <td>15-19 años</td>
+      <td>Secundaria</td>
+      <td>Ninguno</td>
+      <td>ANTIOQUIA</td>
+      <td>Subsidiado</td>
+      <td>EPS - Subsidiado</td>
+      <td>Historia clínica</td>
+      <td>SI</td>
+      <td>J969</td>
+      <td>C782</td>
+      <td>C509</td>
+      <td>Tumor Maligno</td>
+      <td>Andina</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>ANTIOQUIA</td>
+      <td>APARTADÓ</td>
+      <td>Hospital o Clínica</td>
+      <td>1997</td>
+      <td>Agosto</td>
+      <td>Femenino</td>
+      <td>No especificado</td>
+      <td>15-19 años</td>
+      <td>No especificado</td>
+      <td>Ninguno</td>
+      <td>ANTIOQUIA</td>
+      <td>No especificado</td>
+      <td>No especificado</td>
+      <td>No especificado</td>
+      <td>NO</td>
+      <td>C509</td>
+      <td>C509</td>
+      <td>C509</td>
+      <td>Diferente a Tumor</td>
+      <td>Andina</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>ANTIOQUIA</td>
+      <td>ENVIGADO</td>
+      <td>Casa</td>
+      <td>1986</td>
+      <td>Abril</td>
+      <td>Femenino</td>
+      <td>Soltero</td>
+      <td>15-19 años</td>
+      <td>No especificado</td>
+      <td>Ninguno</td>
+      <td>ANTIOQUIA</td>
+      <td>No especificado</td>
+      <td>No especificado</td>
+      <td>No especificado</td>
+      <td>NO</td>
+      <td>C509</td>
+      <td>C509</td>
+      <td>1749</td>
+      <td>Diferente a Tumor</td>
+      <td>Andina</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>ATLÁNTICO</td>
+      <td>BARRANQUILLA</td>
+      <td>Hospital o Clínica</td>
+      <td>1989</td>
+      <td>Julio</td>
+      <td>Femenino</td>
+      <td>Casado</td>
+      <td>15-19 años</td>
+      <td>No especificado</td>
+      <td>Ninguno</td>
+      <td>ATLÁNTICO</td>
+      <td>No especificado</td>
+      <td>No especificado</td>
+      <td>No especificado</td>
+      <td>NO</td>
+      <td>C509</td>
+      <td>C509</td>
+      <td>1749</td>
+      <td>Diferente a Tumor</td>
+      <td>Atlántica</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>ATLÁNTICO</td>
+      <td>BARRANQUILLA</td>
+      <td>Hospital o Clínica</td>
+      <td>1998</td>
+      <td>Agosto</td>
+      <td>Femenino</td>
+      <td>Casado</td>
+      <td>15-19 años</td>
+      <td>Secundaria</td>
+      <td>Ninguno</td>
+      <td>ATLÁNTICO</td>
+      <td>No especificado</td>
+      <td>No especificado</td>
+      <td>Historia clínica</td>
+      <td>SI</td>
+      <td>J969</td>
+      <td>C780</td>
+      <td>C509</td>
+      <td>Tumor Maligno</td>
+      <td>Atlántica</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">data</span><span class="o">.</span><span class="n">to_excel</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;C:\Users\kamac\OneDrive\Desktop\SeminarioInvestigativoUN\data_clean.xlsx&quot;</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="analisis-univariado">
+<h2><strong>Análisis Univariado</strong><a class="headerlink" href="#analisis-univariado" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">grafico_barras_categoricas</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="s1">&#39;Nombre_Departamento&#39;</span><span class="p">,</span> <span class="s1">&#39;Departamento&#39;</span><span class="p">,</span> <span class="s1">&#39;Cantidad de defunciones&#39;</span><span class="p">,</span> <span class="s1">&#39;Defunciones por departamento&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">grafico_barras_categoricas</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="s1">&#39;mes_def&#39;</span><span class="p">,</span> <span class="s1">&#39;Mes de defunción&#39;</span><span class="p">,</span> <span class="s1">&#39;Cantidad de defunciones&#39;</span><span class="p">,</span> <span class="s1">&#39;Defunciones por mes&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">grafico_barras_categoricas</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="s1">&#39;sitio_def&#39;</span><span class="p">,</span> <span class="s1">&#39;Sitio de defunción&#39;</span><span class="p">,</span> <span class="s1">&#39;Cantidad de registros&#39;</span><span class="p">,</span> <span class="s1">&#39;Distribución sitio de defunción&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">grafico_barras_categoricas</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="s1">&#39;estado_civil&#39;</span><span class="p">,</span> <span class="s1">&#39;Estado civil&#39;</span><span class="p">,</span> <span class="s1">&#39;Cantidad de registros&#39;</span><span class="p">,</span> <span class="s1">&#39;Distribución estado civil&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">grafico_barras_categoricas</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="s1">&#39;grupo_edad&#39;</span><span class="p">,</span> <span class="s1">&#39;Grupo de edad&#39;</span><span class="p">,</span> <span class="s1">&#39;Cantidad de registros&#39;</span><span class="p">,</span> <span class="s1">&#39;Distribución grupo de edad&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">grafico_barras_categoricas</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="s1">&#39;nivel_edu&#39;</span><span class="p">,</span> <span class="s1">&#39;Nivel educativo&#39;</span><span class="p">,</span> <span class="s1">&#39;Cantidad de registros&#39;</span><span class="p">,</span> <span class="s1">&#39;Distribución nivel educativo&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">grafico_barras_categoricas</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="s1">&#39;grupo_etnico&#39;</span><span class="p">,</span> <span class="s1">&#39;Grupo étnico&#39;</span><span class="p">,</span> <span class="s1">&#39;Cantidad de registros&#39;</span><span class="p">,</span> <span class="s1">&#39;Distribución grupo étnico&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">grafico_barras_categoricas</span><span class="p">(</span><span class="n">data</span><span class="p">,</span><span class="s1">&#39;seg_social&#39;</span><span class="p">,</span> <span class="s1">&#39;Seguridad social&#39;</span><span class="p">,</span> <span class="s1">&#39;Cantidad de registros&#39;</span><span class="p">,</span> <span class="s1">&#39;Distribución seguridad social&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">grafico_barras_categoricas</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="s1">&#39;ent_salud_cod&#39;</span><span class="p">,</span> <span class="s1">&#39;Entidad de salud&#39;</span><span class="p">,</span> <span class="s1">&#39;Cantidad de registros&#39;</span><span class="p">,</span> <span class="s1">&#39;Distribución entidad de salud&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">grafico_barras_categoricas</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="s1">&#39;cert_medica&#39;</span><span class="p">,</span> <span class="s1">&#39;Certificación médica&#39;</span><span class="p">,</span> <span class="s1">&#39;Cantidad de registros&#39;</span><span class="p">,</span> <span class="s1">&#39;Distribución certificación médica&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">grafico_barras_categoricas</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="s1">&#39;asistencia_med&#39;</span><span class="p">,</span> <span class="s1">&#39;Asistencia médica&#39;</span><span class="p">,</span> <span class="s1">&#39;Cantidad de registros&#39;</span><span class="p">,</span> <span class="s1">&#39;Distribución asistencia médica&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">grafico_barras_categoricas</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="s1">&#39;causa_basica&#39;</span><span class="p">,</span> <span class="s1">&#39;Causa básica&#39;</span><span class="p">,</span> <span class="s1">&#39;Cantidad de registros&#39;</span><span class="p">,</span> <span class="s1">&#39;Distribución causa básica&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">grafico_barras_categoricas</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="s1">&#39;causa_OPS&#39;</span><span class="p">,</span> <span class="s1">&#39;Causa OPS&#39;</span><span class="p">,</span> <span class="s1">&#39;Cantidad de registros&#39;</span><span class="p">,</span> <span class="s1">&#39;Distribución causa OPS&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">grafico_barras_categoricas</span><span class="p">(</span><span class="n">data</span><span class="p">,</span><span class="s1">&#39;region&#39;</span><span class="p">,</span> <span class="s1">&#39;Región&#39;</span><span class="p">,</span> <span class="s1">&#39;Cantidad de registros&#39;</span><span class="p">,</span> <span class="s1">&#39;Distribución región&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+</div>
+</div>
+<section id="tabla-de-caracterizacion">
+<h3><strong>Tabla de caracterización</strong><a class="headerlink" href="#tabla-de-caracterizacion" title="Link to this heading">#</a></h3>
+</section>
+</section>
+<section id="analisis-bivariado">
+<h2><strong>Análisis Bivariado</strong><a class="headerlink" href="#analisis-bivariado" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">data_grouped</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s1">&#39;año_def&#39;</span><span class="p">,</span> <span class="s1">&#39;region&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">size</span><span class="p">()</span><span class="o">.</span><span class="n">reset_index</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;Defunciones&#39;</span><span class="p">)</span>
+
+<span class="n">color_palette</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;#ffb6c1&quot;</span><span class="p">,</span> <span class="s2">&quot;#ff69b4&quot;</span><span class="p">,</span> <span class="s2">&quot;#db7093&quot;</span><span class="p">,</span> <span class="s2">&quot;#c71585&quot;</span><span class="p">,</span> 
+                 <span class="s2">&quot;#ff1493&quot;</span><span class="p">,</span> <span class="s2">&quot;#e60073&quot;</span><span class="p">,</span> <span class="s2">&quot;#cc0033&quot;</span><span class="p">,</span> <span class="s2">&quot;#b20000&quot;</span><span class="p">]</span>
+
+<span class="n">fig6</span> <span class="o">=</span> <span class="n">px</span><span class="o">.</span><span class="n">line</span><span class="p">(</span><span class="n">data_grouped</span><span class="p">,</span> 
+               <span class="n">x</span><span class="o">=</span><span class="s1">&#39;año_def&#39;</span><span class="p">,</span> 
+               <span class="n">y</span><span class="o">=</span><span class="s1">&#39;Defunciones&#39;</span><span class="p">,</span> 
+               <span class="n">color</span><span class="o">=</span><span class="s1">&#39;region&#39;</span><span class="p">,</span>
+               <span class="n">title</span><span class="o">=</span><span class="s1">&#39;Tendencia de Defunciones por Año y Región&#39;</span><span class="p">,</span>
+               <span class="n">markers</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>  <span class="c1"># Agregar marcadores</span>
+               <span class="n">color_discrete_sequence</span><span class="o">=</span><span class="n">color_palette</span><span class="p">)</span>  <span class="c1"># Aplicar paleta personalizada</span>
+
+<span class="n">fig6</span><span class="o">.</span><span class="n">update_layout</span><span class="p">(</span>
+    <span class="n">font</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">family</span><span class="o">=</span><span class="s2">&quot;Bahnschrift&quot;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;black&quot;</span><span class="p">),</span>  <span class="c1"># Fuente Bahnschrift en negro</span>
+    <span class="n">xaxis_title</span><span class="o">=</span><span class="s2">&quot;Año de Defunción&quot;</span><span class="p">,</span> 
+    <span class="n">yaxis_title</span><span class="o">=</span><span class="s2">&quot;Número de Defunciones&quot;</span><span class="p">,</span>
+    <span class="n">legend_title</span><span class="o">=</span><span class="s2">&quot;Región&quot;</span><span class="p">,</span>  <span class="c1"># Título de la leyenda</span>
+    <span class="n">plot_bgcolor</span><span class="o">=</span><span class="s2">&quot;white&quot;</span>  <span class="c1"># Fondo blanco para mayor claridad</span>
+<span class="p">)</span>
+
+<span class="n">fig6</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">color_palette</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;#ffb6c1&quot;</span><span class="p">,</span> <span class="s2">&quot;#ff69b4&quot;</span><span class="p">,</span> <span class="s2">&quot;#db7093&quot;</span><span class="p">,</span> <span class="s2">&quot;#c71585&quot;</span><span class="p">,</span> 
+                 <span class="s2">&quot;#ff1493&quot;</span><span class="p">,</span> <span class="s2">&quot;#e60073&quot;</span><span class="p">,</span> <span class="s2">&quot;#cc0033&quot;</span><span class="p">,</span> <span class="s2">&quot;#b20000&quot;</span><span class="p">]</span>
+
+<span class="n">fig</span> <span class="o">=</span> <span class="n">px</span><span class="o">.</span><span class="n">box</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> 
+             <span class="n">x</span><span class="o">=</span><span class="s2">&quot;estado_civil&quot;</span><span class="p">,</span> 
+             <span class="n">y</span><span class="o">=</span><span class="s2">&quot;grupo_edad&quot;</span><span class="p">,</span> 
+             <span class="n">title</span><span class="o">=</span><span class="s2">&quot;Distribución de Defunciones por Grupo de Edad y Estado Civil&quot;</span><span class="p">,</span>
+             <span class="n">color</span><span class="o">=</span><span class="s2">&quot;estado_civil&quot;</span><span class="p">,</span>
+             <span class="n">color_discrete_sequence</span><span class="o">=</span><span class="n">color_palette</span><span class="p">,</span>
+             <span class="n">labels</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;estado_civil&quot;</span><span class="p">:</span> <span class="s2">&quot;Estado Civil&quot;</span><span class="p">})</span>
+
+<span class="n">fig</span><span class="o">.</span><span class="n">update_layout</span><span class="p">(</span>
+    <span class="n">font</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">family</span><span class="o">=</span><span class="s2">&quot;Bahnschrift&quot;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;black&quot;</span><span class="p">),</span>  <span class="c1"># Fuente en negro</span>
+    <span class="n">xaxis_title</span><span class="o">=</span><span class="s2">&quot;Estado Civil&quot;</span><span class="p">,</span> 
+    <span class="n">yaxis_title</span><span class="o">=</span><span class="s2">&quot;Grupo de Edad&quot;</span><span class="p">,</span>
+    <span class="n">width</span><span class="o">=</span><span class="mi">1100</span><span class="p">,</span>  <span class="c1"># Ajustar ancho</span>
+    <span class="n">height</span><span class="o">=</span><span class="mi">800</span>   <span class="c1"># Ajustar alto</span>
+<span class="p">)</span>
+
+<span class="n">fig</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">color_palette</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;#ffb6c1&quot;</span><span class="p">,</span> <span class="s2">&quot;#ff69b4&quot;</span><span class="p">,</span> <span class="s2">&quot;#db7093&quot;</span><span class="p">,</span> <span class="s2">&quot;#c71585&quot;</span><span class="p">,</span> 
+                 <span class="s2">&quot;#ff1493&quot;</span><span class="p">,</span> <span class="s2">&quot;#e60073&quot;</span><span class="p">,</span> <span class="s2">&quot;#cc0033&quot;</span><span class="p">,</span> <span class="s2">&quot;#b20000&quot;</span><span class="p">,</span> 
+                 <span class="s2">&quot;#990000&quot;</span><span class="p">,</span> <span class="s2">&quot;#800000&quot;</span><span class="p">,</span> <span class="s2">&quot;#ff3366&quot;</span><span class="p">,</span> <span class="s2">&quot;#ff0033&quot;</span><span class="p">,</span> 
+                 <span class="s2">&quot;#d40000&quot;</span><span class="p">,</span> <span class="s2">&quot;#a10000&quot;</span><span class="p">]</span>
+
+<span class="n">fig</span> <span class="o">=</span> <span class="n">px</span><span class="o">.</span><span class="n">box</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> 
+             <span class="n">x</span><span class="o">=</span><span class="s2">&quot;año_def&quot;</span><span class="p">,</span> 
+             <span class="n">y</span><span class="o">=</span><span class="s2">&quot;grupo_edad&quot;</span><span class="p">,</span> 
+             <span class="n">title</span><span class="o">=</span><span class="s2">&quot;Distribución de Edad de Defunciones por Año&quot;</span><span class="p">,</span>
+             <span class="n">color</span><span class="o">=</span><span class="s2">&quot;grupo_edad&quot;</span><span class="p">,</span>
+             <span class="n">color_discrete_sequence</span><span class="o">=</span><span class="n">color_palette</span><span class="p">,</span> <span class="n">labels</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;grupo_edad&quot;</span><span class="p">:</span> <span class="s1">&#39;Grupo de edad&#39;</span><span class="p">})</span> 
+<span class="n">fig</span><span class="o">.</span><span class="n">update_layout</span><span class="p">(</span>
+    <span class="n">font</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">family</span><span class="o">=</span><span class="s2">&quot;Bahnschrift&quot;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;black&quot;</span><span class="p">),</span>
+    <span class="n">xaxis_title</span><span class="o">=</span><span class="s2">&quot;Año de Defunción&quot;</span><span class="p">,</span> 
+    <span class="n">yaxis_title</span><span class="o">=</span><span class="s2">&quot;Grupo de Edad&quot;</span><span class="p">,</span>
+    <span class="n">width</span><span class="o">=</span><span class="mi">1200</span><span class="p">,</span>  <span class="c1"># Ancho del gráfico</span>
+    <span class="n">height</span><span class="o">=</span><span class="mi">1000</span>   <span class="c1"># Alto del gráfico</span>
+    
+<span class="p">)</span>
+
+<span class="n">fig</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Agrupar datos por año de defunción y sitio de defunción</span>
+<span class="n">data_grouped</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s2">&quot;año_def&quot;</span><span class="p">,</span> <span class="s2">&quot;sitio_def&quot;</span><span class="p">])</span><span class="o">.</span><span class="n">size</span><span class="p">()</span><span class="o">.</span><span class="n">reset_index</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;count&quot;</span><span class="p">)</span>
+
+<span class="c1"># Gráfico de líneas con tonalidades rosadas</span>
+<span class="n">fig</span> <span class="o">=</span> <span class="n">px</span><span class="o">.</span><span class="n">line</span><span class="p">(</span><span class="n">data_grouped</span><span class="p">,</span> 
+              <span class="n">x</span><span class="o">=</span><span class="s2">&quot;año_def&quot;</span><span class="p">,</span> 
+              <span class="n">y</span><span class="o">=</span><span class="s2">&quot;count&quot;</span><span class="p">,</span> 
+              <span class="n">color</span><span class="o">=</span><span class="s2">&quot;sitio_def&quot;</span><span class="p">,</span>
+              <span class="n">markers</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>  <span class="c1"># Agregar puntos en la línea</span>
+              <span class="n">title</span><span class="o">=</span><span class="s2">&quot;Evolución de las Defunciones según el Lugar de Muerte&quot;</span><span class="p">,</span>
+              <span class="n">color_discrete_sequence</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;#ffb6c1&quot;</span><span class="p">,</span> <span class="s2">&quot;#ff69b4&quot;</span><span class="p">,</span> <span class="s2">&quot;#db7093&quot;</span><span class="p">,</span> <span class="s2">&quot;#c71585&quot;</span><span class="p">])</span>  <span class="c1"># Tonos rosados</span>
+
+<span class="n">fig</span><span class="o">.</span><span class="n">update_layout</span><span class="p">(</span>
+    <span class="n">font</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">family</span><span class="o">=</span><span class="s2">&quot;Bahnschrift&quot;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;black&quot;</span><span class="p">),</span>
+    <span class="n">xaxis_title</span><span class="o">=</span><span class="s2">&quot;Año de Defunción&quot;</span><span class="p">,</span> 
+    <span class="n">yaxis_title</span><span class="o">=</span><span class="s2">&quot;Número de Defunciones&quot;</span><span class="p">,</span>
+    <span class="n">legend_title</span><span class="o">=</span><span class="s2">&quot;Lugar de Defunción&quot;</span>
+<span class="p">)</span>
+
+<span class="n">fig</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Agrupar datos por nivel educativo y tipo de seguridad social</span>
+<span class="n">data_grouped</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s2">&quot;nivel_edu&quot;</span><span class="p">,</span> <span class="s2">&quot;seg_social&quot;</span><span class="p">])</span><span class="o">.</span><span class="n">size</span><span class="p">()</span><span class="o">.</span><span class="n">reset_index</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;count&quot;</span><span class="p">)</span>
+
+<span class="c1"># Convertir a formato de matriz (pivot)</span>
+<span class="n">heatmap_data</span> <span class="o">=</span> <span class="n">data_grouped</span><span class="o">.</span><span class="n">pivot</span><span class="p">(</span><span class="n">index</span><span class="o">=</span><span class="s2">&quot;nivel_edu&quot;</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="s2">&quot;seg_social&quot;</span><span class="p">,</span> <span class="n">values</span><span class="o">=</span><span class="s2">&quot;count&quot;</span><span class="p">)</span>
+
+<span class="c1"># Crear heatmap con tonalidades rosadas</span>
+<span class="n">fig</span> <span class="o">=</span> <span class="n">px</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">heatmap_data</span><span class="p">,</span> 
+                <span class="n">labels</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s2">&quot;Seguridad Social&quot;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s2">&quot;Nivel Educativo&quot;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;Cantidad&quot;</span><span class="p">),</span>
+                <span class="n">title</span><span class="o">=</span><span class="s2">&quot;Relación entre Nivel Educativo y Tipo de Seguridad Social&quot;</span><span class="p">,</span>
+                <span class="n">color_continuous_scale</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;#ffb6c1&quot;</span><span class="p">,</span> <span class="s2">&quot;#ff69b4&quot;</span><span class="p">,</span> <span class="s2">&quot;#db7093&quot;</span><span class="p">,</span> <span class="s2">&quot;#c71585&quot;</span><span class="p">])</span>
+
+<span class="n">fig</span><span class="o">.</span><span class="n">update_layout</span><span class="p">(</span>
+    <span class="n">font</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">family</span><span class="o">=</span><span class="s2">&quot;Bahnschrift&quot;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;black&quot;</span><span class="p">),</span>
+    <span class="n">xaxis_title</span><span class="o">=</span><span class="s2">&quot;Tipo de Seguridad Social&quot;</span><span class="p">,</span> 
+    <span class="n">yaxis_title</span><span class="o">=</span><span class="s2">&quot;Nivel Educativo&quot;</span>
+<span class="p">)</span>
+
+<span class="n">fig</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">data_grouped</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s2">&quot;año_def&quot;</span><span class="p">,</span> <span class="s2">&quot;grupo_edad&quot;</span><span class="p">])</span><span class="o">.</span><span class="n">size</span><span class="p">()</span><span class="o">.</span><span class="n">reset_index</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;count&quot;</span><span class="p">)</span>
+<span class="n">color_palette</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;#ffb6c1&quot;</span><span class="p">,</span> <span class="s2">&quot;#ff69b4&quot;</span><span class="p">,</span> <span class="s2">&quot;#db7093&quot;</span><span class="p">,</span> <span class="s2">&quot;#c71585&quot;</span><span class="p">,</span> 
+                 <span class="s2">&quot;#ff1493&quot;</span><span class="p">,</span> <span class="s2">&quot;#e60073&quot;</span><span class="p">,</span> <span class="s2">&quot;#cc0033&quot;</span><span class="p">,</span> <span class="s2">&quot;#b20000&quot;</span><span class="p">,</span> 
+                 <span class="s2">&quot;#990000&quot;</span><span class="p">,</span> <span class="s2">&quot;#800000&quot;</span><span class="p">,</span> <span class="s2">&quot;#ff3366&quot;</span><span class="p">,</span> <span class="s2">&quot;#ff0033&quot;</span><span class="p">,</span> 
+                 <span class="s2">&quot;#d40000&quot;</span><span class="p">,</span> <span class="s2">&quot;#a10000&quot;</span><span class="p">]</span>
+<span class="n">fig</span> <span class="o">=</span> <span class="n">px</span><span class="o">.</span><span class="n">line</span><span class="p">(</span><span class="n">data_grouped</span><span class="p">,</span> 
+              <span class="n">x</span><span class="o">=</span><span class="s2">&quot;año_def&quot;</span><span class="p">,</span> 
+              <span class="n">y</span><span class="o">=</span><span class="s2">&quot;count&quot;</span><span class="p">,</span> 
+              <span class="n">color</span><span class="o">=</span><span class="s2">&quot;grupo_edad&quot;</span><span class="p">,</span> 
+              <span class="n">title</span><span class="o">=</span><span class="s2">&quot;Evolución de Defunciones por Grupo de Edad&quot;</span><span class="p">,</span>
+              <span class="n">markers</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>  <span class="c1"># Agregar puntos en la línea</span>
+              <span class="n">color_discrete_sequence</span><span class="o">=</span><span class="n">color_palette</span><span class="p">,</span>  <span class="c1"># Aplicar paleta de colores</span>
+              <span class="n">labels</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;grupo_edad&quot;</span><span class="p">:</span> <span class="s2">&quot;Grupo de Edad&quot;</span><span class="p">,</span> <span class="s2">&quot;año_def&quot;</span><span class="p">:</span> <span class="s2">&quot;Año&quot;</span><span class="p">,</span> <span class="s2">&quot;count&quot;</span><span class="p">:</span> <span class="s2">&quot;Número de Defunciones&quot;</span><span class="p">})</span>  
+
+<span class="n">fig</span><span class="o">.</span><span class="n">update_layout</span><span class="p">(</span>
+    <span class="n">font</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">family</span><span class="o">=</span><span class="s2">&quot;Bahnschrift&quot;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;black&quot;</span><span class="p">),</span>  <span class="c1"># Fuente en negro</span>
+    <span class="n">xaxis_title</span><span class="o">=</span><span class="s2">&quot;Año de Defunción&quot;</span><span class="p">,</span> 
+    <span class="n">yaxis_title</span><span class="o">=</span><span class="s2">&quot;Número de Defunciones&quot;</span><span class="p">,</span>
+    <span class="n">legend_title</span><span class="o">=</span><span class="s2">&quot;Grupo de Edad&quot;</span><span class="p">,</span>  
+    <span class="n">width</span><span class="o">=</span><span class="mi">1200</span><span class="p">,</span>  <span class="c1"># Ajustar ancho</span>
+    <span class="n">height</span><span class="o">=</span><span class="mi">800</span>   <span class="c1"># Ajustar alto</span>
+<span class="p">)</span>
+
+<span class="n">fig</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+</div>
+</div>
+</section>
+<section id="analisis-de-casos-a-lo-largo-del-tiempo">
+<h2><strong>Análisis de casos a lo largo del tiempo</strong><a class="headerlink" href="#analisis-de-casos-a-lo-largo-del-tiempo" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">meses_map</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;Enero&quot;</span><span class="p">:</span> <span class="s2">&quot;01&quot;</span><span class="p">,</span> <span class="s2">&quot;Febrero&quot;</span><span class="p">:</span> <span class="s2">&quot;02&quot;</span><span class="p">,</span> <span class="s2">&quot;Marzo&quot;</span><span class="p">:</span> <span class="s2">&quot;03&quot;</span><span class="p">,</span> <span class="s2">&quot;Abril&quot;</span><span class="p">:</span> <span class="s2">&quot;04&quot;</span><span class="p">,</span> <span class="s2">&quot;Mayo&quot;</span><span class="p">:</span> <span class="s2">&quot;05&quot;</span><span class="p">,</span> <span class="s2">&quot;Junio&quot;</span><span class="p">:</span> <span class="s2">&quot;06&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Julio&quot;</span><span class="p">:</span> <span class="s2">&quot;07&quot;</span><span class="p">,</span> <span class="s2">&quot;Agosto&quot;</span><span class="p">:</span> <span class="s2">&quot;08&quot;</span><span class="p">,</span> <span class="s2">&quot;Septiembre&quot;</span><span class="p">:</span> <span class="s2">&quot;09&quot;</span><span class="p">,</span> <span class="s2">&quot;Octubre&quot;</span><span class="p">:</span> <span class="s2">&quot;10&quot;</span><span class="p">,</span> <span class="s2">&quot;Noviembre&quot;</span><span class="p">:</span> <span class="s2">&quot;11&quot;</span><span class="p">,</span> <span class="s2">&quot;Diciembre&quot;</span><span class="p">:</span> <span class="s2">&quot;12&quot;</span>
+<span class="p">}</span>
+
+<span class="n">data</span><span class="p">[</span><span class="s1">&#39;mes_def&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;mes_def&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="n">meses_map</span><span class="p">)</span>
+<span class="n">data</span><span class="p">[</span><span class="s1">&#39;Fecha&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;año_def&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">str</span><span class="p">)</span> <span class="o">+</span> <span class="s1">&#39;-&#39;</span> <span class="o">+</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;mes_def&#39;</span><span class="p">]</span>
+
+<span class="n">conteo_fechas</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;Fecha&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span>
+<span class="n">conteo_fechas</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Fecha&#39;</span><span class="p">,</span> <span class="s1">&#39;Cantidad&#39;</span><span class="p">]</span>
+<span class="n">conteo_fechas</span> <span class="o">=</span> <span class="n">conteo_fechas</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="s1">&#39;Fecha&#39;</span><span class="p">)</span>
+<span class="n">conteo_fechas</span><span class="p">[</span><span class="s1">&#39;Fecha&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span><span class="n">conteo_fechas</span><span class="p">[</span><span class="s1">&#39;Fecha&#39;</span><span class="p">],</span> <span class="nb">format</span><span class="o">=</span><span class="s1">&#39;%Y-%m&#39;</span><span class="p">)</span>
+
+<span class="n">fig</span> <span class="o">=</span> <span class="n">px</span><span class="o">.</span><span class="n">line</span><span class="p">(</span><span class="n">conteo_fechas</span><span class="p">,</span> 
+              <span class="n">x</span><span class="o">=</span><span class="s1">&#39;Fecha&#39;</span><span class="p">,</span> 
+              <span class="n">y</span><span class="o">=</span><span class="s1">&#39;Cantidad&#39;</span><span class="p">,</span>
+              <span class="n">title</span><span class="o">=</span><span class="s2">&quot;Casos de Defunción a lo Largo del Tiempo&quot;</span><span class="p">,</span>
+              <span class="n">labels</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;Cantidad&#39;</span><span class="p">:</span> <span class="s1">&#39;Número de Defunciones&#39;</span><span class="p">,</span> <span class="s1">&#39;Fecha&#39;</span><span class="p">:</span> <span class="s1">&#39;Fecha&#39;</span><span class="p">},</span>
+              <span class="n">markers</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="n">fig</span><span class="o">.</span><span class="n">update_traces</span><span class="p">(</span><span class="n">line</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">color</span><span class="o">=</span><span class="s2">&quot;#C2185B&quot;</span><span class="p">),</span>  
+                  <span class="n">marker</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">color</span><span class="o">=</span><span class="s2">&quot;#F06292&quot;</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="mi">8</span><span class="p">))</span>  
+
+<span class="n">fig</span><span class="o">.</span><span class="n">update_layout</span><span class="p">(</span>
+    <span class="n">template</span><span class="o">=</span><span class="s2">&quot;plotly_white&quot;</span><span class="p">,</span>
+    <span class="n">xaxis_title</span><span class="o">=</span><span class="s2">&quot;Fecha&quot;</span><span class="p">,</span>
+    <span class="n">yaxis_title</span><span class="o">=</span><span class="s2">&quot;Número de Defunciones&quot;</span><span class="p">,</span>
+    <span class="n">font</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">family</span><span class="o">=</span><span class="s2">&quot;Bahnschrift&quot;</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="mi">14</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;black&quot;</span><span class="p">),</span>
+    <span class="n">title_font</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">family</span><span class="o">=</span><span class="s2">&quot;Bahnschrift&quot;</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="mi">22</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;black&quot;</span><span class="p">),</span>
+    <span class="n">plot_bgcolor</span><span class="o">=</span><span class="s2">&quot;white&quot;</span><span class="p">,</span>
+    <span class="n">paper_bgcolor</span><span class="o">=</span><span class="s2">&quot;white&quot;</span>
+<span class="p">)</span>
+
+<span class="n">fig</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+</div>
+</div>
+</section>
+<section id="mapa-de-casos-por-departamento">
+<h2><strong>Mapa de casos por departamento</strong><a class="headerlink" href="#mapa-de-casos-por-departamento" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="n">urlopen</span><span class="p">(</span><span class="s1">&#39;https://raw.githubusercontent.com/lihkir/Uninorte/main/AppliedStatisticMS/DataVisualizationRPython/Lectures/Python/PythonDataSets/Colombia.geo.json&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">response</span><span class="p">:</span>
+    <span class="n">counties</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">response</span><span class="p">)</span>
+    
+<span class="n">locs</span><span class="o">=</span><span class="p">[];</span> <span class="n">z_id</span><span class="o">=</span><span class="p">[];</span>
+<span class="k">for</span> <span class="n">loc</span> <span class="ow">in</span> <span class="n">counties</span><span class="p">[</span><span class="s1">&#39;features&#39;</span><span class="p">]:</span>
+    <span class="n">loc</span><span class="p">[</span><span class="s1">&#39;id&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">loc</span><span class="p">[</span><span class="s1">&#39;properties&#39;</span><span class="p">][</span><span class="s1">&#39;NOMBRE_DPT&#39;</span><span class="p">]</span>
+    <span class="n">locs</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">loc</span><span class="p">[</span><span class="s1">&#39;properties&#39;</span><span class="p">][</span><span class="s1">&#39;NOMBRE_DPT&#39;</span><span class="p">])</span>
+    <span class="n">z_id</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">loc</span><span class="p">[</span><span class="s1">&#39;properties&#39;</span><span class="p">][</span><span class="s1">&#39;HECTARES&#39;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">colorscale</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="s2">&quot;#fde0dc&quot;</span><span class="p">],</span>  <span class="c1"># Rosa claro</span>
+    <span class="p">[</span><span class="mf">0.2</span><span class="p">,</span> <span class="s2">&quot;#f9bdbb&quot;</span><span class="p">],</span>  
+    <span class="p">[</span><span class="mf">0.4</span><span class="p">,</span> <span class="s2">&quot;#f69988&quot;</span><span class="p">],</span>  
+    <span class="p">[</span><span class="mf">0.6</span><span class="p">,</span> <span class="s2">&quot;#f36c60&quot;</span><span class="p">],</span>  
+    <span class="p">[</span><span class="mf">0.8</span><span class="p">,</span> <span class="s2">&quot;#e84e40&quot;</span><span class="p">],</span>  
+    <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;#d50000&quot;</span><span class="p">]</span>  <span class="c1"># Rojo intenso</span>
+<span class="p">]</span>
+
+<span class="c1"># Contar la cantidad de casos por departamento</span>
+<span class="n">casos_por_departamento</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;Nombre_Departamento&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span>
+<span class="n">casos_por_departamento</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Nombre_Departamento&#39;</span><span class="p">,</span> <span class="s1">&#39;Casos&#39;</span><span class="p">]</span>
+
+<span class="c1"># Reemplazar nombres para que coincidan con el GeoJSON</span>
+<span class="n">correccion_nombres</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;ATLÁNTICO&#39;</span><span class="p">:</span> <span class="s1">&#39;ATLANTICO&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;BOLÍVAR&#39;</span><span class="p">:</span> <span class="s1">&#39;BOLIVAR&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;BOGOTA DC&#39;</span><span class="p">:</span> <span class="s1">&#39;SANTAFE DE BOGOTA D.C&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;BOYACÁ&#39;</span><span class="p">:</span> <span class="s1">&#39;BOYACA&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;CÓRDOBA&#39;</span><span class="p">:</span> <span class="s1">&#39;CORDOBA&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;CAQUETÁ&#39;</span><span class="p">:</span> <span class="s1">&#39;CAQUETA&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;CHOCÓ&#39;</span><span class="p">:</span> <span class="s1">&#39;CHOCO&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;LA GUAJIRA&#39;</span><span class="p">:</span> <span class="s1">&#39;LA GUAJIRA&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;ARCHIPIÉLAGO DE SAN ANDRÉS Y PROVIDENCIA Y SANTA CATALINA&#39;</span><span class="p">:</span> <span class="s1">&#39;ARCHIPIELAGO DE SAN ANDRES PROVIDENCIA Y SANTA CATALINA&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;GUAINÍA&#39;</span><span class="p">:</span> <span class="s1">&#39;GUAINIA&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;GUAVIARE&#39;</span><span class="p">:</span> <span class="s1">&#39;GUAVIARE&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;VAUPÉS&#39;</span><span class="p">:</span> <span class="s1">&#39;VAUPES&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;VICHADA&#39;</span><span class="p">:</span> <span class="s1">&#39;VICHADA&#39;</span>
+<span class="p">}</span>
+
+<span class="n">casos_por_departamento</span><span class="p">[</span><span class="s1">&#39;Nombre_Departamento&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">casos_por_departamento</span><span class="p">[</span><span class="s1">&#39;Nombre_Departamento&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="n">correccion_nombres</span><span class="p">)</span>
+
+<span class="n">locs</span> <span class="o">=</span> <span class="n">casos_por_departamento</span><span class="p">[</span><span class="s1">&#39;Nombre_Departamento&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span>
+<span class="n">z_id</span> <span class="o">=</span> <span class="n">casos_por_departamento</span><span class="p">[</span><span class="s1">&#39;Casos&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span>
+
+<span class="n">fig</span> <span class="o">=</span> <span class="n">go</span><span class="o">.</span><span class="n">Figure</span><span class="p">(</span><span class="n">go</span><span class="o">.</span><span class="n">Choroplethmapbox</span><span class="p">(</span>
+                    <span class="n">geojson</span><span class="o">=</span><span class="n">counties</span><span class="p">,</span>
+                    <span class="n">locations</span><span class="o">=</span><span class="n">locs</span><span class="p">,</span>
+                    <span class="n">z</span><span class="o">=</span><span class="n">z_id</span><span class="p">,</span>
+                    <span class="n">colorscale</span><span class="o">=</span> <span class="n">colorscale</span><span class="p">,</span>
+                    <span class="n">colorbar_title</span><span class="o">=</span><span class="s2">&quot;Casos de Defunción&quot;</span><span class="p">))</span>
+
+<span class="n">fig</span><span class="o">.</span><span class="n">update_layout</span><span class="p">(</span><span class="n">mapbox_style</span><span class="o">=</span><span class="s2">&quot;open-street-map&quot;</span><span class="p">,</span>
+                  <span class="n">mapbox_zoom</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span>
+                  <span class="n">mapbox_center</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;lat&quot;</span><span class="p">:</span> <span class="mf">4.570868</span><span class="p">,</span> <span class="s2">&quot;lon&quot;</span><span class="p">:</span> <span class="o">-</span><span class="mf">74.2973328</span><span class="p">})</span>
+
+<span class="n">fig</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+</div>
+</div>
+</section>
+<section id="pendientes">
+<h2><strong>Pendientes</strong><a class="headerlink" href="#pendientes" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Hacer tabla caracterización.</p></li>
+<li><p>Resolver dudas faltantes.</p></li>
+<li><p>Incluir en los análisis las causas CIE-10</p></li>
+<li><p>Interpretar y corregir titulos</p></li>
+</ul>
 </section>
 </section>
 
@@ -621,6 +2347,24 @@ document.write(`
                 <footer class="prev-next-footer d-print-none">
                   
 <div class="prev-next-area">
+    <a class="left-prev"
+       href="etl.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title"><strong>ETL: Limpieza y preparación de los datos</strong></p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="variables.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title"><strong>Diccionario de variable</strong></p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
 </div>
                 </footer>
               
@@ -639,6 +2383,31 @@ document.write(`
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#librerias-y-modulos-necesarios"><strong>Líbrerias y modulos necesarios</strong></a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conjunto-de-datos"><strong>Conjunto de datos</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#analisis-general-del-conjunto-de-datos"><strong>Análisis general del conjunto de datos</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tratamiento-de-datos-faltantes"><strong>Tratamiento de datos faltantes</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#variable-grupo-etnico-grupo-etnico"><strong>Variable: Grupo étnico (<code class="docutils literal notranslate"><span class="pre">grupo_etnico</span></code>)</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#variable-entidad-de-salud-del-paciente-ent-salud-cod"><strong>Variable: Entidad de salud del paciente (<code class="docutils literal notranslate"><span class="pre">ent_salud_cod</span></code>)</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#variable-primera-causa-asociada-a-la-defuncion-por-antecendentes-causa-ant-1"><strong>Variable: Primera causa asociada a la defunción por antecendentes (<code class="docutils literal notranslate"><span class="pre">causa_ant_1</span></code>)</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#variable-nivel-de-educacion-nivel-edu"><strong>Variable: Nivel de educación (<code class="docutils literal notranslate"><span class="pre">nivel_edu</span></code>)</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#variable-tipo-de-certificacion-medica-de-la-defuncion-cert-medica"><strong>Variable: Tipo de certificación médica de la defunción (<code class="docutils literal notranslate"><span class="pre">cert_medica</span></code>)</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#variable-tipo-de-regimen-de-seguridad-social-seg-social"><strong>Variable: Tipo de régimen de seguridad social (<code class="docutils literal notranslate"><span class="pre">seg_social</span></code>)</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#variable-causa-directa-de-la-defuncion-causa-directa"><strong>Variable: Causa directa de la defunción (<code class="docutils literal notranslate"><span class="pre">causa_directa</span></code>)</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#variable-asistencia-medica-durante-la-defuncion-asistencia-med"><strong>Variable: Asistencia médica durante la defunción (<code class="docutils literal notranslate"><span class="pre">asistencia_med</span></code>)</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#variable-causa-segun-clasificacion-ops-causa-ops"><strong>Variable: Causa según clasificación OPS (<code class="docutils literal notranslate"><span class="pre">causa_OPS</span></code>)</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#variable-tipo-de-causa-muerte-prob-muerte"><strong>Variable: Tipo de causa muerte (<code class="docutils literal notranslate"><span class="pre">prob_muerte</span></code>)</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#variable-estado-civil-estado-civil"><strong>Variable: Estado civil (<code class="docutils literal notranslate"><span class="pre">estado_civil</span></code>)</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#variable-sitio-de-defuncion-sitio-def"><strong>Variable: Sitio de defunción (<code class="docutils literal notranslate"><span class="pre">sitio_def</span></code>)</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#resultados-de-imputacion"><strong>Resultados de imputación</strong></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#analisis-univariado"><strong>Análisis Univariado</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#tabla-de-caracterizacion"><strong>Tabla de caracterización</strong></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#analisis-bivariado"><strong>Análisis Bivariado</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#analisis-de-casos-a-lo-largo-del-tiempo"><strong>Análisis de casos a lo largo del tiempo</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mapa-de-casos-por-departamento"><strong>Mapa de casos por departamento</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pendientes"><strong>Pendientes</strong></a></li>
 </ul>
   </nav></div>
 
