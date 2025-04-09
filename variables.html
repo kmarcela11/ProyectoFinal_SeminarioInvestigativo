@@ -61,7 +61,6 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Bibliografía" href="citas.html" />
     <link rel="prev" title="EDA: Caracterización y distribución de los datos" href="eda.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -185,7 +184,6 @@
 <li class="toctree-l1"><a class="reference internal" href="etl.html"><strong>ETL: Limpieza y preparación de los datos</strong></a></li>
 <li class="toctree-l1"><a class="reference internal" href="eda.html"><strong>EDA: Caracterización y distribución de los datos</strong></a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#"><strong>Diccionario de variable</strong></a></li>
-<li class="toctree-l1"><a class="reference internal" href="citas.html"><strong>Bibliografía</strong></a></li>
 </ul>
 
     </div>
@@ -393,89 +391,57 @@ document.write(`
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td class="text-center"><p><code class="docutils literal notranslate"><span class="pre">Nombre_Departamento</span></code></p></td>
+<tr class="row-even"><td class="text-center"><p><code class="docutils literal notranslate"><span class="pre">region</span></code></p></td>
+<td class="text-center"><p>Región geográfica del país donde ocurrió la defunción.</p></td>
+<td class="text-center"><p>Andina<br>Atlántica<br>Pacífica<br>Orinoquía<br>Amazonía</p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p><code class="docutils literal notranslate"><span class="pre">Nombre_Departamento</span></code></p></td>
 <td class="text-center"><p>Nombre del departamento donde ocurrió la defunción.</p></td>
 <td class="text-center"><p>Departamentos de Colombia</p></td>
 </tr>
-<tr class="row-odd"><td class="text-center"><p><code class="docutils literal notranslate"><span class="pre">Nombre_Municipio</span></code></p></td>
+<tr class="row-even"><td class="text-center"><p><code class="docutils literal notranslate"><span class="pre">Nombre_Municipio</span></code></p></td>
 <td class="text-center"><p>Nombre del municipio donde ocurrió la defunción.</p></td>
 <td class="text-center"><p>Municipios de Colombia</p></td>
 </tr>
-<tr class="row-even"><td class="text-center"><p><code class="docutils literal notranslate"><span class="pre">sitio_def</span></code></p></td>
+<tr class="row-odd"><td class="text-center"><p><code class="docutils literal notranslate"><span class="pre">sitio_def</span></code></p></td>
 <td class="text-center"><p>Sitio donde ocurrió la defunción.</p></td>
-<td class="text-center"><p>Hospital o Clínica<br> Casa<br> Sin información<br> Otro Sitio</p></td>
+<td class="text-center"><p>Hospital o Clínica<br> Casa<br> Otro Sitio</p></td>
 </tr>
-<tr class="row-odd"><td class="text-center"><p><code class="docutils literal notranslate"><span class="pre">año_def</span></code></p></td>
+<tr class="row-even"><td class="text-center"><p><code class="docutils literal notranslate"><span class="pre">año_def</span></code></p></td>
 <td class="text-center"><p>Año en que ocurrió la defunción.</p></td>
 <td class="text-center"><p>1999, 2004, 2012…</p></td>
 </tr>
-<tr class="row-even"><td class="text-center"><p><code class="docutils literal notranslate"><span class="pre">mes_def</span></code></p></td>
+<tr class="row-odd"><td class="text-center"><p><code class="docutils literal notranslate"><span class="pre">mes_def</span></code></p></td>
 <td class="text-center"><p>Mes en que ocurrió la defunción.</p></td>
 <td class="text-center"><p>Enero, Febrero, Marzo, Abril, Mayo, Junio, Julio,<br> Agosto, Septiembre, Octubre, Noviembre, Diciembre</p></td>
 </tr>
-<tr class="row-odd"><td class="text-center"><p><code class="docutils literal notranslate"><span class="pre">sexo</span></code></p></td>
-<td class="text-center"><p>Sexo de la persona.</p></td>
-<td class="text-center"><p>Femenino</p></td>
+<tr class="row-even"><td class="text-center"><p><code class="docutils literal notranslate"><span class="pre">sexo</span></code></p></td>
+<td class="text-center"><p>Sexo de la persona fallecida.</p></td>
+<td class="text-center"><p>Femenino<br>Masculino</p></td>
 </tr>
-<tr class="row-even"><td class="text-center"><p><code class="docutils literal notranslate"><span class="pre">estado_civil</span></code></p></td>
-<td class="text-center"><p>Estado civil de la persona.</p></td>
-<td class="text-center"><p>Soltero <br> Casado <br> Unión Libre<br> Divorciado/Otro<br> Viudo</p></td>
+<tr class="row-odd"><td class="text-center"><p><code class="docutils literal notranslate"><span class="pre">estado_civil</span></code></p></td>
+<td class="text-center"><p>Estado civil de la persona fallecida.</p></td>
+<td class="text-center"><p>Soltero <br> Casado <br> Unión Libre,  Divorciado/Otro<br> Viudo</p></td>
 </tr>
-<tr class="row-odd"><td class="text-center"><p><code class="docutils literal notranslate"><span class="pre">grupo_edad</span></code></p></td>
-<td class="text-center"><p>Rango de edad de la persona.</p></td>
-<td class="text-center"><p>15-19 años, 20-24 años, 25-29 años, 30-34 años, 35-39 años,<br> 40-44 años, 45-49 años, 50-54 años, 55-59 años, 60-64 años, <br> 65-69 años, 70-74 años, 75-79 años, 80-84 años |</p></td>
+<tr class="row-even"><td class="text-center"><p><code class="docutils literal notranslate"><span class="pre">grupo_edad</span></code></p></td>
+<td class="text-center"><p>Rango de edad de la persona fallecida.</p></td>
+<td class="text-center"><p>15-19 años, 20-24 años, 25-29 años, 30-34 años, 35-39 años,<br> 40-44 años, 45-49 años, 50-54 años, 55-59 años, 60-64 años,<br> 65-69 años, 70-74 años, 75-79 años, 80-84 años</p></td>
 </tr>
-<tr class="row-even"><td class="text-center"><p><code class="docutils literal notranslate"><span class="pre">nivel_edu</span></code></p></td>
-<td class="text-center"><p>Nivel educativo de la persona.</p></td>
-<td class="text-center"><p>Secundaria<br> Primaria <br> Superior<br> Ninguno<br> Preescolar</p></td>
-</tr>
-<tr class="row-odd"><td class="text-center"><p><code class="docutils literal notranslate"><span class="pre">grupo_etnico</span></code></p></td>
-<td class="text-center"><p>Grupo étnico de la persona.</p></td>
-<td class="text-center"><p>Indígena<br>Gitano<br>Raizal <br>Palenquero<br>Afrodescendiente<br>Ninguno<br></p></td>
+<tr class="row-odd"><td class="text-center"><p><code class="docutils literal notranslate"><span class="pre">nivel_edu</span></code></p></td>
+<td class="text-center"><p>Nivel educativo de la persona fallecida.</p></td>
+<td class="text-center"><p>Secundaria<br>Primaria<br>Superior<br>Ninguno<br>Preescolar     <br>No especificado</p></td>
 </tr>
 <tr class="row-even"><td class="text-center"><p><code class="docutils literal notranslate"><span class="pre">seg_social</span></code></p></td>
 <td class="text-center"><p>Tipo de régimen de seguridad social.</p></td>
-<td class="text-center"><p>Subsidiado<br>  Contributivo<br> Particular<br> Vinculado <br> Otro<br> Ignorado</p></td>
+<td class="text-center"><p>Subsidiado<br>Contributivo<br>Particular<br>Vinculado<br>Otro<br>Ignorado</p></td>
 </tr>
-<tr class="row-odd"><td class="text-center"><p><code class="docutils literal notranslate"><span class="pre">ent_salud_cod</span></code></p></td>
-<td class="text-center"><p>Código de la entidad de salud.</p></td>
-<td class="text-center"><p>EPS Subsidiado<br>EPS (Entidad Promotora de Salud) <br>EESS (Establecimientoo de Salud) <br>ESE (Empresa Social del Estado) <br>EAPB (Entidad Administradora de Planes de Beneficios)</p></td>
-</tr>
-<tr class="row-even"><td class="text-center"><p><code class="docutils literal notranslate"><span class="pre">prob_muerte</span></code></p></td>
-<td class="text-center"><p>Tipo de causa de muerte.</p></td>
-<td class="text-center"><p>Natural  <br> Violenta <br> En estudio</p></td>
-</tr>
-<tr class="row-odd"><td class="text-center"><p><code class="docutils literal notranslate"><span class="pre">cert_medica</span></code></p></td>
-<td class="text-center"><p>Tipo de certificación médica de la defunción.</p></td>
-<td class="text-center"><p>Historia clínica<br>  Interrogatorio a familiares o testigos<br> Necropsia<br> Pruebas de laboratorio</p></td>
-</tr>
-<tr class="row-even"><td class="text-center"><p><code class="docutils literal notranslate"><span class="pre">asistencia_med</span></code></p></td>
+<tr class="row-odd"><td class="text-center"><p><code class="docutils literal notranslate"><span class="pre">asistencia_med</span></code></p></td>
 <td class="text-center"><p>Asistencia médica durante la defunción.</p></td>
-<td class="text-center"><p>SI<br> NO<br>Ignorado</p></td>
-</tr>
-<tr class="row-odd"><td class="text-center"><p><code class="docutils literal notranslate"><span class="pre">causa_directa</span></code></p></td>
-<td class="text-center"><p>Causa directa de la defunción</p></td>
-<td class="text-center"><p>Código CIE-10</p></td>
-</tr>
-<tr class="row-even"><td class="text-center"><p><code class="docutils literal notranslate"><span class="pre">causa_ant_1</span></code></p></td>
-<td class="text-center"><p>Primera causa asociada de la defunción por antecedentes.</p></td>
-<td class="text-center"><p>Código CIE-10</p></td>
-</tr>
-<tr class="row-odd"><td class="text-center"><p><code class="docutils literal notranslate"><span class="pre">causa_ant_2</span></code></p></td>
-<td class="text-center"><p>Segunda causa asociada de la defunción por antecedentes.</p></td>
-<td class="text-center"><p>Código CIE-10</p></td>
+<td class="text-center"><p>SI<br>NO<br>Ignorado</p></td>
 </tr>
 <tr class="row-even"><td class="text-center"><p><code class="docutils literal notranslate"><span class="pre">causa_basica</span></code></p></td>
-<td class="text-center"><p>Causa básica de la defunción.</p></td>
+<td class="text-center"><p>Causa básica de la defunción (código CIE-10).</p></td>
 <td class="text-center"><p>Código CIE-10</p></td>
-</tr>
-<tr class="row-odd"><td class="text-center"><p><code class="docutils literal notranslate"><span class="pre">causa_OPS</span></code></p></td>
-<td class="text-center"><p>Causa según clasificación OPS (Organización Panamericana de la Salud).</p></td>
-<td class="text-center"><p>Tumor maligno de cáncer de mama</p></td>
-</tr>
-<tr class="row-even"><td class="text-center"><p><code class="docutils literal notranslate"><span class="pre">region</span></code></p></td>
-<td class="text-center"><p>Región geográfica del país.</p></td>
-<td class="text-center"><p>Andina<br> Atlántica<br> Pacífica<br> Orinoquía</p></td>
 </tr>
 </tbody>
 </table>
@@ -520,15 +486,6 @@ document.write(`
         <p class="prev-next-subtitle">previous</p>
         <p class="prev-next-title"><strong>EDA: Caracterización y distribución de los datos</strong></p>
       </div>
-    </a>
-    <a class="right-next"
-       href="citas.html"
-       title="next page">
-      <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><strong>Bibliografía</strong></p>
-      </div>
-      <i class="fa-solid fa-angle-right"></i>
     </a>
 </div>
                 </footer>
