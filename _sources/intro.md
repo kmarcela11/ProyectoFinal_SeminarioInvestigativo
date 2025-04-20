@@ -5,7 +5,7 @@
 - **Emanuel de Jesús Carbonell Naranjo**
 - **Sebastián Alfonso Pérez Albor**
 
-## **Profesor:**
+## **Profesora:**
 - **Dra. Karen Florez**
 
 ## **Ciencia de Datos**
