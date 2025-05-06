@@ -184,7 +184,7 @@
 <li class="toctree-l1"><a class="reference internal" href="context.html"><strong>Contextualización</strong></a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#"><strong>ETL: Limpieza y preparación de los datos</strong></a></li>
 <li class="toctree-l1"><a class="reference internal" href="eda.html"><strong>EDA: Caracterización y distribución de los datos</strong></a></li>
-<li class="toctree-l1"><a class="reference internal" href="variables.html"><strong>Diccionario de variable</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="diccionario.html"><strong>Diccionario de variables</strong></a></li>
 </ul>
 
     </div>
@@ -398,7 +398,6 @@ document.write(`
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#variable-seguridad-social"><strong>Variable: Seguridad social</strong></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#variable-cert-medica-como-se-determino-la-muerte"><strong>Variable: cert_medica - ¿Cómo se determino la muerte?</strong></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#variable-codigo-de-la-entidad-administradora-en-salud-a-la-que-pertenecia-el-fallecido"><strong>Variable: Código de la entidad administradora en salud a la que pertenecía el fallecido</strong></a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#variable-grupo-etnico"><strong>Variable: Grupo étnico</strong></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#variable-causa-basica"><strong>Variable: Causa básica</strong></a></li>
 </ul>
 </li>
@@ -944,9 +943,9 @@ La cantidad de variables con menos del 70% de datos faltantes es de:  33
         });
         }
         </script>
-        </div><div class="output text_html"><div>                            <div id="9ff0ee55-58a2-4bc1-96d8-c867b251616e" class="plotly-graph-div" style="height:525px; width:100%;"></div>            <script type="text/javascript">                require(["plotly"], function(Plotly) {                    window.PLOTLYENV=window.PLOTLYENV || {};                                    if (document.getElementById("9ff0ee55-58a2-4bc1-96d8-c867b251616e")) {                    Plotly.newPlot(                        "9ff0ee55-58a2-4bc1-96d8-c867b251616e",                        [{"alignmentgroup":"True","hovertemplate":"index=%{x}\u003cbr\u003ePorcentaje de Datos Faltantes (%)=%{y}\u003cbr\u003etext=%{text}\u003cbr\u003ecolor=%{marker.color}\u003cextra\u003e\u003c\u002fextra\u003e","legendgroup":"","marker":{"color":[95.9748219314229,95.9748219314229,95.8716122373568,95.57217670518979,95.2931282730852,94.78217657777041,94.7707088339853,94.4266765204317,94.1960474509754,91.96365999413871,84.47522330245538,83.72090060014526,73.8611893324499,67.64057542589926,63.96962322090697,63.765752220282614,62.8916553051057,52.43816974809189,47.900765790446094,44.622265261655684,40.38939361119252,39.7484741529797,38.57621589938966,38.45261910526114,38.45261910526114,22.374842318522955,16.488067175494706,16.488067175494706,16.488067175494706,7.650259298428919,0.05351613766389317,0.05351613766389317,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0],"coloraxis":"coloraxis","pattern":{"shape":""}},"name":"","offsetgroup":"","orientation":"v","showlegend":false,"text":[95.97,95.97,95.87,95.57,95.29,94.78,94.77,94.43,94.2,91.96,84.48,83.72,73.86,67.64,63.97,63.77,62.89,52.44,47.9,44.62,40.39,39.75,38.58,38.45,38.45,22.37,16.49,16.49,16.49,7.65,0.05,0.05,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0],"textposition":"outside","x":["CODMUNOC","CODOCUR","C_MCM1","C_ANT32","C_DIR12","SIMUERTEPO","C_ANT22","C_ANT12","C_PAT2","MAN_MUER","C_ANT3","C_PAT1","C_MUERTE","IDCLASADMI","COD_INST","NOM_INST","C_ANT2","OCUPACION","C_ANT1","CAUSA_666","C_DIR1","IDADMISALUD","PMAN_MUER","IDPERTET","IDPROFCER","CODPRES","ASIS_MED","SEG_SOCIAL","NIVEL_EDU","AREA_RES","CODPTORE","CODMUNRE","Year","COD_DPTO","COD_MUNIC","CAU_HOMOL","CONS_EXP","C_BAS1","SIT_DEFUN","EST_CIVIL","GRU_ED1","SEXO","MES","ANO","A_DEFUN","filter_$"],"xaxis":"x","y":[95.9748219314229,95.9748219314229,95.8716122373568,95.57217670518979,95.2931282730852,94.78217657777041,94.7707088339853,94.4266765204317,94.1960474509754,91.96365999413871,84.47522330245538,83.72090060014526,73.8611893324499,67.64057542589926,63.96962322090697,63.765752220282614,62.8916553051057,52.43816974809189,47.900765790446094,44.622265261655684,40.38939361119252,39.7484741529797,38.57621589938966,38.45261910526114,38.45261910526114,22.374842318522955,16.488067175494706,16.488067175494706,16.488067175494706,7.650259298428919,0.05351613766389317,0.05351613766389317,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0],"yaxis":"y","type":"bar"}],                        {"template":{"data":{"histogram2dcontour":[{"type":"histogram2dcontour","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"choropleth":[{"type":"choropleth","colorbar":{"outlinewidth":0,"ticks":""}}],"histogram2d":[{"type":"histogram2d","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"heatmap":[{"type":"heatmap","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"heatmapgl":[{"type":"heatmapgl","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"contourcarpet":[{"type":"contourcarpet","colorbar":{"outlinewidth":0,"ticks":""}}],"contour":[{"type":"contour","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"surface":[{"type":"surface","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"mesh3d":[{"type":"mesh3d","colorbar":{"outlinewidth":0,"ticks":""}}],"scatter":[{"fillpattern":{"fillmode":"overlay","size":10,"solidity":0.2},"type":"scatter"}],"parcoords":[{"type":"parcoords","line":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterpolargl":[{"type":"scatterpolargl","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"bar":[{"error_x":{"color":"#2a3f5f"},"error_y":{"color":"#2a3f5f"},"marker":{"line":{"color":"#E5ECF6","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"bar"}],"scattergeo":[{"type":"scattergeo","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterpolar":[{"type":"scatterpolar","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"histogram":[{"marker":{"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"histogram"}],"scattergl":[{"type":"scattergl","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatter3d":[{"type":"scatter3d","line":{"colorbar":{"outlinewidth":0,"ticks":""}},"marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattermapbox":[{"type":"scattermapbox","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterternary":[{"type":"scatterternary","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattercarpet":[{"type":"scattercarpet","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"carpet":[{"aaxis":{"endlinecolor":"#2a3f5f","gridcolor":"white","linecolor":"white","minorgridcolor":"white","startlinecolor":"#2a3f5f"},"baxis":{"endlinecolor":"#2a3f5f","gridcolor":"white","linecolor":"white","minorgridcolor":"white","startlinecolor":"#2a3f5f"},"type":"carpet"}],"table":[{"cells":{"fill":{"color":"#EBF0F8"},"line":{"color":"white"}},"header":{"fill":{"color":"#C8D4E3"},"line":{"color":"white"}},"type":"table"}],"barpolar":[{"marker":{"line":{"color":"#E5ECF6","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"barpolar"}],"pie":[{"automargin":true,"type":"pie"}]},"layout":{"autotypenumbers":"strict","colorway":["#636efa","#EF553B","#00cc96","#ab63fa","#FFA15A","#19d3f3","#FF6692","#B6E880","#FF97FF","#FECB52"],"font":{"color":"#2a3f5f"},"hovermode":"closest","hoverlabel":{"align":"left"},"paper_bgcolor":"white","plot_bgcolor":"#E5ECF6","polar":{"bgcolor":"#E5ECF6","angularaxis":{"gridcolor":"white","linecolor":"white","ticks":""},"radialaxis":{"gridcolor":"white","linecolor":"white","ticks":""}},"ternary":{"bgcolor":"#E5ECF6","aaxis":{"gridcolor":"white","linecolor":"white","ticks":""},"baxis":{"gridcolor":"white","linecolor":"white","ticks":""},"caxis":{"gridcolor":"white","linecolor":"white","ticks":""}},"coloraxis":{"colorbar":{"outlinewidth":0,"ticks":""}},"colorscale":{"sequential":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"sequentialminus":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"diverging":[[0,"#8e0152"],[0.1,"#c51b7d"],[0.2,"#de77ae"],[0.3,"#f1b6da"],[0.4,"#fde0ef"],[0.5,"#f7f7f7"],[0.6,"#e6f5d0"],[0.7,"#b8e186"],[0.8,"#7fbc41"],[0.9,"#4d9221"],[1,"#276419"]]},"xaxis":{"gridcolor":"white","linecolor":"white","ticks":"","title":{"standoff":15},"zerolinecolor":"white","automargin":true,"zerolinewidth":2},"yaxis":{"gridcolor":"white","linecolor":"white","ticks":"","title":{"standoff":15},"zerolinecolor":"white","automargin":true,"zerolinewidth":2},"scene":{"xaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2},"yaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2},"zaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2}},"shapedefaults":{"line":{"color":"#2a3f5f"}},"annotationdefaults":{"arrowcolor":"#2a3f5f","arrowhead":0,"arrowwidth":1},"geo":{"bgcolor":"white","landcolor":"#E5ECF6","subunitcolor":"white","showland":true,"showlakes":true,"lakecolor":"white"},"title":{"x":0.05},"mapbox":{"style":"light"}}},"xaxis":{"anchor":"y","domain":[0.0,1.0],"title":{"text":"Variables"},"tickangle":-45},"yaxis":{"anchor":"x","domain":[0.0,1.0],"title":{"text":"Porcentaje de Datos Faltantes"},"range":[0,105.9748219314229]},"coloraxis":{"colorbar":{"title":{"text":"color"}},"colorscale":[[0.0,"#F8BBD0"],[0.25,"#F48FB1"],[0.5,"#F06292"],[0.75,"#EC407A"],[1.0,"#D81B60"]]},"legend":{"tracegroupgap":0},"title":{"text":"Porcentaje de Datos Faltantes por Variable","font":{"size":22,"family":"Bahnschrift","color":"black"}},"barmode":"relative","font":{"family":"Bahnschrift","size":14,"color":"black"},"plot_bgcolor":"white","paper_bgcolor":"white"},                        {"responsive": true}                    ).then(function(){
+        </div><div class="output text_html"><div>                            <div id="7240a816-5558-460e-ab30-086118eda24a" class="plotly-graph-div" style="height:525px; width:100%;"></div>            <script type="text/javascript">                require(["plotly"], function(Plotly) {                    window.PLOTLYENV=window.PLOTLYENV || {};                                    if (document.getElementById("7240a816-5558-460e-ab30-086118eda24a")) {                    Plotly.newPlot(                        "7240a816-5558-460e-ab30-086118eda24a",                        [{"alignmentgroup":"True","hovertemplate":"index=%{x}\u003cbr\u003ePorcentaje de Datos Faltantes (%)=%{y}\u003cbr\u003etext=%{text}\u003cbr\u003ecolor=%{marker.color}\u003cextra\u003e\u003c\u002fextra\u003e","legendgroup":"","marker":{"color":[95.9748219314229,95.9748219314229,95.8716122373568,95.57217670518979,95.2931282730852,94.78217657777041,94.7707088339853,94.4266765204317,94.1960474509754,91.96365999413871,84.47522330245538,83.72090060014526,73.8611893324499,67.64057542589926,63.96962322090697,63.765752220282614,62.8916553051057,52.43816974809189,47.900765790446094,44.622265261655684,40.38939361119252,39.7484741529797,38.57621589938966,38.45261910526114,38.45261910526114,22.374842318522955,16.488067175494706,16.488067175494706,16.488067175494706,7.650259298428919,0.05351613766389317,0.05351613766389317,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0],"coloraxis":"coloraxis","pattern":{"shape":""}},"name":"","offsetgroup":"","orientation":"v","showlegend":false,"text":[95.97,95.97,95.87,95.57,95.29,94.78,94.77,94.43,94.2,91.96,84.48,83.72,73.86,67.64,63.97,63.77,62.89,52.44,47.9,44.62,40.39,39.75,38.58,38.45,38.45,22.37,16.49,16.49,16.49,7.65,0.05,0.05,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0],"textposition":"outside","x":["CODMUNOC","CODOCUR","C_MCM1","C_ANT32","C_DIR12","SIMUERTEPO","C_ANT22","C_ANT12","C_PAT2","MAN_MUER","C_ANT3","C_PAT1","C_MUERTE","IDCLASADMI","COD_INST","NOM_INST","C_ANT2","OCUPACION","C_ANT1","CAUSA_666","C_DIR1","IDADMISALUD","PMAN_MUER","IDPERTET","IDPROFCER","CODPRES","ASIS_MED","SEG_SOCIAL","NIVEL_EDU","AREA_RES","CODPTORE","CODMUNRE","Year","COD_DPTO","COD_MUNIC","CAU_HOMOL","CONS_EXP","C_BAS1","SIT_DEFUN","EST_CIVIL","GRU_ED1","SEXO","MES","ANO","A_DEFUN","filter_$"],"xaxis":"x","y":[95.9748219314229,95.9748219314229,95.8716122373568,95.57217670518979,95.2931282730852,94.78217657777041,94.7707088339853,94.4266765204317,94.1960474509754,91.96365999413871,84.47522330245538,83.72090060014526,73.8611893324499,67.64057542589926,63.96962322090697,63.765752220282614,62.8916553051057,52.43816974809189,47.900765790446094,44.622265261655684,40.38939361119252,39.7484741529797,38.57621589938966,38.45261910526114,38.45261910526114,22.374842318522955,16.488067175494706,16.488067175494706,16.488067175494706,7.650259298428919,0.05351613766389317,0.05351613766389317,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0],"yaxis":"y","type":"bar"}],                        {"template":{"data":{"histogram2dcontour":[{"type":"histogram2dcontour","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"choropleth":[{"type":"choropleth","colorbar":{"outlinewidth":0,"ticks":""}}],"histogram2d":[{"type":"histogram2d","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"heatmap":[{"type":"heatmap","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"heatmapgl":[{"type":"heatmapgl","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"contourcarpet":[{"type":"contourcarpet","colorbar":{"outlinewidth":0,"ticks":""}}],"contour":[{"type":"contour","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"surface":[{"type":"surface","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"mesh3d":[{"type":"mesh3d","colorbar":{"outlinewidth":0,"ticks":""}}],"scatter":[{"fillpattern":{"fillmode":"overlay","size":10,"solidity":0.2},"type":"scatter"}],"parcoords":[{"type":"parcoords","line":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterpolargl":[{"type":"scatterpolargl","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"bar":[{"error_x":{"color":"#2a3f5f"},"error_y":{"color":"#2a3f5f"},"marker":{"line":{"color":"#E5ECF6","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"bar"}],"scattergeo":[{"type":"scattergeo","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterpolar":[{"type":"scatterpolar","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"histogram":[{"marker":{"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"histogram"}],"scattergl":[{"type":"scattergl","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatter3d":[{"type":"scatter3d","line":{"colorbar":{"outlinewidth":0,"ticks":""}},"marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattermapbox":[{"type":"scattermapbox","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterternary":[{"type":"scatterternary","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattercarpet":[{"type":"scattercarpet","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"carpet":[{"aaxis":{"endlinecolor":"#2a3f5f","gridcolor":"white","linecolor":"white","minorgridcolor":"white","startlinecolor":"#2a3f5f"},"baxis":{"endlinecolor":"#2a3f5f","gridcolor":"white","linecolor":"white","minorgridcolor":"white","startlinecolor":"#2a3f5f"},"type":"carpet"}],"table":[{"cells":{"fill":{"color":"#EBF0F8"},"line":{"color":"white"}},"header":{"fill":{"color":"#C8D4E3"},"line":{"color":"white"}},"type":"table"}],"barpolar":[{"marker":{"line":{"color":"#E5ECF6","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"barpolar"}],"pie":[{"automargin":true,"type":"pie"}]},"layout":{"autotypenumbers":"strict","colorway":["#636efa","#EF553B","#00cc96","#ab63fa","#FFA15A","#19d3f3","#FF6692","#B6E880","#FF97FF","#FECB52"],"font":{"color":"#2a3f5f"},"hovermode":"closest","hoverlabel":{"align":"left"},"paper_bgcolor":"white","plot_bgcolor":"#E5ECF6","polar":{"bgcolor":"#E5ECF6","angularaxis":{"gridcolor":"white","linecolor":"white","ticks":""},"radialaxis":{"gridcolor":"white","linecolor":"white","ticks":""}},"ternary":{"bgcolor":"#E5ECF6","aaxis":{"gridcolor":"white","linecolor":"white","ticks":""},"baxis":{"gridcolor":"white","linecolor":"white","ticks":""},"caxis":{"gridcolor":"white","linecolor":"white","ticks":""}},"coloraxis":{"colorbar":{"outlinewidth":0,"ticks":""}},"colorscale":{"sequential":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"sequentialminus":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"diverging":[[0,"#8e0152"],[0.1,"#c51b7d"],[0.2,"#de77ae"],[0.3,"#f1b6da"],[0.4,"#fde0ef"],[0.5,"#f7f7f7"],[0.6,"#e6f5d0"],[0.7,"#b8e186"],[0.8,"#7fbc41"],[0.9,"#4d9221"],[1,"#276419"]]},"xaxis":{"gridcolor":"white","linecolor":"white","ticks":"","title":{"standoff":15},"zerolinecolor":"white","automargin":true,"zerolinewidth":2},"yaxis":{"gridcolor":"white","linecolor":"white","ticks":"","title":{"standoff":15},"zerolinecolor":"white","automargin":true,"zerolinewidth":2},"scene":{"xaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2},"yaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2},"zaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2}},"shapedefaults":{"line":{"color":"#2a3f5f"}},"annotationdefaults":{"arrowcolor":"#2a3f5f","arrowhead":0,"arrowwidth":1},"geo":{"bgcolor":"white","landcolor":"#E5ECF6","subunitcolor":"white","showland":true,"showlakes":true,"lakecolor":"white"},"title":{"x":0.05},"mapbox":{"style":"light"}}},"xaxis":{"anchor":"y","domain":[0.0,1.0],"title":{"text":"Variables"},"tickangle":-45},"yaxis":{"anchor":"x","domain":[0.0,1.0],"title":{"text":"Porcentaje de Datos Faltantes"},"range":[0,105.9748219314229]},"coloraxis":{"colorbar":{"title":{"text":"color"}},"colorscale":[[0.0,"#F8BBD0"],[0.25,"#F48FB1"],[0.5,"#F06292"],[0.75,"#EC407A"],[1.0,"#D81B60"]]},"legend":{"tracegroupgap":0},"title":{"text":"Porcentaje de Datos Faltantes por Variable","font":{"size":22,"family":"Bahnschrift","color":"black"}},"barmode":"relative","font":{"family":"Bahnschrift","size":14,"color":"black"},"plot_bgcolor":"white","paper_bgcolor":"white"},                        {"responsive": true}                    ).then(function(){
                             
-var gd = document.getElementById('9ff0ee55-58a2-4bc1-96d8-c867b251616e');
+var gd = document.getElementById('7240a816-5558-460e-ab30-086118eda24a');
 var x = new MutationObserver(function (mutations, observer) {{
         var display = window.getComputedStyle(gd).display;
         if (!display || display === 'none') {{
@@ -1065,35 +1064,31 @@ Estas variables NO serán utilizadas en el enfoque de este estudio y, además, p
 <td><p>Código de institución sin aplicación directa en este análisis y con muchos valores faltantes.</p></td>
 <td><p>63.97%</p></td>
 </tr>
-<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">CODMUNRE</span></code></p></td>
-<td><p>Código municipal que no aporta valor agregado al análisis.</p></td>
-<td><p>0.05%</p></td>
-</tr>
-<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">CODPRES</span></code></p></td>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">CODPRES</span></code></p></td>
 <td><p>Código sin utilidad práctica para el objetivo del estudio.</p></td>
 <td><p>22.37%</p></td>
 </tr>
-<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">CONS_EXP</span></code></p></td>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">CONS_EXP</span></code></p></td>
 <td><p>Certificación médica o código administrativo sin relevancia clínica ni analítica para el modelo.</p></td>
 <td><p>0%</p></td>
 </tr>
-<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">IDCLASADMI</span></code></p></td>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">IDCLASADMI</span></code></p></td>
 <td><p>Clasificación administrativa sin aporte directo al análisis y con alto número de valores faltantes.</p></td>
 <td><p>67.64%</p></td>
 </tr>
-<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">IDPERTET</span></code></p></td>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">IDPERTET</span></code></p></td>
 <td><p>Redundante con la variable <code class="docutils literal notranslate"><span class="pre">CODPTORE</span></code>, que ya representa la pertenencia étnica; además, muchos valores nulos.</p></td>
 <td><p>38.45%</p></td>
 </tr>
-<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">IDPROFCER</span></code></p></td>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">IDPROFCER</span></code></p></td>
 <td><p>Variable administrativa sin valor analítico para el objetivo del estudio.</p></td>
 <td><p>38.45%</p></td>
 </tr>
-<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">NOM_INST</span></code></p></td>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">NOM_INST</span></code></p></td>
 <td><p>Información redundante con <code class="docutils literal notranslate"><span class="pre">COD_INST</span></code>, además no es imputable ni generalizable.</p></td>
 <td><p>63.77%</p></td>
 </tr>
-<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">OCUPACION</span></code></p></td>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">OCUPACION</span></code></p></td>
 <td><p>Alto porcentaje de valores nulos; no se considera una variable relevante en la explicación de patrones de mortalidad por cáncer de mama.</p></td>
 <td><p>52.44%</p></td>
 </tr>
@@ -1112,7 +1107,7 @@ Estas variables NO serán utilizadas en el enfoque de este estudio y, además, p
     <span class="s1">&#39;C_ANT3&#39;</span><span class="p">,</span> <span class="s1">&#39;C_PAT1&#39;</span><span class="p">,</span>
 
     <span class="c1"># 3. Variables no relevantes para el estudio</span>
-    <span class="s1">&#39;A_DEFUN&#39;</span><span class="p">,</span> <span class="s1">&#39;ANO&#39;</span><span class="p">,</span> <span class="s1">&#39;AREA_RES&#39;</span><span class="p">,</span> <span class="s1">&#39;C_ANT2&#39;</span><span class="p">,</span> <span class="s1">&#39;COD_INST&#39;</span><span class="p">,</span> <span class="s1">&#39;CODMUNRE&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;A_DEFUN&#39;</span><span class="p">,</span> <span class="s1">&#39;ANO&#39;</span><span class="p">,</span> <span class="s1">&#39;AREA_RES&#39;</span><span class="p">,</span> <span class="s1">&#39;C_ANT2&#39;</span><span class="p">,</span> <span class="s1">&#39;COD_INST&#39;</span><span class="p">,</span>
     <span class="s1">&#39;CODPRES&#39;</span><span class="p">,</span> <span class="s1">&#39;CONS_EXP&#39;</span><span class="p">,</span> <span class="s1">&#39;IDCLASADMI&#39;</span><span class="p">,</span> <span class="s1">&#39;IDPERTET&#39;</span><span class="p">,</span> <span class="s1">&#39;IDPROFCER&#39;</span><span class="p">,</span>
     <span class="s1">&#39;NOM_INST&#39;</span><span class="p">,</span> <span class="s1">&#39;OCUPACION&#39;</span><span class="p">,</span> <span class="s1">&#39;C_ANT1&#39;</span><span class="p">,</span> <span class="s1">&#39;C_DIR1&#39;</span>
 <span class="p">])</span>
@@ -1127,7 +1122,7 @@ Estas variables NO serán utilizadas en el enfoque de este estudio y, además, p
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(78481, 17)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(78481, 18)
 </pre></div>
 </div>
 </div>
@@ -1141,11 +1136,12 @@ Estas variables NO serán utilizadas en el enfoque de este estudio y, además, p
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">{</span>
     <span class="s1">&#39;COD_DPTO&#39;</span><span class="p">:</span> <span class="s1">&#39;depto_ocurr&#39;</span><span class="p">,</span>       <span class="c1"># Departamento donde ocurrió la defunción (DIVIPOLA)</span>
     <span class="s1">&#39;COD_MUNIC&#39;</span><span class="p">:</span> <span class="s1">&#39;munic_ocurr&#39;</span><span class="p">,</span>      <span class="c1"># Municipio donde ocurrió la defunción (DIVIPOLA)</span>
+    <span class="s1">&#39;CODMUNRE&#39;</span><span class="p">:</span> <span class="s1">&#39;munic_res&#39;</span><span class="p">,</span>        <span class="c1"># Municipio de residencia del fallecido (DIVIPOLA)</span>
     <span class="s1">&#39;MES&#39;</span><span class="p">:</span> <span class="s1">&#39;mes_def&#39;</span><span class="p">,</span>                <span class="c1"># Mes de la defunción</span>
     <span class="s1">&#39;SEXO&#39;</span><span class="p">:</span> <span class="s1">&#39;sexo&#39;</span><span class="p">,</span>                  <span class="c1"># Sexo del fallecido</span>
     <span class="s1">&#39;GRU_ED1&#39;</span><span class="p">:</span> <span class="s1">&#39;grupo_edad&#39;</span><span class="p">,</span>         <span class="c1"># Grupo de edad del fallecido</span>
     <span class="s1">&#39;EST_CIVIL&#39;</span><span class="p">:</span> <span class="s1">&#39;estado_civil&#39;</span><span class="p">,</span>     <span class="c1"># Estado civil del fallecido</span>
-    <span class="s1">&#39;CODPTORE&#39;</span><span class="p">:</span> <span class="s1">&#39;grupo_etnico&#39;</span><span class="p">,</span>      <span class="c1"># Pertenencia étnica según cultura/pueblo/rasgos físicos (DIVIPOLA)</span>
+    <span class="s1">&#39;CODPTORE&#39;</span><span class="p">:</span> <span class="s1">&#39;depto_res&#39;</span><span class="p">,</span>      <span class="c1"># Departamento de residencia del fallecido (DIVIPOLA)</span>
     <span class="s1">&#39;SIT_DEFUN&#39;</span><span class="p">:</span> <span class="s1">&#39;sitio_def&#39;</span><span class="p">,</span>        <span class="c1"># Sitio donde ocurrió la defunción</span>
     <span class="s1">&#39;C_BAS1&#39;</span><span class="p">:</span> <span class="s1">&#39;causa_basica&#39;</span><span class="p">,</span>        <span class="c1"># Código de la causa básica de la defunción</span>
     <span class="s1">&#39;PMAN_MUER&#39;</span><span class="p">:</span> <span class="s1">&#39;prob_muerte&#39;</span><span class="p">,</span>      <span class="c1"># Probable manera de muerte</span>
@@ -1192,7 +1188,8 @@ Estas variables NO serán utilizadas en el enfoque de este estudio y, además, p
       <th>sexo</th>
       <th>grupo_edad</th>
       <th>estado_civil</th>
-      <th>grupo_etnico</th>
+      <th>depto_res</th>
+      <th>munic_res</th>
       <th>sitio_def</th>
       <th>causa_basica</th>
       <th>prob_muerte</th>
@@ -1215,6 +1212,7 @@ Estas variables NO serán utilizadas en el enfoque de este estudio y, además, p
       <td>16</td>
       <td>2</td>
       <td>50</td>
+      <td>001</td>
       <td>2</td>
       <td>1749</td>
       <td>NaN</td>
@@ -1235,6 +1233,7 @@ Estas variables NO serán utilizadas en el enfoque de este estudio y, además, p
       <td>24</td>
       <td>1</td>
       <td>15</td>
+      <td>861</td>
       <td>2</td>
       <td>1749</td>
       <td>NaN</td>
@@ -1255,6 +1254,7 @@ Estas variables NO serán utilizadas en el enfoque de este estudio y, además, p
       <td>17</td>
       <td>2</td>
       <td>50</td>
+      <td>573</td>
       <td>2</td>
       <td>1749</td>
       <td>NaN</td>
@@ -1275,6 +1275,7 @@ Estas variables NO serán utilizadas en el enfoque de este estudio y, además, p
       <td>14</td>
       <td>2</td>
       <td>41</td>
+      <td>001</td>
       <td>1</td>
       <td>1749</td>
       <td>NaN</td>
@@ -1295,6 +1296,7 @@ Estas variables NO serán utilizadas en el enfoque de este estudio y, además, p
       <td>22</td>
       <td>2</td>
       <td>41</td>
+      <td>001</td>
       <td>2</td>
       <td>1749</td>
       <td>NaN</td>
@@ -1318,9 +1320,9 @@ Estas variables NO serán utilizadas en el enfoque de este estudio y, además, p
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><div>                            <div id="e665094a-ebd4-4fc2-9e29-f41de4e0d6f0" class="plotly-graph-div" style="height:525px; width:100%;"></div>            <script type="text/javascript">                require(["plotly"], function(Plotly) {                    window.PLOTLYENV=window.PLOTLYENV || {};                                    if (document.getElementById("e665094a-ebd4-4fc2-9e29-f41de4e0d6f0")) {                    Plotly.newPlot(                        "e665094a-ebd4-4fc2-9e29-f41de4e0d6f0",                        [{"alignmentgroup":"True","hovertemplate":"index=%{x}\u003cbr\u003ePorcentaje de Datos Faltantes (%)=%{y}\u003cbr\u003etext=%{text}\u003cbr\u003ecolor=%{marker.color}\u003cextra\u003e\u003c\u002fextra\u003e","legendgroup":"","marker":{"color":[73.8611893324499,44.622265261655684,39.7484741529797,38.57621589938966,16.488067175494706,16.488067175494706,16.488067175494706,0.05351613766389317,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0],"coloraxis":"coloraxis","pattern":{"shape":""}},"name":"","offsetgroup":"","orientation":"v","showlegend":false,"text":[73.86,44.62,39.75,38.58,16.49,16.49,16.49,0.05,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0],"textposition":"outside","x":["cert_medica","causa_ops","ent_salud_cod","prob_muerte","asistencia_med","seg_social","nivel_edu","grupo_etnico","depto_ocurr","causa_basica","munic_ocurr","sitio_def","estado_civil","grupo_edad","sexo","mes_def","año_def"],"xaxis":"x","y":[73.8611893324499,44.622265261655684,39.7484741529797,38.57621589938966,16.488067175494706,16.488067175494706,16.488067175494706,0.05351613766389317,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0],"yaxis":"y","type":"bar"}],                        {"template":{"data":{"histogram2dcontour":[{"type":"histogram2dcontour","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"choropleth":[{"type":"choropleth","colorbar":{"outlinewidth":0,"ticks":""}}],"histogram2d":[{"type":"histogram2d","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"heatmap":[{"type":"heatmap","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"heatmapgl":[{"type":"heatmapgl","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"contourcarpet":[{"type":"contourcarpet","colorbar":{"outlinewidth":0,"ticks":""}}],"contour":[{"type":"contour","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"surface":[{"type":"surface","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"mesh3d":[{"type":"mesh3d","colorbar":{"outlinewidth":0,"ticks":""}}],"scatter":[{"fillpattern":{"fillmode":"overlay","size":10,"solidity":0.2},"type":"scatter"}],"parcoords":[{"type":"parcoords","line":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterpolargl":[{"type":"scatterpolargl","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"bar":[{"error_x":{"color":"#2a3f5f"},"error_y":{"color":"#2a3f5f"},"marker":{"line":{"color":"#E5ECF6","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"bar"}],"scattergeo":[{"type":"scattergeo","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterpolar":[{"type":"scatterpolar","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"histogram":[{"marker":{"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"histogram"}],"scattergl":[{"type":"scattergl","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatter3d":[{"type":"scatter3d","line":{"colorbar":{"outlinewidth":0,"ticks":""}},"marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattermapbox":[{"type":"scattermapbox","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterternary":[{"type":"scatterternary","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattercarpet":[{"type":"scattercarpet","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"carpet":[{"aaxis":{"endlinecolor":"#2a3f5f","gridcolor":"white","linecolor":"white","minorgridcolor":"white","startlinecolor":"#2a3f5f"},"baxis":{"endlinecolor":"#2a3f5f","gridcolor":"white","linecolor":"white","minorgridcolor":"white","startlinecolor":"#2a3f5f"},"type":"carpet"}],"table":[{"cells":{"fill":{"color":"#EBF0F8"},"line":{"color":"white"}},"header":{"fill":{"color":"#C8D4E3"},"line":{"color":"white"}},"type":"table"}],"barpolar":[{"marker":{"line":{"color":"#E5ECF6","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"barpolar"}],"pie":[{"automargin":true,"type":"pie"}]},"layout":{"autotypenumbers":"strict","colorway":["#636efa","#EF553B","#00cc96","#ab63fa","#FFA15A","#19d3f3","#FF6692","#B6E880","#FF97FF","#FECB52"],"font":{"color":"#2a3f5f"},"hovermode":"closest","hoverlabel":{"align":"left"},"paper_bgcolor":"white","plot_bgcolor":"#E5ECF6","polar":{"bgcolor":"#E5ECF6","angularaxis":{"gridcolor":"white","linecolor":"white","ticks":""},"radialaxis":{"gridcolor":"white","linecolor":"white","ticks":""}},"ternary":{"bgcolor":"#E5ECF6","aaxis":{"gridcolor":"white","linecolor":"white","ticks":""},"baxis":{"gridcolor":"white","linecolor":"white","ticks":""},"caxis":{"gridcolor":"white","linecolor":"white","ticks":""}},"coloraxis":{"colorbar":{"outlinewidth":0,"ticks":""}},"colorscale":{"sequential":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"sequentialminus":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"diverging":[[0,"#8e0152"],[0.1,"#c51b7d"],[0.2,"#de77ae"],[0.3,"#f1b6da"],[0.4,"#fde0ef"],[0.5,"#f7f7f7"],[0.6,"#e6f5d0"],[0.7,"#b8e186"],[0.8,"#7fbc41"],[0.9,"#4d9221"],[1,"#276419"]]},"xaxis":{"gridcolor":"white","linecolor":"white","ticks":"","title":{"standoff":15},"zerolinecolor":"white","automargin":true,"zerolinewidth":2},"yaxis":{"gridcolor":"white","linecolor":"white","ticks":"","title":{"standoff":15},"zerolinecolor":"white","automargin":true,"zerolinewidth":2},"scene":{"xaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2},"yaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2},"zaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2}},"shapedefaults":{"line":{"color":"#2a3f5f"}},"annotationdefaults":{"arrowcolor":"#2a3f5f","arrowhead":0,"arrowwidth":1},"geo":{"bgcolor":"white","landcolor":"#E5ECF6","subunitcolor":"white","showland":true,"showlakes":true,"lakecolor":"white"},"title":{"x":0.05},"mapbox":{"style":"light"}}},"xaxis":{"anchor":"y","domain":[0.0,1.0],"title":{"text":"Variables"},"tickangle":-45},"yaxis":{"anchor":"x","domain":[0.0,1.0],"title":{"text":"Porcentaje de Datos Faltantes"},"range":[0,83.8611893324499]},"coloraxis":{"colorbar":{"title":{"text":"color"}},"colorscale":[[0.0,"#F8BBD0"],[0.25,"#F48FB1"],[0.5,"#F06292"],[0.75,"#EC407A"],[1.0,"#D81B60"]]},"legend":{"tracegroupgap":0},"title":{"text":"Porcentaje de Datos Faltantes por Variable","font":{"size":22,"family":"Bahnschrift","color":"black"}},"barmode":"relative","font":{"family":"Bahnschrift","size":14,"color":"black"},"plot_bgcolor":"white","paper_bgcolor":"white"},                        {"responsive": true}                    ).then(function(){
+<div class="output text_html"><div>                            <div id="16922bca-0d7d-4192-b553-d5f5e3806eea" class="plotly-graph-div" style="height:525px; width:100%;"></div>            <script type="text/javascript">                require(["plotly"], function(Plotly) {                    window.PLOTLYENV=window.PLOTLYENV || {};                                    if (document.getElementById("16922bca-0d7d-4192-b553-d5f5e3806eea")) {                    Plotly.newPlot(                        "16922bca-0d7d-4192-b553-d5f5e3806eea",                        [{"alignmentgroup":"True","hovertemplate":"index=%{x}\u003cbr\u003ePorcentaje de Datos Faltantes (%)=%{y}\u003cbr\u003etext=%{text}\u003cbr\u003ecolor=%{marker.color}\u003cextra\u003e\u003c\u002fextra\u003e","legendgroup":"","marker":{"color":[73.8611893324499,44.622265261655684,39.7484741529797,38.57621589938966,16.488067175494706,16.488067175494706,16.488067175494706,0.05351613766389317,0.05351613766389317,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0],"coloraxis":"coloraxis","pattern":{"shape":""}},"name":"","offsetgroup":"","orientation":"v","showlegend":false,"text":[73.86,44.62,39.75,38.58,16.49,16.49,16.49,0.05,0.05,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0],"textposition":"outside","x":["cert_medica","causa_ops","ent_salud_cod","prob_muerte","asistencia_med","seg_social","nivel_edu","depto_res","munic_res","depto_ocurr","causa_basica","munic_ocurr","sitio_def","estado_civil","grupo_edad","sexo","mes_def","año_def"],"xaxis":"x","y":[73.8611893324499,44.622265261655684,39.7484741529797,38.57621589938966,16.488067175494706,16.488067175494706,16.488067175494706,0.05351613766389317,0.05351613766389317,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0],"yaxis":"y","type":"bar"}],                        {"template":{"data":{"histogram2dcontour":[{"type":"histogram2dcontour","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"choropleth":[{"type":"choropleth","colorbar":{"outlinewidth":0,"ticks":""}}],"histogram2d":[{"type":"histogram2d","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"heatmap":[{"type":"heatmap","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"heatmapgl":[{"type":"heatmapgl","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"contourcarpet":[{"type":"contourcarpet","colorbar":{"outlinewidth":0,"ticks":""}}],"contour":[{"type":"contour","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"surface":[{"type":"surface","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"mesh3d":[{"type":"mesh3d","colorbar":{"outlinewidth":0,"ticks":""}}],"scatter":[{"fillpattern":{"fillmode":"overlay","size":10,"solidity":0.2},"type":"scatter"}],"parcoords":[{"type":"parcoords","line":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterpolargl":[{"type":"scatterpolargl","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"bar":[{"error_x":{"color":"#2a3f5f"},"error_y":{"color":"#2a3f5f"},"marker":{"line":{"color":"#E5ECF6","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"bar"}],"scattergeo":[{"type":"scattergeo","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterpolar":[{"type":"scatterpolar","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"histogram":[{"marker":{"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"histogram"}],"scattergl":[{"type":"scattergl","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatter3d":[{"type":"scatter3d","line":{"colorbar":{"outlinewidth":0,"ticks":""}},"marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattermapbox":[{"type":"scattermapbox","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterternary":[{"type":"scatterternary","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattercarpet":[{"type":"scattercarpet","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"carpet":[{"aaxis":{"endlinecolor":"#2a3f5f","gridcolor":"white","linecolor":"white","minorgridcolor":"white","startlinecolor":"#2a3f5f"},"baxis":{"endlinecolor":"#2a3f5f","gridcolor":"white","linecolor":"white","minorgridcolor":"white","startlinecolor":"#2a3f5f"},"type":"carpet"}],"table":[{"cells":{"fill":{"color":"#EBF0F8"},"line":{"color":"white"}},"header":{"fill":{"color":"#C8D4E3"},"line":{"color":"white"}},"type":"table"}],"barpolar":[{"marker":{"line":{"color":"#E5ECF6","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"barpolar"}],"pie":[{"automargin":true,"type":"pie"}]},"layout":{"autotypenumbers":"strict","colorway":["#636efa","#EF553B","#00cc96","#ab63fa","#FFA15A","#19d3f3","#FF6692","#B6E880","#FF97FF","#FECB52"],"font":{"color":"#2a3f5f"},"hovermode":"closest","hoverlabel":{"align":"left"},"paper_bgcolor":"white","plot_bgcolor":"#E5ECF6","polar":{"bgcolor":"#E5ECF6","angularaxis":{"gridcolor":"white","linecolor":"white","ticks":""},"radialaxis":{"gridcolor":"white","linecolor":"white","ticks":""}},"ternary":{"bgcolor":"#E5ECF6","aaxis":{"gridcolor":"white","linecolor":"white","ticks":""},"baxis":{"gridcolor":"white","linecolor":"white","ticks":""},"caxis":{"gridcolor":"white","linecolor":"white","ticks":""}},"coloraxis":{"colorbar":{"outlinewidth":0,"ticks":""}},"colorscale":{"sequential":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"sequentialminus":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"diverging":[[0,"#8e0152"],[0.1,"#c51b7d"],[0.2,"#de77ae"],[0.3,"#f1b6da"],[0.4,"#fde0ef"],[0.5,"#f7f7f7"],[0.6,"#e6f5d0"],[0.7,"#b8e186"],[0.8,"#7fbc41"],[0.9,"#4d9221"],[1,"#276419"]]},"xaxis":{"gridcolor":"white","linecolor":"white","ticks":"","title":{"standoff":15},"zerolinecolor":"white","automargin":true,"zerolinewidth":2},"yaxis":{"gridcolor":"white","linecolor":"white","ticks":"","title":{"standoff":15},"zerolinecolor":"white","automargin":true,"zerolinewidth":2},"scene":{"xaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2},"yaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2},"zaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2}},"shapedefaults":{"line":{"color":"#2a3f5f"}},"annotationdefaults":{"arrowcolor":"#2a3f5f","arrowhead":0,"arrowwidth":1},"geo":{"bgcolor":"white","landcolor":"#E5ECF6","subunitcolor":"white","showland":true,"showlakes":true,"lakecolor":"white"},"title":{"x":0.05},"mapbox":{"style":"light"}}},"xaxis":{"anchor":"y","domain":[0.0,1.0],"title":{"text":"Variables"},"tickangle":-45},"yaxis":{"anchor":"x","domain":[0.0,1.0],"title":{"text":"Porcentaje de Datos Faltantes"},"range":[0,83.8611893324499]},"coloraxis":{"colorbar":{"title":{"text":"color"}},"colorscale":[[0.0,"#F8BBD0"],[0.25,"#F48FB1"],[0.5,"#F06292"],[0.75,"#EC407A"],[1.0,"#D81B60"]]},"legend":{"tracegroupgap":0},"title":{"text":"Porcentaje de Datos Faltantes por Variable","font":{"size":22,"family":"Bahnschrift","color":"black"}},"barmode":"relative","font":{"family":"Bahnschrift","size":14,"color":"black"},"plot_bgcolor":"white","paper_bgcolor":"white"},                        {"responsive": true}                    ).then(function(){
                             
-var gd = document.getElementById('e665094a-ebd4-4fc2-9e29-f41de4e0d6f0');
+var gd = document.getElementById('16922bca-0d7d-4192-b553-d5f5e3806eea');
 var x = new MutationObserver(function (mutations, observer) {{
         var display = window.getComputedStyle(gd).display;
         if (!display || display === 'none') {{
@@ -1492,10 +1494,10 @@ Name: count, dtype: int64
 </div>
 <div class="cell_output docutils container">
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>estado_civil
-Casado                          24499
-Soltero                         19992
-Unión Libre, Divorciado/Otro    18535
-Viudo                           15455
+Casado                          24581
+Soltero                         20079
+Unión Libre, Divorciado/Otro    18309
+Viudo                           15512
 Name: count, dtype: int64
 </pre></div>
 </div>
@@ -1861,69 +1863,6 @@ Name: count, dtype: int64
 </div>
 </div>
 </section>
-<section id="variable-grupo-etnico">
-<h4><strong>Variable: Grupo étnico</strong><a class="headerlink" href="#variable-grupo-etnico" title="Link to this heading">#</a></h4>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;grupo_etnico&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">(</span><span class="n">dropna</span> <span class="o">=</span> <span class="kc">False</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>grupo_etnico
-11      14593
-05      11857
-76      10926
-08       5221
-68       4017
-25       3605
-13       2968
-73       2389
-54       2246
-17       2127
-66       2093
-15       1607
-23       1561
-52       1501
-41       1434
-19       1400
-47       1347
-63       1226
-50       1199
-20       1112
-70        983
-44        423
-18        407
-85        305
-47.0      284
-81        255
-41.0      254
-27        252
-01        246
-86        177
-44.0      134
-88        125
-75         49
-95         45
-NaN        42
-91         28
-99         25
-94         13
-97          5
-Name: count, dtype: int64
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="s1">&#39;grupo_etnico&#39;</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-<p>Dada la cantidad de códigos diferentes asociados al grupo étnico y al desconocimiento de la información proveniente y relevante de esta variable, se decide eliminar.</p>
-</section>
 <section id="variable-causa-basica">
 <h4><strong>Variable: Causa básica</strong><a class="headerlink" href="#variable-causa-basica" title="Link to this heading">#</a></h4>
 <p>En esta variable se utilizan los códigos CIE-10 y CIE-9 para asociar las distintas causas de muerte relacionadas con la enfermedad del cáncer de mama. Estos códigos permiten identificar y clasificar de manera estandarizada las causas médicas registradas en los certificados de defunción.</p>
@@ -2167,19 +2106,19 @@ memory usage: 503.5+ KB
 
 <span class="n">regiones</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Amazonía&#39;</span><span class="p">,</span> <span class="s1">&#39;Andina&#39;</span><span class="p">,</span> <span class="s1">&#39;Caribe&#39;</span><span class="p">,</span> <span class="s1">&#39;Orinoquía&#39;</span><span class="p">,</span> <span class="s1">&#39;Pacífica&#39;</span><span class="p">]</span>
 
-<span class="n">data</span><span class="p">[</span><span class="s1">&#39;region&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">select</span><span class="p">(</span><span class="n">condiciones</span><span class="p">,</span> <span class="n">regiones</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="s1">&#39;Otra&#39;</span><span class="p">)</span>
+<span class="n">data</span><span class="p">[</span><span class="s1">&#39;region_Def&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">select</span><span class="p">(</span><span class="n">condiciones</span><span class="p">,</span> <span class="n">regiones</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="s1">&#39;Otra&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;region&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">(</span><span class="n">dropna</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;region_Def&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">(</span><span class="n">dropna</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>region
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>region_Def
 Andina       48416
 Caribe       14026
 Pacífica     13947
@@ -2234,6 +2173,7 @@ Name: count, dtype: int64
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span><span class="p">[</span><span class="s2">&quot;municipio&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s2">&quot;depto_ocurr&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">str</span><span class="p">)</span> <span class="o">+</span> <span class="n">data</span><span class="p">[</span><span class="s2">&quot;munic_ocurr&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">str</span><span class="p">)</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">zfill</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+<span class="n">data</span><span class="p">[</span><span class="s1">&#39;municipio_res&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;depto_res&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">str</span><span class="p">)</span> <span class="o">+</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;munic_res&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">str</span><span class="p">)</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">zfill</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -2243,9 +2183,11 @@ Name: count, dtype: int64
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">departamento_dict</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="nb">zip</span><span class="p">(</span><span class="n">data2</span><span class="p">[</span><span class="s1">&#39;Código Departamento&#39;</span><span class="p">],</span> <span class="n">data2</span><span class="p">[</span><span class="s1">&#39;Nombre Departamento&#39;</span><span class="p">]))</span>
 <span class="n">municipio_dict</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="nb">zip</span><span class="p">(</span><span class="n">data2</span><span class="p">[</span><span class="s1">&#39;Código Municipio&#39;</span><span class="p">],</span> <span class="n">data2</span><span class="p">[</span><span class="s1">&#39;Nombre Municipio&#39;</span><span class="p">]))</span>
-<span class="n">data</span><span class="p">[</span><span class="s1">&#39;Nombre_Departamento&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;depto_ocurr&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="n">departamento_dict</span><span class="p">)</span>
-<span class="n">data</span><span class="p">[</span><span class="s1">&#39;Nombre_Municipio&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;municipio&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="n">municipio_dict</span><span class="p">)</span>
-<span class="n">data</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;munic_ocurr&#39;</span><span class="p">,</span> <span class="s1">&#39;depto_ocurr&#39;</span><span class="p">])</span> 
+<span class="n">data</span><span class="p">[</span><span class="s1">&#39;Nombre_Departamento_Def&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;depto_ocurr&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="n">departamento_dict</span><span class="p">)</span>
+<span class="n">data</span><span class="p">[</span><span class="s1">&#39;Nombre_Municipio_Def&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;municipio&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="n">municipio_dict</span><span class="p">)</span>
+<span class="n">data</span><span class="p">[</span><span class="s1">&#39;Nombre_Departamento_Res&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;depto_res&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="n">departamento_dict</span><span class="p">)</span>
+<span class="n">data</span><span class="p">[</span><span class="s1">&#39;Nombre_Municipio_Res&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;municipio_res&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="n">municipio_dict</span><span class="p">)</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;munic_ocurr&#39;</span><span class="p">,</span> <span class="s1">&#39;depto_ocurr&#39;</span><span class="p">,</span> <span class="s1">&#39;depto_res&#39;</span><span class="p">,</span> <span class="s1">&#39;munic_res&#39;</span><span class="p">])</span> 
 <span class="n">data</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 </pre></div>
 </div>
@@ -2279,10 +2221,13 @@ Name: count, dtype: int64
       <th>seg_social</th>
       <th>asistencia_med</th>
       <th>año_def</th>
-      <th>region</th>
+      <th>region_Def</th>
       <th>municipio</th>
-      <th>Nombre_Departamento</th>
-      <th>Nombre_Municipio</th>
+      <th>municipio_res</th>
+      <th>Nombre_Departamento_Def</th>
+      <th>Nombre_Municipio_Def</th>
+      <th>Nombre_Departamento_Res</th>
+      <th>Nombre_Municipio_Res</th>
     </tr>
   </thead>
   <tbody>
@@ -2300,6 +2245,9 @@ Name: count, dtype: int64
       <td>1985</td>
       <td>Orinoquía</td>
       <td>50001</td>
+      <td>50001</td>
+      <td>META</td>
+      <td>VILLAVICENCIO</td>
       <td>META</td>
       <td>VILLAVICENCIO</td>
     </tr>
@@ -2317,6 +2265,9 @@ Name: count, dtype: int64
       <td>1985</td>
       <td>Andina</td>
       <td>15861</td>
+      <td>15861</td>
+      <td>BOYACÁ</td>
+      <td>VENTAQUEMADA</td>
       <td>BOYACÁ</td>
       <td>VENTAQUEMADA</td>
     </tr>
@@ -2334,6 +2285,9 @@ Name: count, dtype: int64
       <td>1985</td>
       <td>Orinoquía</td>
       <td>50573</td>
+      <td>50573</td>
+      <td>META</td>
+      <td>PUERTO LÓPEZ</td>
       <td>META</td>
       <td>PUERTO LÓPEZ</td>
     </tr>
@@ -2351,6 +2305,9 @@ Name: count, dtype: int64
       <td>1985</td>
       <td>Andina</td>
       <td>41001</td>
+      <td>41001</td>
+      <td>HUILA</td>
+      <td>NEIVA</td>
       <td>HUILA</td>
       <td>NEIVA</td>
     </tr>
@@ -2368,6 +2325,9 @@ Name: count, dtype: int64
       <td>1985</td>
       <td>Andina</td>
       <td>41001</td>
+      <td>41001</td>
+      <td>HUILA</td>
+      <td>NEIVA</td>
       <td>HUILA</td>
       <td>NEIVA</td>
     </tr>
@@ -2384,25 +2344,28 @@ Name: count, dtype: int64
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;class &#39;pandas.core.frame.DataFrame&#39;&gt;
 RangeIndex: 78481 entries, 0 to 78480
-Data columns (total 14 columns):
- #   Column               Non-Null Count  Dtype 
----  ------               --------------  ----- 
- 0   mes_def              78481 non-null  object
- 1   sexo                 78481 non-null  object
- 2   grupo_edad           78481 non-null  object
- 3   estado_civil         78481 non-null  object
- 4   sitio_def            78481 non-null  object
- 5   causa_basica         78481 non-null  object
- 6   nivel_edu            78481 non-null  object
- 7   seg_social           78481 non-null  object
- 8   asistencia_med       78481 non-null  object
- 9   año_def              78481 non-null  object
- 10  region               78481 non-null  object
- 11  municipio            78481 non-null  object
- 12  Nombre_Departamento  78481 non-null  object
- 13  Nombre_Municipio     78479 non-null  object
-dtypes: object(14)
-memory usage: 8.4+ MB
+Data columns (total 17 columns):
+ #   Column                   Non-Null Count  Dtype 
+---  ------                   --------------  ----- 
+ 0   mes_def                  78481 non-null  object
+ 1   sexo                     78481 non-null  object
+ 2   grupo_edad               78481 non-null  object
+ 3   estado_civil             78481 non-null  object
+ 4   sitio_def                78481 non-null  object
+ 5   causa_basica             78481 non-null  object
+ 6   nivel_edu                78481 non-null  object
+ 7   seg_social               78481 non-null  object
+ 8   asistencia_med           78481 non-null  object
+ 9   año_def                  78481 non-null  object
+ 10  region_Def               78481 non-null  object
+ 11  municipio                78481 non-null  object
+ 12  municipio_res            78481 non-null  object
+ 13  Nombre_Departamento_Def  78481 non-null  object
+ 14  Nombre_Municipio_Def     78479 non-null  object
+ 15  Nombre_Departamento_Res  77472 non-null  object
+ 16  Nombre_Municipio_Res     66719 non-null  object
+dtypes: object(17)
+memory usage: 10.2+ MB
 </pre></div>
 </div>
 </div>
@@ -2410,7 +2373,7 @@ memory usage: 8.4+ MB
 <p>Vemos que en la columna de <code class="docutils literal notranslate"><span class="pre">Nombre_Municipio</span></code> hay dos datos faltantes. Veamos a que se debe esto.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span><span class="p">[</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;Nombre_Municipio&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">isna</span><span class="p">()]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span><span class="p">[</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;Nombre_Municipio_Def&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">isna</span><span class="p">()]</span>
 </pre></div>
 </div>
 </div>
@@ -2443,10 +2406,13 @@ memory usage: 8.4+ MB
       <th>seg_social</th>
       <th>asistencia_med</th>
       <th>año_def</th>
-      <th>region</th>
+      <th>region_Def</th>
       <th>municipio</th>
-      <th>Nombre_Departamento</th>
-      <th>Nombre_Municipio</th>
+      <th>municipio_res</th>
+      <th>Nombre_Departamento_Def</th>
+      <th>Nombre_Municipio_Def</th>
+      <th>Nombre_Departamento_Res</th>
+      <th>Nombre_Municipio_Res</th>
     </tr>
   </thead>
   <tbody>
@@ -2464,8 +2430,11 @@ memory usage: 8.4+ MB
       <td>1988</td>
       <td>Orinoquía</td>
       <td>99496</td>
+      <td>85325</td>
       <td>VICHADA</td>
       <td>NaN</td>
+      <td>CASANARE</td>
+      <td>SAN LUIS DE PALENQUE</td>
     </tr>
     <tr>
       <th>3126</th>
@@ -2481,6 +2450,9 @@ memory usage: 8.4+ MB
       <td>1989</td>
       <td>Amazonía</td>
       <td>18765</td>
+      <td>18765</td>
+      <td>CAQUETÁ</td>
+      <td>NaN</td>
       <td>CAQUETÁ</td>
       <td>NaN</td>
     </tr>
@@ -2504,25 +2476,28 @@ memory usage: 8.4+ MB
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;class &#39;pandas.core.frame.DataFrame&#39;&gt;
 Index: 78479 entries, 0 to 78480
-Data columns (total 14 columns):
- #   Column               Non-Null Count  Dtype 
----  ------               --------------  ----- 
- 0   mes_def              78479 non-null  object
- 1   sexo                 78479 non-null  object
- 2   grupo_edad           78479 non-null  object
- 3   estado_civil         78479 non-null  object
- 4   sitio_def            78479 non-null  object
- 5   causa_basica         78479 non-null  object
- 6   nivel_edu            78479 non-null  object
- 7   seg_social           78479 non-null  object
- 8   asistencia_med       78479 non-null  object
- 9   año_def              78479 non-null  object
- 10  region               78479 non-null  object
- 11  municipio            78479 non-null  object
- 12  Nombre_Departamento  78479 non-null  object
- 13  Nombre_Municipio     78479 non-null  object
-dtypes: object(14)
-memory usage: 9.0+ MB
+Data columns (total 17 columns):
+ #   Column                   Non-Null Count  Dtype 
+---  ------                   --------------  ----- 
+ 0   mes_def                  78479 non-null  object
+ 1   sexo                     78479 non-null  object
+ 2   grupo_edad               78479 non-null  object
+ 3   estado_civil             78479 non-null  object
+ 4   sitio_def                78479 non-null  object
+ 5   causa_basica             78479 non-null  object
+ 6   nivel_edu                78479 non-null  object
+ 7   seg_social               78479 non-null  object
+ 8   asistencia_med           78479 non-null  object
+ 9   año_def                  78479 non-null  object
+ 10  region_Def               78479 non-null  object
+ 11  municipio                78479 non-null  object
+ 12  municipio_res            78479 non-null  object
+ 13  Nombre_Departamento_Def  78479 non-null  object
+ 14  Nombre_Municipio_Def     78479 non-null  object
+ 15  Nombre_Departamento_Res  77470 non-null  object
+ 16  Nombre_Municipio_Res     66718 non-null  object
+dtypes: object(17)
+memory usage: 10.8+ MB
 </pre></div>
 </div>
 </div>
@@ -2532,10 +2507,26 @@ memory usage: 9.0+ MB
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">columnas_ordenadas</span> <span class="o">=</span> <span class="p">[</span>
-    <span class="s1">&#39;region&#39;</span><span class="p">,</span> <span class="s1">&#39;Nombre_Departamento&#39;</span><span class="p">,</span> <span class="s1">&#39;Nombre_Municipio&#39;</span><span class="p">,</span> <span class="s1">&#39;sitio_def&#39;</span><span class="p">,</span> <span class="s1">&#39;año_def&#39;</span><span class="p">,</span> 
+    <span class="s1">&#39;region_Def&#39;</span><span class="p">,</span> <span class="s1">&#39;Nombre_Departamento_Def&#39;</span><span class="p">,</span> <span class="s1">&#39;Nombre_Municipio_Def&#39;</span><span class="p">,</span> <span class="s1">&#39;Nombre_Departamento_Res&#39;</span><span class="p">,</span> <span class="s1">&#39;Nombre_Municipio_Res&#39;</span><span class="p">,</span> <span class="s1">&#39;sitio_def&#39;</span><span class="p">,</span> <span class="s1">&#39;año_def&#39;</span><span class="p">,</span> 
     <span class="s1">&#39;mes_def&#39;</span><span class="p">,</span> <span class="s1">&#39;sexo&#39;</span><span class="p">,</span> <span class="s1">&#39;estado_civil&#39;</span><span class="p">,</span> <span class="s1">&#39;grupo_edad&#39;</span><span class="p">,</span> <span class="s1">&#39;nivel_edu&#39;</span><span class="p">,</span> <span class="s1">&#39;seg_social&#39;</span><span class="p">,</span>  <span class="s1">&#39;asistencia_med&#39;</span><span class="p">,</span>
   <span class="s1">&#39;causa_basica&#39;</span><span class="p">]</span>
 <span class="n">data_new</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="n">columnas_ordenadas</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data_new</span><span class="p">[</span><span class="s1">&#39;Nombre_Departamento_Res&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">data_new</span><span class="p">[</span><span class="s1">&#39;Nombre_Departamento_Res&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="n">data_new</span><span class="p">[</span><span class="s1">&#39;Nombre_Departamento_Def&#39;</span><span class="p">])</span>
+<span class="n">capitales</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;AMAZONAS&quot;</span><span class="p">:</span> <span class="s2">&quot;LETICIA&quot;</span><span class="p">,</span><span class="s2">&quot;ANTIOQUIA&quot;</span><span class="p">:</span> <span class="s2">&quot;MEDELLÍN&quot;</span><span class="p">,</span><span class="s2">&quot;ARAUCA&quot;</span><span class="p">:</span> <span class="s2">&quot;ARAUCA&quot;</span><span class="p">,</span>  <span class="s2">&quot;ATLÁNTICO&quot;</span><span class="p">:</span> <span class="s2">&quot;BARRANQUILLA&quot;</span><span class="p">,</span> <span class="s2">&quot;BOLÍVAR&quot;</span><span class="p">:</span> <span class="s2">&quot;CARTAGENA DE INDIAS&quot;</span><span class="p">,</span>
+<span class="s2">&quot;BOYACÁ&quot;</span><span class="p">:</span> <span class="s2">&quot;TUNJA&quot;</span><span class="p">,</span><span class="s2">&quot;CALDAS&quot;</span><span class="p">:</span> <span class="s2">&quot;MANIZALES&quot;</span><span class="p">,</span><span class="s2">&quot;CAQUETÁ&quot;</span><span class="p">:</span> <span class="s2">&quot;FLORENCIA&quot;</span><span class="p">,</span><span class="s2">&quot;CASANARE&quot;</span><span class="p">:</span> <span class="s2">&quot;YOPAL&quot;</span><span class="p">,</span> <span class="s2">&quot;CAUCA&quot;</span><span class="p">:</span> <span class="s2">&quot;POPAYÁN&quot;</span><span class="p">,</span><span class="s2">&quot;CESAR&quot;</span><span class="p">:</span> <span class="s2">&quot;VALLEDUPAR&quot;</span><span class="p">,</span> <span class="s2">&quot;CHOCÓ&quot;</span><span class="p">:</span> <span class="s2">&quot;QUIBDÓ&quot;</span><span class="p">,</span>
+<span class="s2">&quot;CÓRDOBA&quot;</span><span class="p">:</span> <span class="s2">&quot;MONTERÍA&quot;</span><span class="p">,</span><span class="s2">&quot;CUNDINAMARCA&quot;</span><span class="p">:</span> <span class="s2">&quot;BOGOTA DC&quot;</span><span class="p">,</span> <span class="s2">&quot;GUAINÍA&quot;</span><span class="p">:</span> <span class="s2">&quot;INÍRIDA&quot;</span><span class="p">,</span> <span class="s2">&quot;BOGOTA DC&quot;</span><span class="p">:</span><span class="s2">&quot;BOGOTA DC&quot;</span><span class="p">,</span> <span class="s2">&quot;GUAVIARE&quot;</span><span class="p">:</span> <span class="s2">&quot;SAN JOSÉ DEL GUAVIARE&quot;</span><span class="p">,</span> 
+<span class="s2">&quot;HUILA&quot;</span><span class="p">:</span> <span class="s2">&quot;NEIVA&quot;</span><span class="p">,</span> <span class="s2">&quot;LA GUAJIRA&quot;</span><span class="p">:</span> <span class="s2">&quot;RIOHACHA&quot;</span><span class="p">,</span> <span class="s2">&quot;MAGDALENA&quot;</span><span class="p">:</span> <span class="s2">&quot;SANTA MARTA&quot;</span><span class="p">,</span><span class="s2">&quot;META&quot;</span><span class="p">:</span> <span class="s2">&quot;VILLAVICENCIO&quot;</span><span class="p">,</span> <span class="s2">&quot;NARIÑO&quot;</span><span class="p">:</span> <span class="s2">&quot;PASTO&quot;</span><span class="p">,</span><span class="s2">&quot;NORTE DE SANTANDER&quot;</span><span class="p">:</span> <span class="s2">&quot;CÚCUTA&quot;</span><span class="p">,</span> 
+<span class="s2">&quot;PUTUMAYO&quot;</span><span class="p">:</span> <span class="s2">&quot;MOCOA&quot;</span><span class="p">,</span><span class="s2">&quot;QUINDIO&quot;</span><span class="p">:</span> <span class="s2">&quot;ARMENIA&quot;</span><span class="p">,</span><span class="s2">&quot;RISARALDA&quot;</span><span class="p">:</span> <span class="s2">&quot;PEREIRA&quot;</span><span class="p">,</span><span class="s2">&quot;SAN ANDRÉS&quot;</span><span class="p">:</span> <span class="s2">&quot;SAN ANDRÉS&quot;</span><span class="p">,</span><span class="s2">&quot;SANTANDER&quot;</span><span class="p">:</span> <span class="s2">&quot;BUCARAMANGA&quot;</span><span class="p">,</span><span class="s2">&quot;SUCRE&quot;</span><span class="p">:</span> <span class="s2">&quot;SINCELEJO&quot;</span><span class="p">,</span>
+<span class="s2">&quot;TOLIMA&quot;</span><span class="p">:</span> <span class="s2">&quot;IBAGUÉ&quot;</span><span class="p">,</span><span class="s2">&quot;VALLE DEL CAUCA&quot;</span><span class="p">:</span> <span class="s2">&quot;CALI&quot;</span><span class="p">,</span> <span class="s2">&quot;VAUPÉS&quot;</span><span class="p">:</span> <span class="s2">&quot;MITÚ&quot;</span><span class="p">,</span><span class="s2">&quot;VICHADA&quot;</span><span class="p">:</span> <span class="s2">&quot;PUERTO CARREÑO&quot;</span><span class="p">,</span>
+<span class="s2">&quot;ARCHIPIÉLAGO DE SAN ANDRÉS Y PROVIDENCIA Y SANTA CATALINA&quot;</span><span class="p">:</span> <span class="s2">&quot;SAN ANDRÉS&quot;</span>
+<span class="p">}</span>
+<span class="n">data_new</span><span class="p">[</span><span class="s1">&#39;Nombre_Municipio_Res&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">data_new</span><span class="p">[</span><span class="s1">&#39;Nombre_Municipio_Res&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="n">data_new</span><span class="p">[</span><span class="s1">&#39;Nombre_Departamento_Res&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="n">capitales</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
@@ -2565,9 +2556,11 @@ memory usage: 9.0+ MB
   <thead>
     <tr style="text-align: right;">
       <th></th>
-      <th>region</th>
-      <th>Nombre_Departamento</th>
-      <th>Nombre_Municipio</th>
+      <th>region_Def</th>
+      <th>Nombre_Departamento_Def</th>
+      <th>Nombre_Municipio_Def</th>
+      <th>Nombre_Departamento_Res</th>
+      <th>Nombre_Municipio_Res</th>
       <th>sitio_def</th>
       <th>año_def</th>
       <th>mes_def</th>
@@ -2586,6 +2579,8 @@ memory usage: 9.0+ MB
       <td>Orinoquía</td>
       <td>META</td>
       <td>VILLAVICENCIO</td>
+      <td>META</td>
+      <td>VILLAVICENCIO</td>
       <td>Casa</td>
       <td>1985</td>
       <td>Enero</td>
@@ -2600,6 +2595,8 @@ memory usage: 9.0+ MB
     <tr>
       <th>1</th>
       <td>Andina</td>
+      <td>BOYACÁ</td>
+      <td>VENTAQUEMADA</td>
       <td>BOYACÁ</td>
       <td>VENTAQUEMADA</td>
       <td>Casa</td>
@@ -2618,6 +2615,8 @@ memory usage: 9.0+ MB
       <td>Orinoquía</td>
       <td>META</td>
       <td>PUERTO LÓPEZ</td>
+      <td>META</td>
+      <td>PUERTO LÓPEZ</td>
       <td>Casa</td>
       <td>1985</td>
       <td>Enero</td>
@@ -2634,6 +2633,8 @@ memory usage: 9.0+ MB
       <td>Andina</td>
       <td>HUILA</td>
       <td>NEIVA</td>
+      <td>HUILA</td>
+      <td>NEIVA</td>
       <td>Hospital o Clínica</td>
       <td>1985</td>
       <td>Enero</td>
@@ -2648,6 +2649,8 @@ memory usage: 9.0+ MB
     <tr>
       <th>4</th>
       <td>Andina</td>
+      <td>HUILA</td>
+      <td>NEIVA</td>
       <td>HUILA</td>
       <td>NEIVA</td>
       <td>Casa</td>
@@ -2673,9 +2676,9 @@ memory usage: 9.0+ MB
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><div>                            <div id="44a10219-cdac-4014-bfd1-8a875049a51c" class="plotly-graph-div" style="height:525px; width:100%;"></div>            <script type="text/javascript">                require(["plotly"], function(Plotly) {                    window.PLOTLYENV=window.PLOTLYENV || {};                                    if (document.getElementById("44a10219-cdac-4014-bfd1-8a875049a51c")) {                    Plotly.newPlot(                        "44a10219-cdac-4014-bfd1-8a875049a51c",                        [{"alignmentgroup":"True","hovertemplate":"index=%{x}\u003cbr\u003ePorcentaje de Datos Faltantes (%)=%{y}\u003cbr\u003etext=%{text}\u003cbr\u003ecolor=%{marker.color}\u003cextra\u003e\u003c\u002fextra\u003e","legendgroup":"","marker":{"color":[0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0],"coloraxis":"coloraxis","pattern":{"shape":""}},"name":"","offsetgroup":"","orientation":"v","showlegend":false,"text":[0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0],"textposition":"outside","x":["region","Nombre_Departamento","Nombre_Municipio","sitio_def","año_def","mes_def","sexo","estado_civil","grupo_edad","nivel_edu","seg_social","asistencia_med","causa_basica"],"xaxis":"x","y":[0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0],"yaxis":"y","type":"bar"}],                        {"template":{"data":{"histogram2dcontour":[{"type":"histogram2dcontour","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"choropleth":[{"type":"choropleth","colorbar":{"outlinewidth":0,"ticks":""}}],"histogram2d":[{"type":"histogram2d","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"heatmap":[{"type":"heatmap","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"heatmapgl":[{"type":"heatmapgl","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"contourcarpet":[{"type":"contourcarpet","colorbar":{"outlinewidth":0,"ticks":""}}],"contour":[{"type":"contour","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"surface":[{"type":"surface","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"mesh3d":[{"type":"mesh3d","colorbar":{"outlinewidth":0,"ticks":""}}],"scatter":[{"fillpattern":{"fillmode":"overlay","size":10,"solidity":0.2},"type":"scatter"}],"parcoords":[{"type":"parcoords","line":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterpolargl":[{"type":"scatterpolargl","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"bar":[{"error_x":{"color":"#2a3f5f"},"error_y":{"color":"#2a3f5f"},"marker":{"line":{"color":"#E5ECF6","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"bar"}],"scattergeo":[{"type":"scattergeo","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterpolar":[{"type":"scatterpolar","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"histogram":[{"marker":{"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"histogram"}],"scattergl":[{"type":"scattergl","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatter3d":[{"type":"scatter3d","line":{"colorbar":{"outlinewidth":0,"ticks":""}},"marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattermapbox":[{"type":"scattermapbox","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterternary":[{"type":"scatterternary","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattercarpet":[{"type":"scattercarpet","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"carpet":[{"aaxis":{"endlinecolor":"#2a3f5f","gridcolor":"white","linecolor":"white","minorgridcolor":"white","startlinecolor":"#2a3f5f"},"baxis":{"endlinecolor":"#2a3f5f","gridcolor":"white","linecolor":"white","minorgridcolor":"white","startlinecolor":"#2a3f5f"},"type":"carpet"}],"table":[{"cells":{"fill":{"color":"#EBF0F8"},"line":{"color":"white"}},"header":{"fill":{"color":"#C8D4E3"},"line":{"color":"white"}},"type":"table"}],"barpolar":[{"marker":{"line":{"color":"#E5ECF6","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"barpolar"}],"pie":[{"automargin":true,"type":"pie"}]},"layout":{"autotypenumbers":"strict","colorway":["#636efa","#EF553B","#00cc96","#ab63fa","#FFA15A","#19d3f3","#FF6692","#B6E880","#FF97FF","#FECB52"],"font":{"color":"#2a3f5f"},"hovermode":"closest","hoverlabel":{"align":"left"},"paper_bgcolor":"white","plot_bgcolor":"#E5ECF6","polar":{"bgcolor":"#E5ECF6","angularaxis":{"gridcolor":"white","linecolor":"white","ticks":""},"radialaxis":{"gridcolor":"white","linecolor":"white","ticks":""}},"ternary":{"bgcolor":"#E5ECF6","aaxis":{"gridcolor":"white","linecolor":"white","ticks":""},"baxis":{"gridcolor":"white","linecolor":"white","ticks":""},"caxis":{"gridcolor":"white","linecolor":"white","ticks":""}},"coloraxis":{"colorbar":{"outlinewidth":0,"ticks":""}},"colorscale":{"sequential":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"sequentialminus":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"diverging":[[0,"#8e0152"],[0.1,"#c51b7d"],[0.2,"#de77ae"],[0.3,"#f1b6da"],[0.4,"#fde0ef"],[0.5,"#f7f7f7"],[0.6,"#e6f5d0"],[0.7,"#b8e186"],[0.8,"#7fbc41"],[0.9,"#4d9221"],[1,"#276419"]]},"xaxis":{"gridcolor":"white","linecolor":"white","ticks":"","title":{"standoff":15},"zerolinecolor":"white","automargin":true,"zerolinewidth":2},"yaxis":{"gridcolor":"white","linecolor":"white","ticks":"","title":{"standoff":15},"zerolinecolor":"white","automargin":true,"zerolinewidth":2},"scene":{"xaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2},"yaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2},"zaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2}},"shapedefaults":{"line":{"color":"#2a3f5f"}},"annotationdefaults":{"arrowcolor":"#2a3f5f","arrowhead":0,"arrowwidth":1},"geo":{"bgcolor":"white","landcolor":"#E5ECF6","subunitcolor":"white","showland":true,"showlakes":true,"lakecolor":"white"},"title":{"x":0.05},"mapbox":{"style":"light"}}},"xaxis":{"anchor":"y","domain":[0.0,1.0],"title":{"text":"Variables"},"tickangle":-45},"yaxis":{"anchor":"x","domain":[0.0,1.0],"title":{"text":"Porcentaje de Datos Faltantes"},"range":[0,10.0]},"coloraxis":{"colorbar":{"title":{"text":"color"}},"colorscale":[[0.0,"#F8BBD0"],[0.25,"#F48FB1"],[0.5,"#F06292"],[0.75,"#EC407A"],[1.0,"#D81B60"]]},"legend":{"tracegroupgap":0},"title":{"text":"Porcentaje de Datos Faltantes por Variable","font":{"size":22,"family":"Bahnschrift","color":"black"}},"barmode":"relative","font":{"family":"Bahnschrift","size":14,"color":"black"},"plot_bgcolor":"white","paper_bgcolor":"white"},                        {"responsive": true}                    ).then(function(){
+<div class="output text_html"><div>                            <div id="dde01ec5-6f2c-4c75-ad21-cc206bf27cfb" class="plotly-graph-div" style="height:525px; width:100%;"></div>            <script type="text/javascript">                require(["plotly"], function(Plotly) {                    window.PLOTLYENV=window.PLOTLYENV || {};                                    if (document.getElementById("dde01ec5-6f2c-4c75-ad21-cc206bf27cfb")) {                    Plotly.newPlot(                        "dde01ec5-6f2c-4c75-ad21-cc206bf27cfb",                        [{"alignmentgroup":"True","hovertemplate":"index=%{x}\u003cbr\u003ePorcentaje de Datos Faltantes (%)=%{y}\u003cbr\u003etext=%{text}\u003cbr\u003ecolor=%{marker.color}\u003cextra\u003e\u003c\u002fextra\u003e","legendgroup":"","marker":{"color":[0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0],"coloraxis":"coloraxis","pattern":{"shape":""}},"name":"","offsetgroup":"","orientation":"v","showlegend":false,"text":[0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0],"textposition":"outside","x":["region_Def","Nombre_Departamento_Def","Nombre_Municipio_Def","Nombre_Departamento_Res","Nombre_Municipio_Res","sitio_def","año_def","mes_def","sexo","estado_civil","grupo_edad","nivel_edu","seg_social","asistencia_med","causa_basica"],"xaxis":"x","y":[0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0],"yaxis":"y","type":"bar"}],                        {"template":{"data":{"histogram2dcontour":[{"type":"histogram2dcontour","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"choropleth":[{"type":"choropleth","colorbar":{"outlinewidth":0,"ticks":""}}],"histogram2d":[{"type":"histogram2d","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"heatmap":[{"type":"heatmap","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"heatmapgl":[{"type":"heatmapgl","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"contourcarpet":[{"type":"contourcarpet","colorbar":{"outlinewidth":0,"ticks":""}}],"contour":[{"type":"contour","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"surface":[{"type":"surface","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"mesh3d":[{"type":"mesh3d","colorbar":{"outlinewidth":0,"ticks":""}}],"scatter":[{"fillpattern":{"fillmode":"overlay","size":10,"solidity":0.2},"type":"scatter"}],"parcoords":[{"type":"parcoords","line":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterpolargl":[{"type":"scatterpolargl","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"bar":[{"error_x":{"color":"#2a3f5f"},"error_y":{"color":"#2a3f5f"},"marker":{"line":{"color":"#E5ECF6","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"bar"}],"scattergeo":[{"type":"scattergeo","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterpolar":[{"type":"scatterpolar","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"histogram":[{"marker":{"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"histogram"}],"scattergl":[{"type":"scattergl","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatter3d":[{"type":"scatter3d","line":{"colorbar":{"outlinewidth":0,"ticks":""}},"marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattermapbox":[{"type":"scattermapbox","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterternary":[{"type":"scatterternary","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattercarpet":[{"type":"scattercarpet","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"carpet":[{"aaxis":{"endlinecolor":"#2a3f5f","gridcolor":"white","linecolor":"white","minorgridcolor":"white","startlinecolor":"#2a3f5f"},"baxis":{"endlinecolor":"#2a3f5f","gridcolor":"white","linecolor":"white","minorgridcolor":"white","startlinecolor":"#2a3f5f"},"type":"carpet"}],"table":[{"cells":{"fill":{"color":"#EBF0F8"},"line":{"color":"white"}},"header":{"fill":{"color":"#C8D4E3"},"line":{"color":"white"}},"type":"table"}],"barpolar":[{"marker":{"line":{"color":"#E5ECF6","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"barpolar"}],"pie":[{"automargin":true,"type":"pie"}]},"layout":{"autotypenumbers":"strict","colorway":["#636efa","#EF553B","#00cc96","#ab63fa","#FFA15A","#19d3f3","#FF6692","#B6E880","#FF97FF","#FECB52"],"font":{"color":"#2a3f5f"},"hovermode":"closest","hoverlabel":{"align":"left"},"paper_bgcolor":"white","plot_bgcolor":"#E5ECF6","polar":{"bgcolor":"#E5ECF6","angularaxis":{"gridcolor":"white","linecolor":"white","ticks":""},"radialaxis":{"gridcolor":"white","linecolor":"white","ticks":""}},"ternary":{"bgcolor":"#E5ECF6","aaxis":{"gridcolor":"white","linecolor":"white","ticks":""},"baxis":{"gridcolor":"white","linecolor":"white","ticks":""},"caxis":{"gridcolor":"white","linecolor":"white","ticks":""}},"coloraxis":{"colorbar":{"outlinewidth":0,"ticks":""}},"colorscale":{"sequential":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"sequentialminus":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"diverging":[[0,"#8e0152"],[0.1,"#c51b7d"],[0.2,"#de77ae"],[0.3,"#f1b6da"],[0.4,"#fde0ef"],[0.5,"#f7f7f7"],[0.6,"#e6f5d0"],[0.7,"#b8e186"],[0.8,"#7fbc41"],[0.9,"#4d9221"],[1,"#276419"]]},"xaxis":{"gridcolor":"white","linecolor":"white","ticks":"","title":{"standoff":15},"zerolinecolor":"white","automargin":true,"zerolinewidth":2},"yaxis":{"gridcolor":"white","linecolor":"white","ticks":"","title":{"standoff":15},"zerolinecolor":"white","automargin":true,"zerolinewidth":2},"scene":{"xaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2},"yaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2},"zaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2}},"shapedefaults":{"line":{"color":"#2a3f5f"}},"annotationdefaults":{"arrowcolor":"#2a3f5f","arrowhead":0,"arrowwidth":1},"geo":{"bgcolor":"white","landcolor":"#E5ECF6","subunitcolor":"white","showland":true,"showlakes":true,"lakecolor":"white"},"title":{"x":0.05},"mapbox":{"style":"light"}}},"xaxis":{"anchor":"y","domain":[0.0,1.0],"title":{"text":"Variables"},"tickangle":-45},"yaxis":{"anchor":"x","domain":[0.0,1.0],"title":{"text":"Porcentaje de Datos Faltantes"},"range":[0,10.0]},"coloraxis":{"colorbar":{"title":{"text":"color"}},"colorscale":[[0.0,"#F8BBD0"],[0.25,"#F48FB1"],[0.5,"#F06292"],[0.75,"#EC407A"],[1.0,"#D81B60"]]},"legend":{"tracegroupgap":0},"title":{"text":"Porcentaje de Datos Faltantes por Variable","font":{"size":22,"family":"Bahnschrift","color":"black"}},"barmode":"relative","font":{"family":"Bahnschrift","size":14,"color":"black"},"plot_bgcolor":"white","paper_bgcolor":"white"},                        {"responsive": true}                    ).then(function(){
                             
-var gd = document.getElementById('44a10219-cdac-4014-bfd1-8a875049a51c');
+var gd = document.getElementById('dde01ec5-6f2c-4c75-ad21-cc206bf27cfb');
 var x = new MutationObserver(function (mutations, observer) {{
         var display = window.getComputedStyle(gd).display;
         if (!display || display === 'none') {{
@@ -2707,15 +2710,15 @@ if (outputEl) {{
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(78479, 13)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(78479, 15)
 </pre></div>
 </div>
 </div>
 </div>
-<p>Finalmente, el conjunto de datos asociado a las defunciones relacionadas con cáncer de mama cuenta con <strong>78479</strong> observaciones y <strong>13</strong> variables.</p>
+<p>Finalmente, el conjunto de datos asociado a las defunciones relacionadas con cáncer de mama cuenta con <strong>78479</strong> observaciones y <strong>15</strong> variables.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data_new</span><span class="o">.</span><span class="n">to_excel</span><span class="p">(</span><span class="s1">&#39;C:</span><span class="se">\\</span><span class="s1">Users</span><span class="se">\\</span><span class="s1">kamac</span><span class="se">\\</span><span class="s1">OneDrive</span><span class="se">\\</span><span class="s1">Desktop</span><span class="se">\\</span><span class="s1">SeminarioInvestigativoUN</span><span class="se">\\</span><span class="s1">docs.xlsx&#39;</span><span class="p">,</span> <span class="n">index</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span> <span class="n">engine</span> <span class="o">=</span> <span class="s1">&#39;openpyxl&#39;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data_new</span><span class="o">.</span><span class="n">to_excel</span><span class="p">(</span><span class="s1">&#39;C:</span><span class="se">\\</span><span class="s1">Users</span><span class="se">\\</span><span class="s1">kamac</span><span class="se">\\</span><span class="s1">OneDrive</span><span class="se">\\</span><span class="s1">Desktop</span><span class="se">\\</span><span class="s1">SeminarioInvestigativoUN</span><span class="se">\\</span><span class="s1">data_to_eda.xlsx&#39;</span><span class="p">,</span> <span class="n">index</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span> <span class="n">engine</span> <span class="o">=</span> <span class="s1">&#39;openpyxl&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -2821,7 +2824,6 @@ Este diccionario incluye una descripción detallada de cada una de las variables
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#variable-seguridad-social"><strong>Variable: Seguridad social</strong></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#variable-cert-medica-como-se-determino-la-muerte"><strong>Variable: cert_medica - ¿Cómo se determino la muerte?</strong></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#variable-codigo-de-la-entidad-administradora-en-salud-a-la-que-pertenecia-el-fallecido"><strong>Variable: Código de la entidad administradora en salud a la que pertenecía el fallecido</strong></a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#variable-grupo-etnico"><strong>Variable: Grupo étnico</strong></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#variable-causa-basica"><strong>Variable: Causa básica</strong></a></li>
 </ul>
 </li>
