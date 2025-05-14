@@ -1,0 +1,3674 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Índice de Moran &#8212; Proyecto Final - Seminario Investigativo</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'moranindex';</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Mapas" href="mapas.html" />
+    <link rel="prev" title="Tasas de mortalidad" href="tasas.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/uninorte.jpg" class="logo__image only-light" alt="Proyecto Final - Seminario Investigativo - Home"/>
+    <script>document.write(`<img src="_static/uninorte.jpg" class="logo__image only-dark" alt="Proyecto Final - Seminario Investigativo - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    Proyecto Final - Seminario Investigativo
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="context.html"><strong>Contextualización</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="etl.html"><strong>ETL: Limpieza y preparación de los datos</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="eda.html"><strong>EDA: Caracterización y distribución de los datos</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="tasas.html"><strong>Tasas de mortalidad</strong></a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#"><strong>Índice de Moran</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="mapas.html"><strong>Mapas</strong></a></li>
+
+
+<li class="toctree-l1"><a class="reference internal" href="diccionario.html"><strong>Diccionario de variables</strong></a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/kmarcela11/ProyectoFinal_SeminarioInvestigativo" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/kmarcela11/ProyectoFinal_SeminarioInvestigativo/issues/new?title=Issue%20on%20page%20%2Fmoranindex.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/moranindex.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Índice de Moran</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#librerias-y-modulos-necesarios"><strong>Librerías y modulos necesarios</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data"><strong>Data</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tasa-de-mortalidad-cruda-por-municipio"><strong>Tasa de mortalidad cruda por municipio</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#analisis-de-autocorrelacion-espacial-con-el-indice-de-moran"><strong>Análisis de Autocorrelación Espacial con el Índice de Moran</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#p-valor-indice-de-moran"><strong>P-valor índice de Moran</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#hipotesis"><strong>Hipótesis</strong></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="indice-de-moran">
+<h1><strong>Índice de Moran</strong><a class="headerlink" href="#indice-de-moran" title="Link to this heading">#</a></h1>
+<section id="librerias-y-modulos-necesarios">
+<h2><strong>Librerías y modulos necesarios</strong><a class="headerlink" href="#librerias-y-modulos-necesarios" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">json</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="data">
+<h2><strong>Data</strong><a class="headerlink" href="#data" title="Link to this heading">#</a></h2>
+<p>Inicialmente, se hace el cargue de los conjuntos de datos a utilizar.</p>
+<p>Para el cálculo de la tasa de mortalidad, es necesario tener los datos sobre que tantas mujeres fallecidas hubieron a lo largo del período por dicha enfermedad.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">muertes</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_excel</span><span class="p">(</span><span class="s1">&#39;../data_tasas/MUERTES-CANMAMA-M40-MUN-COL.xlsx&#39;</span><span class="p">)</span>
+<span class="n">muertes</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>DPMP</th>
+      <th>DPNOM</th>
+      <th>ANIO</th>
+      <th>FALLECIDAS</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>EL ENCANTO</td>
+      <td>AMAZONAS</td>
+      <td>2009</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>EL ENCANTO</td>
+      <td>AMAZONAS</td>
+      <td>2010</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>EL ENCANTO</td>
+      <td>AMAZONAS</td>
+      <td>2011</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>EL ENCANTO</td>
+      <td>AMAZONAS</td>
+      <td>2012</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>EL ENCANTO</td>
+      <td>AMAZONAS</td>
+      <td>2013</td>
+      <td>0</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>También, se utilizará la población total de mujeres mayores de 40 años por municipio en ese período de años (2009 - 2023).</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">poblacion</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_excel</span><span class="p">(</span><span class="s1">&#39;../data_tasas/POB-M40-MUNCOL-2009-2023.xlsx&#39;</span><span class="p">)</span>
+<span class="n">poblacion_total</span> <span class="o">=</span> <span class="n">poblacion</span><span class="p">[[</span><span class="s1">&#39;DPNOM&#39;</span><span class="p">,</span> <span class="s1">&#39;DPMP&#39;</span><span class="p">,</span> <span class="s1">&#39;MPIO&#39;</span><span class="p">,</span> <span class="s1">&#39;ANIO&#39;</span><span class="p">,</span> <span class="s1">&#39;TOTAL_MUJERES&#39;</span><span class="p">]]</span>
+<span class="n">poblacion_total</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>DPNOM</th>
+      <th>DPMP</th>
+      <th>MPIO</th>
+      <th>ANIO</th>
+      <th>TOTAL_MUJERES</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>AMAZONAS</td>
+      <td>EL ENCANTO</td>
+      <td>91263</td>
+      <td>2009</td>
+      <td>205</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>AMAZONAS</td>
+      <td>EL ENCANTO</td>
+      <td>91263</td>
+      <td>2010</td>
+      <td>213</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>AMAZONAS</td>
+      <td>EL ENCANTO</td>
+      <td>91263</td>
+      <td>2011</td>
+      <td>224</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>AMAZONAS</td>
+      <td>EL ENCANTO</td>
+      <td>91263</td>
+      <td>2012</td>
+      <td>229</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>AMAZONAS</td>
+      <td>EL ENCANTO</td>
+      <td>91263</td>
+      <td>2013</td>
+      <td>233</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>Se lee el DataFrame del archivo de metadatos geográficos de cada municipio.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mdata_mun</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_excel</span><span class="p">(</span><span class="s1">&#39;../data_tasas/metadata_mun_col.xlsx&#39;</span><span class="p">)</span>
+<span class="n">mdata_mun</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>MPIO</th>
+      <th>DPMP</th>
+      <th>DPNOM</th>
+      <th>GEOMETRY</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>91405</td>
+      <td>LA CHORRERA</td>
+      <td>AMAZONAS</td>
+      <td>POLYGON ((5000339.8632 1499049.6806000005, 501...</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>91669</td>
+      <td>SANTANDER</td>
+      <td>AMAZONAS</td>
+      <td>POLYGON ((5109398.9191 1528841.3461000007, 510...</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>91460</td>
+      <td>MIRITÍ-PARANÁ</td>
+      <td>AMAZONAS</td>
+      <td>POLYGON ((5161666.8311 1560407.6130999997, 516...</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>91430</td>
+      <td>LA VICTORIA</td>
+      <td>AMAZONAS</td>
+      <td>POLYGON ((5201993.3468 1568778.1232999992, 520...</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>52560</td>
+      <td>POTOSÍ</td>
+      <td>NARIÑO</td>
+      <td>POLYGON ((4492613.2148 1651194.4537000004, 449...</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>Se carga el archivo que contiene los vecinos municipales de cada municipio.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;vecinos_municipales.json&#39;</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s1">&#39;utf-8&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+    <span class="n">vecinos_mun</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
+
+<span class="n">vecinos_mun</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;91405&#39;: [&#39;18756&#39;, &#39;86573&#39;, &#39;91263&#39;, &#39;91530&#39;, &#39;91536&#39;, &#39;91669&#39;],
+ &#39;91669&#39;: [&#39;18756&#39;, &#39;91405&#39;, &#39;91460&#39;, &#39;91536&#39;],
+ &#39;18756&#39;: [&#39;18150&#39;,
+  &#39;18410&#39;,
+  &#39;18460&#39;,
+  &#39;18753&#39;,
+  &#39;18785&#39;,
+  &#39;18860&#39;,
+  &#39;86571&#39;,
+  &#39;86573&#39;,
+  &#39;91405&#39;,
+  &#39;91430&#39;,
+  &#39;91460&#39;,
+  &#39;91530&#39;,
+  &#39;91669&#39;,
+  &#39;95015&#39;,
+  &#39;95200&#39;,
+  &#39;97511&#39;],
+ &#39;86573&#39;: [&#39;18756&#39;, &#39;86568&#39;, &#39;86571&#39;, &#39;91405&#39;, &#39;91530&#39;],
+ &#39;91263&#39;: [&#39;91405&#39;, &#39;91530&#39;, &#39;91536&#39;],
+ &#39;91536&#39;: [&#39;91263&#39;, &#39;91405&#39;, &#39;91407&#39;, &#39;91460&#39;, &#39;91669&#39;, &#39;91798&#39;],
+ &#39;91530&#39;: [&#39;18756&#39;, &#39;86573&#39;, &#39;91263&#39;, &#39;91405&#39;],
+ &#39;91460&#39;: [&#39;18756&#39;, &#39;91407&#39;, &#39;91430&#39;, &#39;91536&#39;, &#39;91669&#39;, &#39;97511&#39;],
+ &#39;91430&#39;: [&#39;18756&#39;, &#39;91460&#39;, &#39;97511&#39;],
+ &#39;91407&#39;: [&#39;91460&#39;, &#39;91536&#39;, &#39;91798&#39;, &#39;97511&#39;, &#39;97666&#39;],
+ &#39;97511&#39;: [&#39;18756&#39;,
+  &#39;91407&#39;,
+  &#39;91430&#39;,
+  &#39;91460&#39;,
+  &#39;95200&#39;,
+  &#39;97001&#39;,
+  &#39;97161&#39;,
+  &#39;97666&#39;],
+ &#39;52560&#39;: [&#39;52215&#39;, &#39;52356&#39;, &#39;86320&#39;],
+ &#39;52215&#39;: [&#39;52356&#39;, &#39;52560&#39;, &#39;52573&#39;, &#39;86320&#39;],
+ &#39;86320&#39;: [&#39;52001&#39;,
+  &#39;52215&#39;,
+  &#39;52287&#39;,
+  &#39;52356&#39;,
+  &#39;52560&#39;,
+  &#39;52573&#39;,
+  &#39;86568&#39;,
+  &#39;86569&#39;,
+  &#39;86865&#39;,
+  &#39;86885&#39;],
+ &#39;52356&#39;: [&#39;52022&#39;,
+  &#39;52210&#39;,
+  &#39;52215&#39;,
+  &#39;52224&#39;,
+  &#39;52323&#39;,
+  &#39;52560&#39;,
+  &#39;52573&#39;,
+  &#39;52585&#39;,
+  &#39;86320&#39;,
+  &#39;86865&#39;],
+ &#39;86569&#39;: [&#39;86001&#39;, &#39;86320&#39;, &#39;86568&#39;, &#39;86571&#39;, &#39;86885&#39;],
+ &#39;86571&#39;: [&#39;18205&#39;,
+  &#39;18756&#39;,
+  &#39;18785&#39;,
+  &#39;19533&#39;,
+  &#39;86001&#39;,
+  &#39;86568&#39;,
+  &#39;86569&#39;,
+  &#39;86573&#39;],
+ &#39;86885&#39;: [&#39;52001&#39;, &#39;86001&#39;, &#39;86320&#39;, &#39;86569&#39;, &#39;86755&#39;, &#39;86760&#39;],
+ &#39;86001&#39;: [&#39;19533&#39;,
+  &#39;19701&#39;,
+  &#39;52258&#39;,
+  &#39;86569&#39;,
+  &#39;86571&#39;,
+  &#39;86749&#39;,
+  &#39;86755&#39;,
+  &#39;86885&#39;],
+ &#39;86568&#39;: [&#39;86320&#39;, &#39;86569&#39;, &#39;86571&#39;, &#39;86573&#39;, &#39;86757&#39;, &#39;86865&#39;],
+ &#39;52573&#39;: [&#39;52210&#39;, &#39;52215&#39;, &#39;52287&#39;, &#39;52356&#39;, &#39;86320&#39;],
+ &#39;52210&#39;: [&#39;52287&#39;, &#39;52323&#39;, &#39;52352&#39;, &#39;52356&#39;, &#39;52573&#39;],
+ &#39;52287&#39;: [&#39;52001&#39;,
+  &#39;52210&#39;,
+  &#39;52352&#39;,
+  &#39;52354&#39;,
+  &#39;52573&#39;,
+  &#39;52788&#39;,
+  &#39;52885&#39;,
+  &#39;86320&#39;],
+ &#39;52001&#39;: [&#39;52110&#39;,
+  &#39;52207&#39;,
+  &#39;52240&#39;,
+  &#39;52287&#39;,
+  &#39;52381&#39;,
+  &#39;52480&#39;,
+  &#39;52788&#39;,
+  &#39;86320&#39;,
+  &#39;86760&#39;,
+  &#39;86885&#39;],
+ &#39;86865&#39;: [&#39;52356&#39;, &#39;86320&#39;, &#39;86568&#39;, &#39;86757&#39;],
+ &#39;52323&#39;: [&#39;52210&#39;, &#39;52352&#39;, &#39;52356&#39;, &#39;52585&#39;],
+ &#39;52352&#39;: [&#39;52210&#39;, &#39;52287&#39;, &#39;52323&#39;, &#39;52354&#39;, &#39;52506&#39;, &#39;52585&#39;, &#39;52720&#39;],
+ &#39;52585&#39;: [&#39;52022&#39;, &#39;52317&#39;, &#39;52323&#39;, &#39;52352&#39;, &#39;52356&#39;, &#39;52506&#39;, &#39;52720&#39;],
+ &#39;52317&#39;: [&#39;52022&#39;, &#39;52224&#39;, &#39;52227&#39;, &#39;52435&#39;, &#39;52585&#39;, &#39;52720&#39;],
+ &#39;52506&#39;: [&#39;52352&#39;, &#39;52354&#39;, &#39;52585&#39;, &#39;52720&#39;, &#39;52838&#39;],
+ &#39;52720&#39;: [&#39;52317&#39;, &#39;52352&#39;, &#39;52435&#39;, &#39;52506&#39;, &#39;52585&#39;, &#39;52699&#39;, &#39;52838&#39;],
+ &#39;52022&#39;: [&#39;52224&#39;, &#39;52317&#39;, &#39;52356&#39;, &#39;52585&#39;],
+ &#39;18785&#39;: [&#39;18205&#39;, &#39;18756&#39;, &#39;18860&#39;, &#39;86571&#39;],
+ &#39;18205&#39;: [&#39;18029&#39;, &#39;18610&#39;, &#39;18785&#39;, &#39;18860&#39;, &#39;19533&#39;, &#39;86571&#39;],
+ &#39;18860&#39;: [&#39;18029&#39;, &#39;18094&#39;, &#39;18205&#39;, &#39;18460&#39;, &#39;18479&#39;, &#39;18756&#39;, &#39;18785&#39;],
+ &#39;52354&#39;: [&#39;52287&#39;, &#39;52320&#39;, &#39;52352&#39;, &#39;52506&#39;, &#39;52838&#39;, &#39;52885&#39;],
+ &#39;52435&#39;: [&#39;52227&#39;, &#39;52317&#39;, &#39;52612&#39;, &#39;52699&#39;, &#39;52720&#39;],
+ &#39;52224&#39;: [&#39;52022&#39;, &#39;52227&#39;, &#39;52317&#39;, &#39;52356&#39;],
+ &#39;52227&#39;: [&#39;52224&#39;, &#39;52317&#39;, &#39;52435&#39;, &#39;52612&#39;],
+ &#39;52885&#39;: [&#39;52207&#39;, &#39;52287&#39;, &#39;52320&#39;, &#39;52354&#39;, &#39;52788&#39;],
+ &#39;52788&#39;: [&#39;52001&#39;, &#39;52207&#39;, &#39;52287&#39;, &#39;52885&#39;],
+ &#39;19533&#39;: [&#39;18205&#39;, &#39;18610&#39;, &#39;19701&#39;, &#39;41006&#39;, &#39;41530&#39;, &#39;86001&#39;, &#39;86571&#39;],
+ &#39;52838&#39;: [&#39;52320&#39;, &#39;52354&#39;, &#39;52506&#39;, &#39;52565&#39;, &#39;52699&#39;, &#39;52720&#39;],
+ &#39;86760&#39;: [&#39;52001&#39;, &#39;52110&#39;, &#39;86219&#39;, &#39;86749&#39;, &#39;86755&#39;, &#39;86885&#39;],
+ &#39;86755&#39;: [&#39;86001&#39;, &#39;86219&#39;, &#39;86749&#39;, &#39;86760&#39;, &#39;86885&#39;],
+ &#39;52699&#39;: [&#39;52435&#39;, &#39;52565&#39;, &#39;52612&#39;, &#39;52678&#39;, &#39;52720&#39;, &#39;52838&#39;],
+ &#39;52320&#39;: [&#39;52036&#39;, &#39;52207&#39;, &#39;52354&#39;, &#39;52565&#39;, &#39;52678&#39;, &#39;52838&#39;, &#39;52885&#39;],
+ &#39;18029&#39;: [&#39;18094&#39;, &#39;18205&#39;, &#39;18610&#39;, &#39;18860&#39;],
+ &#39;18610&#39;: [&#39;18029&#39;, &#39;18094&#39;, &#39;18205&#39;, &#39;19533&#39;, &#39;41006&#39;, &#39;41530&#39;],
+ &#39;18460&#39;: [&#39;18001&#39;, &#39;18410&#39;, &#39;18479&#39;, &#39;18756&#39;, &#39;18860&#39;],
+ &#39;18150&#39;: [&#39;18247&#39;, &#39;18256&#39;, &#39;18410&#39;, &#39;18592&#39;, &#39;18753&#39;, &#39;18756&#39;],
+ &#39;18410&#39;: [&#39;18001&#39;, &#39;18150&#39;, &#39;18256&#39;, &#39;18460&#39;, &#39;18756&#39;],
+ &#39;95200&#39;: [&#39;18756&#39;, &#39;95015&#39;, &#39;95025&#39;, &#39;97161&#39;, &#39;97511&#39;],
+ &#39;95015&#39;: [&#39;18753&#39;, &#39;18756&#39;, &#39;50350&#39;, &#39;95001&#39;, &#39;95025&#39;, &#39;95200&#39;],
+ &#39;18753&#39;: [&#39;18150&#39;,
+  &#39;18592&#39;,
+  &#39;18756&#39;,
+  &#39;41001&#39;,
+  &#39;41020&#39;,
+  &#39;41615&#39;,
+  &#39;41799&#39;,
+  &#39;50350&#39;,
+  &#39;50370&#39;,
+  &#39;95015&#39;],
+ &#39;52207&#39;: [&#39;52001&#39;,
+  &#39;52036&#39;,
+  &#39;52320&#39;,
+  &#39;52381&#39;,
+  &#39;52480&#39;,
+  &#39;52683&#39;,
+  &#39;52788&#39;,
+  &#39;52885&#39;],
+ &#39;86219&#39;: [&#39;52110&#39;, &#39;52258&#39;, &#39;86749&#39;, &#39;86755&#39;, &#39;86760&#39;],
+ &#39;86749&#39;: [&#39;52110&#39;, &#39;52258&#39;, &#39;86001&#39;, &#39;86219&#39;, &#39;86755&#39;, &#39;86760&#39;],
+ &#39;52110&#39;: [&#39;52001&#39;,
+  &#39;52019&#39;,
+  &#39;52051&#39;,
+  &#39;52240&#39;,
+  &#39;52258&#39;,
+  &#39;52687&#39;,
+  &#39;86219&#39;,
+  &#39;86749&#39;,
+  &#39;86760&#39;],
+ &#39;52565&#39;: [&#39;52320&#39;, &#39;52678&#39;, &#39;52699&#39;, &#39;52838&#39;],
+ &#39;52036&#39;: [&#39;52207&#39;, &#39;52320&#39;, &#39;52411&#39;, &#39;52678&#39;, &#39;52683&#39;],
+ &#39;52678&#39;: [&#39;52036&#39;,
+  &#39;52079&#39;,
+  &#39;52320&#39;,
+  &#39;52385&#39;,
+  &#39;52411&#39;,
+  &#39;52565&#39;,
+  &#39;52612&#39;,
+  &#39;52699&#39;],
+ &#39;52480&#39;: [&#39;52001&#39;, &#39;52207&#39;, &#39;52381&#39;],
+ &#39;52683&#39;: [&#39;52036&#39;, &#39;52207&#39;, &#39;52260&#39;, &#39;52381&#39;, &#39;52411&#39;],
+ &#39;52381&#39;: [&#39;52001&#39;, &#39;52207&#39;, &#39;52240&#39;, &#39;52260&#39;, &#39;52480&#39;, &#39;52683&#39;],
+ &#39;52258&#39;: [&#39;19701&#39;,
+  &#39;52019&#39;,
+  &#39;52110&#39;,
+  &#39;52378&#39;,
+  &#39;52685&#39;,
+  &#39;86001&#39;,
+  &#39;86219&#39;,
+  &#39;86749&#39;],
+ &#39;52411&#39;: [&#39;52036&#39;, &#39;52254&#39;, &#39;52260&#39;, &#39;52385&#39;, &#39;52418&#39;, &#39;52678&#39;, &#39;52683&#39;],
+ &#39;18479&#39;: [&#39;18001&#39;, &#39;18094&#39;, &#39;18460&#39;, &#39;18860&#39;],
+ &#39;18094&#39;: [&#39;18001&#39;, &#39;18029&#39;, &#39;18479&#39;, &#39;18610&#39;, &#39;18860&#39;, &#39;41006&#39;, &#39;41770&#39;],
+ &#39;52240&#39;: [&#39;52001&#39;, &#39;52110&#39;, &#39;52260&#39;, &#39;52381&#39;, &#39;52687&#39;, &#39;52786&#39;],
+ &#39;18001&#39;: [&#39;18094&#39;,
+  &#39;18256&#39;,
+  &#39;18410&#39;,
+  &#39;18460&#39;,
+  &#39;18479&#39;,
+  &#39;41298&#39;,
+  &#39;41319&#39;,
+  &#39;41770&#39;],
+ &#39;52260&#39;: [&#39;52240&#39;, &#39;52254&#39;, &#39;52381&#39;, &#39;52411&#39;, &#39;52683&#39;, &#39;52786&#39;],
+ &#39;52612&#39;: [&#39;52079&#39;, &#39;52227&#39;, &#39;52435&#39;, &#39;52678&#39;, &#39;52699&#39;],
+ &#39;52019&#39;: [&#39;52051&#39;, &#39;52110&#39;, &#39;52258&#39;, &#39;52685&#39;, &#39;52694&#39;],
+ &#39;52051&#39;: [&#39;52019&#39;, &#39;52110&#39;, &#39;52687&#39;, &#39;52694&#39;],
+ &#39;52687&#39;: [&#39;19450&#39;, &#39;52051&#39;, &#39;52110&#39;, &#39;52240&#39;, &#39;52399&#39;, &#39;52694&#39;, &#39;52786&#39;],
+ &#39;19701&#39;: [&#39;19100&#39;,
+  &#39;19533&#39;,
+  &#39;19693&#39;,
+  &#39;41530&#39;,
+  &#39;41551&#39;,
+  &#39;41668&#39;,
+  &#39;52258&#39;,
+  &#39;52378&#39;,
+  &#39;86001&#39;],
+ &#39;52254&#39;: [&#39;52260&#39;, &#39;52411&#39;, &#39;52418&#39;, &#39;52540&#39;, &#39;52786&#39;],
+ &#39;52385&#39;: [&#39;52079&#39;, &#39;52411&#39;, &#39;52418&#39;, &#39;52678&#39;],
+ &#39;52418&#39;: [&#39;52079&#39;, &#39;52233&#39;, &#39;52254&#39;, &#39;52385&#39;, &#39;52411&#39;, &#39;52427&#39;, &#39;52540&#39;],
+ &#39;52685&#39;: [&#39;52019&#39;, &#39;52083&#39;, &#39;52258&#39;, &#39;52378&#39;, &#39;52399&#39;, &#39;52694&#39;],
+ &#39;52694&#39;: [&#39;52019&#39;, &#39;52051&#39;, &#39;52083&#39;, &#39;52399&#39;, &#39;52685&#39;, &#39;52687&#39;],
+ &#39;52378&#39;: [&#39;19100&#39;, &#39;19701&#39;, &#39;52083&#39;, &#39;52203&#39;, &#39;52258&#39;, &#39;52685&#39;, &#39;52693&#39;],
+ &#39;52786&#39;: [&#39;19450&#39;, &#39;52240&#39;, &#39;52254&#39;, &#39;52256&#39;, &#39;52260&#39;, &#39;52540&#39;, &#39;52687&#39;],
+ &#39;18256&#39;: [&#39;18001&#39;, &#39;18150&#39;, &#39;18247&#39;, &#39;18410&#39;, &#39;41020&#39;, &#39;41298&#39;, &#39;41306&#39;],
+ &#39;18247&#39;: [&#39;18150&#39;, &#39;18256&#39;, &#39;18592&#39;, &#39;41020&#39;, &#39;41306&#39;],
+ &#39;18592&#39;: [&#39;18150&#39;, &#39;18247&#39;, &#39;18753&#39;, &#39;41020&#39;],
+ &#39;52083&#39;: [&#39;52203&#39;, &#39;52378&#39;, &#39;52399&#39;, &#39;52685&#39;, &#39;52694&#39;],
+ &#39;52399&#39;: [&#39;19290&#39;,
+  &#39;19450&#39;,
+  &#39;52083&#39;,
+  &#39;52203&#39;,
+  &#39;52685&#39;,
+  &#39;52687&#39;,
+  &#39;52693&#39;,
+  &#39;52694&#39;],
+ &#39;41530&#39;: [&#39;18610&#39;, &#39;19533&#39;, &#39;19701&#39;, &#39;41006&#39;, &#39;41551&#39;],
+ &#39;41006&#39;: [&#39;18094&#39;, &#39;18610&#39;, &#39;19533&#39;, &#39;41530&#39;, &#39;41551&#39;, &#39;41770&#39;, &#39;41807&#39;],
+ &#39;52079&#39;: [&#39;52385&#39;, &#39;52418&#39;, &#39;52427&#39;, &#39;52612&#39;, &#39;52621&#39;, &#39;52678&#39;, &#39;52835&#39;],
+ &#39;52540&#39;: [&#39;52233&#39;, &#39;52254&#39;, &#39;52256&#39;, &#39;52418&#39;, &#39;52786&#39;],
+ &#39;52203&#39;: [&#39;52083&#39;, &#39;52378&#39;, &#39;52399&#39;, &#39;52693&#39;],
+ &#39;52693&#39;: [&#39;19100&#39;, &#39;19290&#39;, &#39;52203&#39;, &#39;52378&#39;, &#39;52399&#39;],
+ &#39;19100&#39;: [&#39;19022&#39;,
+  &#39;19290&#39;,
+  &#39;19450&#39;,
+  &#39;19532&#39;,
+  &#39;19693&#39;,
+  &#39;19701&#39;,
+  &#39;19785&#39;,
+  &#39;52378&#39;,
+  &#39;52693&#39;],
+ &#39;19450&#39;: [&#39;19075&#39;,
+  &#39;19100&#39;,
+  &#39;19290&#39;,
+  &#39;19532&#39;,
+  &#39;52256&#39;,
+  &#39;52399&#39;,
+  &#39;52405&#39;,
+  &#39;52687&#39;,
+  &#39;52786&#39;],
+ &#39;52256&#39;: [&#39;19450&#39;, &#39;52233&#39;, &#39;52250&#39;, &#39;52405&#39;, &#39;52540&#39;, &#39;52786&#39;],
+ &#39;19290&#39;: [&#39;19100&#39;, &#39;19450&#39;, &#39;52399&#39;, &#39;52693&#39;],
+ &#39;97161&#39;: [&#39;95025&#39;, &#39;95200&#39;, &#39;97001&#39;, &#39;97511&#39;, &#39;97777&#39;],
+ &#39;95025&#39;: [&#39;94888&#39;, &#39;95001&#39;, &#39;95015&#39;, &#39;95200&#39;, &#39;97161&#39;, &#39;97777&#39;],
+ &#39;97001&#39;: [&#39;94887&#39;, &#39;97161&#39;, &#39;97511&#39;, &#39;97777&#39;, &#39;97889&#39;],
+ &#39;97777&#39;: [&#39;94887&#39;, &#39;94888&#39;, &#39;95025&#39;, &#39;97001&#39;, &#39;97161&#39;],
+ &#39;41770&#39;: [&#39;18001&#39;, &#39;18094&#39;, &#39;41006&#39;, &#39;41026&#39;, &#39;41319&#39;, &#39;41807&#39;],
+ &#39;41551&#39;: [&#39;19701&#39;,
+  &#39;41006&#39;,
+  &#39;41244&#39;,
+  &#39;41359&#39;,
+  &#39;41530&#39;,
+  &#39;41660&#39;,
+  &#39;41668&#39;,
+  &#39;41807&#39;],
+ &#39;41807&#39;: [&#39;41006&#39;, &#39;41026&#39;, &#39;41244&#39;, &#39;41551&#39;, &#39;41770&#39;, &#39;41791&#39;],
+ &#39;19693&#39;: [&#39;19022&#39;, &#39;19100&#39;, &#39;19397&#39;, &#39;19701&#39;, &#39;41668&#39;],
+ &#39;41668&#39;: [&#39;19397&#39;, &#39;19585&#39;, &#39;19693&#39;, &#39;19701&#39;, &#39;19760&#39;, &#39;41359&#39;, &#39;41551&#39;],
+ &#39;52233&#39;: [&#39;52250&#39;, &#39;52256&#39;, &#39;52418&#39;, &#39;52427&#39;, &#39;52540&#39;],
+ &#39;52427&#39;: [&#39;52079&#39;, &#39;52233&#39;, &#39;52250&#39;, &#39;52390&#39;, &#39;52418&#39;, &#39;52490&#39;, &#39;52621&#39;],
+ &#39;52250&#39;: [&#39;19050&#39;,
+  &#39;19075&#39;,
+  &#39;19318&#39;,
+  &#39;52233&#39;,
+  &#39;52256&#39;,
+  &#39;52390&#39;,
+  &#39;52405&#39;,
+  &#39;52427&#39;,
+  &#39;52696&#39;],
+ &#39;52405&#39;: [&#39;19075&#39;, &#39;19450&#39;, &#39;52250&#39;, &#39;52256&#39;],
+ &#39;19075&#39;: [&#39;19050&#39;, &#39;19450&#39;, &#39;19532&#39;, &#39;52250&#39;, &#39;52405&#39;],
+ &#39;19532&#39;: [&#39;19050&#39;, &#39;19075&#39;, &#39;19100&#39;, &#39;19256&#39;, &#39;19392&#39;, &#39;19450&#39;, &#39;19785&#39;],
+ &#39;19022&#39;: [&#39;19100&#39;, &#39;19397&#39;, &#39;19693&#39;, &#39;19785&#39;],
+ &#39;19397&#39;: [&#39;19022&#39;, &#39;19392&#39;, &#39;19693&#39;, &#39;19760&#39;, &#39;19785&#39;, &#39;41668&#39;],
+ &#39;19785&#39;: [&#39;19022&#39;, &#39;19100&#39;, &#39;19392&#39;, &#39;19397&#39;, &#39;19532&#39;],
+ &#39;41319&#39;: [&#39;18001&#39;, &#39;41026&#39;, &#39;41298&#39;, &#39;41770&#39;],
+ &#39;41026&#39;: [&#39;41013&#39;, &#39;41298&#39;, &#39;41319&#39;, &#39;41548&#39;, &#39;41770&#39;, &#39;41791&#39;, &#39;41807&#39;],
+ &#39;41244&#39;: [&#39;41503&#39;, &#39;41551&#39;, &#39;41660&#39;, &#39;41791&#39;, &#39;41807&#39;],
+ &#39;41660&#39;: [&#39;41244&#39;, &#39;41359&#39;, &#39;41378&#39;, &#39;41503&#39;, &#39;41551&#39;],
+ &#39;41359&#39;: [&#39;19585&#39;, &#39;41378&#39;, &#39;41551&#39;, &#39;41660&#39;, &#39;41668&#39;],
+ &#39;41791&#39;: [&#39;41026&#39;, &#39;41244&#39;, &#39;41378&#39;, &#39;41503&#39;, &#39;41548&#39;, &#39;41807&#39;],
+ &#39;41503&#39;: [&#39;41244&#39;, &#39;41378&#39;, &#39;41660&#39;, &#39;41791&#39;],
+ &#39;41298&#39;: [&#39;18001&#39;, &#39;18256&#39;, &#39;41013&#39;, &#39;41026&#39;, &#39;41306&#39;, &#39;41319&#39;],
+ &#39;52621&#39;: [&#39;52079&#39;, &#39;52427&#39;, &#39;52473&#39;, &#39;52490&#39;, &#39;52520&#39;, &#39;52835&#39;],
+ &#39;52490&#39;: [&#39;52390&#39;, &#39;52427&#39;, &#39;52473&#39;, &#39;52621&#39;],
+ &#39;52390&#39;: [&#39;52250&#39;, &#39;52427&#39;, &#39;52490&#39;],
+ &#39;41378&#39;: [&#39;41359&#39;, &#39;41396&#39;, &#39;41503&#39;, &#39;41548&#39;, &#39;41660&#39;, &#39;41791&#39;],
+ &#39;19392&#39;: [&#39;19256&#39;, &#39;19397&#39;, &#39;19532&#39;, &#39;19622&#39;, &#39;19760&#39;, &#39;19785&#39;],
+ &#39;19760&#39;: [&#39;19001&#39;, &#39;19392&#39;, &#39;19397&#39;, &#39;19585&#39;, &#39;19622&#39;, &#39;19807&#39;, &#39;41668&#39;],
+ &#39;41548&#39;: [&#39;41013&#39;, &#39;41026&#39;, &#39;41378&#39;, &#39;41396&#39;, &#39;41518&#39;, &#39;41791&#39;],
+ &#39;41013&#39;: [&#39;41026&#39;, &#39;41298&#39;, &#39;41306&#39;, &#39;41518&#39;, &#39;41548&#39;],
+ &#39;50350&#39;: [&#39;18753&#39;, &#39;50370&#39;, &#39;50711&#39;, &#39;95001&#39;, &#39;95015&#39;],
+ &#39;95001&#39;: [&#39;50325&#39;,
+  &#39;50350&#39;,
+  &#39;50450&#39;,
+  &#39;50590&#39;,
+  &#39;50711&#39;,
+  &#39;94343&#39;,
+  &#39;94888&#39;,
+  &#39;95015&#39;,
+  &#39;95025&#39;,
+  &#39;99773&#39;],
+ &#39;19585&#39;: [&#39;19001&#39;, &#39;19760&#39;, &#39;19824&#39;, &#39;41359&#39;, &#39;41668&#39;],
+ &#39;19050&#39;: [&#39;19075&#39;, &#39;19256&#39;, &#39;19318&#39;, &#39;19532&#39;, &#39;19809&#39;, &#39;52250&#39;],
+ &#39;52520&#39;: [&#39;52473&#39;, &#39;52621&#39;, &#39;52835&#39;],
+ &#39;52473&#39;: [&#39;52490&#39;, &#39;52520&#39;, &#39;52621&#39;, &#39;52835&#39;],
+ &#39;52835&#39;: [&#39;52079&#39;, &#39;52473&#39;, &#39;52520&#39;, &#39;52621&#39;],
+ &#39;19622&#39;: [&#39;19256&#39;, &#39;19392&#39;, &#39;19760&#39;, &#39;19807&#39;],
+ &#39;19256&#39;: [&#39;19001&#39;,
+  &#39;19050&#39;,
+  &#39;19130&#39;,
+  &#39;19392&#39;,
+  &#39;19418&#39;,
+  &#39;19473&#39;,
+  &#39;19532&#39;,
+  &#39;19622&#39;,
+  &#39;19807&#39;,
+  &#39;19809&#39;],
+ &#39;41396&#39;: [&#39;19355&#39;, &#39;19517&#39;, &#39;41378&#39;, &#39;41518&#39;, &#39;41548&#39;],
+ &#39;41306&#39;: [&#39;18247&#39;,
+  &#39;18256&#39;,
+  &#39;41013&#39;,
+  &#39;41020&#39;,
+  &#39;41298&#39;,
+  &#39;41349&#39;,
+  &#39;41518&#39;,
+  &#39;41797&#39;,
+  &#39;41885&#39;],
+ &#39;41020&#39;: [&#39;18247&#39;,
+  &#39;18256&#39;,
+  &#39;18592&#39;,
+  &#39;18753&#39;,
+  &#39;41132&#39;,
+  &#39;41306&#39;,
+  &#39;41349&#39;,
+  &#39;41615&#39;],
+ &#39;19807&#39;: [&#39;19001&#39;, &#39;19256&#39;, &#39;19622&#39;, &#39;19760&#39;],
+ &#39;41518&#39;: [&#39;19517&#39;, &#39;41013&#39;, &#39;41306&#39;, &#39;41396&#39;, &#39;41483&#39;, &#39;41548&#39;, &#39;41797&#39;],
+ &#39;19824&#39;: [&#39;19001&#39;, &#39;19130&#39;, &#39;19355&#39;, &#39;19585&#39;, &#39;19743&#39;],
+ &#39;19355&#39;: [&#39;19517&#39;, &#39;19743&#39;, &#39;19824&#39;, &#39;41396&#39;],
+ &#39;19001&#39;: [&#39;19130&#39;, &#39;19256&#39;, &#39;19585&#39;, &#39;19760&#39;, &#39;19807&#39;, &#39;19824&#39;],
+ &#39;94888&#39;: [&#39;94001&#39;, &#39;94343&#39;, &#39;94887&#39;, &#39;95001&#39;, &#39;95025&#39;, &#39;97777&#39;],
+ &#39;41797&#39;: [&#39;41306&#39;, &#39;41357&#39;, &#39;41483&#39;, &#39;41518&#39;, &#39;41885&#39;],
+ &#39;41483&#39;: [&#39;19517&#39;, &#39;41357&#39;, &#39;41518&#39;, &#39;41797&#39;],
+ &#39;19517&#39;: [&#39;19355&#39;,
+  &#39;19364&#39;,
+  &#39;19743&#39;,
+  &#39;19821&#39;,
+  &#39;41357&#39;,
+  &#39;41396&#39;,
+  &#39;41483&#39;,
+  &#39;41518&#39;,
+  &#39;41801&#39;,
+  &#39;73555&#39;],
+ &#39;19318&#39;: [&#39;19050&#39;, &#39;19809&#39;, &#39;52250&#39;, &#39;52696&#39;],
+ &#39;19809&#39;: [&#39;19050&#39;, &#39;19256&#39;, &#39;19318&#39;, &#39;19418&#39;],
+ &#39;41349&#39;: [&#39;41020&#39;, &#39;41132&#39;, &#39;41306&#39;, &#39;41885&#39;],
+ &#39;41885&#39;: [&#39;41132&#39;, &#39;41306&#39;, &#39;41349&#39;, &#39;41357&#39;, &#39;41524&#39;, &#39;41797&#39;, &#39;41801&#39;],
+ &#39;19130&#39;: [&#39;19001&#39;, &#39;19256&#39;, &#39;19473&#39;, &#39;19548&#39;, &#39;19743&#39;, &#39;19824&#39;],
+ &#39;19743&#39;: [&#39;19130&#39;, &#39;19137&#39;, &#39;19355&#39;, &#39;19364&#39;, &#39;19517&#39;, &#39;19548&#39;, &#39;19824&#39;],
+ &#39;50711&#39;: [&#39;50330&#39;, &#39;50350&#39;, &#39;50370&#39;, &#39;50577&#39;, &#39;50590&#39;, &#39;50683&#39;, &#39;95001&#39;],
+ &#39;50370&#39;: [&#39;11001&#39;,
+  &#39;18753&#39;,
+  &#39;41078&#39;,
+  &#39;41206&#39;,
+  &#39;41799&#39;,
+  &#39;50223&#39;,
+  &#39;50330&#39;,
+  &#39;50350&#39;,
+  &#39;50400&#39;,
+  &#39;50711&#39;],
+ &#39;41357&#39;: [&#39;19517&#39;, &#39;41483&#39;, &#39;41797&#39;, &#39;41801&#39;, &#39;41885&#39;],
+ &#39;52696&#39;: [&#39;19318&#39;, &#39;52250&#39;],
+ &#39;41132&#39;: [&#39;41020&#39;, &#39;41349&#39;, &#39;41524&#39;, &#39;41615&#39;, &#39;41885&#39;],
+ &#39;41615&#39;: [&#39;18753&#39;, &#39;41001&#39;, &#39;41020&#39;, &#39;41132&#39;, &#39;41524&#39;],
+ &#39;19548&#39;: [&#39;19130&#39;, &#39;19137&#39;, &#39;19473&#39;, &#39;19743&#39;],
+ &#39;19473&#39;: [&#39;19110&#39;, &#39;19130&#39;, &#39;19137&#39;, &#39;19256&#39;, &#39;19418&#39;, &#39;19548&#39;, &#39;19780&#39;],
+ &#39;41801&#39;: [&#39;19517&#39;, &#39;41357&#39;, &#39;41524&#39;, &#39;41676&#39;, &#39;41885&#39;, &#39;73555&#39;],
+ &#39;41524&#39;: [&#39;41001&#39;, &#39;41132&#39;, &#39;41615&#39;, &#39;41676&#39;, &#39;41801&#39;, &#39;41885&#39;, &#39;73555&#39;],
+ &#39;19137&#39;: [&#39;19110&#39;, &#39;19364&#39;, &#39;19473&#39;, &#39;19548&#39;, &#39;19698&#39;, &#39;19743&#39;],
+ &#39;19364&#39;: [&#39;19137&#39;, &#39;19142&#39;, &#39;19517&#39;, &#39;19698&#39;, &#39;19743&#39;, &#39;19821&#39;],
+ &#39;19418&#39;: [&#39;19110&#39;, &#39;19256&#39;, &#39;19473&#39;, &#39;19780&#39;, &#39;19809&#39;, &#39;76109&#39;],
+ &#39;41001&#39;: [&#39;18753&#39;, &#39;41016&#39;, &#39;41524&#39;, &#39;41615&#39;, &#39;41799&#39;, &#39;73555&#39;],
+ &#39;19698&#39;: [&#39;19110&#39;, &#39;19137&#39;, &#39;19142&#39;, &#39;19364&#39;, &#39;19845&#39;, &#39;76364&#39;],
+ &#39;19110&#39;: [&#39;19137&#39;, &#39;19418&#39;, &#39;19473&#39;, &#39;19698&#39;, &#39;19780&#39;, &#39;76109&#39;, &#39;76364&#39;],
+ &#39;41799&#39;: [&#39;18753&#39;, &#39;41001&#39;, &#39;41016&#39;, &#39;41078&#39;, &#39;41872&#39;, &#39;50370&#39;],
+ &#39;19780&#39;: [&#39;19110&#39;, &#39;19418&#39;, &#39;19473&#39;],
+ &#39;41676&#39;: [&#39;41524&#39;, &#39;41801&#39;, &#39;73555&#39;],
+ &#39;73555&#39;: [&#39;19212&#39;,
+  &#39;19455&#39;,
+  &#39;19517&#39;,
+  &#39;19821&#39;,
+  &#39;41001&#39;,
+  &#39;41016&#39;,
+  &#39;41524&#39;,
+  &#39;41676&#39;,
+  &#39;41801&#39;,
+  &#39;73067&#39;,
+  &#39;73616&#39;],
+ &#39;19821&#39;: [&#39;19142&#39;, &#39;19212&#39;, &#39;19364&#39;, &#39;19517&#39;, &#39;73555&#39;],
+ &#39;19142&#39;: [&#39;19212&#39;,
+  &#39;19300&#39;,
+  &#39;19364&#39;,
+  &#39;19513&#39;,
+  &#39;19573&#39;,
+  &#39;19698&#39;,
+  &#39;19821&#39;,
+  &#39;19845&#39;],
+ &#39;19212&#39;: [&#39;19142&#39;, &#39;19455&#39;, &#39;19513&#39;, &#39;19821&#39;, &#39;73555&#39;],
+ &#39;19845&#39;: [&#39;19142&#39;, &#39;19573&#39;, &#39;19698&#39;, &#39;76364&#39;],
+ &#39;76364&#39;: [&#39;19110&#39;, &#39;19573&#39;, &#39;19698&#39;, &#39;19845&#39;, &#39;76001&#39;, &#39;76109&#39;],
+ &#39;41078&#39;: [&#39;41206&#39;, &#39;41799&#39;, &#39;41872&#39;, &#39;50370&#39;, &#39;73024&#39;],
+ &#39;41016&#39;: [&#39;41001&#39;, &#39;41799&#39;, &#39;41872&#39;, &#39;73067&#39;, &#39;73483&#39;, &#39;73555&#39;],
+ &#39;41872&#39;: [&#39;41016&#39;, &#39;41078&#39;, &#39;41799&#39;, &#39;73024&#39;, &#39;73483&#39;],
+ &#39;50577&#39;: [&#39;50287&#39;, &#39;50325&#39;, &#39;50590&#39;, &#39;50683&#39;, &#39;50689&#39;, &#39;50711&#39;],
+ &#39;50683&#39;: [&#39;50287&#39;, &#39;50313&#39;, &#39;50330&#39;, &#39;50400&#39;, &#39;50577&#39;, &#39;50711&#39;],
+ &#39;50330&#39;: [&#39;50370&#39;, &#39;50400&#39;, &#39;50683&#39;, &#39;50711&#39;],
+ &#39;50590&#39;: [&#39;50325&#39;, &#39;50450&#39;, &#39;50577&#39;, &#39;50711&#39;, &#39;95001&#39;],
+ &#39;19300&#39;: [&#39;19142&#39;, &#39;19513&#39;, &#39;19573&#39;],
+ &#39;19513&#39;: [&#39;19142&#39;, &#39;19212&#39;, &#39;19300&#39;, &#39;19455&#39;, &#39;19573&#39;],
+ &#39;19573&#39;: [&#39;19142&#39;,
+  &#39;19300&#39;,
+  &#39;19455&#39;,
+  &#39;19513&#39;,
+  &#39;19845&#39;,
+  &#39;76001&#39;,
+  &#39;76130&#39;,
+  &#39;76364&#39;],
+ &#39;19455&#39;: [&#39;19212&#39;, &#39;19513&#39;, &#39;19573&#39;, &#39;73555&#39;, &#39;73616&#39;, &#39;76130&#39;, &#39;76275&#39;],
+ &#39;76109&#39;: [&#39;19110&#39;, &#39;19418&#39;, &#39;27250&#39;, &#39;76001&#39;, &#39;76126&#39;, &#39;76233&#39;, &#39;76364&#39;],
+ &#39;76275&#39;: [&#39;19455&#39;, &#39;73616&#39;, &#39;76130&#39;, &#39;76563&#39;],
+ &#39;76130&#39;: [&#39;19455&#39;, &#39;19573&#39;, &#39;76001&#39;, &#39;76275&#39;, &#39;76520&#39;, &#39;76563&#39;],
+ &#39;73616&#39;: [&#39;19455&#39;,
+  &#39;73067&#39;,
+  &#39;73168&#39;,
+  &#39;73555&#39;,
+  &#39;76111&#39;,
+  &#39;76248&#39;,
+  &#39;76275&#39;,
+  &#39;76520&#39;,
+  &#39;76563&#39;],
+ &#39;73024&#39;: [&#39;41078&#39;, &#39;41206&#39;, &#39;41872&#39;, &#39;73236&#39;, &#39;73483&#39;],
+ &#39;41206&#39;: [&#39;11001&#39;, &#39;25120&#39;, &#39;41078&#39;, &#39;50370&#39;, &#39;73024&#39;, &#39;73236&#39;],
+ &#39;73067&#39;: [&#39;41016&#39;, &#39;73168&#39;, &#39;73217&#39;, &#39;73483&#39;, &#39;73555&#39;, &#39;73616&#39;],
+ &#39;76001&#39;: [&#39;19573&#39;,
+  &#39;76109&#39;,
+  &#39;76130&#39;,
+  &#39;76233&#39;,
+  &#39;76364&#39;,
+  &#39;76377&#39;,
+  &#39;76520&#39;,
+  &#39;76892&#39;],
+ &#39;76563&#39;: [&#39;73616&#39;, &#39;76130&#39;, &#39;76275&#39;, &#39;76520&#39;],
+ &#39;73483&#39;: [&#39;41016&#39;, &#39;41872&#39;, &#39;73024&#39;, &#39;73067&#39;, &#39;73217&#39;, &#39;73236&#39;, &#39;73563&#39;],
+ &#39;76520&#39;: [&#39;73616&#39;, &#39;76001&#39;, &#39;76130&#39;, &#39;76248&#39;, &#39;76563&#39;, &#39;76869&#39;, &#39;76892&#39;],
+ &#39;50287&#39;: [&#39;50313&#39;, &#39;50577&#39;, &#39;50683&#39;, &#39;50689&#39;],
+ &#39;50689&#39;: [&#39;50150&#39;,
+  &#39;50223&#39;,
+  &#39;50251&#39;,
+  &#39;50270&#39;,
+  &#39;50287&#39;,
+  &#39;50313&#39;,
+  &#39;50318&#39;,
+  &#39;50325&#39;,
+  &#39;50568&#39;,
+  &#39;50573&#39;,
+  &#39;50577&#39;,
+  &#39;50680&#39;],
+ &#39;50325&#39;: [&#39;50450&#39;, &#39;50568&#39;, &#39;50577&#39;, &#39;50590&#39;, &#39;50689&#39;, &#39;95001&#39;, &#39;99773&#39;],
+ &#39;50313&#39;: [&#39;50251&#39;, &#39;50287&#39;, &#39;50400&#39;, &#39;50683&#39;, &#39;50689&#39;],
+ &#39;50400&#39;: [&#39;50223&#39;, &#39;50251&#39;, &#39;50313&#39;, &#39;50330&#39;, &#39;50370&#39;, &#39;50683&#39;],
+ &#39;73236&#39;: [&#39;25120&#39;, &#39;41206&#39;, &#39;73024&#39;, &#39;73483&#39;, &#39;73563&#39;, &#39;73873&#39;],
+ &#39;76892&#39;: [&#39;76001&#39;, &#39;76377&#39;, &#39;76520&#39;, &#39;76869&#39;],
+ &#39;76377&#39;: [&#39;76001&#39;, &#39;76126&#39;, &#39;76233&#39;, &#39;76606&#39;, &#39;76869&#39;, &#39;76892&#39;],
+ &#39;76233&#39;: [&#39;76001&#39;, &#39;76109&#39;, &#39;76126&#39;, &#39;76377&#39;],
+ &#39;50251&#39;: [&#39;50223&#39;, &#39;50270&#39;, &#39;50313&#39;, &#39;50400&#39;, &#39;50689&#39;],
+ &#39;73217&#39;: [&#39;73067&#39;, &#39;73168&#39;, &#39;73483&#39;, &#39;73504&#39;, &#39;73563&#39;, &#39;73585&#39;, &#39;73671&#39;],
+ &#39;73168&#39;: [&#39;73067&#39;,
+  &#39;73217&#39;,
+  &#39;73504&#39;,
+  &#39;73616&#39;,
+  &#39;73622&#39;,
+  &#39;73675&#39;,
+  &#39;76111&#39;,
+  &#39;76736&#39;,
+  &#39;76834&#39;],
+ &#39;73563&#39;: [&#39;73217&#39;, &#39;73236&#39;, &#39;73483&#39;, &#39;73585&#39;, &#39;73873&#39;],
+ &#39;76869&#39;: [&#39;76248&#39;, &#39;76377&#39;, &#39;76520&#39;, &#39;76606&#39;, &#39;76890&#39;, &#39;76892&#39;],
+ &#39;76248&#39;: [&#39;73616&#39;, &#39;76111&#39;, &#39;76306&#39;, &#39;76318&#39;, &#39;76520&#39;, &#39;76869&#39;, &#39;76890&#39;],
+ &#39;94343&#39;: [&#39;94001&#39;, &#39;94888&#39;, &#39;95001&#39;, &#39;99773&#39;],
+ &#39;94001&#39;: [&#39;94343&#39;, &#39;94884&#39;, &#39;94886&#39;, &#39;94887&#39;, &#39;94888&#39;, &#39;99773&#39;],
+ &#39;99773&#39;: [&#39;50325&#39;,
+  &#39;50568&#39;,
+  &#39;94001&#39;,
+  &#39;94343&#39;,
+  &#39;95001&#39;,
+  &#39;99001&#39;,
+  &#39;99524&#39;,
+  &#39;99624&#39;],
+ &#39;50270&#39;: [&#39;50223&#39;, &#39;50251&#39;, &#39;50689&#39;],
+ &#39;50223&#39;: [&#39;11001&#39;, &#39;50251&#39;, &#39;50270&#39;, &#39;50318&#39;, &#39;50370&#39;, &#39;50400&#39;, &#39;50689&#39;],
+ &#39;76306&#39;: [&#39;76111&#39;, &#39;76248&#39;, &#39;76318&#39;],
+ &#39;76318&#39;: [&#39;76111&#39;, &#39;76248&#39;, &#39;76306&#39;, &#39;76890&#39;],
+ &#39;76111&#39;: [&#39;73168&#39;,
+  &#39;73616&#39;,
+  &#39;76248&#39;,
+  &#39;76306&#39;,
+  &#39;76318&#39;,
+  &#39;76670&#39;,
+  &#39;76834&#39;,
+  &#39;76890&#39;],
+ &#39;76890&#39;: [&#39;76111&#39;,
+  &#39;76126&#39;,
+  &#39;76248&#39;,
+  &#39;76318&#39;,
+  &#39;76606&#39;,
+  &#39;76616&#39;,
+  &#39;76670&#39;,
+  &#39;76834&#39;,
+  &#39;76869&#39;],
+ &#39;11001&#39;: [&#39;25053&#39;,
+  &#39;25120&#39;,
+  &#39;25175&#39;,
+  &#39;25178&#39;,
+  &#39;25181&#39;,
+  &#39;25214&#39;,
+  &#39;25286&#39;,
+  &#39;25339&#39;,
+  &#39;25377&#39;,
+  &#39;25473&#39;,
+  &#39;25535&#39;,
+  &#39;25649&#39;,
+  &#39;25754&#39;,
+  &#39;25841&#39;,
+  &#39;25845&#39;,
+  &#39;41206&#39;,
+  &#39;50223&#39;,
+  &#39;50318&#39;,
+  &#39;50370&#39;],
+ &#39;50150&#39;: [&#39;50006&#39;, &#39;50318&#39;, &#39;50680&#39;, &#39;50689&#39;],
+ &#39;50680&#39;: [&#39;50001&#39;, &#39;50006&#39;, &#39;50150&#39;, &#39;50573&#39;, &#39;50689&#39;],
+ &#39;50318&#39;: [&#39;11001&#39;, &#39;25339&#39;, &#39;50006&#39;, &#39;50150&#39;, &#39;50223&#39;, &#39;50689&#39;],
+ &#39;50573&#39;: [&#39;50001&#39;,
+  &#39;50124&#39;,
+  &#39;50226&#39;,
+  &#39;50568&#39;,
+  &#39;50606&#39;,
+  &#39;50680&#39;,
+  &#39;50689&#39;,
+  &#39;85139&#39;,
+  &#39;85410&#39;,
+  &#39;85440&#39;],
+ &#39;50568&#39;: [&#39;50325&#39;, &#39;50573&#39;, &#39;50689&#39;, &#39;85139&#39;, &#39;85230&#39;, &#39;99624&#39;, &#39;99773&#39;],
+ &#39;73873&#39;: [&#39;25120&#39;, &#39;73226&#39;, &#39;73236&#39;, &#39;73352&#39;, &#39;73563&#39;, &#39;73585&#39;],
+ &#39;73585&#39;: [&#39;73217&#39;, &#39;73226&#39;, &#39;73319&#39;, &#39;73563&#39;, &#39;73671&#39;, &#39;73770&#39;, &#39;73873&#39;],
+ &#39;76606&#39;: [&#39;76126&#39;, &#39;76377&#39;, &#39;76869&#39;, &#39;76890&#39;],
+ &#39;25120&#39;: [&#39;11001&#39;,
+  &#39;25506&#39;,
+  &#39;25649&#39;,
+  &#39;41206&#39;,
+  &#39;73226&#39;,
+  &#39;73236&#39;,
+  &#39;73352&#39;,
+  &#39;73873&#39;],
+ &#39;76126&#39;: [&#39;27250&#39;, &#39;76109&#39;, &#39;76233&#39;, &#39;76377&#39;, &#39;76606&#39;, &#39;76616&#39;, &#39;76890&#39;],
+ &#39;73671&#39;: [&#39;73217&#39;, &#39;73319&#39;, &#39;73504&#39;, &#39;73585&#39;, &#39;73678&#39;],
+ &#39;73504&#39;: [&#39;73168&#39;, &#39;73217&#39;, &#39;73624&#39;, &#39;73671&#39;, &#39;73675&#39;, &#39;73678&#39;, &#39;73854&#39;],
+ &#39;50006&#39;: [&#39;25335&#39;, &#39;25339&#39;, &#39;50001&#39;, &#39;50150&#39;, &#39;50318&#39;, &#39;50680&#39;],
+ &#39;50001&#39;: [&#39;25335&#39;, &#39;50006&#39;, &#39;50245&#39;, &#39;50573&#39;, &#39;50606&#39;, &#39;50680&#39;],
+ &#39;73226&#39;: [&#39;25120&#39;, &#39;73148&#39;, &#39;73352&#39;, &#39;73449&#39;, &#39;73585&#39;, &#39;73770&#39;, &#39;73873&#39;],
+ &#39;73352&#39;: [&#39;25053&#39;,
+  &#39;25120&#39;,
+  &#39;25290&#39;,
+  &#39;25488&#39;,
+  &#39;25506&#39;,
+  &#39;25524&#39;,
+  &#39;25805&#39;,
+  &#39;73226&#39;,
+  &#39;73449&#39;,
+  &#39;73873&#39;],
+ &#39;76670&#39;: [&#39;76111&#39;, &#39;76834&#39;, &#39;76890&#39;],
+ &#39;76834&#39;: [&#39;73168&#39;,
+  &#39;76036&#39;,
+  &#39;76111&#39;,
+  &#39;76113&#39;,
+  &#39;76616&#39;,
+  &#39;76670&#39;,
+  &#39;76736&#39;,
+  &#39;76890&#39;],
+ &#39;73319&#39;: [&#39;73268&#39;, &#39;73585&#39;, &#39;73671&#39;, &#39;73678&#39;, &#39;73770&#39;],
+ &#39;73678&#39;: [&#39;73001&#39;,
+  &#39;73200&#39;,
+  &#39;73268&#39;,
+  &#39;73319&#39;,
+  &#39;73504&#39;,
+  &#39;73624&#39;,
+  &#39;73671&#39;,
+  &#39;73854&#39;],
+ &#39;73770&#39;: [&#39;25612&#39;, &#39;73148&#39;, &#39;73226&#39;, &#39;73268&#39;, &#39;73275&#39;, &#39;73319&#39;, &#39;73585&#39;],
+ &#39;25506&#39;: [&#39;25120&#39;, &#39;25524&#39;, &#39;25649&#39;, &#39;73352&#39;],
+ &#39;25649&#39;: [&#39;11001&#39;, &#39;25053&#39;, &#39;25120&#39;, &#39;25506&#39;, &#39;25524&#39;],
+ &#39;73675&#39;: [&#39;73168&#39;, &#39;73504&#39;, &#39;73622&#39;, &#39;73624&#39;],
+ &#39;73622&#39;: [&#39;63302&#39;, &#39;63548&#39;, &#39;73124&#39;, &#39;73168&#39;, &#39;73624&#39;, &#39;73675&#39;, &#39;76736&#39;],
+ &#39;76736&#39;: [&#39;63302&#39;,
+  &#39;63401&#39;,
+  &#39;73168&#39;,
+  &#39;73622&#39;,
+  &#39;76113&#39;,
+  &#39;76122&#39;,
+  &#39;76834&#39;,
+  &#39;76895&#39;],
+ &#39;76616&#39;: [&#39;27250&#39;, &#39;76036&#39;, &#39;76126&#39;, &#39;76828&#39;, &#39;76834&#39;, &#39;76890&#39;],
+ &#39;27250&#39;: [&#39;27077&#39;,
+  &#39;27361&#39;,
+  &#39;27745&#39;,
+  &#39;76100&#39;,
+  &#39;76109&#39;,
+  &#39;76126&#39;,
+  &#39;76616&#39;,
+  &#39;76828&#39;],
+ &#39;25339&#39;: [&#39;11001&#39;, &#39;25281&#39;, &#39;25335&#39;, &#39;25845&#39;, &#39;50006&#39;, &#39;50318&#39;],
+ &#39;25524&#39;: [&#39;25053&#39;, &#39;25506&#39;, &#39;25649&#39;, &#39;73352&#39;],
+ &#39;73854&#39;: [&#39;73504&#39;, &#39;73624&#39;, &#39;73678&#39;],
+ &#39;73624&#39;: [&#39;73001&#39;, &#39;73124&#39;, &#39;73504&#39;, &#39;73622&#39;, &#39;73675&#39;, &#39;73678&#39;, &#39;73854&#39;],
+ &#39;73148&#39;: [&#39;25612&#39;, &#39;73226&#39;, &#39;73449&#39;, &#39;73770&#39;],
+ &#39;73449&#39;: [&#39;25488&#39;, &#39;25612&#39;, &#39;73148&#39;, &#39;73226&#39;, &#39;73352&#39;],
+ &#39;76036&#39;: [&#39;76113&#39;, &#39;76616&#39;, &#39;76828&#39;, &#39;76834&#39;],
+ &#39;76113&#39;: [&#39;76036&#39;, &#39;76100&#39;, &#39;76736&#39;, &#39;76828&#39;, &#39;76834&#39;, &#39;76895&#39;],
+ &#39;25335&#39;: [&#39;25281&#39;, &#39;25339&#39;, &#39;25594&#39;, &#39;50001&#39;, &#39;50006&#39;, &#39;50245&#39;],
+ &#39;76828&#39;: [&#39;27250&#39;, &#39;76036&#39;, &#39;76100&#39;, &#39;76113&#39;, &#39;76616&#39;],
+ &#39;25053&#39;: [&#39;11001&#39;, &#39;25290&#39;, &#39;25524&#39;, &#39;25535&#39;, &#39;25649&#39;, &#39;73352&#39;],
+ &#39;25612&#39;: [&#39;25001&#39;,
+  &#39;25307&#39;,
+  &#39;25488&#39;,
+  &#39;25815&#39;,
+  &#39;73148&#39;,
+  &#39;73275&#39;,
+  &#39;73449&#39;,
+  &#39;73770&#39;],
+ &#39;73268&#39;: [&#39;73200&#39;, &#39;73275&#39;, &#39;73319&#39;, &#39;73678&#39;, &#39;73770&#39;],
+ &#39;73275&#39;: [&#39;25307&#39;, &#39;25612&#39;, &#39;73200&#39;, &#39;73268&#39;, &#39;73770&#39;],
+ &#39;73200&#39;: [&#39;25307&#39;,
+  &#39;25324&#39;,
+  &#39;25483&#39;,
+  &#39;73001&#39;,
+  &#39;73268&#39;,
+  &#39;73275&#39;,
+  &#39;73547&#39;,
+  &#39;73678&#39;],
+ &#39;25488&#39;: [&#39;25001&#39;, &#39;25612&#39;, &#39;25805&#39;, &#39;25815&#39;, &#39;25878&#39;, &#39;73352&#39;, &#39;73449&#39;],
+ &#39;25805&#39;: [&#39;25290&#39;, &#39;25488&#39;, &#39;25743&#39;, &#39;25878&#39;, &#39;73352&#39;],
+ &#39;25290&#39;: [&#39;25053&#39;, &#39;25535&#39;, &#39;25740&#39;, &#39;25743&#39;, &#39;25805&#39;, &#39;73352&#39;],
+ &#39;50606&#39;: [&#39;25438&#39;, &#39;50001&#39;, &#39;50226&#39;, &#39;50245&#39;, &#39;50573&#39;, &#39;50686&#39;],
+ &#39;50245&#39;: [&#39;25279&#39;, &#39;25335&#39;, &#39;25594&#39;, &#39;50001&#39;, &#39;50606&#39;, &#39;50686&#39;],
+ &#39;25535&#39;: [&#39;11001&#39;, &#39;25053&#39;, &#39;25290&#39;, &#39;25740&#39;, &#39;25754&#39;],
+ &#39;25307&#39;: [&#39;25483&#39;, &#39;25612&#39;, &#39;25815&#39;, &#39;73200&#39;, &#39;73275&#39;],
+ &#39;25281&#39;: [&#39;25151&#39;, &#39;25335&#39;, &#39;25339&#39;, &#39;25594&#39;, &#39;25845&#39;],
+ &#39;25845&#39;: [&#39;11001&#39;, &#39;25151&#39;, &#39;25178&#39;, &#39;25281&#39;, &#39;25339&#39;],
+ &#39;76100&#39;: [&#39;27250&#39;, &#39;27745&#39;, &#39;76113&#39;, &#39;76250&#39;, &#39;76622&#39;, &#39;76828&#39;, &#39;76895&#39;],
+ &#39;76895&#39;: [&#39;63401&#39;, &#39;76100&#39;, &#39;76113&#39;, &#39;76403&#39;, &#39;76622&#39;, &#39;76736&#39;],
+ &#39;73001&#39;: [&#39;63690&#39;,
+  &#39;73026&#39;,
+  &#39;73043&#39;,
+  &#39;73124&#39;,
+  &#39;73200&#39;,
+  &#39;73547&#39;,
+  &#39;73624&#39;,
+  &#39;73678&#39;],
+ &#39;73124&#39;: [&#39;63130&#39;, &#39;63212&#39;, &#39;63548&#39;, &#39;63690&#39;, &#39;73001&#39;, &#39;73622&#39;, &#39;73624&#39;],
+ &#39;25594&#39;: [&#39;25151&#39;, &#39;25279&#39;, &#39;25281&#39;, &#39;25335&#39;, &#39;50245&#39;],
+ &#39;25151&#39;: [&#39;25178&#39;, &#39;25279&#39;, &#39;25281&#39;, &#39;25594&#39;, &#39;25841&#39;, &#39;25845&#39;],
+ &#39;50226&#39;: [&#39;25438&#39;, &#39;25530&#39;, &#39;50124&#39;, &#39;50573&#39;, &#39;50606&#39;],
+ &#39;50124&#39;: [&#39;25530&#39;, &#39;50110&#39;, &#39;50226&#39;, &#39;50573&#39;, &#39;85440&#39;],
+ &#39;25438&#39;: [&#39;25293&#39;, &#39;25530&#39;, &#39;25839&#39;, &#39;50226&#39;, &#39;50606&#39;, &#39;50686&#39;],
+ &#39;25530&#39;: [&#39;15667&#39;,
+  &#39;15690&#39;,
+  &#39;25438&#39;,
+  &#39;25839&#39;,
+  &#39;50110&#39;,
+  &#39;50124&#39;,
+  &#39;50226&#39;,
+  &#39;85300&#39;],
+ &#39;25001&#39;: [&#39;25488&#39;, &#39;25612&#39;, &#39;25815&#39;],
+ &#39;25878&#39;: [&#39;25035&#39;,
+  &#39;25245&#39;,
+  &#39;25312&#39;,
+  &#39;25488&#39;,
+  &#39;25599&#39;,
+  &#39;25743&#39;,
+  &#39;25805&#39;,
+  &#39;25815&#39;],
+ &#39;25815&#39;: [&#39;25001&#39;,
+  &#39;25307&#39;,
+  &#39;25368&#39;,
+  &#39;25483&#39;,
+  &#39;25488&#39;,
+  &#39;25599&#39;,
+  &#39;25612&#39;,
+  &#39;25878&#39;],
+ &#39;25743&#39;: [&#39;25290&#39;, &#39;25312&#39;, &#39;25740&#39;, &#39;25805&#39;, &#39;25878&#39;],
+ &#39;25740&#39;: [&#39;25290&#39;, &#39;25312&#39;, &#39;25535&#39;, &#39;25743&#39;, &#39;25754&#39;],
+ &#39;25754&#39;: [&#39;11001&#39;, &#39;25099&#39;, &#39;25312&#39;, &#39;25473&#39;, &#39;25535&#39;, &#39;25645&#39;, &#39;25740&#39;],
+ &#39;25279&#39;: [&#39;25151&#39;,
+  &#39;25181&#39;,
+  &#39;25372&#39;,
+  &#39;25377&#39;,
+  &#39;25594&#39;,
+  &#39;25841&#39;,
+  &#39;50245&#39;,
+  &#39;50686&#39;],
+ &#39;25178&#39;: [&#39;11001&#39;, &#39;25151&#39;, &#39;25841&#39;, &#39;25845&#39;],
+ &#39;25483&#39;: [&#39;25307&#39;, &#39;25324&#39;, &#39;25368&#39;, &#39;25815&#39;, &#39;73200&#39;],
+ &#39;85440&#39;: [&#39;50110&#39;, &#39;50124&#39;, &#39;50573&#39;, &#39;85162&#39;, &#39;85300&#39;, &#39;85410&#39;],
+ &#39;85139&#39;: [&#39;50568&#39;, &#39;50573&#39;, &#39;85001&#39;, &#39;85010&#39;, &#39;85230&#39;, &#39;85410&#39;],
+ &#39;85410&#39;: [&#39;15514&#39;,
+  &#39;50573&#39;,
+  &#39;85010&#39;,
+  &#39;85015&#39;,
+  &#39;85139&#39;,
+  &#39;85162&#39;,
+  &#39;85279&#39;,
+  &#39;85440&#39;],
+ &#39;25841&#39;: [&#39;11001&#39;, &#39;25151&#39;, &#39;25178&#39;, &#39;25181&#39;, &#39;25279&#39;],
+ &#39;50686&#39;: [&#39;25279&#39;, &#39;25293&#39;, &#39;25372&#39;, &#39;25438&#39;, &#39;50245&#39;, &#39;50606&#39;],
+ &#39;76622&#39;: [&#39;76100&#39;, &#39;76250&#39;, &#39;76400&#39;, &#39;76403&#39;, &#39;76895&#39;],
+ &#39;63401&#39;: [&#39;63001&#39;, &#39;63130&#39;, &#39;63470&#39;, &#39;76122&#39;, &#39;76403&#39;, &#39;76736&#39;, &#39;76895&#39;],
+ &#39;76403&#39;: [&#39;63401&#39;, &#39;63470&#39;, &#39;76400&#39;, &#39;76497&#39;, &#39;76622&#39;, &#39;76895&#39;],
+ &#39;50110&#39;: [&#39;15667&#39;, &#39;25530&#39;, &#39;50124&#39;, &#39;85300&#39;, &#39;85440&#39;],
+ &#39;25324&#39;: [&#39;25086&#39;, &#39;25368&#39;, &#39;25483&#39;, &#39;73200&#39;, &#39;73547&#39;],
+ &#39;25368&#39;: [&#39;25035&#39;,
+  &#39;25086&#39;,
+  &#39;25324&#39;,
+  &#39;25483&#39;,
+  &#39;25580&#39;,
+  &#39;25596&#39;,
+  &#39;25599&#39;,
+  &#39;25815&#39;],
+ &#39;25312&#39;: [&#39;25245&#39;, &#39;25645&#39;, &#39;25740&#39;, &#39;25743&#39;, &#39;25754&#39;, &#39;25878&#39;],
+ &#39;76250&#39;: [&#39;27745&#39;, &#39;76100&#39;, &#39;76400&#39;, &#39;76622&#39;, &#39;76863&#39;],
+ &#39;27745&#39;: [&#39;27250&#39;,
+  &#39;27361&#39;,
+  &#39;27450&#39;,
+  &#39;27491&#39;,
+  &#39;27660&#39;,
+  &#39;76100&#39;,
+  &#39;76246&#39;,
+  &#39;76250&#39;,
+  &#39;76863&#39;],
+ &#39;73547&#39;: [&#39;25086&#39;, &#39;25324&#39;, &#39;73001&#39;, &#39;73026&#39;, &#39;73200&#39;, &#39;73861&#39;],
+ &#39;76400&#39;: [&#39;76250&#39;, &#39;76403&#39;, &#39;76497&#39;, &#39;76622&#39;, &#39;76823&#39;, &#39;76863&#39;],
+ &#39;25245&#39;: [&#39;25035&#39;, &#39;25312&#39;, &#39;25386&#39;, &#39;25645&#39;, &#39;25797&#39;, &#39;25878&#39;],
+ &#39;25599&#39;: [&#39;25035&#39;, &#39;25368&#39;, &#39;25815&#39;, &#39;25878&#39;],
+ &#39;25035&#39;: [&#39;25245&#39;, &#39;25368&#39;, &#39;25386&#39;, &#39;25596&#39;, &#39;25599&#39;, &#39;25878&#39;],
+ &#39;25645&#39;: [&#39;25099&#39;, &#39;25245&#39;, &#39;25312&#39;, &#39;25754&#39;, &#39;25797&#39;],
+ &#39;25181&#39;: [&#39;11001&#39;, &#39;25279&#39;, &#39;25377&#39;, &#39;25841&#39;],
+ &#39;25293&#39;: [&#39;15236&#39;, &#39;15690&#39;, &#39;25299&#39;, &#39;25372&#39;, &#39;25438&#39;, &#39;25839&#39;, &#39;50686&#39;],
+ &#39;25372&#39;: [&#39;25279&#39;,
+  &#39;25293&#39;,
+  &#39;25297&#39;,
+  &#39;25299&#39;,
+  &#39;25322&#39;,
+  &#39;25326&#39;,
+  &#39;25377&#39;,
+  &#39;50686&#39;],
+ &#39;27361&#39;: [&#39;27077&#39;,
+  &#39;27135&#39;,
+  &#39;27250&#39;,
+  &#39;27430&#39;,
+  &#39;27450&#39;,
+  &#39;27580&#39;,
+  &#39;27745&#39;,
+  &#39;27787&#39;,
+  &#39;27810&#39;],
+ &#39;27077&#39;: [&#39;27025&#39;, &#39;27250&#39;, &#39;27361&#39;, &#39;27430&#39;, &#39;27495&#39;],
+ &#39;25086&#39;: [&#39;25324&#39;, &#39;25368&#39;, &#39;25580&#39;, &#39;25662&#39;, &#39;73030&#39;, &#39;73547&#39;, &#39;73861&#39;],
+ &#39;76863&#39;: [&#39;27745&#39;, &#39;76054&#39;, &#39;76246&#39;, &#39;76250&#39;, &#39;76400&#39;, &#39;76823&#39;],
+ &#39;76823&#39;: [&#39;76041&#39;, &#39;76054&#39;, &#39;76147&#39;, &#39;76400&#39;, &#39;76497&#39;, &#39;76863&#39;],
+ &#39;76497&#39;: [&#39;63470&#39;, &#39;63594&#39;, &#39;76147&#39;, &#39;76400&#39;, &#39;76403&#39;, &#39;76823&#39;],
+ &#39;25797&#39;: [&#39;25099&#39;, &#39;25245&#39;, &#39;25386&#39;, &#39;25645&#39;],
+ &#39;25386&#39;: [&#39;25035&#39;, &#39;25099&#39;, &#39;25123&#39;, &#39;25245&#39;, &#39;25596&#39;, &#39;25797&#39;, &#39;25898&#39;],
+ &#39;73026&#39;: [&#39;73001&#39;, &#39;73043&#39;, &#39;73547&#39;, &#39;73861&#39;],
+ &#39;73861&#39;: [&#39;25086&#39;,
+  &#39;73026&#39;,
+  &#39;73030&#39;,
+  &#39;73043&#39;,
+  &#39;73408&#39;,
+  &#39;73411&#39;,
+  &#39;73547&#39;,
+  &#39;73686&#39;],
+ &#39;25473&#39;: [&#39;11001&#39;, &#39;25099&#39;, &#39;25286&#39;, &#39;25430&#39;, &#39;25754&#39;],
+ &#39;25099&#39;: [&#39;25269&#39;,
+  &#39;25386&#39;,
+  &#39;25430&#39;,
+  &#39;25473&#39;,
+  &#39;25645&#39;,
+  &#39;25754&#39;,
+  &#39;25797&#39;,
+  &#39;25898&#39;],
+ &#39;25596&#39;: [&#39;25035&#39;,
+  &#39;25040&#39;,
+  &#39;25095&#39;,
+  &#39;25123&#39;,
+  &#39;25368&#39;,
+  &#39;25386&#39;,
+  &#39;25580&#39;,
+  &#39;25662&#39;,
+  &#39;25867&#39;],
+ &#39;25377&#39;: [&#39;11001&#39;, &#39;25175&#39;, &#39;25181&#39;, &#39;25279&#39;, &#39;25322&#39;, &#39;25372&#39;, &#39;25758&#39;],
+ &#39;25580&#39;: [&#39;25086&#39;, &#39;25368&#39;, &#39;25596&#39;, &#39;25662&#39;],
+ &#39;25839&#39;: [&#39;15236&#39;,
+  &#39;15325&#39;,
+  &#39;15690&#39;,
+  &#39;25293&#39;,
+  &#39;25297&#39;,
+  &#39;25299&#39;,
+  &#39;25438&#39;,
+  &#39;25530&#39;],
+ &#39;73043&#39;: [&#39;63690&#39;, &#39;73001&#39;, &#39;73026&#39;, &#39;73686&#39;, &#39;73861&#39;],
+ &#39;76054&#39;: [&#39;76041&#39;, &#39;76246&#39;, &#39;76823&#39;, &#39;76863&#39;],
+ &#39;76246&#39;: [&#39;27660&#39;, &#39;27745&#39;, &#39;76041&#39;, &#39;76054&#39;, &#39;76863&#39;],
+ &#39;25123&#39;: [&#39;25040&#39;, &#39;25386&#39;, &#39;25596&#39;, &#39;25898&#39;],
+ &#39;25898&#39;: [&#39;25040&#39;, &#39;25099&#39;, &#39;25123&#39;, &#39;25269&#39;, &#39;25386&#39;],
+ &#39;85300&#39;: [&#39;15514&#39;, &#39;15667&#39;, &#39;25530&#39;, &#39;50110&#39;, &#39;85162&#39;, &#39;85440&#39;],
+ &#39;85162&#39;: [&#39;15514&#39;, &#39;85300&#39;, &#39;85410&#39;, &#39;85440&#39;],
+ &#39;73686&#39;: [&#39;17873&#39;,
+  &#39;63690&#39;,
+  &#39;66001&#39;,
+  &#39;66682&#39;,
+  &#39;73043&#39;,
+  &#39;73411&#39;,
+  &#39;73461&#39;,
+  &#39;73861&#39;],
+ &#39;63690&#39;: [&#39;63001&#39;,
+  &#39;63130&#39;,
+  &#39;63190&#39;,
+  &#39;63272&#39;,
+  &#39;66001&#39;,
+  &#39;73001&#39;,
+  &#39;73043&#39;,
+  &#39;73124&#39;,
+  &#39;73686&#39;],
+ &#39;15667&#39;: [&#39;15135&#39;, &#39;15514&#39;, &#39;15690&#39;, &#39;25530&#39;, &#39;50110&#39;, &#39;85300&#39;],
+ &#39;25286&#39;: [&#39;11001&#39;, &#39;25214&#39;, &#39;25430&#39;, &#39;25473&#39;, &#39;25799&#39;],
+ &#39;25430&#39;: [&#39;25099&#39;, &#39;25260&#39;, &#39;25269&#39;, &#39;25286&#39;, &#39;25473&#39;, &#39;25769&#39;, &#39;25799&#39;],
+ &#39;15690&#39;: [&#39;15135&#39;, &#39;15236&#39;, &#39;15425&#39;, &#39;15667&#39;, &#39;25293&#39;, &#39;25530&#39;, &#39;25839&#39;],
+ &#39;76041&#39;: [&#39;27660&#39;,
+  &#39;66001&#39;,
+  &#39;66075&#39;,
+  &#39;76054&#39;,
+  &#39;76147&#39;,
+  &#39;76243&#39;,
+  &#39;76246&#39;,
+  &#39;76823&#39;],
+ &#39;76147&#39;: [&#39;63594&#39;, &#39;66001&#39;, &#39;76020&#39;, &#39;76041&#39;, &#39;76497&#39;, &#39;76823&#39;, &#39;76845&#39;],
+ &#39;25662&#39;: [&#39;25086&#39;, &#39;25168&#39;, &#39;25580&#39;, &#39;25596&#39;, &#39;25867&#39;, &#39;73030&#39;, &#39;73055&#39;],
+ &#39;25269&#39;: [&#39;25019&#39;,
+  &#39;25040&#39;,
+  &#39;25099&#39;,
+  &#39;25260&#39;,
+  &#39;25402&#39;,
+  &#39;25430&#39;,
+  &#39;25658&#39;,
+  &#39;25718&#39;,
+  &#39;25898&#39;],
+ &#39;25040&#39;: [&#39;25019&#39;, &#39;25095&#39;, &#39;25123&#39;, &#39;25269&#39;, &#39;25328&#39;, &#39;25596&#39;, &#39;25898&#39;],
+ &#39;25299&#39;: [&#39;25293&#39;, &#39;25297&#39;, &#39;25372&#39;, &#39;25839&#39;],
+ &#39;25297&#39;: [&#39;15325&#39;, &#39;25299&#39;, &#39;25326&#39;, &#39;25372&#39;, &#39;25426&#39;, &#39;25436&#39;, &#39;25839&#39;],
+ &#39;25799&#39;: [&#39;25175&#39;, &#39;25214&#39;, &#39;25286&#39;, &#39;25430&#39;, &#39;25769&#39;, &#39;25785&#39;],
+ &#39;25214&#39;: [&#39;11001&#39;, &#39;25175&#39;, &#39;25286&#39;, &#39;25799&#39;],
+ &#39;25095&#39;: [&#39;25040&#39;, &#39;25328&#39;, &#39;25596&#39;, &#39;25867&#39;, &#39;25875&#39;],
+ &#39;25867&#39;: [&#39;25095&#39;, &#39;25168&#39;, &#39;25320&#39;, &#39;25596&#39;, &#39;25662&#39;, &#39;25875&#39;],
+ &#39;15236&#39;: [&#39;15022&#39;, &#39;15325&#39;, &#39;15425&#39;, &#39;15690&#39;, &#39;25293&#39;, &#39;25839&#39;],
+ &#39;27491&#39;: [&#39;27205&#39;, &#39;27450&#39;, &#39;27660&#39;, &#39;27745&#39;],
+ &#39;27450&#39;: [&#39;27205&#39;, &#39;27361&#39;, &#39;27491&#39;, &#39;27580&#39;, &#39;27745&#39;],
+ &#39;27660&#39;: [&#39;27205&#39;,
+  &#39;27491&#39;,
+  &#39;27745&#39;,
+  &#39;27787&#39;,
+  &#39;66045&#39;,
+  &#39;66383&#39;,
+  &#39;66572&#39;,
+  &#39;66687&#39;,
+  &#39;76041&#39;,
+  &#39;76243&#39;,
+  &#39;76246&#39;],
+ &#39;73030&#39;: [&#39;25086&#39;, &#39;25662&#39;, &#39;73055&#39;, &#39;73408&#39;, &#39;73861&#39;],
+ &#39;73408&#39;: [&#39;73030&#39;, &#39;73055&#39;, &#39;73411&#39;, &#39;73861&#39;],
+ &#39;73411&#39;: [&#39;73055&#39;, &#39;73408&#39;, &#39;73461&#39;, &#39;73686&#39;, &#39;73861&#39;, &#39;73870&#39;],
+ &#39;73461&#39;: [&#39;17873&#39;, &#39;66001&#39;, &#39;66682&#39;, &#39;73411&#39;, &#39;73686&#39;, &#39;73870&#39;],
+ &#39;66682&#39;: [&#39;17174&#39;, &#39;17873&#39;, &#39;66001&#39;, &#39;66170&#39;, &#39;66440&#39;, &#39;73461&#39;, &#39;73686&#39;],
+ &#39;17873&#39;: [&#39;17001&#39;,
+  &#39;17174&#39;,
+  &#39;66001&#39;,
+  &#39;66682&#39;,
+  &#39;73152&#39;,
+  &#39;73347&#39;,
+  &#39;73461&#39;,
+  &#39;73686&#39;,
+  &#39;73870&#39;],
+ &#39;66001&#39;: [&#39;17873&#39;,
+  &#39;63272&#39;,
+  &#39;63690&#39;,
+  &#39;66075&#39;,
+  &#39;66170&#39;,
+  &#39;66400&#39;,
+  &#39;66440&#39;,
+  &#39;66682&#39;,
+  &#39;73461&#39;,
+  &#39;73686&#39;,
+  &#39;76041&#39;,
+  &#39;76147&#39;,
+  &#39;76845&#39;],
+ &#39;25322&#39;: [&#39;25326&#39;, &#39;25372&#39;, &#39;25377&#39;, &#39;25758&#39;, &#39;25817&#39;],
+ &#39;25326&#39;: [&#39;25295&#39;, &#39;25297&#39;, &#39;25322&#39;, &#39;25372&#39;, &#39;25426&#39;, &#39;25736&#39;, &#39;25817&#39;],
+ &#39;25328&#39;: [&#39;25019&#39;, &#39;25040&#39;, &#39;25095&#39;, &#39;25875&#39;],
+ &#39;25019&#39;: [&#39;25040&#39;, &#39;25269&#39;, &#39;25328&#39;, &#39;25718&#39;, &#39;25875&#39;],
+ &#39;25260&#39;: [&#39;25269&#39;, &#39;25430&#39;, &#39;25658&#39;, &#39;25769&#39;],
+ &#39;25769&#39;: [&#39;25260&#39;,
+  &#39;25430&#39;,
+  &#39;25513&#39;,
+  &#39;25658&#39;,
+  &#39;25777&#39;,
+  &#39;25785&#39;,
+  &#39;25799&#39;,
+  &#39;25899&#39;],
+ &#39;15325&#39;: [&#39;15022&#39;, &#39;15236&#39;, &#39;15322&#39;, &#39;15761&#39;, &#39;25297&#39;, &#39;25436&#39;, &#39;25839&#39;],
+ &#39;66170&#39;: [&#39;66001&#39;, &#39;66440&#39;, &#39;66682&#39;],
+ &#39;66440&#39;: [&#39;17088&#39;, &#39;17174&#39;, &#39;66001&#39;, &#39;66170&#39;, &#39;66400&#39;, &#39;66682&#39;],
+ &#39;66075&#39;: [&#39;66001&#39;, &#39;66383&#39;, &#39;66400&#39;, &#39;66687&#39;, &#39;76041&#39;, &#39;76243&#39;],
+ &#39;76243&#39;: [&#39;27660&#39;, &#39;66075&#39;, &#39;66383&#39;, &#39;66687&#39;, &#39;76041&#39;],
+ &#39;25718&#39;: [&#39;25019&#39;, &#39;25269&#39;, &#39;25402&#39;, &#39;25491&#39;, &#39;25875&#39;],
+ &#39;25658&#39;: [&#39;25260&#39;, &#39;25269&#39;, &#39;25402&#39;, &#39;25769&#39;, &#39;25777&#39;],
+ &#39;25402&#39;: [&#39;25269&#39;, &#39;25491&#39;, &#39;25658&#39;, &#39;25718&#39;, &#39;25777&#39;, &#39;25862&#39;],
+ &#39;85230&#39;: [&#39;50568&#39;, &#39;85001&#39;, &#39;85139&#39;, &#39;85325&#39;, &#39;99624&#39;],
+ &#39;99624&#39;: [&#39;50568&#39;, &#39;85230&#39;, &#39;85325&#39;, &#39;85430&#39;, &#39;99524&#39;, &#39;99773&#39;],
+ &#39;25785&#39;: [&#39;25126&#39;, &#39;25175&#39;, &#39;25769&#39;, &#39;25799&#39;, &#39;25899&#39;],
+ &#39;25175&#39;: [&#39;11001&#39;, &#39;25126&#39;, &#39;25214&#39;, &#39;25377&#39;, &#39;25758&#39;, &#39;25785&#39;, &#39;25799&#39;],
+ &#39;73870&#39;: [&#39;17873&#39;, &#39;73055&#39;, &#39;73152&#39;, &#39;73270&#39;, &#39;73411&#39;, &#39;73461&#39;],
+ &#39;25817&#39;: [&#39;25295&#39;, &#39;25322&#39;, &#39;25326&#39;, &#39;25486&#39;, &#39;25758&#39;, &#39;25899&#39;],
+ &#39;25758&#39;: [&#39;25126&#39;, &#39;25175&#39;, &#39;25322&#39;, &#39;25377&#39;, &#39;25817&#39;, &#39;25899&#39;],
+ &#39;15022&#39;: [&#39;15236&#39;, &#39;15299&#39;, &#39;15325&#39;, &#39;15425&#39;, &#39;15761&#39;],
+ &#39;15425&#39;: [&#39;15022&#39;, &#39;15135&#39;, &#39;15236&#39;, &#39;15299&#39;, &#39;15455&#39;, &#39;15690&#39;],
+ &#39;66400&#39;: [&#39;17088&#39;, &#39;66001&#39;, &#39;66075&#39;, &#39;66440&#39;, &#39;66687&#39;],
+ &#39;17088&#39;: [&#39;17174&#39;, &#39;17616&#39;, &#39;17665&#39;, &#39;17877&#39;, &#39;66400&#39;, &#39;66440&#39;, &#39;66687&#39;],
+ &#39;66687&#39;: [&#39;17088&#39;,
+  &#39;17877&#39;,
+  &#39;27660&#39;,
+  &#39;66045&#39;,
+  &#39;66075&#39;,
+  &#39;66383&#39;,
+  &#39;66400&#39;,
+  &#39;66572&#39;,
+  &#39;76243&#39;],
+ &#39;25875&#39;: [&#39;25019&#39;,
+  &#39;25095&#39;,
+  &#39;25320&#39;,
+  &#39;25328&#39;,
+  &#39;25489&#39;,
+  &#39;25491&#39;,
+  &#39;25592&#39;,
+  &#39;25718&#39;,
+  &#39;25867&#39;],
+ &#39;73055&#39;: [&#39;25168&#39;,
+  &#39;25320&#39;,
+  &#39;25662&#39;,
+  &#39;73030&#39;,
+  &#39;73270&#39;,
+  &#39;73349&#39;,
+  &#39;73408&#39;,
+  &#39;73411&#39;,
+  &#39;73443&#39;,
+  &#39;73870&#39;],
+ &#39;25436&#39;: [&#39;15322&#39;, &#39;15325&#39;, &#39;25297&#39;, &#39;25426&#39;, &#39;25807&#39;],
+ &#39;25426&#39;: [&#39;25183&#39;, &#39;25297&#39;, &#39;25326&#39;, &#39;25436&#39;, &#39;25736&#39;, &#39;25807&#39;],
+ &#39;25168&#39;: [&#39;25320&#39;, &#39;25662&#39;, &#39;25867&#39;, &#39;73055&#39;],
+ &#39;25320&#39;: [&#39;17380&#39;,
+  &#39;25148&#39;,
+  &#39;25168&#39;,
+  &#39;25572&#39;,
+  &#39;25592&#39;,
+  &#39;25851&#39;,
+  &#39;25867&#39;,
+  &#39;25875&#39;,
+  &#39;73055&#39;,
+  &#39;73349&#39;],
+ &#39;15135&#39;: [&#39;15299&#39;, &#39;15425&#39;, &#39;15455&#39;, &#39;15514&#39;, &#39;15667&#39;, &#39;15690&#39;],
+ &#39;17174&#39;: [&#39;17001&#39;, &#39;17088&#39;, &#39;17524&#39;, &#39;17616&#39;, &#39;17873&#39;, &#39;66440&#39;, &#39;66682&#39;],
+ &#39;25126&#39;: [&#39;25175&#39;, &#39;25758&#39;, &#39;25785&#39;, &#39;25899&#39;],
+ &#39;25899&#39;: [&#39;25126&#39;,
+  &#39;25200&#39;,
+  &#39;25295&#39;,
+  &#39;25486&#39;,
+  &#39;25513&#39;,
+  &#39;25758&#39;,
+  &#39;25769&#39;,
+  &#39;25785&#39;,
+  &#39;25817&#39;],
+ &#39;25295&#39;: [&#39;25326&#39;, &#39;25486&#39;, &#39;25736&#39;, &#39;25772&#39;, &#39;25817&#39;, &#39;25899&#39;],
+ &#39;25736&#39;: [&#39;25183&#39;, &#39;25295&#39;, &#39;25326&#39;, &#39;25426&#39;, &#39;25772&#39;],
+ &#39;15761&#39;: [&#39;15022&#39;, &#39;15299&#39;, &#39;15322&#39;, &#39;15325&#39;, &#39;15778&#39;],
+ &#39;15322&#39;: [&#39;15325&#39;, &#39;15380&#39;, &#39;15761&#39;, &#39;15778&#39;, &#39;15798&#39;, &#39;25436&#39;, &#39;25807&#39;],
+ &#39;66383&#39;: [&#39;27660&#39;, &#39;66075&#39;, &#39;66687&#39;, &#39;76243&#39;],
+ &#39;15514&#39;: [&#39;15047&#39;,
+  &#39;15090&#39;,
+  &#39;15135&#39;,
+  &#39;15455&#39;,
+  &#39;15660&#39;,
+  &#39;15667&#39;,
+  &#39;85015&#39;,
+  &#39;85162&#39;,
+  &#39;85300&#39;,
+  &#39;85410&#39;],
+ &#39;15299&#39;: [&#39;15022&#39;,
+  &#39;15135&#39;,
+  &#39;15172&#39;,
+  &#39;15425&#39;,
+  &#39;15455&#39;,
+  &#39;15511&#39;,
+  &#39;15761&#39;,
+  &#39;15778&#39;,
+  &#39;15798&#39;],
+ &#39;15778&#39;: [&#39;15299&#39;, &#39;15322&#39;, &#39;15761&#39;, &#39;15798&#39;],
+ &#39;25491&#39;: [&#39;25402&#39;, &#39;25489&#39;, &#39;25718&#39;, &#39;25862&#39;, &#39;25875&#39;],
+ &#39;25486&#39;: [&#39;25200&#39;, &#39;25295&#39;, &#39;25772&#39;, &#39;25793&#39;, &#39;25817&#39;, &#39;25899&#39;],
+ &#39;27205&#39;: [&#39;27450&#39;, &#39;27491&#39;, &#39;27580&#39;, &#39;27660&#39;, &#39;27787&#39;],
+ &#39;25777&#39;: [&#39;25402&#39;, &#39;25513&#39;, &#39;25658&#39;, &#39;25769&#39;, &#39;25862&#39;],
+ &#39;25772&#39;: [&#39;25183&#39;, &#39;25224&#39;, &#39;25295&#39;, &#39;25407&#39;, &#39;25486&#39;, &#39;25736&#39;, &#39;25793&#39;],
+ &#39;15798&#39;: [&#39;15299&#39;, &#39;15322&#39;, &#39;15380&#39;, &#39;15511&#39;, &#39;15778&#39;],
+ &#39;73152&#39;: [&#39;17873&#39;, &#39;73270&#39;, &#39;73283&#39;, &#39;73347&#39;, &#39;73520&#39;, &#39;73870&#39;],
+ &#39;17001&#39;: [&#39;17042&#39;, &#39;17174&#39;, &#39;17446&#39;, &#39;17486&#39;, &#39;17524&#39;, &#39;17873&#39;, &#39;73347&#39;],
+ &#39;73347&#39;: [&#39;17001&#39;, &#39;17433&#39;, &#39;17446&#39;, &#39;17873&#39;, &#39;73152&#39;, &#39;73283&#39;],
+ &#39;25807&#39;: [&#39;15322&#39;, &#39;15380&#39;, &#39;25183&#39;, &#39;25426&#39;, &#39;25436&#39;, &#39;25873&#39;],
+ &#39;15380&#39;: [&#39;15322&#39;, &#39;15511&#39;, &#39;15798&#39;, &#39;15842&#39;, &#39;25807&#39;, &#39;25873&#39;],
+ &#39;15455&#39;: [&#39;15090&#39;, &#39;15135&#39;, &#39;15172&#39;, &#39;15299&#39;, &#39;15425&#39;, &#39;15514&#39;, &#39;15897&#39;],
+ &#39;73270&#39;: [&#39;73055&#39;, &#39;73152&#39;, &#39;73283&#39;, &#39;73443&#39;, &#39;73520&#39;, &#39;73870&#39;],
+ &#39;85010&#39;: [&#39;15518&#39;, &#39;85001&#39;, &#39;85139&#39;, &#39;85279&#39;, &#39;85410&#39;],
+ &#39;85001&#39;: [&#39;15377&#39;,
+  &#39;15518&#39;,
+  &#39;15533&#39;,
+  &#39;85010&#39;,
+  &#39;85139&#39;,
+  &#39;85225&#39;,
+  &#39;85230&#39;,
+  &#39;85325&#39;],
+ &#39;25592&#39;: [&#39;25320&#39;, &#39;25489&#39;, &#39;25851&#39;, &#39;25875&#39;],
+ &#39;25489&#39;: [&#39;25258&#39;, &#39;25398&#39;, &#39;25491&#39;, &#39;25592&#39;, &#39;25851&#39;, &#39;25862&#39;, &#39;25875&#39;],
+ &#39;25513&#39;: [&#39;25200&#39;,
+  &#39;25258&#39;,
+  &#39;25653&#39;,
+  &#39;25769&#39;,
+  &#39;25777&#39;,
+  &#39;25793&#39;,
+  &#39;25823&#39;,
+  &#39;25862&#39;,
+  &#39;25871&#39;,
+  &#39;25899&#39;],
+ &#39;17665&#39;: [&#39;17088&#39;, &#39;17616&#39;, &#39;17877&#39;],
+ &#39;17877&#39;: [&#39;17042&#39;, &#39;17088&#39;, &#39;17616&#39;, &#39;17665&#39;, &#39;66045&#39;, &#39;66088&#39;, &#39;66687&#39;],
+ &#39;17616&#39;: [&#39;17042&#39;, &#39;17088&#39;, &#39;17174&#39;, &#39;17524&#39;, &#39;17665&#39;, &#39;17877&#39;],
+ &#39;25862&#39;: [&#39;25258&#39;, &#39;25402&#39;, &#39;25489&#39;, &#39;25491&#39;, &#39;25513&#39;, &#39;25777&#39;],
+ &#39;17524&#39;: [&#39;17001&#39;, &#39;17042&#39;, &#39;17174&#39;, &#39;17616&#39;],
+ &#39;25183&#39;: [&#39;25224&#39;, &#39;25407&#39;, &#39;25426&#39;, &#39;25736&#39;, &#39;25772&#39;, &#39;25807&#39;, &#39;25873&#39;],
+ &#39;15511&#39;: [&#39;15172&#39;, &#39;15299&#39;, &#39;15380&#39;, &#39;15798&#39;, &#39;15842&#39;],
+ &#39;73520&#39;: [&#39;73152&#39;, &#39;73270&#39;, &#39;73283&#39;],
+ &#39;73283&#39;: [&#39;17433&#39;, &#39;17444&#39;, &#39;73152&#39;, &#39;73270&#39;, &#39;73347&#39;, &#39;73443&#39;, &#39;73520&#39;],
+ &#39;25873&#39;: [&#39;15380&#39;, &#39;15835&#39;, &#39;15842&#39;, &#39;15861&#39;, &#39;25183&#39;, &#39;25407&#39;, &#39;25807&#39;],
+ &#39;27580&#39;: [&#39;27205&#39;, &#39;27361&#39;, &#39;27450&#39;, &#39;27787&#39;],
+ &#39;66045&#39;: [&#39;17877&#39;, &#39;27660&#39;, &#39;66088&#39;, &#39;66572&#39;, &#39;66687&#39;],
+ &#39;66088&#39;: [&#39;17042&#39;, &#39;17877&#39;, &#39;66045&#39;, &#39;66318&#39;, &#39;66456&#39;, &#39;66572&#39;],
+ &#39;17042&#39;: [&#39;17001&#39;,
+  &#39;17486&#39;,
+  &#39;17524&#39;,
+  &#39;17616&#39;,
+  &#39;17877&#39;,
+  &#39;66088&#39;,
+  &#39;66318&#39;,
+  &#39;66594&#39;],
+ &#39;66572&#39;: [&#39;27073&#39;, &#39;27660&#39;, &#39;27787&#39;, &#39;66045&#39;, &#39;66088&#39;, &#39;66456&#39;, &#39;66687&#39;],
+ &#39;73443&#39;: [&#39;17444&#39;, &#39;17867&#39;, &#39;73055&#39;, &#39;73270&#39;, &#39;73283&#39;, &#39;73349&#39;],
+ &#39;73349&#39;: [&#39;17380&#39;, &#39;17867&#39;, &#39;25320&#39;, &#39;73055&#39;, &#39;73443&#39;],
+ &#39;25851&#39;: [&#39;25148&#39;, &#39;25320&#39;, &#39;25394&#39;, &#39;25398&#39;, &#39;25489&#39;, &#39;25592&#39;],
+ &#39;15842&#39;: [&#39;15172&#39;, &#39;15380&#39;, &#39;15494&#39;, &#39;15511&#39;, &#39;15804&#39;, &#39;15835&#39;, &#39;25873&#39;],
+ &#39;25200&#39;: [&#39;25486&#39;, &#39;25513&#39;, &#39;25793&#39;, &#39;25899&#39;],
+ &#39;25793&#39;: [&#39;25154&#39;,
+  &#39;25200&#39;,
+  &#39;25224&#39;,
+  &#39;25486&#39;,
+  &#39;25513&#39;,
+  &#39;25653&#39;,
+  &#39;25772&#39;,
+  &#39;25781&#39;],
+ &#39;15172&#39;: [&#39;15299&#39;, &#39;15455&#39;, &#39;15511&#39;, &#39;15599&#39;, &#39;15804&#39;, &#39;15842&#39;, &#39;15897&#39;],
+ &#39;17486&#39;: [&#39;17001&#39;, &#39;17042&#39;, &#39;17050&#39;, &#39;17272&#39;, &#39;17446&#39;, &#39;17653&#39;, &#39;66594&#39;],
+ &#39;17446&#39;: [&#39;17001&#39;, &#39;17050&#39;, &#39;17433&#39;, &#39;17486&#39;, &#39;17541&#39;, &#39;17653&#39;, &#39;73347&#39;],
+ &#39;17433&#39;: [&#39;17444&#39;, &#39;17446&#39;, &#39;17541&#39;, &#39;73283&#39;, &#39;73347&#39;],
+ &#39;85015&#39;: [&#39;15047&#39;, &#39;15514&#39;, &#39;15518&#39;, &#39;85279&#39;, &#39;85410&#39;],
+ &#39;85279&#39;: [&#39;15047&#39;, &#39;15518&#39;, &#39;85010&#39;, &#39;85015&#39;, &#39;85410&#39;],
+ &#39;27787&#39;: [&#39;27073&#39;,
+  &#39;27160&#39;,
+  &#39;27205&#39;,
+  &#39;27361&#39;,
+  &#39;27580&#39;,
+  &#39;27660&#39;,
+  &#39;27810&#39;,
+  &#39;66572&#39;],
+ &#39;25258&#39;: [&#39;25394&#39;, &#39;25398&#39;, &#39;25489&#39;, &#39;25513&#39;, &#39;25823&#39;, &#39;25862&#39;],
+ &#39;25398&#39;: [&#39;25258&#39;, &#39;25394&#39;, &#39;25489&#39;, &#39;25851&#39;],
+ &#39;15090&#39;: [&#39;15455&#39;, &#39;15514&#39;, &#39;15660&#39;, &#39;15897&#39;],
+ &#39;15660&#39;: [&#39;15047&#39;, &#39;15090&#39;, &#39;15514&#39;, &#39;15897&#39;],
+ &#39;15047&#39;: [&#39;15226&#39;,
+  &#39;15377&#39;,
+  &#39;15464&#39;,
+  &#39;15514&#39;,
+  &#39;15518&#39;,
+  &#39;15660&#39;,
+  &#39;15759&#39;,
+  &#39;15822&#39;,
+  &#39;15897&#39;,
+  &#39;85015&#39;,
+  &#39;85279&#39;],
+ &#39;85325&#39;: [&#39;85001&#39;, &#39;85225&#39;, &#39;85230&#39;, &#39;85263&#39;, &#39;85430&#39;, &#39;99624&#39;],
+ &#39;25224&#39;: [&#39;25183&#39;, &#39;25407&#39;, &#39;25772&#39;, &#39;25781&#39;, &#39;25793&#39;, &#39;25843&#39;],
+ &#39;25407&#39;: [&#39;15861&#39;, &#39;25183&#39;, &#39;25224&#39;, &#39;25317&#39;, &#39;25772&#39;, &#39;25843&#39;, &#39;25873&#39;],
+ &#39;15897&#39;: [&#39;15047&#39;,
+  &#39;15090&#39;,
+  &#39;15172&#39;,
+  &#39;15455&#39;,
+  &#39;15542&#39;,
+  &#39;15599&#39;,
+  &#39;15621&#39;,
+  &#39;15660&#39;,
+  &#39;15822&#39;],
+ &#39;25781&#39;: [&#39;25154&#39;, &#39;25224&#39;, &#39;25793&#39;, &#39;25843&#39;],
+ &#39;25653&#39;: [&#39;15212&#39;, &#39;25154&#39;, &#39;25513&#39;, &#39;25518&#39;, &#39;25793&#39;, &#39;25871&#39;],
+ &#39;25154&#39;: [&#39;15109&#39;,
+  &#39;15212&#39;,
+  &#39;25653&#39;,
+  &#39;25745&#39;,
+  &#39;25779&#39;,
+  &#39;25781&#39;,
+  &#39;25793&#39;,
+  &#39;25843&#39;],
+ &#39;25394&#39;: [&#39;25148&#39;, &#39;25258&#39;, &#39;25398&#39;, &#39;25823&#39;, &#39;25851&#39;, &#39;25885&#39;],
+ &#39;25148&#39;: [&#39;25320&#39;, &#39;25394&#39;, &#39;25572&#39;, &#39;25851&#39;, &#39;25885&#39;],
+ &#39;66318&#39;: [&#39;17042&#39;, &#39;17614&#39;, &#39;66088&#39;, &#39;66456&#39;, &#39;66594&#39;],
+ &#39;66456&#39;: [&#39;05034&#39;, &#39;05364&#39;, &#39;17614&#39;, &#39;27073&#39;, &#39;66088&#39;, &#39;66318&#39;, &#39;66572&#39;],
+ &#39;17050&#39;: [&#39;17272&#39;, &#39;17388&#39;, &#39;17446&#39;, &#39;17486&#39;, &#39;17653&#39;],
+ &#39;17272&#39;: [&#39;17050&#39;, &#39;17388&#39;, &#39;17486&#39;, &#39;17614&#39;, &#39;17777&#39;, &#39;66594&#39;],
+ &#39;66594&#39;: [&#39;17042&#39;, &#39;17272&#39;, &#39;17486&#39;, &#39;17614&#39;, &#39;66318&#39;],
+ &#39;17653&#39;: [&#39;05756&#39;,
+  &#39;17013&#39;,
+  &#39;17050&#39;,
+  &#39;17388&#39;,
+  &#39;17446&#39;,
+  &#39;17486&#39;,
+  &#39;17513&#39;,
+  &#39;17541&#39;],
+ &#39;15804&#39;: [&#39;15172&#39;, &#39;15367&#39;, &#39;15494&#39;, &#39;15599&#39;, &#39;15842&#39;],
+ &#39;15599&#39;: [&#39;15104&#39;,
+  &#39;15172&#39;,
+  &#39;15189&#39;,
+  &#39;15367&#39;,
+  &#39;15621&#39;,
+  &#39;15764&#39;,
+  &#39;15804&#39;,
+  &#39;15897&#39;],
+ &#39;25843&#39;: [&#39;25154&#39;, &#39;25224&#39;, &#39;25288&#39;, &#39;25317&#39;, &#39;25407&#39;, &#39;25779&#39;, &#39;25781&#39;],
+ &#39;27430&#39;: [&#39;27025&#39;, &#39;27077&#39;, &#39;27135&#39;, &#39;27361&#39;],
+ &#39;27810&#39;: [&#39;27135&#39;, &#39;27160&#39;, &#39;27361&#39;, &#39;27787&#39;],
+ &#39;27135&#39;: [&#39;27025&#39;, &#39;27160&#39;, &#39;27361&#39;, &#39;27430&#39;, &#39;27600&#39;, &#39;27810&#39;],
+ &#39;17444&#39;: [&#39;17433&#39;, &#39;17541&#39;, &#39;17662&#39;, &#39;17867&#39;, &#39;73283&#39;, &#39;73443&#39;],
+ &#39;25871&#39;: [&#39;25513&#39;, &#39;25518&#39;, &#39;25653&#39;, &#39;25823&#39;],
+ &#39;25823&#39;: [&#39;25258&#39;, &#39;25394&#39;, &#39;25513&#39;, &#39;25518&#39;, &#39;25871&#39;, &#39;25885&#39;],
+ &#39;15835&#39;: [&#39;15494&#39;, &#39;15842&#39;, &#39;15861&#39;, &#39;25873&#39;],
+ &#39;15494&#39;: [&#39;15104&#39;, &#39;15367&#39;, &#39;15804&#39;, &#39;15835&#39;, &#39;15842&#39;, &#39;15861&#39;],
+ &#39;17541&#39;: [&#39;05483&#39;,
+  &#39;05756&#39;,
+  &#39;17013&#39;,
+  &#39;17433&#39;,
+  &#39;17444&#39;,
+  &#39;17446&#39;,
+  &#39;17653&#39;,
+  &#39;17662&#39;],
+ &#39;17867&#39;: [&#39;17380&#39;, &#39;17444&#39;, &#39;17495&#39;, &#39;17662&#39;, &#39;73349&#39;, &#39;73443&#39;],
+ &#39;17380&#39;: [&#39;05756&#39;, &#39;15572&#39;, &#39;17495&#39;, &#39;17867&#39;, &#39;25320&#39;, &#39;25572&#39;, &#39;73349&#39;],
+ &#39;25518&#39;: [&#39;15212&#39;, &#39;15480&#39;, &#39;15580&#39;, &#39;25653&#39;, &#39;25823&#39;, &#39;25871&#39;, &#39;25885&#39;],
+ &#39;17662&#39;: [&#39;05055&#39;, &#39;05483&#39;, &#39;17444&#39;, &#39;17495&#39;, &#39;17541&#39;, &#39;17867&#39;],
+ &#39;17388&#39;: [&#39;17050&#39;, &#39;17272&#39;, &#39;17442&#39;, &#39;17513&#39;, &#39;17653&#39;, &#39;17777&#39;],
+ &#39;15861&#39;: [&#39;15001&#39;,
+  &#39;15104&#39;,
+  &#39;15494&#39;,
+  &#39;15646&#39;,
+  &#39;15835&#39;,
+  &#39;25317&#39;,
+  &#39;25407&#39;,
+  &#39;25873&#39;],
+ &#39;15367&#39;: [&#39;15104&#39;, &#39;15494&#39;, &#39;15599&#39;, &#39;15804&#39;],
+ &#39;15518&#39;: [&#39;15047&#39;, &#39;15377&#39;, &#39;85001&#39;, &#39;85010&#39;, &#39;85015&#39;, &#39;85279&#39;],
+ &#39;15621&#39;: [&#39;15189&#39;, &#39;15542&#39;, &#39;15599&#39;, &#39;15740&#39;, &#39;15879&#39;, &#39;15897&#39;],
+ &#39;15822&#39;: [&#39;15047&#39;, &#39;15226&#39;, &#39;15362&#39;, &#39;15542&#39;, &#39;15897&#39;],
+ &#39;15542&#39;: [&#39;15226&#39;,
+  &#39;15272&#39;,
+  &#39;15362&#39;,
+  &#39;15621&#39;,
+  &#39;15740&#39;,
+  &#39;15814&#39;,
+  &#39;15822&#39;,
+  &#39;15837&#39;,
+  &#39;15897&#39;],
+ &#39;25317&#39;: [&#39;15600&#39;, &#39;15646&#39;, &#39;15861&#39;, &#39;25288&#39;, &#39;25407&#39;, &#39;25843&#39;],
+ &#39;25288&#39;: [&#39;15600&#39;, &#39;15676&#39;, &#39;25317&#39;, &#39;25779&#39;, &#39;25843&#39;],
+ &#39;25779&#39;: [&#39;15600&#39;, &#39;15676&#39;, &#39;25154&#39;, &#39;25288&#39;, &#39;25745&#39;, &#39;25843&#39;],
+ &#39;85430&#39;: [&#39;85250&#39;, &#39;85263&#39;, &#39;85325&#39;, &#39;99524&#39;, &#39;99624&#39;],
+ &#39;99524&#39;: [&#39;81220&#39;, &#39;85250&#39;, &#39;85430&#39;, &#39;99001&#39;, &#39;99624&#39;, &#39;99773&#39;],
+ &#39;17777&#39;: [&#39;05145&#39;, &#39;17272&#39;, &#39;17388&#39;, &#39;17442&#39;, &#39;17614&#39;],
+ &#39;17614&#39;: [&#39;05145&#39;,
+  &#39;05364&#39;,
+  &#39;05789&#39;,
+  &#39;17272&#39;,
+  &#39;17777&#39;,
+  &#39;66318&#39;,
+  &#39;66456&#39;,
+  &#39;66594&#39;],
+ &#39;27025&#39;: [&#39;27001&#39;,
+  &#39;27075&#39;,
+  &#39;27077&#39;,
+  &#39;27099&#39;,
+  &#39;27135&#39;,
+  &#39;27430&#39;,
+  &#39;27495&#39;,
+  &#39;27600&#39;],
+ &#39;15104&#39;: [&#39;15001&#39;, &#39;15367&#39;, &#39;15494&#39;, &#39;15599&#39;, &#39;15764&#39;, &#39;15861&#39;],
+ &#39;27160&#39;: [&#39;27050&#39;, &#39;27073&#39;, &#39;27135&#39;, &#39;27413&#39;, &#39;27600&#39;, &#39;27787&#39;, &#39;27810&#39;],
+ &#39;27073&#39;: [&#39;05034&#39;,
+  &#39;05091&#39;,
+  &#39;27160&#39;,
+  &#39;27245&#39;,
+  &#39;27413&#39;,
+  &#39;27787&#39;,
+  &#39;66456&#39;,
+  &#39;66572&#39;],
+ &#39;25885&#39;: [&#39;15401&#39;,
+  &#39;15507&#39;,
+  &#39;15572&#39;,
+  &#39;15580&#39;,
+  &#39;25148&#39;,
+  &#39;25394&#39;,
+  &#39;25518&#39;,
+  &#39;25572&#39;,
+  &#39;25823&#39;],
+ &#39;15212&#39;: [&#39;15109&#39;, &#39;15442&#39;, &#39;15480&#39;, &#39;25154&#39;, &#39;25518&#39;, &#39;25653&#39;],
+ &#39;25572&#39;: [&#39;15572&#39;, &#39;17380&#39;, &#39;25148&#39;, &#39;25320&#39;, &#39;25885&#39;],
+ &#39;15189&#39;: [&#39;15599&#39;, &#39;15621&#39;, &#39;15764&#39;, &#39;15879&#39;],
+ &#39;15879&#39;: [&#39;15189&#39;, &#39;15621&#39;, &#39;15740&#39;, &#39;15764&#39;],
+ &#39;15764&#39;: [&#39;15001&#39;, &#39;15104&#39;, &#39;15187&#39;, &#39;15189&#39;, &#39;15599&#39;, &#39;15740&#39;, &#39;15879&#39;],
+ &#39;15646&#39;: [&#39;15001&#39;,
+  &#39;15224&#39;,
+  &#39;15232&#39;,
+  &#39;15600&#39;,
+  &#39;15638&#39;,
+  &#39;15762&#39;,
+  &#39;15861&#39;,
+  &#39;25317&#39;],
+ &#39;15600&#39;: [&#39;15638&#39;,
+  &#39;15646&#39;,
+  &#39;15676&#39;,
+  &#39;15776&#39;,
+  &#39;15808&#39;,
+  &#39;25288&#39;,
+  &#39;25317&#39;,
+  &#39;25779&#39;],
+ &#39;17442&#39;: [&#39;05145&#39;, &#39;17388&#39;, &#39;17513&#39;, &#39;17777&#39;],
+ &#39;17513&#39;: [&#39;05145&#39;, &#39;17013&#39;, &#39;17388&#39;, &#39;17442&#39;, &#39;17653&#39;],
+ &#39;15001&#39;: [&#39;15104&#39;,
+  &#39;15187&#39;,
+  &#39;15204&#39;,
+  &#39;15224&#39;,
+  &#39;15476&#39;,
+  &#39;15500&#39;,
+  &#39;15646&#39;,
+  &#39;15762&#39;,
+  &#39;15764&#39;,
+  &#39;15861&#39;],
+ &#39;15109&#39;: [&#39;15131&#39;, &#39;15212&#39;, &#39;15442&#39;, &#39;25154&#39;, &#39;25745&#39;],
+ &#39;25745&#39;: [&#39;15109&#39;, &#39;15131&#39;, &#39;15176&#39;, &#39;15676&#39;, &#39;25154&#39;, &#39;25779&#39;],
+ &#39;17013&#39;: [&#39;05002&#39;,
+  &#39;05145&#39;,
+  &#39;05390&#39;,
+  &#39;05679&#39;,
+  &#39;05756&#39;,
+  &#39;05856&#39;,
+  &#39;17513&#39;,
+  &#39;17541&#39;,
+  &#39;17653&#39;],
+ &#39;05756&#39;: [&#39;05002&#39;,
+  &#39;05055&#39;,
+  &#39;05148&#39;,
+  &#39;05197&#39;,
+  &#39;05483&#39;,
+  &#39;05591&#39;,
+  &#39;05652&#39;,
+  &#39;05660&#39;,
+  &#39;15572&#39;,
+  &#39;17013&#39;,
+  &#39;17380&#39;,
+  &#39;17495&#39;,
+  &#39;17541&#39;,
+  &#39;17653&#39;],
+ &#39;15480&#39;: [&#39;15212&#39;, &#39;15442&#39;, &#39;15507&#39;, &#39;15580&#39;, &#39;15681&#39;, &#39;25518&#39;],
+ &#39;15580&#39;: [&#39;15401&#39;, &#39;15480&#39;, &#39;15507&#39;, &#39;25518&#39;, &#39;25885&#39;],
+ &#39;15676&#39;: [&#39;15176&#39;, &#39;15600&#39;, &#39;15808&#39;, &#39;25288&#39;, &#39;25745&#39;, &#39;25779&#39;],
+ &#39;15740&#39;: [&#39;15187&#39;, &#39;15542&#39;, &#39;15621&#39;, &#39;15764&#39;, &#39;15814&#39;, &#39;15879&#39;],
+ &#39;15377&#39;: [&#39;15047&#39;, &#39;15464&#39;, &#39;15518&#39;, &#39;15533&#39;, &#39;15550&#39;, &#39;85001&#39;],
+ &#39;27600&#39;: [&#39;27001&#39;, &#39;27025&#39;, &#39;27050&#39;, &#39;27135&#39;, &#39;27160&#39;],
+ &#39;27050&#39;: [&#39;27001&#39;, &#39;27160&#39;, &#39;27413&#39;, &#39;27600&#39;],
+ &#39;27413&#39;: [&#39;27001&#39;, &#39;27050&#39;, &#39;27073&#39;, &#39;27160&#39;, &#39;27245&#39;],
+ &#39;15442&#39;: [&#39;15109&#39;, &#39;15131&#39;, &#39;15212&#39;, &#39;15480&#39;, &#39;15531&#39;, &#39;15681&#39;],
+ &#39;05145&#39;: [&#39;05789&#39;, &#39;05856&#39;, &#39;17013&#39;, &#39;17442&#39;, &#39;17513&#39;, &#39;17614&#39;, &#39;17777&#39;],
+ &#39;15187&#39;: [&#39;15001&#39;, &#39;15500&#39;, &#39;15740&#39;, &#39;15764&#39;, &#39;15814&#39;, &#39;15837&#39;],
+ &#39;05483&#39;: [&#39;05055&#39;, &#39;05756&#39;, &#39;17541&#39;, &#39;17662&#39;],
+ &#39;85225&#39;: [&#39;15533&#39;, &#39;85001&#39;, &#39;85263&#39;, &#39;85325&#39;, &#39;85400&#39;],
+ &#39;85263&#39;: [&#39;85225&#39;, &#39;85250&#39;, &#39;85325&#39;, &#39;85400&#39;, &#39;85430&#39;],
+ &#39;15131&#39;: [&#39;15106&#39;, &#39;15109&#39;, &#39;15176&#39;, &#39;15442&#39;, &#39;15531&#39;, &#39;25745&#39;],
+ &#39;15814&#39;: [&#39;15187&#39;, &#39;15542&#39;, &#39;15740&#39;, &#39;15837&#39;],
+ &#39;15401&#39;: [&#39;15580&#39;, &#39;25885&#39;],
+ &#39;15224&#39;: [&#39;15001&#39;, &#39;15646&#39;, &#39;15762&#39;],
+ &#39;15762&#39;: [&#39;15001&#39;, &#39;15224&#39;, &#39;15232&#39;, &#39;15476&#39;, &#39;15638&#39;, &#39;15646&#39;],
+ &#39;15638&#39;: [&#39;15232&#39;, &#39;15407&#39;, &#39;15600&#39;, &#39;15646&#39;, &#39;15762&#39;, &#39;15776&#39;],
+ &#39;15232&#39;: [&#39;15051&#39;, &#39;15407&#39;, &#39;15476&#39;, &#39;15638&#39;, &#39;15646&#39;, &#39;15762&#39;],
+ &#39;05364&#39;: [&#39;05034&#39;, &#39;05368&#39;, &#39;05789&#39;, &#39;17614&#39;, &#39;66456&#39;],
+ &#39;05789&#39;: [&#39;05145&#39;, &#39;05282&#39;, &#39;05364&#39;, &#39;05368&#39;, &#39;05390&#39;, &#39;05856&#39;, &#39;17614&#39;],
+ &#39;15533&#39;: [&#39;15377&#39;, &#39;15550&#39;, &#39;85001&#39;, &#39;85225&#39;, &#39;85400&#39;],
+ &#39;15176&#39;: [&#39;15106&#39;, &#39;15131&#39;, &#39;15632&#39;, &#39;15676&#39;, &#39;15808&#39;, &#39;25745&#39;],
+ &#39;85250&#39;: [&#39;81220&#39;, &#39;85125&#39;, &#39;85263&#39;, &#39;85315&#39;, &#39;85400&#39;, &#39;85430&#39;, &#39;99524&#39;],
+ &#39;05034&#39;: [&#39;05091&#39;, &#39;05353&#39;, &#39;05364&#39;, &#39;05368&#39;, &#39;05576&#39;, &#39;27073&#39;, &#39;66456&#39;],
+ &#39;27495&#39;: [&#39;27025&#39;, &#39;27075&#39;, &#39;27077&#39;],
+ &#39;15500&#39;: [&#39;15001&#39;, &#39;15187&#39;, &#39;15204&#39;, &#39;15837&#39;],
+ &#39;15476&#39;: [&#39;15001&#39;, &#39;15051&#39;, &#39;15204&#39;, &#39;15232&#39;, &#39;15762&#39;],
+ &#39;15204&#39;: [&#39;15001&#39;, &#39;15051&#39;, &#39;15476&#39;, &#39;15500&#39;, &#39;15763&#39;, &#39;15837&#39;, &#39;68298&#39;],
+ &#39;15808&#39;: [&#39;15176&#39;, &#39;15600&#39;, &#39;15632&#39;, &#39;15676&#39;, &#39;15776&#39;],
+ &#39;15776&#39;: [&#39;15407&#39;, &#39;15600&#39;, &#39;15632&#39;, &#39;15638&#39;, &#39;15696&#39;, &#39;15808&#39;],
+ &#39;15226&#39;: [&#39;15047&#39;, &#39;15362&#39;, &#39;15542&#39;, &#39;15759&#39;, &#39;15822&#39;],
+ &#39;15362&#39;: [&#39;15226&#39;, &#39;15272&#39;, &#39;15542&#39;, &#39;15759&#39;, &#39;15822&#39;],
+ &#39;17495&#39;: [&#39;05055&#39;, &#39;05756&#39;, &#39;17380&#39;, &#39;17662&#39;, &#39;17867&#39;],
+ &#39;15681&#39;: [&#39;15442&#39;, &#39;15480&#39;, &#39;15507&#39;, &#39;15531&#39;],
+ &#39;15507&#39;: [&#39;15480&#39;,
+  &#39;15531&#39;,
+  &#39;15572&#39;,
+  &#39;15580&#39;,
+  &#39;15681&#39;,
+  &#39;25885&#39;,
+  &#39;68101&#39;,
+  &#39;68271&#39;,
+  &#39;68377&#39;],
+ &#39;05856&#39;: [&#39;05145&#39;, &#39;05390&#39;, &#39;05789&#39;, &#39;17013&#39;],
+ &#39;15759&#39;: [&#39;15047&#39;,
+  &#39;15226&#39;,
+  &#39;15272&#39;,
+  &#39;15362&#39;,
+  &#39;15464&#39;,
+  &#39;15466&#39;,
+  &#39;15491&#39;,
+  &#39;15806&#39;,
+  &#39;15820&#39;],
+ &#39;15407&#39;: [&#39;15051&#39;, &#39;15232&#39;, &#39;15293&#39;, &#39;15638&#39;, &#39;15696&#39;, &#39;15776&#39;],
+ &#39;15837&#39;: [&#39;15187&#39;,
+  &#39;15204&#39;,
+  &#39;15272&#39;,
+  &#39;15500&#39;,
+  &#39;15516&#39;,
+  &#39;15542&#39;,
+  &#39;15763&#39;,
+  &#39;15814&#39;],
+ &#39;15632&#39;: [&#39;15106&#39;, &#39;15176&#39;, &#39;15696&#39;, &#39;15776&#39;, &#39;15808&#39;, &#39;68020&#39;, &#39;68572&#39;],
+ &#39;15106&#39;: [&#39;15131&#39;, &#39;15176&#39;, &#39;15531&#39;, &#39;15632&#39;, &#39;15832&#39;, &#39;68020&#39;],
+ &#39;15531&#39;: [&#39;15106&#39;, &#39;15131&#39;, &#39;15442&#39;, &#39;15507&#39;, &#39;15681&#39;, &#39;15832&#39;, &#39;68271&#39;],
+ &#39;15464&#39;: [&#39;15047&#39;,
+  &#39;15296&#39;,
+  &#39;15377&#39;,
+  &#39;15466&#39;,
+  &#39;15550&#39;,
+  &#39;15755&#39;,
+  &#39;15759&#39;,
+  &#39;15820&#39;],
+ &#39;15272&#39;: [&#39;15362&#39;, &#39;15516&#39;, &#39;15542&#39;, &#39;15759&#39;, &#39;15806&#39;, &#39;15837&#39;],
+ &#39;05368&#39;: [&#39;05034&#39;, &#39;05282&#39;, &#39;05364&#39;, &#39;05576&#39;, &#39;05789&#39;, &#39;05792&#39;],
+ &#39;15051&#39;: [&#39;15204&#39;, &#39;15232&#39;, &#39;15293&#39;, &#39;15407&#39;, &#39;15469&#39;, &#39;15476&#39;, &#39;68298&#39;],
+ &#39;05055&#39;: [&#39;05483&#39;, &#39;05756&#39;, &#39;17495&#39;, &#39;17662&#39;],
+ &#39;05091&#39;: [&#39;05034&#39;, &#39;05101&#39;, &#39;05353&#39;, &#39;27073&#39;, &#39;27245&#39;],
+ &#39;27245&#39;: [&#39;05091&#39;, &#39;05101&#39;, &#39;05642&#39;, &#39;05847&#39;, &#39;27001&#39;, &#39;27073&#39;, &#39;27413&#39;],
+ &#39;15696&#39;: [&#39;15293&#39;, &#39;15407&#39;, &#39;15469&#39;, &#39;15632&#39;, &#39;15776&#39;, &#39;68572&#39;],
+ &#39;27001&#39;: [&#39;05847&#39;,
+  &#39;05873&#39;,
+  &#39;27025&#39;,
+  &#39;27050&#39;,
+  &#39;27099&#39;,
+  &#39;27245&#39;,
+  &#39;27413&#39;,
+  &#39;27425&#39;,
+  &#39;27600&#39;],
+ &#39;15550&#39;: [&#39;15377&#39;, &#39;15464&#39;, &#39;15533&#39;, &#39;15755&#39;, &#39;85400&#39;],
+ &#39;15806&#39;: [&#39;15238&#39;, &#39;15272&#39;, &#39;15491&#39;, &#39;15516&#39;, &#39;15693&#39;, &#39;15759&#39;],
+ &#39;15516&#39;: [&#39;15238&#39;, &#39;15272&#39;, &#39;15763&#39;, &#39;15806&#39;, &#39;15837&#39;, &#39;68167&#39;, &#39;68298&#39;],
+ &#39;15293&#39;: [&#39;15051&#39;, &#39;15407&#39;, &#39;15469&#39;, &#39;15696&#39;],
+ &#39;85400&#39;: [&#39;15183&#39;,
+  &#39;15533&#39;,
+  &#39;15550&#39;,
+  &#39;15755&#39;,
+  &#39;85125&#39;,
+  &#39;85225&#39;,
+  &#39;85250&#39;,
+  &#39;85263&#39;,
+  &#39;85315&#39;],
+ &#39;15832&#39;: [&#39;15106&#39;, &#39;15531&#39;, &#39;68020&#39;, &#39;68271&#39;],
+ &#39;68020&#39;: [&#39;15106&#39;, &#39;15632&#39;, &#39;15832&#39;, &#39;68271&#39;, &#39;68368&#39;, &#39;68572&#39;],
+ &#39;15763&#39;: [&#39;15204&#39;, &#39;15516&#39;, &#39;15837&#39;, &#39;68298&#39;],
+ &#39;05390&#39;: [&#39;05282&#39;, &#39;05679&#39;, &#39;05789&#39;, &#39;05856&#39;, &#39;17013&#39;],
+ &#39;05002&#39;: [&#39;05148&#39;, &#39;05376&#39;, &#39;05400&#39;, &#39;05467&#39;, &#39;05679&#39;, &#39;05756&#39;, &#39;17013&#39;],
+ &#39;05679&#39;: [&#39;05002&#39;, &#39;05129&#39;, &#39;05282&#39;, &#39;05390&#39;, &#39;05467&#39;, &#39;05607&#39;, &#39;17013&#39;],
+ &#39;68271&#39;: [&#39;15507&#39;, &#39;15531&#39;, &#39;15832&#39;, &#39;68020&#39;, &#39;68368&#39;, &#39;68377&#39;],
+ &#39;15466&#39;: [&#39;15464&#39;, &#39;15759&#39;, &#39;15820&#39;],
+ &#39;15820&#39;: [&#39;15215&#39;, &#39;15296&#39;, &#39;15464&#39;, &#39;15466&#39;, &#39;15491&#39;, &#39;15759&#39;],
+ &#39;15491&#39;: [&#39;15215&#39;, &#39;15276&#39;, &#39;15693&#39;, &#39;15759&#39;, &#39;15806&#39;, &#39;15820&#39;],
+ &#39;15572&#39;: [&#39;05579&#39;,
+  &#39;05585&#39;,
+  &#39;05591&#39;,
+  &#39;05756&#39;,
+  &#39;15507&#39;,
+  &#39;17380&#39;,
+  &#39;25572&#39;,
+  &#39;25885&#39;,
+  &#39;68101&#39;],
+ &#39;68572&#39;: [&#39;15469&#39;,
+  &#39;15632&#39;,
+  &#39;15696&#39;,
+  &#39;68020&#39;,
+  &#39;68077&#39;,
+  &#39;68324&#39;,
+  &#39;68368&#39;,
+  &#39;68861&#39;],
+ &#39;05353&#39;: [&#39;05034&#39;, &#39;05091&#39;, &#39;05101&#39;, &#39;05576&#39;],
+ &#39;05576&#39;: [&#39;05034&#39;, &#39;05101&#39;, &#39;05353&#39;, &#39;05368&#39;, &#39;05642&#39;, &#39;05792&#39;],
+ &#39;15296&#39;: [&#39;15215&#39;, &#39;15464&#39;, &#39;15755&#39;, &#39;15790&#39;, &#39;15820&#39;],
+ &#39;15755&#39;: [&#39;15183&#39;,
+  &#39;15296&#39;,
+  &#39;15368&#39;,
+  &#39;15464&#39;,
+  &#39;15550&#39;,
+  &#39;15720&#39;,
+  &#39;15723&#39;,
+  &#39;15757&#39;,
+  &#39;15790&#39;,
+  &#39;85400&#39;],
+ &#39;15469&#39;: [&#39;15051&#39;,
+  &#39;15293&#39;,
+  &#39;15664&#39;,
+  &#39;15696&#39;,
+  &#39;15816&#39;,
+  &#39;68077&#39;,
+  &#39;68298&#39;,
+  &#39;68572&#39;],
+ &#39;15215&#39;: [&#39;15092&#39;, &#39;15114&#39;, &#39;15276&#39;, &#39;15296&#39;, &#39;15491&#39;, &#39;15790&#39;, &#39;15820&#39;],
+ &#39;05101&#39;: [&#39;05091&#39;, &#39;05353&#39;, &#39;05576&#39;, &#39;05642&#39;, &#39;27245&#39;],
+ &#39;68298&#39;: [&#39;15051&#39;,
+  &#39;15185&#39;,
+  &#39;15204&#39;,
+  &#39;15238&#39;,
+  &#39;15469&#39;,
+  &#39;15516&#39;,
+  &#39;15763&#39;,
+  &#39;15816&#39;,
+  &#39;68167&#39;,
+  &#39;68770&#39;],
+ &#39;05282&#39;: [&#39;05030&#39;,
+  &#39;05129&#39;,
+  &#39;05368&#39;,
+  &#39;05390&#39;,
+  &#39;05679&#39;,
+  &#39;05789&#39;,
+  &#39;05792&#39;,
+  &#39;05861&#39;],
+ &#39;15276&#39;: [&#39;15092&#39;, &#39;15114&#39;, &#39;15162&#39;, &#39;15215&#39;, &#39;15491&#39;, &#39;15693&#39;],
+ &#39;15693&#39;: [&#39;15162&#39;, &#39;15238&#39;, &#39;15276&#39;, &#39;15491&#39;, &#39;15806&#39;, &#39;68264&#39;],
+ &#39;15238&#39;: [&#39;15516&#39;, &#39;15693&#39;, &#39;15806&#39;, &#39;68167&#39;, &#39;68264&#39;, &#39;68298&#39;],
+ &#39;15790&#39;: [&#39;15092&#39;, &#39;15215&#39;, &#39;15296&#39;, &#39;15537&#39;, &#39;15755&#39;, &#39;15757&#39;],
+ &#39;68368&#39;: [&#39;68020&#39;, &#39;68271&#39;, &#39;68324&#39;, &#39;68377&#39;, &#39;68572&#39;, &#39;68773&#39;],
+ &#39;68377&#39;: [&#39;15507&#39;, &#39;68101&#39;, &#39;68271&#39;, &#39;68368&#39;, &#39;68773&#39;],
+ &#39;15114&#39;: [&#39;15092&#39;, &#39;15215&#39;, &#39;15276&#39;],
+ &#39;15092&#39;: [&#39;15087&#39;, &#39;15114&#39;, &#39;15162&#39;, &#39;15215&#39;, &#39;15276&#39;, &#39;15537&#39;, &#39;15790&#39;],
+ &#39;05792&#39;: [&#39;05282&#39;, &#39;05368&#39;, &#39;05576&#39;, &#39;05642&#39;, &#39;05861&#39;],
+ &#39;68101&#39;: [&#39;05579&#39;,
+  &#39;15507&#39;,
+  &#39;15572&#39;,
+  &#39;68190&#39;,
+  &#39;68250&#39;,
+  &#39;68324&#39;,
+  &#39;68377&#39;,
+  &#39;68385&#39;,
+  &#39;68773&#39;,
+  &#39;68861&#39;],
+ &#39;68324&#39;: [&#39;68077&#39;, &#39;68101&#39;, &#39;68368&#39;, &#39;68572&#39;, &#39;68773&#39;, &#39;68861&#39;],
+ &#39;68773&#39;: [&#39;68101&#39;, &#39;68250&#39;, &#39;68324&#39;, &#39;68368&#39;, &#39;68377&#39;],
+ &#39;05642&#39;: [&#39;05101&#39;, &#39;05209&#39;, &#39;05576&#39;, &#39;05792&#39;, &#39;05847&#39;, &#39;05861&#39;, &#39;27245&#39;],
+ &#39;68077&#39;: [&#39;15469&#39;, &#39;15664&#39;, &#39;68324&#39;, &#39;68327&#39;, &#39;68572&#39;, &#39;68861&#39;],
+ &#39;68861&#39;: [&#39;68077&#39;,
+  &#39;68101&#39;,
+  &#39;68179&#39;,
+  &#39;68324&#39;,
+  &#39;68327&#39;,
+  &#39;68385&#39;,
+  &#39;68397&#39;,
+  &#39;68572&#39;,
+  &#39;68573&#39;,
+  &#39;68720&#39;,
+  &#39;68745&#39;],
+ &#39;15162&#39;: [&#39;15087&#39;, &#39;15092&#39;, &#39;15276&#39;, &#39;15693&#39;, &#39;68264&#39;],
+ &#39;05652&#39;: [&#39;05197&#39;, &#39;05591&#39;, &#39;05660&#39;, &#39;05756&#39;],
+ &#39;05591&#39;: [&#39;05585&#39;, &#39;05652&#39;, &#39;05660&#39;, &#39;05756&#39;, &#39;15572&#39;],
+ &#39;05197&#39;: [&#39;05148&#39;, &#39;05313&#39;, &#39;05652&#39;, &#39;05660&#39;, &#39;05697&#39;, &#39;05756&#39;],
+ &#39;05660&#39;: [&#39;05197&#39;, &#39;05313&#39;, &#39;05585&#39;, &#39;05591&#39;, &#39;05649&#39;, &#39;05652&#39;, &#39;05756&#39;],
+ &#39;05148&#39;: [&#39;05002&#39;,
+  &#39;05197&#39;,
+  &#39;05376&#39;,
+  &#39;05400&#39;,
+  &#39;05440&#39;,
+  &#39;05615&#39;,
+  &#39;05697&#39;,
+  &#39;05756&#39;],
+ &#39;05861&#39;: [&#39;05030&#39;, &#39;05209&#39;, &#39;05282&#39;, &#39;05642&#39;, &#39;05792&#39;, &#39;05809&#39;],
+ &#39;05467&#39;: [&#39;05002&#39;, &#39;05376&#39;, &#39;05607&#39;, &#39;05679&#39;],
+ &#39;05400&#39;: [&#39;05002&#39;, &#39;05148&#39;, &#39;05376&#39;],
+ &#39;05376&#39;: [&#39;05002&#39;, &#39;05148&#39;, &#39;05400&#39;, &#39;05467&#39;, &#39;05607&#39;, &#39;05615&#39;],
+ &#39;15816&#39;: [&#39;15185&#39;, &#39;15469&#39;, &#39;15664&#39;, &#39;68298&#39;],
+ &#39;15664&#39;: [&#39;15185&#39;, &#39;15469&#39;, &#39;15686&#39;, &#39;15816&#39;, &#39;68077&#39;, &#39;68327&#39;, &#39;68673&#39;],
+ &#39;05607&#39;: [&#39;05129&#39;, &#39;05266&#39;, &#39;05376&#39;, &#39;05467&#39;, &#39;05615&#39;, &#39;05679&#39;],
+ &#39;15185&#39;: [&#39;15664&#39;, &#39;15686&#39;, &#39;15816&#39;, &#39;68298&#39;, &#39;68770&#39;],
+ &#39;15757&#39;: [&#39;15537&#39;, &#39;15723&#39;, &#39;15755&#39;, &#39;15790&#39;],
+ &#39;15537&#39;: [&#39;15087&#39;, &#39;15092&#39;, &#39;15720&#39;, &#39;15723&#39;, &#39;15757&#39;, &#39;15790&#39;, &#39;15839&#39;],
+ &#39;68327&#39;: [&#39;15664&#39;, &#39;68077&#39;, &#39;68179&#39;, &#39;68673&#39;, &#39;68861&#39;],
+ &#39;68167&#39;: [&#39;15238&#39;,
+  &#39;15516&#39;,
+  &#39;68209&#39;,
+  &#39;68217&#39;,
+  &#39;68264&#39;,
+  &#39;68298&#39;,
+  &#39;68464&#39;,
+  &#39;68498&#39;,
+  &#39;68500&#39;,
+  &#39;68533&#39;,
+  &#39;68770&#39;],
+ &#39;05030&#39;: [&#39;05036&#39;, &#39;05129&#39;, &#39;05282&#39;, &#39;05809&#39;, &#39;05861&#39;],
+ &#39;05129&#39;: [&#39;05030&#39;,
+  &#39;05036&#39;,
+  &#39;05266&#39;,
+  &#39;05282&#39;,
+  &#39;05380&#39;,
+  &#39;05607&#39;,
+  &#39;05631&#39;,
+  &#39;05679&#39;],
+ &#39;05809&#39;: [&#39;05030&#39;, &#39;05036&#39;, &#39;05059&#39;, &#39;05209&#39;, &#39;05861&#39;],
+ &#39;05209&#39;: [&#39;05059&#39;, &#39;05093&#39;, &#39;05642&#39;, &#39;05809&#39;, &#39;05847&#39;, &#39;05861&#39;],
+ &#39;68264&#39;: [&#39;15087&#39;, &#39;15162&#39;, &#39;15238&#39;, &#39;15693&#39;, &#39;15839&#39;, &#39;68167&#39;, &#39;68217&#39;],
+ &#39;27075&#39;: [&#39;27025&#39;, &#39;27099&#39;, &#39;27150&#39;, &#39;27372&#39;, &#39;27495&#39;, &#39;27615&#39;],
+ &#39;05847&#39;: [&#39;05004&#39;,
+  &#39;05044&#39;,
+  &#39;05093&#39;,
+  &#39;05125&#39;,
+  &#39;05209&#39;,
+  &#39;05284&#39;,
+  &#39;05642&#39;,
+  &#39;05873&#39;,
+  &#39;27001&#39;,
+  &#39;27245&#39;,
+  &#39;27425&#39;],
+ &#39;15686&#39;: [&#39;15185&#39;, &#39;15664&#39;, &#39;68673&#39;, &#39;68770&#39;],
+ &#39;68673&#39;: [&#39;15664&#39;,
+  &#39;15686&#39;,
+  &#39;68013&#39;,
+  &#39;68179&#39;,
+  &#39;68320&#39;,
+  &#39;68327&#39;,
+  &#39;68397&#39;,
+  &#39;68770&#39;],
+ &#39;05585&#39;: [&#39;05142&#39;, &#39;05579&#39;, &#39;05591&#39;, &#39;05649&#39;, &#39;05660&#39;, &#39;15572&#39;],
+ &#39;15723&#39;: [&#39;15537&#39;, &#39;15720&#39;, &#39;15755&#39;, &#39;15757&#39;],
+ &#39;27099&#39;: [&#39;05873&#39;, &#39;27001&#39;, &#39;27025&#39;, &#39;27075&#39;, &#39;27150&#39;],
+ &#39;85315&#39;: [&#39;15183&#39;, &#39;81794&#39;, &#39;85125&#39;, &#39;85136&#39;, &#39;85250&#39;, &#39;85400&#39;],
+ &#39;15183&#39;: [&#39;15244&#39;, &#39;15368&#39;, &#39;15403&#39;, &#39;15755&#39;, &#39;85136&#39;, &#39;85315&#39;, &#39;85400&#39;],
+ &#39;85125&#39;: [&#39;81220&#39;, &#39;81591&#39;, &#39;81794&#39;, &#39;85250&#39;, &#39;85315&#39;, &#39;85400&#39;],
+ &#39;05615&#39;: [&#39;05001&#39;,
+  &#39;05148&#39;,
+  &#39;05266&#39;,
+  &#39;05318&#39;,
+  &#39;05376&#39;,
+  &#39;05440&#39;,
+  &#39;05607&#39;,
+  &#39;05674&#39;],
+ &#39;68770&#39;: [&#39;15185&#39;, &#39;15686&#39;, &#39;68167&#39;, &#39;68298&#39;, &#39;68320&#39;, &#39;68500&#39;, &#39;68673&#39;],
+ &#39;68179&#39;: [&#39;68327&#39;, &#39;68397&#39;, &#39;68673&#39;, &#39;68861&#39;],
+ &#39;05036&#39;: [&#39;05001&#39;, &#39;05030&#39;, &#39;05059&#39;, &#39;05129&#39;, &#39;05347&#39;, &#39;05380&#39;, &#39;05809&#39;],
+ &#39;15720&#39;: [&#39;15368&#39;, &#39;15537&#39;, &#39;15723&#39;, &#39;15755&#39;, &#39;15774&#39;, &#39;15839&#39;, &#39;68502&#39;],
+ &#39;15368&#39;: [&#39;15183&#39;, &#39;15403&#39;, &#39;15720&#39;, &#39;15755&#39;, &#39;15774&#39;],
+ &#39;05631&#39;: [&#39;05129&#39;, &#39;05266&#39;, &#39;05360&#39;, &#39;05380&#39;],
+ &#39;05380&#39;: [&#39;05001&#39;, &#39;05036&#39;, &#39;05129&#39;, &#39;05360&#39;, &#39;05631&#39;],
+ &#39;05266&#39;: [&#39;05001&#39;, &#39;05129&#39;, &#39;05360&#39;, &#39;05607&#39;, &#39;05615&#39;, &#39;05631&#39;],
+ &#39;05697&#39;: [&#39;05148&#39;, &#39;05197&#39;, &#39;05313&#39;, &#39;05440&#39;, &#39;05541&#39;],
+ &#39;05313&#39;: [&#39;05197&#39;, &#39;05321&#39;, &#39;05541&#39;, &#39;05649&#39;, &#39;05660&#39;, &#39;05697&#39;],
+ &#39;68397&#39;: [&#39;68013&#39;, &#39;68179&#39;, &#39;68245&#39;, &#39;68673&#39;, &#39;68720&#39;, &#39;68861&#39;],
+ &#39;85136&#39;: [&#39;15183&#39;, &#39;15244&#39;, &#39;81794&#39;, &#39;85315&#39;],
+ &#39;81794&#39;: [&#39;15244&#39;,
+  &#39;15332&#39;,
+  &#39;81065&#39;,
+  &#39;81300&#39;,
+  &#39;81591&#39;,
+  &#39;85125&#39;,
+  &#39;85136&#39;,
+  &#39;85315&#39;],
+ &#39;05649&#39;: [&#39;05142&#39;, &#39;05313&#39;, &#39;05321&#39;, &#39;05585&#39;, &#39;05660&#39;, &#39;05667&#39;, &#39;05670&#39;],
+ &#39;81220&#39;: [&#39;81001&#39;, &#39;81591&#39;, &#39;85125&#39;, &#39;85250&#39;, &#39;99524&#39;],
+ &#39;05059&#39;: [&#39;05036&#39;, &#39;05044&#39;, &#39;05093&#39;, &#39;05209&#39;, &#39;05240&#39;, &#39;05347&#39;, &#39;05809&#39;],
+ &#39;05440&#39;: [&#39;05148&#39;, &#39;05541&#39;, &#39;05615&#39;, &#39;05674&#39;, &#39;05697&#39;],
+ &#39;15839&#39;: [&#39;15087&#39;, &#39;15537&#39;, &#39;15720&#39;, &#39;68217&#39;, &#39;68264&#39;, &#39;68502&#39;],
+ &#39;68217&#39;: [&#39;15087&#39;, &#39;15839&#39;, &#39;68167&#39;, &#39;68264&#39;, &#39;68464&#39;, &#39;68502&#39;, &#39;68682&#39;],
+ &#39;68502&#39;: [&#39;15218&#39;,
+  &#39;15720&#39;,
+  &#39;15753&#39;,
+  &#39;15774&#39;,
+  &#39;15810&#39;,
+  &#39;15839&#39;,
+  &#39;68217&#39;,
+  &#39;68468&#39;,
+  &#39;68682&#39;],
+ &#39;15087&#39;: [&#39;15092&#39;, &#39;15162&#39;, &#39;15537&#39;, &#39;15839&#39;, &#39;68217&#39;, &#39;68264&#39;],
+ &#39;68013&#39;: [&#39;68245&#39;, &#39;68320&#39;, &#39;68397&#39;, &#39;68673&#39;],
+ &#39;68320&#39;: [&#39;68013&#39;,
+  &#39;68176&#39;,
+  &#39;68211&#39;,
+  &#39;68245&#39;,
+  &#39;68322&#39;,
+  &#39;68500&#39;,
+  &#39;68673&#39;,
+  &#39;68770&#39;],
+ &#39;05360&#39;: [&#39;05001&#39;, &#39;05266&#39;, &#39;05380&#39;, &#39;05631&#39;],
+ &#39;68250&#39;: [&#39;68101&#39;, &#39;68773&#39;],
+ &#39;05541&#39;: [&#39;05206&#39;, &#39;05313&#39;, &#39;05321&#39;, &#39;05440&#39;, &#39;05674&#39;, &#39;05697&#39;],
+ &#39;05093&#39;: [&#39;05044&#39;, &#39;05059&#39;, &#39;05209&#39;, &#39;05847&#39;],
+ &#39;05001&#39;: [&#39;05036&#39;,
+  &#39;05088&#39;,
+  &#39;05212&#39;,
+  &#39;05240&#39;,
+  &#39;05266&#39;,
+  &#39;05318&#39;,
+  &#39;05347&#39;,
+  &#39;05360&#39;,
+  &#39;05380&#39;,
+  &#39;05615&#39;,
+  &#39;05656&#39;],
+ &#39;15774&#39;: [&#39;15097&#39;, &#39;15368&#39;, &#39;15403&#39;, &#39;15720&#39;, &#39;15753&#39;, &#39;68502&#39;],
+ &#39;05347&#39;: [&#39;05001&#39;, &#39;05036&#39;, &#39;05059&#39;, &#39;05240&#39;],
+ &#39;68500&#39;: [&#39;68167&#39;, &#39;68209&#39;, &#39;68320&#39;, &#39;68322&#39;, &#39;68770&#39;],
+ &#39;15403&#39;: [&#39;15097&#39;, &#39;15183&#39;, &#39;15244&#39;, &#39;15368&#39;, &#39;15673&#39;, &#39;15774&#39;],
+ &#39;27425&#39;: [&#39;05847&#39;, &#39;05873&#39;, &#39;27001&#39;],
+ &#39;05873&#39;: [&#39;05284&#39;, &#39;05475&#39;, &#39;05847&#39;, &#39;27001&#39;, &#39;27099&#39;, &#39;27150&#39;, &#39;27425&#39;],
+ &#39;05321&#39;: [&#39;05021&#39;, &#39;05206&#39;, &#39;05313&#39;, &#39;05541&#39;, &#39;05649&#39;, &#39;05667&#39;],
+ &#39;05318&#39;: [&#39;05001&#39;, &#39;05212&#39;, &#39;05308&#39;, &#39;05615&#39;, &#39;05674&#39;],
+ &#39;05674&#39;: [&#39;05079&#39;, &#39;05206&#39;, &#39;05308&#39;, &#39;05318&#39;, &#39;05440&#39;, &#39;05541&#39;, &#39;05615&#39;],
+ &#39;68245&#39;: [&#39;68013&#39;, &#39;68211&#39;, &#39;68320&#39;, &#39;68397&#39;, &#39;68720&#39;],
+ &#39;05044&#39;: [&#39;05042&#39;, &#39;05059&#39;, &#39;05093&#39;, &#39;05125&#39;, &#39;05240&#39;, &#39;05847&#39;],
+ &#39;05240&#39;: [&#39;05001&#39;, &#39;05042&#39;, &#39;05044&#39;, &#39;05059&#39;, &#39;05347&#39;, &#39;05656&#39;, &#39;05761&#39;],
+ &#39;05579&#39;: [&#39;05142&#39;,
+  &#39;05425&#39;,
+  &#39;05585&#39;,
+  &#39;05604&#39;,
+  &#39;05890&#39;,
+  &#39;05893&#39;,
+  &#39;15572&#39;,
+  &#39;68101&#39;,
+  &#39;68190&#39;],
+ &#39;68385&#39;: [&#39;68101&#39;, &#39;68190&#39;, &#39;68573&#39;, &#39;68861&#39;],
+ &#39;68190&#39;: [&#39;05579&#39;, &#39;05893&#39;, &#39;68101&#39;, &#39;68385&#39;, &#39;68573&#39;],
+ &#39;05142&#39;: [&#39;05425&#39;, &#39;05579&#39;, &#39;05585&#39;, &#39;05649&#39;, &#39;05670&#39;],
+ &#39;15753&#39;: [&#39;15097&#39;, &#39;15774&#39;, &#39;15810&#39;, &#39;68502&#39;],
+ &#39;15097&#39;: [&#39;15403&#39;, &#39;15673&#39;, &#39;15753&#39;, &#39;15774&#39;, &#39;15810&#39;, &#39;68147&#39;, &#39;68425&#39;],
+ &#39;15244&#39;: [&#39;15183&#39;, &#39;15332&#39;, &#39;15403&#39;, &#39;15522&#39;, &#39;15673&#39;, &#39;81794&#39;, &#39;85136&#39;],
+ &#39;81591&#39;: [&#39;81001&#39;, &#39;81065&#39;, &#39;81220&#39;, &#39;81794&#39;, &#39;85125&#39;],
+ &#39;68322&#39;: [&#39;68176&#39;, &#39;68209&#39;, &#39;68320&#39;, &#39;68500&#39;, &#39;68524&#39;],
+ &#39;68211&#39;: [&#39;68176&#39;, &#39;68245&#39;, &#39;68320&#39;, &#39;68720&#39;],
+ &#39;68176&#39;: [&#39;68211&#39;, &#39;68320&#39;, &#39;68322&#39;, &#39;68524&#39;, &#39;68720&#39;, &#39;68745&#39;],
+ &#39;68720&#39;: [&#39;68176&#39;, &#39;68211&#39;, &#39;68245&#39;, &#39;68397&#39;, &#39;68745&#39;, &#39;68861&#39;],
+ &#39;05206&#39;: [&#39;05021&#39;, &#39;05079&#39;, &#39;05321&#39;, &#39;05541&#39;, &#39;05674&#39;, &#39;05690&#39;],
+ &#39;68209&#39;: [&#39;68167&#39;, &#39;68322&#39;, &#39;68500&#39;, &#39;68524&#39;, &#39;68533&#39;, &#39;68755&#39;],
+ &#39;05667&#39;: [&#39;05021&#39;, &#39;05321&#39;, &#39;05649&#39;, &#39;05670&#39;],
+ &#39;05021&#39;: [&#39;05206&#39;, &#39;05321&#39;, &#39;05667&#39;, &#39;05670&#39;, &#39;05690&#39;],
+ &#39;05670&#39;: [&#39;05021&#39;, &#39;05142&#39;, &#39;05425&#39;, &#39;05649&#39;, &#39;05667&#39;, &#39;05690&#39;, &#39;05890&#39;],
+ &#39;15673&#39;: [&#39;15097&#39;, &#39;15244&#39;, &#39;15317&#39;, &#39;15403&#39;, &#39;15522&#39;, &#39;68425&#39;],
+ &#39;05212&#39;: [&#39;05001&#39;, &#39;05088&#39;, &#39;05308&#39;, &#39;05318&#39;, &#39;05664&#39;],
+ &#39;05308&#39;: [&#39;05079&#39;, &#39;05212&#39;, &#39;05237&#39;, &#39;05318&#39;, &#39;05664&#39;, &#39;05674&#39;],
+ &#39;68524&#39;: [&#39;68176&#39;, &#39;68209&#39;, &#39;68322&#39;, &#39;68745&#39;, &#39;68755&#39;],
+ &#39;05088&#39;: [&#39;05001&#39;, &#39;05212&#39;, &#39;05656&#39;, &#39;05664&#39;],
+ &#39;05656&#39;: [&#39;05001&#39;, &#39;05086&#39;, &#39;05088&#39;, &#39;05240&#39;, &#39;05664&#39;, &#39;05761&#39;],
+ &#39;68682&#39;: [&#39;68217&#39;, &#39;68464&#39;, &#39;68468&#39;, &#39;68502&#39;],
+ &#39;68464&#39;: [&#39;68167&#39;,
+  &#39;68217&#39;,
+  &#39;68229&#39;,
+  &#39;68468&#39;,
+  &#39;68498&#39;,
+  &#39;68679&#39;,
+  &#39;68682&#39;,
+  &#39;68855&#39;],
+ &#39;15810&#39;: [&#39;15097&#39;, &#39;15218&#39;, &#39;15753&#39;, &#39;68147&#39;, &#39;68502&#39;],
+ &#39;68498&#39;: [&#39;68167&#39;, &#39;68464&#39;, &#39;68533&#39;, &#39;68855&#39;],
+ &#39;68533&#39;: [&#39;68167&#39;, &#39;68209&#39;, &#39;68498&#39;, &#39;68549&#39;, &#39;68679&#39;, &#39;68755&#39;, &#39;68855&#39;],
+ &#39;68855&#39;: [&#39;68464&#39;, &#39;68498&#39;, &#39;68533&#39;, &#39;68679&#39;],
+ &#39;05079&#39;: [&#39;05206&#39;, &#39;05237&#39;, &#39;05308&#39;, &#39;05674&#39;, &#39;05690&#39;],
+ &#39;68755&#39;: [&#39;68121&#39;, &#39;68209&#39;, &#39;68522&#39;, &#39;68524&#39;, &#39;68533&#39;, &#39;68549&#39;, &#39;68745&#39;],
+ &#39;05125&#39;: [&#39;05004&#39;, &#39;05042&#39;, &#39;05044&#39;, &#39;05847&#39;],
+ &#39;05042&#39;: [&#39;05004&#39;,
+  &#39;05044&#39;,
+  &#39;05113&#39;,
+  &#39;05125&#39;,
+  &#39;05240&#39;,
+  &#39;05306&#39;,
+  &#39;05411&#39;,
+  &#39;05501&#39;,
+  &#39;05761&#39;],
+ &#39;05690&#39;: [&#39;05021&#39;,
+  &#39;05079&#39;,
+  &#39;05190&#39;,
+  &#39;05206&#39;,
+  &#39;05237&#39;,
+  &#39;05670&#39;,
+  &#39;05686&#39;,
+  &#39;05890&#39;],
+ &#39;68745&#39;: [&#39;68081&#39;,
+  &#39;68176&#39;,
+  &#39;68235&#39;,
+  &#39;68344&#39;,
+  &#39;68522&#39;,
+  &#39;68524&#39;,
+  &#39;68573&#39;,
+  &#39;68689&#39;,
+  &#39;68720&#39;,
+  &#39;68755&#39;,
+  &#39;68861&#39;],
+ &#39;05761&#39;: [&#39;05042&#39;, &#39;05086&#39;, &#39;05240&#39;, &#39;05501&#39;, &#39;05656&#39;],
+ &#39;15522&#39;: [&#39;15244&#39;, &#39;15248&#39;, &#39;15317&#39;, &#39;15332&#39;, &#39;15673&#39;],
+ &#39;15332&#39;: [&#39;15180&#39;,
+  &#39;15223&#39;,
+  &#39;15244&#39;,
+  &#39;15248&#39;,
+  &#39;15522&#39;,
+  &#39;81300&#39;,
+  &#39;81736&#39;,
+  &#39;81794&#39;],
+ &#39;05664&#39;: [&#39;05086&#39;, &#39;05088&#39;, &#39;05212&#39;, &#39;05237&#39;, &#39;05264&#39;, &#39;05308&#39;, &#39;05656&#39;],
+ &#39;68425&#39;: [&#39;15097&#39;,
+  &#39;15180&#39;,
+  &#39;15248&#39;,
+  &#39;15317&#39;,
+  &#39;15673&#39;,
+  &#39;68147&#39;,
+  &#39;68152&#39;,
+  &#39;68686&#39;],
+ &#39;68147&#39;: [&#39;15097&#39;, &#39;15218&#39;, &#39;15810&#39;, &#39;68266&#39;, &#39;68425&#39;, &#39;68684&#39;, &#39;68686&#39;],
+ &#39;05425&#39;: [&#39;05142&#39;, &#39;05579&#39;, &#39;05670&#39;, &#39;05890&#39;],
+ &#39;15218&#39;: [&#39;15810&#39;, &#39;68147&#39;, &#39;68468&#39;, &#39;68502&#39;, &#39;68684&#39;],
+ &#39;68679&#39;: [&#39;68079&#39;,
+  &#39;68121&#39;,
+  &#39;68229&#39;,
+  &#39;68464&#39;,
+  &#39;68533&#39;,
+  &#39;68549&#39;,
+  &#39;68855&#39;,
+  &#39;68872&#39;],
+ &#39;15317&#39;: [&#39;15248&#39;, &#39;15522&#39;, &#39;15673&#39;, &#39;68425&#39;],
+ &#39;15248&#39;: [&#39;15180&#39;, &#39;15317&#39;, &#39;15332&#39;, &#39;15522&#39;, &#39;68425&#39;],
+ &#39;68549&#39;: [&#39;68121&#39;, &#39;68533&#39;, &#39;68679&#39;, &#39;68755&#39;],
+ &#39;05004&#39;: [&#39;05042&#39;, &#39;05125&#39;, &#39;05138&#39;, &#39;05284&#39;, &#39;05306&#39;, &#39;05847&#39;],
+ &#39;68522&#39;: [&#39;68121&#39;, &#39;68296&#39;, &#39;68344&#39;, &#39;68745&#39;, &#39;68755&#39;],
+ &#39;68121&#39;: [&#39;68079&#39;, &#39;68296&#39;, &#39;68522&#39;, &#39;68549&#39;, &#39;68679&#39;, &#39;68755&#39;],
+ &#39;68468&#39;: [&#39;15218&#39;,
+  &#39;68160&#39;,
+  &#39;68229&#39;,
+  &#39;68432&#39;,
+  &#39;68464&#39;,
+  &#39;68502&#39;,
+  &#39;68669&#39;,
+  &#39;68682&#39;,
+  &#39;68684&#39;],
+ &#39;15180&#39;: [&#39;15223&#39;, &#39;15248&#39;, &#39;15332&#39;, &#39;68152&#39;, &#39;68207&#39;, &#39;68425&#39;],
+ &#39;05890&#39;: [&#39;05031&#39;,
+  &#39;05190&#39;,
+  &#39;05310&#39;,
+  &#39;05425&#39;,
+  &#39;05579&#39;,
+  &#39;05604&#39;,
+  &#39;05670&#39;,
+  &#39;05686&#39;,
+  &#39;05690&#39;,
+  &#39;05858&#39;,
+  &#39;05885&#39;],
+ &#39;68573&#39;: [&#39;05893&#39;, &#39;68081&#39;, &#39;68190&#39;, &#39;68385&#39;, &#39;68745&#39;, &#39;68861&#39;],
+ &#39;05190&#39;: [&#39;05690&#39;, &#39;05890&#39;],
+ &#39;05237&#39;: [&#39;05079&#39;, &#39;05264&#39;, &#39;05308&#39;, &#39;05664&#39;, &#39;05686&#39;, &#39;05690&#39;],
+ &#39;05686&#39;: [&#39;05038&#39;,
+  &#39;05086&#39;,
+  &#39;05150&#39;,
+  &#39;05237&#39;,
+  &#39;05264&#39;,
+  &#39;05310&#39;,
+  &#39;05647&#39;,
+  &#39;05658&#39;,
+  &#39;05690&#39;,
+  &#39;05887&#39;,
+  &#39;05890&#39;],
+ &#39;68344&#39;: [&#39;68235&#39;, &#39;68296&#39;, &#39;68522&#39;, &#39;68745&#39;],
+ &#39;68296&#39;: [&#39;68079&#39;, &#39;68121&#39;, &#39;68235&#39;, &#39;68344&#39;, &#39;68522&#39;, &#39;68689&#39;, &#39;68895&#39;],
+ &#39;68684&#39;: [&#39;15218&#39;, &#39;68147&#39;, &#39;68266&#39;, &#39;68432&#39;, &#39;68468&#39;],
+ &#39;68686&#39;: [&#39;68147&#39;, &#39;68152&#39;, &#39;68266&#39;, &#39;68425&#39;],
+ &#39;68152&#39;: [&#39;15180&#39;, &#39;68207&#39;, &#39;68266&#39;, &#39;68425&#39;, &#39;68686&#39;],
+ &#39;68266&#39;: [&#39;68147&#39;, &#39;68152&#39;, &#39;68207&#39;, &#39;68432&#39;, &#39;68684&#39;, &#39;68686&#39;],
+ &#39;05284&#39;: [&#39;05004&#39;, &#39;05138&#39;, &#39;05234&#39;, &#39;05475&#39;, &#39;05842&#39;, &#39;05847&#39;, &#39;05873&#39;],
+ &#39;81065&#39;: [&#39;81001&#39;, &#39;81300&#39;, &#39;81591&#39;, &#39;81736&#39;, &#39;81794&#39;],
+ &#39;81001&#39;: [&#39;81065&#39;, &#39;81220&#39;, &#39;81591&#39;],
+ &#39;68079&#39;: [&#39;68121&#39;, &#39;68296&#39;, &#39;68679&#39;, &#39;68872&#39;, &#39;68895&#39;],
+ &#39;68235&#39;: [&#39;68296&#39;, &#39;68344&#39;, &#39;68689&#39;, &#39;68745&#39;],
+ &#39;05501&#39;: [&#39;05042&#39;, &#39;05086&#39;, &#39;05411&#39;, &#39;05761&#39;],
+ &#39;05086&#39;: [&#39;05264&#39;,
+  &#39;05411&#39;,
+  &#39;05501&#39;,
+  &#39;05656&#39;,
+  &#39;05658&#39;,
+  &#39;05664&#39;,
+  &#39;05686&#39;,
+  &#39;05761&#39;],
+ &#39;68229&#39;: [&#39;68051&#39;, &#39;68160&#39;, &#39;68370&#39;, &#39;68464&#39;, &#39;68468&#39;, &#39;68679&#39;, &#39;68872&#39;],
+ &#39;68872&#39;: [&#39;68079&#39;, &#39;68229&#39;, &#39;68370&#39;, &#39;68418&#39;, &#39;68679&#39;, &#39;68895&#39;],
+ &#39;05411&#39;: [&#39;05042&#39;, &#39;05086&#39;, &#39;05113&#39;, &#39;05501&#39;, &#39;05628&#39;, &#39;05647&#39;, &#39;05658&#39;],
+ &#39;05306&#39;: [&#39;05004&#39;, &#39;05042&#39;, &#39;05113&#39;, &#39;05138&#39;],
+ &#39;05113&#39;: [&#39;05042&#39;, &#39;05138&#39;, &#39;05306&#39;, &#39;05411&#39;, &#39;05543&#39;, &#39;05628&#39;],
+ &#39;68370&#39;: [&#39;68051&#39;, &#39;68229&#39;, &#39;68418&#39;, &#39;68872&#39;],
+ &#39;68160&#39;: [&#39;68051&#39;, &#39;68229&#39;, &#39;68318&#39;, &#39;68468&#39;, &#39;68547&#39;, &#39;68669&#39;],
+ &#39;68051&#39;: [&#39;68160&#39;, &#39;68229&#39;, &#39;68370&#39;, &#39;68418&#39;, &#39;68547&#39;],
+ &#39;68432&#39;: [&#39;68207&#39;, &#39;68266&#39;, &#39;68468&#39;, &#39;68669&#39;, &#39;68684&#39;],
+ &#39;81300&#39;: [&#39;15223&#39;, &#39;15332&#39;, &#39;81065&#39;, &#39;81736&#39;, &#39;81794&#39;],
+ &#39;68207&#39;: [&#39;15180&#39;,
+  &#39;15223&#39;,
+  &#39;54174&#39;,
+  &#39;68152&#39;,
+  &#39;68162&#39;,
+  &#39;68266&#39;,
+  &#39;68432&#39;,
+  &#39;68669&#39;],
+ &#39;68669&#39;: [&#39;68160&#39;, &#39;68162&#39;, &#39;68207&#39;, &#39;68318&#39;, &#39;68432&#39;, &#39;68468&#39;],
+ &#39;68895&#39;: [&#39;68079&#39;, &#39;68092&#39;, &#39;68296&#39;, &#39;68307&#39;, &#39;68418&#39;, &#39;68689&#39;, &#39;68872&#39;],
+ &#39;05138&#39;: [&#39;05004&#39;, &#39;05113&#39;, &#39;05284&#39;, &#39;05306&#39;, &#39;05543&#39;, &#39;05842&#39;],
+ &#39;68418&#39;: [&#39;68051&#39;, &#39;68307&#39;, &#39;68370&#39;, &#39;68547&#39;, &#39;68872&#39;, &#39;68895&#39;],
+ &#39;05604&#39;: [&#39;05031&#39;,
+  &#39;05579&#39;,
+  &#39;05736&#39;,
+  &#39;05858&#39;,
+  &#39;05885&#39;,
+  &#39;05890&#39;,
+  &#39;05893&#39;,
+  &#39;13160&#39;,
+  &#39;13670&#39;],
+ &#39;05893&#39;: [&#39;05579&#39;, &#39;05604&#39;, &#39;13160&#39;, &#39;68081&#39;, &#39;68190&#39;, &#39;68573&#39;, &#39;68575&#39;],
+ &#39;15223&#39;: [&#39;15180&#39;, &#39;15332&#39;, &#39;54174&#39;, &#39;54820&#39;, &#39;68207&#39;, &#39;81300&#39;, &#39;81736&#39;],
+ &#39;81736&#39;: [&#39;15223&#39;, &#39;15332&#39;, &#39;81065&#39;, &#39;81300&#39;],
+ &#39;68689&#39;: [&#39;68081&#39;, &#39;68092&#39;, &#39;68235&#39;, &#39;68296&#39;, &#39;68307&#39;, &#39;68745&#39;, &#39;68895&#39;],
+ &#39;05885&#39;: [&#39;05604&#39;, &#39;05858&#39;, &#39;05890&#39;],
+ &#39;05858&#39;: [&#39;05031&#39;, &#39;05604&#39;, &#39;05885&#39;, &#39;05890&#39;],
+ &#39;05658&#39;: [&#39;05086&#39;, &#39;05411&#39;, &#39;05647&#39;, &#39;05686&#39;],
+ &#39;05647&#39;: [&#39;05107&#39;, &#39;05411&#39;, &#39;05628&#39;, &#39;05658&#39;, &#39;05686&#39;, &#39;05819&#39;, &#39;05887&#39;],
+ &#39;05628&#39;: [&#39;05113&#39;, &#39;05361&#39;, &#39;05411&#39;, &#39;05543&#39;, &#39;05647&#39;, &#39;05819&#39;],
+ &#39;68547&#39;: [&#39;68051&#39;,
+  &#39;68160&#39;,
+  &#39;68276&#39;,
+  &#39;68307&#39;,
+  &#39;68318&#39;,
+  &#39;68418&#39;,
+  &#39;68705&#39;,
+  &#39;68820&#39;],
+ &#39;68318&#39;: [&#39;54174&#39;, &#39;54743&#39;, &#39;68160&#39;, &#39;68162&#39;, &#39;68547&#39;, &#39;68669&#39;, &#39;68705&#39;],
+ &#39;05150&#39;: [&#39;05038&#39;, &#39;05310&#39;, &#39;05315&#39;, &#39;05686&#39;],
+ &#39;05310&#39;: [&#39;05031&#39;, &#39;05150&#39;, &#39;05315&#39;, &#39;05686&#39;, &#39;05890&#39;],
+ &#39;05315&#39;: [&#39;05031&#39;, &#39;05038&#39;, &#39;05040&#39;, &#39;05134&#39;, &#39;05150&#39;, &#39;05310&#39;],
+ &#39;05038&#39;: [&#39;05134&#39;, &#39;05150&#39;, &#39;05315&#39;, &#39;05686&#39;, &#39;05887&#39;],
+ &#39;27372&#39;: [&#39;27075&#39;, &#39;27615&#39;],
+ &#39;27150&#39;: [&#39;05234&#39;, &#39;05475&#39;, &#39;05873&#39;, &#39;27075&#39;, &#39;27099&#39;, &#39;27615&#39;],
+ &#39;27615&#39;: [&#39;05234&#39;, &#39;05480&#39;, &#39;05837&#39;, &#39;27075&#39;, &#39;27150&#39;, &#39;27372&#39;, &#39;27800&#39;],
+ &#39;05031&#39;: [&#39;05040&#39;,
+  &#39;05310&#39;,
+  &#39;05315&#39;,
+  &#39;05604&#39;,
+  &#39;05736&#39;,
+  &#39;05858&#39;,
+  &#39;05890&#39;,
+  &#39;05895&#39;],
+ &#39;05475&#39;: [&#39;05234&#39;, &#39;05284&#39;, &#39;05873&#39;, &#39;27150&#39;],
+ &#39;68081&#39;: [&#39;05893&#39;,
+  &#39;68092&#39;,
+  &#39;68307&#39;,
+  &#39;68573&#39;,
+  &#39;68575&#39;,
+  &#39;68655&#39;,
+  &#39;68689&#39;,
+  &#39;68745&#39;],
+ &#39;68162&#39;: [&#39;54174&#39;, &#39;54743&#39;, &#39;68207&#39;, &#39;68318&#39;, &#39;68669&#39;],
+ &#39;54174&#39;: [&#39;15223&#39;,
+  &#39;54125&#39;,
+  &#39;54377&#39;,
+  &#39;54518&#39;,
+  &#39;54743&#39;,
+  &#39;54820&#39;,
+  &#39;68162&#39;,
+  &#39;68207&#39;,
+  &#39;68318&#39;],
+ &#39;68307&#39;: [&#39;68001&#39;,
+  &#39;68081&#39;,
+  &#39;68092&#39;,
+  &#39;68276&#39;,
+  &#39;68406&#39;,
+  &#39;68418&#39;,
+  &#39;68547&#39;,
+  &#39;68615&#39;,
+  &#39;68655&#39;,
+  &#39;68689&#39;,
+  &#39;68895&#39;],
+ &#39;05842&#39;: [&#39;05138&#39;, &#39;05234&#39;, &#39;05284&#39;, &#39;05543&#39;],
+ &#39;05234&#39;: [&#39;05284&#39;,
+  &#39;05361&#39;,
+  &#39;05475&#39;,
+  &#39;05480&#39;,
+  &#39;05543&#39;,
+  &#39;05842&#39;,
+  &#39;27150&#39;,
+  &#39;27615&#39;],
+ &#39;05134&#39;: [&#39;05038&#39;, &#39;05040&#39;, &#39;05315&#39;, &#39;05887&#39;],
+ &#39;05040&#39;: [&#39;05031&#39;,
+  &#39;05120&#39;,
+  &#39;05134&#39;,
+  &#39;05315&#39;,
+  &#39;05790&#39;,
+  &#39;05854&#39;,
+  &#39;05887&#39;,
+  &#39;05895&#39;],
+ &#39;05887&#39;: [&#39;05038&#39;,
+  &#39;05040&#39;,
+  &#39;05107&#39;,
+  &#39;05134&#39;,
+  &#39;05647&#39;,
+  &#39;05686&#39;,
+  &#39;05819&#39;,
+  &#39;05854&#39;],
+ &#39;05543&#39;: [&#39;05113&#39;, &#39;05138&#39;, &#39;05234&#39;, &#39;05361&#39;, &#39;05628&#39;, &#39;05842&#39;],
+ &#39;68092&#39;: [&#39;68081&#39;, &#39;68307&#39;, &#39;68689&#39;, &#39;68895&#39;],
+ &#39;05819&#39;: [&#39;05107&#39;, &#39;05361&#39;, &#39;05628&#39;, &#39;05647&#39;, &#39;05887&#39;],
+ &#39;05107&#39;: [&#39;05361&#39;, &#39;05647&#39;, &#39;05819&#39;, &#39;05854&#39;, &#39;05887&#39;],
+ &#39;05361&#39;: [&#39;05107&#39;,
+  &#39;05234&#39;,
+  &#39;05480&#39;,
+  &#39;05543&#39;,
+  &#39;05628&#39;,
+  &#39;05790&#39;,
+  &#39;05819&#39;,
+  &#39;05854&#39;,
+  &#39;23466&#39;,
+  &#39;23580&#39;,
+  &#39;23682&#39;,
+  &#39;23807&#39;],
+ &#39;68276&#39;: [&#39;68001&#39;, &#39;68307&#39;, &#39;68547&#39;, &#39;68820&#39;],
+ &#39;68705&#39;: [&#39;54743&#39;, &#39;68318&#39;, &#39;68547&#39;, &#39;68820&#39;],
+ &#39;68820&#39;: [&#39;54743&#39;, &#39;68001&#39;, &#39;68169&#39;, &#39;68276&#39;, &#39;68547&#39;, &#39;68705&#39;, &#39;68867&#39;],
+ &#39;68001&#39;: [&#39;68169&#39;, &#39;68276&#39;, &#39;68307&#39;, &#39;68444&#39;, &#39;68615&#39;, &#39;68820&#39;],
+ &#39;68406&#39;: [&#39;68307&#39;, &#39;68615&#39;, &#39;68655&#39;],
+ &#39;68655&#39;: [&#39;68081&#39;, &#39;68307&#39;, &#39;68406&#39;, &#39;68575&#39;, &#39;68615&#39;],
+ &#39;68615&#39;: [&#39;20710&#39;,
+  &#39;20770&#39;,
+  &#39;54128&#39;,
+  &#39;54385&#39;,
+  &#39;68001&#39;,
+  &#39;68255&#39;,
+  &#39;68307&#39;,
+  &#39;68406&#39;,
+  &#39;68444&#39;,
+  &#39;68575&#39;,
+  &#39;68655&#39;],
+ &#39;05854&#39;: [&#39;05040&#39;, &#39;05107&#39;, &#39;05361&#39;, &#39;05790&#39;, &#39;05887&#39;],
+ &#39;68575&#39;: [&#39;05893&#39;,
+  &#39;13160&#39;,
+  &#39;13473&#39;,
+  &#39;13670&#39;,
+  &#39;13744&#39;,
+  &#39;20011&#39;,
+  &#39;20770&#39;,
+  &#39;68081&#39;,
+  &#39;68615&#39;,
+  &#39;68655&#39;],
+ &#39;68169&#39;: [&#39;68001&#39;, &#39;68132&#39;, &#39;68444&#39;, &#39;68780&#39;, &#39;68820&#39;, &#39;68867&#39;],
+ &#39;68444&#39;: [&#39;68001&#39;, &#39;68169&#39;, &#39;68255&#39;, &#39;68615&#39;, &#39;68780&#39;],
+ &#39;13160&#39;: [&#39;05604&#39;, &#39;05893&#39;, &#39;13670&#39;, &#39;68575&#39;],
+ &#39;05736&#39;: [&#39;05031&#39;, &#39;05250&#39;, &#39;05604&#39;, &#39;05895&#39;, &#39;13670&#39;, &#39;13688&#39;],
+ &#39;13670&#39;: [&#39;05604&#39;, &#39;05736&#39;, &#39;13160&#39;, &#39;13688&#39;, &#39;13744&#39;, &#39;68575&#39;],
+ &#39;05895&#39;: [&#39;05031&#39;, &#39;05040&#39;, &#39;05120&#39;, &#39;05154&#39;, &#39;05250&#39;, &#39;05736&#39;],
+ &#39;68867&#39;: [&#39;54223&#39;, &#39;54480&#39;, &#39;54743&#39;, &#39;68132&#39;, &#39;68169&#39;, &#39;68780&#39;, &#39;68820&#39;],
+ &#39;68132&#39;: [&#39;68169&#39;, &#39;68780&#39;, &#39;68867&#39;],
+ &#39;68780&#39;: [&#39;54051&#39;,
+  &#39;54128&#39;,
+  &#39;54223&#39;,
+  &#39;68132&#39;,
+  &#39;68169&#39;,
+  &#39;68255&#39;,
+  &#39;68444&#39;,
+  &#39;68867&#39;],
+ &#39;54125&#39;: [&#39;54174&#39;, &#39;54480&#39;, &#39;54518&#39;, &#39;54743&#39;],
+ &#39;54480&#39;: [&#39;54125&#39;, &#39;54223&#39;, &#39;54518&#39;, &#39;54743&#39;, &#39;68867&#39;],
+ &#39;54518&#39;: [&#39;54125&#39;, &#39;54174&#39;, &#39;54223&#39;, &#39;54377&#39;, &#39;54480&#39;, &#39;54520&#39;],
+ &#39;54743&#39;: [&#39;54125&#39;,
+  &#39;54174&#39;,
+  &#39;54480&#39;,
+  &#39;68162&#39;,
+  &#39;68318&#39;,
+  &#39;68705&#39;,
+  &#39;68820&#39;,
+  &#39;68867&#39;],
+ &#39;54223&#39;: [&#39;54051&#39;, &#39;54099&#39;, &#39;54480&#39;, &#39;54518&#39;, &#39;54520&#39;, &#39;68780&#39;, &#39;68867&#39;],
+ &#39;54377&#39;: [&#39;54174&#39;, &#39;54518&#39;, &#39;54520&#39;, &#39;54820&#39;],
+ &#39;54520&#39;: [&#39;54099&#39;, &#39;54172&#39;, &#39;54223&#39;, &#39;54377&#39;, &#39;54518&#39;, &#39;54820&#39;],
+ &#39;54820&#39;: [&#39;15223&#39;, &#39;54172&#39;, &#39;54174&#39;, &#39;54347&#39;, &#39;54377&#39;, &#39;54520&#39;],
+ &#39;05790&#39;: [&#39;05040&#39;, &#39;05120&#39;, &#39;05361&#39;, &#39;05854&#39;, &#39;23682&#39;],
+ &#39;05120&#39;: [&#39;05040&#39;, &#39;05154&#39;, &#39;05790&#39;, &#39;05895&#39;, &#39;23466&#39;, &#39;23682&#39;],
+ &#39;68255&#39;: [&#39;54128&#39;, &#39;68444&#39;, &#39;68615&#39;, &#39;68780&#39;],
+ &#39;05250&#39;: [&#39;05154&#39;, &#39;05495&#39;, &#39;05736&#39;, &#39;05895&#39;, &#39;13458&#39;, &#39;13688&#39;],
+ &#39;13688&#39;: [&#39;05250&#39;, &#39;05736&#39;, &#39;13458&#39;, &#39;13473&#39;, &#39;13670&#39;, &#39;13744&#39;],
+ &#39;54172&#39;: [&#39;54099&#39;, &#39;54347&#39;, &#39;54405&#39;, &#39;54520&#39;, &#39;54599&#39;, &#39;54820&#39;],
+ &#39;54099&#39;: [&#39;54001&#39;,
+  &#39;54051&#39;,
+  &#39;54172&#39;,
+  &#39;54223&#39;,
+  &#39;54239&#39;,
+  &#39;54405&#39;,
+  &#39;54520&#39;,
+  &#39;54673&#39;],
+ &#39;23682&#39;: [&#39;05120&#39;, &#39;05361&#39;, &#39;05790&#39;, &#39;23466&#39;, &#39;23580&#39;],
+ &#39;23580&#39;: [&#39;05361&#39;, &#39;23466&#39;, &#39;23682&#39;],
+ &#39;23466&#39;: [&#39;05120&#39;,
+  &#39;05154&#39;,
+  &#39;05361&#39;,
+  &#39;23079&#39;,
+  &#39;23350&#39;,
+  &#39;23555&#39;,
+  &#39;23580&#39;,
+  &#39;23682&#39;,
+  &#39;23807&#39;],
+ &#39;23807&#39;: [&#39;05045&#39;,
+  &#39;05147&#39;,
+  &#39;05172&#39;,
+  &#39;05361&#39;,
+  &#39;05480&#39;,
+  &#39;23001&#39;,
+  &#39;23466&#39;,
+  &#39;23555&#39;,
+  &#39;23855&#39;],
+ &#39;05480&#39;: [&#39;05172&#39;, &#39;05234&#39;, &#39;05361&#39;, &#39;05837&#39;, &#39;23807&#39;, &#39;27615&#39;],
+ &#39;54051&#39;: [&#39;54099&#39;, &#39;54128&#39;, &#39;54223&#39;, &#39;54239&#39;, &#39;54660&#39;, &#39;68780&#39;],
+ &#39;54128&#39;: [&#39;54003&#39;,
+  &#39;54051&#39;,
+  &#39;54385&#39;,
+  &#39;54660&#39;,
+  &#39;54871&#39;,
+  &#39;68255&#39;,
+  &#39;68615&#39;,
+  &#39;68780&#39;],
+ &#39;54405&#39;: [&#39;54001&#39;, &#39;54099&#39;, &#39;54172&#39;, &#39;54599&#39;, &#39;54874&#39;],
+ &#39;54347&#39;: [&#39;54172&#39;, &#39;54599&#39;, &#39;54820&#39;],
+ &#39;54599&#39;: [&#39;54172&#39;, &#39;54347&#39;, &#39;54405&#39;, &#39;54874&#39;],
+ &#39;13744&#39;: [&#39;13473&#39;, &#39;13670&#39;, &#39;13688&#39;, &#39;68575&#39;],
+ &#39;05154&#39;: [&#39;05120&#39;, &#39;05250&#39;, &#39;05495&#39;, &#39;05895&#39;, &#39;23068&#39;, &#39;23350&#39;, &#39;23466&#39;],
+ &#39;54239&#39;: [&#39;54051&#39;, &#39;54099&#39;, &#39;54660&#39;, &#39;54673&#39;, &#39;54680&#39;],
+ &#39;54660&#39;: [&#39;54051&#39;, &#39;54128&#39;, &#39;54239&#39;, &#39;54313&#39;, &#39;54680&#39;, &#39;54871&#39;],
+ &#39;54385&#39;: [&#39;20710&#39;, &#39;20770&#39;, &#39;54003&#39;, &#39;54128&#39;, &#39;68615&#39;],
+ &#39;20710&#39;: [&#39;20770&#39;, &#39;54003&#39;, &#39;54385&#39;, &#39;68615&#39;],
+ &#39;20770&#39;: [&#39;20011&#39;,
+  &#39;20614&#39;,
+  &#39;20710&#39;,
+  &#39;54003&#39;,
+  &#39;54385&#39;,
+  &#39;54498&#39;,
+  &#39;68575&#39;,
+  &#39;68615&#39;],
+ &#39;54673&#39;: [&#39;54001&#39;, &#39;54099&#39;, &#39;54239&#39;, &#39;54261&#39;, &#39;54680&#39;],
+ &#39;54001&#39;: [&#39;54099&#39;,
+  &#39;54261&#39;,
+  &#39;54405&#39;,
+  &#39;54553&#39;,
+  &#39;54673&#39;,
+  &#39;54720&#39;,
+  &#39;54810&#39;,
+  &#39;54874&#39;],
+ &#39;05172&#39;: [&#39;05147&#39;, &#39;05480&#39;, &#39;05837&#39;, &#39;23807&#39;],
+ &#39;05147&#39;: [&#39;05045&#39;, &#39;05172&#39;, &#39;05837&#39;, &#39;23807&#39;],
+ &#39;05837&#39;: [&#39;05045&#39;,
+  &#39;05051&#39;,
+  &#39;05147&#39;,
+  &#39;05172&#39;,
+  &#39;05480&#39;,
+  &#39;05490&#39;,
+  &#39;05665&#39;,
+  &#39;23855&#39;,
+  &#39;27615&#39;,
+  &#39;27800&#39;],
+ &#39;54003&#39;: [&#39;20710&#39;,
+  &#39;20770&#39;,
+  &#39;54109&#39;,
+  &#39;54128&#39;,
+  &#39;54344&#39;,
+  &#39;54385&#39;,
+  &#39;54398&#39;,
+  &#39;54498&#39;,
+  &#39;54720&#39;,
+  &#39;54871&#39;],
+ &#39;54680&#39;: [&#39;54239&#39;, &#39;54261&#39;, &#39;54313&#39;, &#39;54660&#39;, &#39;54673&#39;],
+ &#39;54871&#39;: [&#39;54003&#39;, &#39;54109&#39;, &#39;54128&#39;, &#39;54313&#39;, &#39;54418&#39;, &#39;54660&#39;],
+ &#39;54874&#39;: [&#39;54001&#39;, &#39;54405&#39;, &#39;54599&#39;],
+ &#39;05045&#39;: [&#39;05147&#39;, &#39;05837&#39;, &#39;23807&#39;, &#39;23855&#39;],
+ &#39;54313&#39;: [&#39;54261&#39;, &#39;54418&#39;, &#39;54660&#39;, &#39;54680&#39;, &#39;54720&#39;, &#39;54871&#39;],
+ &#39;54261&#39;: [&#39;54001&#39;, &#39;54313&#39;, &#39;54673&#39;, &#39;54680&#39;, &#39;54720&#39;],
+ &#39;05495&#39;: [&#39;05154&#39;, &#39;05250&#39;, &#39;13458&#39;, &#39;13655&#39;, &#39;23068&#39;],
+ &#39;13458&#39;: [&#39;05250&#39;,
+  &#39;05495&#39;,
+  &#39;13006&#39;,
+  &#39;13042&#39;,
+  &#39;13473&#39;,
+  &#39;13600&#39;,
+  &#39;13655&#39;,
+  &#39;13688&#39;,
+  &#39;13810&#39;],
+ &#39;54418&#39;: [&#39;54109&#39;, &#39;54313&#39;, &#39;54720&#39;, &#39;54871&#39;],
+ &#39;54720&#39;: [&#39;54001&#39;,
+  &#39;54003&#39;,
+  &#39;54109&#39;,
+  &#39;54261&#39;,
+  &#39;54313&#39;,
+  &#39;54344&#39;,
+  &#39;54418&#39;,
+  &#39;54670&#39;,
+  &#39;54810&#39;],
+ &#39;54109&#39;: [&#39;54003&#39;, &#39;54418&#39;, &#39;54720&#39;, &#39;54871&#39;],
+ &#39;23855&#39;: [&#39;05045&#39;, &#39;05665&#39;, &#39;05837&#39;, &#39;23001&#39;, &#39;23807&#39;],
+ &#39;23350&#39;: [&#39;05154&#39;, &#39;23068&#39;, &#39;23079&#39;, &#39;23466&#39;],
+ &#39;23068&#39;: [&#39;05154&#39;,
+  &#39;05495&#39;,
+  &#39;13655&#39;,
+  &#39;23079&#39;,
+  &#39;23350&#39;,
+  &#39;23570&#39;,
+  &#39;70265&#39;,
+  &#39;70429&#39;,
+  &#39;70678&#39;,
+  &#39;70708&#39;],
+ &#39;20614&#39;: [&#39;20011&#39;, &#39;20310&#39;, &#39;20770&#39;, &#39;54498&#39;],
+ &#39;54498&#39;: [&#39;20011&#39;,
+  &#39;20310&#39;,
+  &#39;20614&#39;,
+  &#39;20770&#39;,
+  &#39;54003&#39;,
+  &#39;54206&#39;,
+  &#39;54245&#39;,
+  &#39;54398&#39;,
+  &#39;54670&#39;,
+  &#39;54800&#39;],
+ &#39;20011&#39;: [&#39;13473&#39;,
+  &#39;20295&#39;,
+  &#39;20383&#39;,
+  &#39;20614&#39;,
+  &#39;20770&#39;,
+  &#39;54245&#39;,
+  &#39;54498&#39;,
+  &#39;68575&#39;],
+ &#39;13473&#39;: [&#39;13042&#39;,
+  &#39;13458&#39;,
+  &#39;13600&#39;,
+  &#39;13688&#39;,
+  &#39;13744&#39;,
+  &#39;20011&#39;,
+  &#39;20295&#39;,
+  &#39;68575&#39;],
+ &#39;23079&#39;: [&#39;23068&#39;, &#39;23350&#39;, &#39;23466&#39;, &#39;23555&#39;, &#39;23570&#39;],
+ &#39;23555&#39;: [&#39;23001&#39;, &#39;23079&#39;, &#39;23466&#39;, &#39;23570&#39;, &#39;23678&#39;, &#39;23807&#39;],
+ &#39;13655&#39;: [&#39;05495&#39;, &#39;13006&#39;, &#39;13458&#39;, &#39;23068&#39;, &#39;70265&#39;],
+ &#39;54398&#39;: [&#39;54003&#39;, &#39;54344&#39;, &#39;54498&#39;, &#39;54670&#39;],
+ &#39;54344&#39;: [&#39;54003&#39;, &#39;54398&#39;, &#39;54670&#39;, &#39;54720&#39;],
+ &#39;23001&#39;: [&#39;05051&#39;,
+  &#39;05665&#39;,
+  &#39;23090&#39;,
+  &#39;23162&#39;,
+  &#39;23419&#39;,
+  &#39;23555&#39;,
+  &#39;23574&#39;,
+  &#39;23678&#39;,
+  &#39;23686&#39;,
+  &#39;23807&#39;,
+  &#39;23855&#39;],
+ &#39;20310&#39;: [&#39;20614&#39;, &#39;54206&#39;, &#39;54245&#39;, &#39;54498&#39;],
+ &#39;54670&#39;: [&#39;54250&#39;, &#39;54344&#39;, &#39;54398&#39;, &#39;54498&#39;, &#39;54720&#39;, &#39;54800&#39;, &#39;54810&#39;],
+ &#39;23570&#39;: [&#39;23068&#39;, &#39;23079&#39;, &#39;23189&#39;, &#39;23555&#39;, &#39;23660&#39;, &#39;23678&#39;, &#39;70708&#39;],
+ &#39;54800&#39;: [&#39;54206&#39;, &#39;54250&#39;, &#39;54498&#39;, &#39;54670&#39;, &#39;54810&#39;],
+ &#39;54206&#39;: [&#39;20310&#39;, &#39;54245&#39;, &#39;54498&#39;, &#39;54800&#39;],
+ &#39;54245&#39;: [&#39;20011&#39;,
+  &#39;20175&#39;,
+  &#39;20228&#39;,
+  &#39;20310&#39;,
+  &#39;20383&#39;,
+  &#39;20517&#39;,
+  &#39;20550&#39;,
+  &#39;54206&#39;,
+  &#39;54498&#39;],
+ &#39;05665&#39;: [&#39;05051&#39;, &#39;05837&#39;, &#39;23001&#39;, &#39;23855&#39;],
+ &#39;70265&#39;: [&#39;13006&#39;, &#39;13655&#39;, &#39;23068&#39;, &#39;70429&#39;],
+ &#39;13006&#39;: [&#39;13430&#39;,
+  &#39;13458&#39;,
+  &#39;13549&#39;,
+  &#39;13655&#39;,
+  &#39;13810&#39;,
+  &#39;70265&#39;,
+  &#39;70429&#39;,
+  &#39;70771&#39;],
+ &#39;13042&#39;: [&#39;13458&#39;, &#39;13473&#39;, &#39;13600&#39;],
+ &#39;13810&#39;: [&#39;13006&#39;,
+  &#39;13030&#39;,
+  &#39;13074&#39;,
+  &#39;13458&#39;,
+  &#39;13490&#39;,
+  &#39;13549&#39;,
+  &#39;13600&#39;,
+  &#39;13667&#39;],
+ &#39;13600&#39;: [&#39;13042&#39;,
+  &#39;13074&#39;,
+  &#39;13458&#39;,
+  &#39;13473&#39;,
+  &#39;13490&#39;,
+  &#39;13580&#39;,
+  &#39;13667&#39;,
+  &#39;13810&#39;,
+  &#39;20295&#39;,
+  &#39;20383&#39;],
+ &#39;20295&#39;: [&#39;13473&#39;, &#39;13600&#39;, &#39;20011&#39;, &#39;20383&#39;],
+ &#39;20383&#39;: [&#39;13580&#39;, &#39;13600&#39;, &#39;20011&#39;, &#39;20295&#39;, &#39;20550&#39;, &#39;20787&#39;, &#39;54245&#39;],
+ &#39;70429&#39;: [&#39;13006&#39;, &#39;23068&#39;, &#39;70265&#39;, &#39;70678&#39;, &#39;70771&#39;],
+ &#39;54810&#39;: [&#39;54001&#39;, &#39;54250&#39;, &#39;54670&#39;, &#39;54720&#39;, &#39;54800&#39;],
+ &#39;70708&#39;: [&#39;23068&#39;, &#39;23570&#39;, &#39;23660&#39;, &#39;70124&#39;, &#39;70400&#39;, &#39;70678&#39;],
+ &#39;70678&#39;: [&#39;13430&#39;,
+  &#39;23068&#39;,
+  &#39;23182&#39;,
+  &#39;70124&#39;,
+  &#39;70233&#39;,
+  &#39;70235&#39;,
+  &#39;70429&#39;,
+  &#39;70708&#39;,
+  &#39;70771&#39;],
+ &#39;23678&#39;: [&#39;23001&#39;, &#39;23162&#39;, &#39;23189&#39;, &#39;23555&#39;, &#39;23570&#39;],
+ &#39;54250&#39;: [&#39;54670&#39;, &#39;54800&#39;, &#39;54810&#39;],
+ &#39;05051&#39;: [&#39;05490&#39;, &#39;05659&#39;, &#39;05665&#39;, &#39;05837&#39;, &#39;23001&#39;, &#39;23090&#39;, &#39;23419&#39;],
+ &#39;13490&#39;: [&#39;13600&#39;, &#39;13810&#39;],
+ &#39;23660&#39;: [&#39;23182&#39;, &#39;23189&#39;, &#39;23570&#39;, &#39;70400&#39;, &#39;70708&#39;],
+ &#39;23189&#39;: [&#39;23162&#39;,
+  &#39;23168&#39;,
+  &#39;23182&#39;,
+  &#39;23570&#39;,
+  &#39;23660&#39;,
+  &#39;23670&#39;,
+  &#39;23678&#39;,
+  &#39;23686&#39;],
+ &#39;13030&#39;: [&#39;13074&#39;, &#39;13549&#39;, &#39;13810&#39;],
+ &#39;13074&#39;: [&#39;13030&#39;, &#39;13300&#39;, &#39;13440&#39;, &#39;13549&#39;, &#39;13600&#39;, &#39;13667&#39;, &#39;13810&#39;],
+ &#39;13667&#39;: [&#39;13074&#39;, &#39;13268&#39;, &#39;13300&#39;, &#39;13580&#39;, &#39;13600&#39;, &#39;13810&#39;, &#39;47245&#39;],
+ &#39;13549&#39;: [&#39;13006&#39;,
+  &#39;13030&#39;,
+  &#39;13074&#39;,
+  &#39;13300&#39;,
+  &#39;13430&#39;,
+  &#39;13440&#39;,
+  &#39;13468&#39;,
+  &#39;13650&#39;,
+  &#39;13810&#39;],
+ &#39;13580&#39;: [&#39;13268&#39;, &#39;13600&#39;, &#39;13667&#39;, &#39;20383&#39;, &#39;20787&#39;],
+ &#39;05490&#39;: [&#39;05051&#39;, &#39;05659&#39;, &#39;05837&#39;],
+ &#39;05659&#39;: [&#39;05051&#39;, &#39;05490&#39;],
+ &#39;70400&#39;: [&#39;23182&#39;, &#39;23660&#39;, &#39;70124&#39;, &#39;70708&#39;],
+ &#39;70124&#39;: [&#39;23182&#39;, &#39;70400&#39;, &#39;70678&#39;, &#39;70708&#39;],
+ &#39;70771&#39;: [&#39;13006&#39;, &#39;13430&#39;, &#39;70429&#39;, &#39;70678&#39;],
+ &#39;20550&#39;: [&#39;20383&#39;, &#39;20517&#39;, &#39;20787&#39;, &#39;54245&#39;],
+ &#39;20787&#39;: [&#39;13268&#39;, &#39;13580&#39;, &#39;20175&#39;, &#39;20383&#39;, &#39;20517&#39;, &#39;20550&#39;, &#39;47245&#39;],
+ &#39;13268&#39;: [&#39;13300&#39;, &#39;13580&#39;, &#39;13667&#39;, &#39;20787&#39;, &#39;47245&#39;],
+ &#39;13430&#39;: [&#39;13006&#39;,
+  &#39;13188&#39;,
+  &#39;13212&#39;,
+  &#39;13468&#39;,
+  &#39;13549&#39;,
+  &#39;13780&#39;,
+  &#39;47720&#39;,
+  &#39;70110&#39;,
+  &#39;70235&#39;,
+  &#39;70678&#39;,
+  &#39;70771&#39;],
+ &#39;23090&#39;: [&#39;05051&#39;, &#39;23001&#39;, &#39;23419&#39;],
+ &#39;23419&#39;: [&#39;05051&#39;, &#39;23001&#39;, &#39;23090&#39;, &#39;23574&#39;],
+ &#39;23162&#39;: [&#39;23001&#39;, &#39;23189&#39;, &#39;23678&#39;, &#39;23686&#39;],
+ &#39;20517&#39;: [&#39;20175&#39;, &#39;20550&#39;, &#39;20787&#39;, &#39;54245&#39;],
+ &#39;23182&#39;: [&#39;23189&#39;,
+  &#39;23660&#39;,
+  &#39;23670&#39;,
+  &#39;70124&#39;,
+  &#39;70233&#39;,
+  &#39;70400&#39;,
+  &#39;70670&#39;,
+  &#39;70678&#39;],
+ &#39;23574&#39;: [&#39;23001&#39;, &#39;23417&#39;, &#39;23419&#39;, &#39;23500&#39;, &#39;23686&#39;],
+ &#39;13300&#39;: [&#39;13074&#39;, &#39;13268&#39;, &#39;13440&#39;, &#39;13549&#39;, &#39;13650&#39;, &#39;13667&#39;, &#39;47245&#39;],
+ &#39;13440&#39;: [&#39;13074&#39;, &#39;13300&#39;, &#39;13549&#39;, &#39;13650&#39;, &#39;47245&#39;, &#39;47318&#39;],
+ &#39;23686&#39;: [&#39;23001&#39;, &#39;23162&#39;, &#39;23168&#39;, &#39;23189&#39;, &#39;23300&#39;, &#39;23417&#39;, &#39;23574&#39;],
+ &#39;47245&#39;: [&#39;13268&#39;, &#39;13300&#39;, &#39;13440&#39;, &#39;13667&#39;, &#39;20175&#39;, &#39;20787&#39;, &#39;47318&#39;],
+ &#39;13650&#39;: [&#39;13300&#39;, &#39;13440&#39;, &#39;13468&#39;, &#39;13549&#39;, &#39;47318&#39;, &#39;47692&#39;],
+ &#39;23168&#39;: [&#39;23189&#39;, &#39;23300&#39;, &#39;23417&#39;, &#39;23464&#39;, &#39;23670&#39;, &#39;23686&#39;, &#39;23815&#39;],
+ &#39;23670&#39;: [&#39;23168&#39;, &#39;23182&#39;, &#39;23189&#39;, &#39;23815&#39;, &#39;70001&#39;, &#39;70670&#39;],
+ &#39;20175&#39;: [&#39;20032&#39;,
+  &#39;20178&#39;,
+  &#39;20228&#39;,
+  &#39;20517&#39;,
+  &#39;20787&#39;,
+  &#39;47245&#39;,
+  &#39;47318&#39;,
+  &#39;47692&#39;,
+  &#39;54245&#39;],
+ &#39;13468&#39;: [&#39;13188&#39;, &#39;13430&#39;, &#39;13549&#39;, &#39;13650&#39;, &#39;13780&#39;, &#39;47692&#39;, &#39;47703&#39;],
+ &#39;23300&#39;: [&#39;23168&#39;, &#39;23417&#39;, &#39;23686&#39;],
+ &#39;23417&#39;: [&#39;23168&#39;,
+  &#39;23300&#39;,
+  &#39;23464&#39;,
+  &#39;23500&#39;,
+  &#39;23574&#39;,
+  &#39;23586&#39;,
+  &#39;23672&#39;,
+  &#39;23675&#39;,
+  &#39;23686&#39;],
+ &#39;70233&#39;: [&#39;23182&#39;, &#39;70215&#39;, &#39;70235&#39;, &#39;70670&#39;, &#39;70678&#39;, &#39;70742&#39;],
+ &#39;70235&#39;: [&#39;13430&#39;, &#39;70110&#39;, &#39;70233&#39;, &#39;70678&#39;, &#39;70742&#39;],
+ &#39;23500&#39;: [&#39;23417&#39;, &#39;23574&#39;, &#39;23675&#39;],
+ &#39;70670&#39;: [&#39;23182&#39;, &#39;23670&#39;, &#39;70001&#39;, &#39;70215&#39;, &#39;70233&#39;],
+ &#39;70215&#39;: [&#39;70001&#39;, &#39;70233&#39;, &#39;70418&#39;, &#39;70473&#39;, &#39;70670&#39;, &#39;70702&#39;, &#39;70742&#39;],
+ &#39;70742&#39;: [&#39;70110&#39;, &#39;70215&#39;, &#39;70233&#39;, &#39;70235&#39;, &#39;70418&#39;, &#39;70702&#39;, &#39;70717&#39;],
+ &#39;47318&#39;: [&#39;13440&#39;, &#39;13650&#39;, &#39;20175&#39;, &#39;47245&#39;, &#39;47692&#39;],
+ &#39;70110&#39;: [&#39;13212&#39;, &#39;13430&#39;, &#39;70235&#39;, &#39;70717&#39;, &#39;70742&#39;],
+ &#39;47692&#39;: [&#39;13468&#39;, &#39;13650&#39;, &#39;20032&#39;, &#39;20175&#39;, &#39;47318&#39;, &#39;47545&#39;, &#39;47703&#39;],
+ &#39;23815&#39;: [&#39;23168&#39;, &#39;23464&#39;, &#39;23670&#39;, &#39;70001&#39;, &#39;70523&#39;],
+ &#39;23464&#39;: [&#39;23168&#39;, &#39;23417&#39;, &#39;23586&#39;, &#39;23815&#39;, &#39;70523&#39;],
+ &#39;70001&#39;: [&#39;23670&#39;,
+  &#39;23815&#39;,
+  &#39;70215&#39;,
+  &#39;70473&#39;,
+  &#39;70523&#39;,
+  &#39;70670&#39;,
+  &#39;70820&#39;,
+  &#39;70823&#39;],
+ &#39;13188&#39;: [&#39;13430&#39;, &#39;13468&#39;, &#39;13780&#39;],
+ &#39;13780&#39;: [&#39;13188&#39;, &#39;13430&#39;, &#39;13468&#39;, &#39;47703&#39;, &#39;47707&#39;, &#39;47720&#39;],
+ &#39;47703&#39;: [&#39;13468&#39;, &#39;13780&#39;, &#39;47545&#39;, &#39;47692&#39;, &#39;47707&#39;],
+ &#39;70523&#39;: [&#39;23464&#39;, &#39;23586&#39;, &#39;23815&#39;, &#39;70001&#39;, &#39;70221&#39;, &#39;70820&#39;],
+ &#39;23675&#39;: [&#39;23417&#39;, &#39;23500&#39;, &#39;23672&#39;],
+ &#39;23586&#39;: [&#39;23417&#39;, &#39;23464&#39;, &#39;23672&#39;, &#39;70221&#39;, &#39;70523&#39;],
+ &#39;23672&#39;: [&#39;23417&#39;, &#39;23586&#39;, &#39;23675&#39;, &#39;70221&#39;],
+ &#39;70702&#39;: [&#39;70215&#39;, &#39;70418&#39;, &#39;70742&#39;],
+ &#39;70473&#39;: [&#39;70001&#39;, &#39;70204&#39;, &#39;70215&#39;, &#39;70418&#39;, &#39;70823&#39;],
+ &#39;70418&#39;: [&#39;70204&#39;, &#39;70215&#39;, &#39;70473&#39;, &#39;70508&#39;, &#39;70702&#39;, &#39;70717&#39;, &#39;70742&#39;],
+ &#39;70221&#39;: [&#39;23586&#39;, &#39;23672&#39;, &#39;70523&#39;, &#39;70820&#39;],
+ &#39;70717&#39;: [&#39;13212&#39;, &#39;70110&#39;, &#39;70418&#39;, &#39;70508&#39;, &#39;70742&#39;],
+ &#39;70820&#39;: [&#39;70001&#39;, &#39;70221&#39;, &#39;70523&#39;, &#39;70713&#39;, &#39;70823&#39;],
+ &#39;47720&#39;: [&#39;13212&#39;, &#39;13430&#39;, &#39;13780&#39;, &#39;47555&#39;, &#39;47707&#39;],
+ &#39;47707&#39;: [&#39;13780&#39;,
+  &#39;20250&#39;,
+  &#39;47058&#39;,
+  &#39;47460&#39;,
+  &#39;47545&#39;,
+  &#39;47555&#39;,
+  &#39;47703&#39;,
+  &#39;47720&#39;],
+ &#39;70823&#39;: [&#39;70001&#39;, &#39;70204&#39;, &#39;70473&#39;, &#39;70713&#39;, &#39;70820&#39;],
+ &#39;13212&#39;: [&#39;13244&#39;,
+  &#39;13430&#39;,
+  &#39;13894&#39;,
+  &#39;47555&#39;,
+  &#39;47720&#39;,
+  &#39;70110&#39;,
+  &#39;70508&#39;,
+  &#39;70717&#39;],
+ &#39;70508&#39;: [&#39;13212&#39;, &#39;13244&#39;, &#39;70204&#39;, &#39;70230&#39;, &#39;70418&#39;, &#39;70717&#39;],
+ &#39;47545&#39;: [&#39;20032&#39;, &#39;20250&#39;, &#39;47692&#39;, &#39;47703&#39;, &#39;47707&#39;],
+ &#39;70204&#39;: [&#39;13244&#39;, &#39;70230&#39;, &#39;70418&#39;, &#39;70473&#39;, &#39;70508&#39;, &#39;70713&#39;, &#39;70823&#39;],
+ &#39;20032&#39;: [&#39;20175&#39;, &#39;20178&#39;, &#39;20250&#39;, &#39;47545&#39;, &#39;47692&#39;],
+ &#39;20228&#39;: [&#39;20175&#39;, &#39;20178&#39;, &#39;54245&#39;],
+ &#39;20178&#39;: [&#39;20032&#39;, &#39;20175&#39;, &#39;20228&#39;, &#39;20250&#39;, &#39;20400&#39;],
+ &#39;20250&#39;: [&#39;20001&#39;,
+  &#39;20013&#39;,
+  &#39;20032&#39;,
+  &#39;20045&#39;,
+  &#39;20060&#39;,
+  &#39;20178&#39;,
+  &#39;20400&#39;,
+  &#39;20621&#39;,
+  &#39;47058&#39;,
+  &#39;47545&#39;,
+  &#39;47707&#39;],
+ &#39;70230&#39;: [&#39;13244&#39;, &#39;70204&#39;, &#39;70508&#39;, &#39;70713&#39;],
+ &#39;13244&#39;: [&#39;13212&#39;,
+  &#39;13442&#39;,
+  &#39;13654&#39;,
+  &#39;13894&#39;,
+  &#39;70204&#39;,
+  &#39;70230&#39;,
+  &#39;70508&#39;,
+  &#39;70713&#39;],
+ &#39;70713&#39;: [&#39;13052&#39;,
+  &#39;13244&#39;,
+  &#39;13442&#39;,
+  &#39;13838&#39;,
+  &#39;70204&#39;,
+  &#39;70230&#39;,
+  &#39;70820&#39;,
+  &#39;70823&#39;],
+ &#39;47555&#39;: [&#39;13212&#39;,
+  &#39;13894&#39;,
+  &#39;47170&#39;,
+  &#39;47460&#39;,
+  &#39;47660&#39;,
+  &#39;47707&#39;,
+  &#39;47720&#39;,
+  &#39;47798&#39;],
+ ...}
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="tasa-de-mortalidad-cruda-por-municipio">
+<h2><strong>Tasa de mortalidad cruda por municipio</strong><a class="headerlink" href="#tasa-de-mortalidad-cruda-por-municipio" title="Link to this heading">#</a></h2>
+<p>Inicialmente, para calcular la tasa de mortalidad, se agrupan la cantidad de fallecimientos por departamentos.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">muertes</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s1">&#39;DPNOM&#39;</span><span class="p">])[</span><span class="s1">&#39;FALLECIDAS&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>DPNOM
+AMAZONAS                                                       18
+ANTIOQUIA                                                    6102
+ARAUCA                                                        169
+ARCHIPIÉLAGO DE SAN ANDRÉS Y PROVIDENCIA Y SANTA CATALINA      56
+ATLÁNTICO                                                    2928
+BOLÍVAR                                                      1664
+BOYACÁ                                                        869
+CALDAS                                                       1065
+CAQUETÁ                                                       240
+CASANARE                                                      218
+CAUCA                                                         807
+CESAR                                                         757
+CHOCÓ                                                         132
+CUNDINAMARCA                                                 8956
+CÓRDOBA                                                      1006
+GUAINÍA                                                        11
+GUAVIARE                                                       33
+HUILA                                                         929
+LA GUAJIRA                                                    325
+MAGDALENA                                                     952
+META                                                          733
+NARIÑO                                                        877
+NORTE DE SANTANDER                                           1319
+PUTUMAYO                                                      135
+QUINDIO                                                       634
+RISARALDA                                                    1126
+SANTANDER                                                    2145
+SUCRE                                                         576
+TOLIMA                                                       1291
+VALLE DEL CAUCA                                              5523
+VAUPÉS                                                          1
+VICHADA                                                        13
+Name: FALLECIDAS, dtype: int64
+</pre></div>
+</div>
+</div>
+</div>
+<p>Se procede a realizar el cálculo de esta tasa con la siguiente función</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">calcular_tasa_mortalidad</span><span class="p">(</span><span class="n">muertes</span><span class="p">,</span> <span class="n">poblacion</span><span class="p">,</span> <span class="n">año_inicio</span><span class="o">=</span><span class="mi">2009</span><span class="p">,</span> <span class="n">año_fin</span><span class="o">=</span><span class="mi">2023</span><span class="p">,</span> <span class="n">k</span><span class="o">=</span><span class="mi">100000</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Calcula la tasa cruda de mortalidad por municipio y departamento para mujeres mayores de 40 años.</span>
+
+<span class="sd">    Parámetros:</span>
+<span class="sd">    - muertes: DataFrame con columnas [&#39;DPNOM&#39;, &#39;DPMP&#39;, &#39;ANIO&#39;, &#39;FALLECIDAS&#39;]</span>
+<span class="sd">    - poblacion: DataFrame con columnas [&#39;DPNOM&#39;, &#39;DPMP&#39;, &#39;MPIO&#39;, &#39;ANIO&#39;, &#39;TOTAL_MUJERES&#39;]</span>
+<span class="sd">    - año_inicio: Año inicial del periodo (int)</span>
+<span class="sd">    - año_fin: Año final del periodo (int)</span>
+<span class="sd">    - k: Factor de estandarización (int, default 100000)</span>
+
+<span class="sd">    Retorna:</span>
+<span class="sd">    - DataFrame con columnas [&#39;MPIO&#39;, &#39;DPNOM&#39;, &#39;DPMP&#39;, &#39;FALLECIDAS&#39;, &#39;TOTAL_MUJERES&#39;, &#39;Tasa_Mortalidad&#39;]</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="c1"># Filtrado por años</span>
+    <span class="n">muertes_filtrado</span> <span class="o">=</span> <span class="n">muertes</span><span class="p">[(</span><span class="n">muertes</span><span class="p">[</span><span class="s1">&#39;ANIO&#39;</span><span class="p">]</span> <span class="o">&gt;=</span> <span class="n">año_inicio</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">muertes</span><span class="p">[</span><span class="s1">&#39;ANIO&#39;</span><span class="p">]</span> <span class="o">&lt;=</span> <span class="n">año_fin</span><span class="p">)]</span>
+    <span class="n">pob_filtrada</span> <span class="o">=</span> <span class="n">poblacion</span><span class="p">[(</span><span class="n">poblacion</span><span class="p">[</span><span class="s1">&#39;ANIO&#39;</span><span class="p">]</span> <span class="o">&gt;=</span> <span class="n">año_inicio</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">poblacion</span><span class="p">[</span><span class="s1">&#39;ANIO&#39;</span><span class="p">]</span> <span class="o">&lt;=</span> <span class="n">año_fin</span><span class="p">)]</span>
+
+    <span class="c1"># Agrupación de muertes por departamento y municipio</span>
+    <span class="n">muertes_agg</span> <span class="o">=</span> <span class="n">muertes_filtrado</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s1">&#39;DPNOM&#39;</span><span class="p">,</span> <span class="s1">&#39;DPMP&#39;</span><span class="p">],</span> <span class="n">as_index</span><span class="o">=</span><span class="kc">False</span><span class="p">)[</span><span class="s1">&#39;FALLECIDAS&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+
+    <span class="c1"># Agrupación de población (incluyendo MPIO para conservarlo)</span>
+    <span class="n">pob_agg</span> <span class="o">=</span> <span class="n">pob_filtrada</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s1">&#39;DPNOM&#39;</span><span class="p">,</span> <span class="s1">&#39;DPMP&#39;</span><span class="p">,</span> <span class="s1">&#39;MPIO&#39;</span><span class="p">],</span> <span class="n">as_index</span><span class="o">=</span><span class="kc">False</span><span class="p">)[</span><span class="s1">&#39;TOTAL_MUJERES&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+
+    <span class="c1"># Unión de muertes con población (se une por DPNOM y DPMP)</span>
+    <span class="n">tasa</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">muertes_agg</span><span class="p">,</span> <span class="n">pob_agg</span><span class="p">,</span> <span class="n">on</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;DPNOM&#39;</span><span class="p">,</span> <span class="s1">&#39;DPMP&#39;</span><span class="p">])</span>
+
+    <span class="c1"># Cálculo de la tasa de mortalidad</span>
+    <span class="n">tasa</span><span class="p">[</span><span class="s1">&#39;Tasa_Mortalidad&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">tasa</span><span class="p">[</span><span class="s1">&#39;FALLECIDAS&#39;</span><span class="p">]</span> <span class="o">/</span> <span class="n">tasa</span><span class="p">[</span><span class="s1">&#39;TOTAL_MUJERES&#39;</span><span class="p">])</span> <span class="o">*</span> <span class="n">k</span>
+
+    <span class="c1"># Reordenar columnas</span>
+    <span class="n">columnas</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;MPIO&#39;</span><span class="p">,</span> <span class="s1">&#39;DPNOM&#39;</span><span class="p">,</span> <span class="s1">&#39;DPMP&#39;</span><span class="p">,</span> <span class="s1">&#39;FALLECIDAS&#39;</span><span class="p">,</span> <span class="s1">&#39;TOTAL_MUJERES&#39;</span><span class="p">,</span> <span class="s1">&#39;Tasa_Mortalidad&#39;</span><span class="p">]</span>
+    <span class="n">tasa</span> <span class="o">=</span> <span class="n">tasa</span><span class="p">[</span><span class="n">columnas</span><span class="p">]</span>
+
+    <span class="k">return</span> <span class="n">tasa</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">tasa_mortalidad</span>  <span class="o">=</span> <span class="n">calcular_tasa_mortalidad</span><span class="p">(</span><span class="n">muertes</span><span class="p">,</span> <span class="n">poblacion_total</span><span class="p">,</span> <span class="n">año_inicio</span> <span class="o">=</span> <span class="mi">2009</span><span class="p">,</span> <span class="n">año_fin</span> <span class="o">=</span> <span class="mi">2023</span><span class="p">,</span> <span class="n">k</span> <span class="o">=</span> <span class="mi">100000</span><span class="p">)</span>
+<span class="n">tasa_mortalidad</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>MPIO</th>
+      <th>DPNOM</th>
+      <th>DPMP</th>
+      <th>FALLECIDAS</th>
+      <th>TOTAL_MUJERES</th>
+      <th>Tasa_Mortalidad</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>91263</td>
+      <td>AMAZONAS</td>
+      <td>EL ENCANTO</td>
+      <td>0</td>
+      <td>3478</td>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>91405</td>
+      <td>AMAZONAS</td>
+      <td>LA CHORRERA</td>
+      <td>0</td>
+      <td>3907</td>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>91407</td>
+      <td>AMAZONAS</td>
+      <td>LA PEDRERA</td>
+      <td>1</td>
+      <td>5283</td>
+      <td>18.928639</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>91430</td>
+      <td>AMAZONAS</td>
+      <td>LA VICTORIA</td>
+      <td>0</td>
+      <td>1378</td>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>91001</td>
+      <td>AMAZONAS</td>
+      <td>LETICIA</td>
+      <td>17</td>
+      <td>80655</td>
+      <td>21.077429</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>Evidentemente, hay varios municipios que tienen una tasa de mortalidad igual a 0, dado que no tienen casos de fallecimientos.</p>
+<p>Veamos cuales municipios no tienen tasa de mortalidad igual a 0</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">tasa_mortalidad</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s2">&quot; Tasa_Mortalidad &gt; 0&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>MPIO</th>
+      <th>DPNOM</th>
+      <th>DPMP</th>
+      <th>FALLECIDAS</th>
+      <th>TOTAL_MUJERES</th>
+      <th>Tasa_Mortalidad</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>2</th>
+      <td>91407</td>
+      <td>AMAZONAS</td>
+      <td>LA PEDRERA</td>
+      <td>1</td>
+      <td>5283</td>
+      <td>18.928639</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>91001</td>
+      <td>AMAZONAS</td>
+      <td>LETICIA</td>
+      <td>17</td>
+      <td>80655</td>
+      <td>21.077429</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>5002</td>
+      <td>ANTIOQUIA</td>
+      <td>ABEJORRAL</td>
+      <td>13</td>
+      <td>64951</td>
+      <td>20.015088</td>
+    </tr>
+    <tr>
+      <th>12</th>
+      <td>5004</td>
+      <td>ANTIOQUIA</td>
+      <td>ABRIAQUÍ</td>
+      <td>3</td>
+      <td>7347</td>
+      <td>40.832993</td>
+    </tr>
+    <tr>
+      <th>14</th>
+      <td>5030</td>
+      <td>ANTIOQUIA</td>
+      <td>AMAGÁ</td>
+      <td>19</td>
+      <td>91959</td>
+      <td>20.661382</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>1111</th>
+      <td>76895</td>
+      <td>VALLE DEL CAUCA</td>
+      <td>ZARZAL</td>
+      <td>32</td>
+      <td>130564</td>
+      <td>24.509053</td>
+    </tr>
+    <tr>
+      <th>1114</th>
+      <td>97511</td>
+      <td>VAUPÉS</td>
+      <td>PACOA</td>
+      <td>1</td>
+      <td>3894</td>
+      <td>25.680534</td>
+    </tr>
+    <tr>
+      <th>1118</th>
+      <td>99773</td>
+      <td>VICHADA</td>
+      <td>CUMARIBO</td>
+      <td>2</td>
+      <td>84025</td>
+      <td>2.380244</td>
+    </tr>
+    <tr>
+      <th>1120</th>
+      <td>99001</td>
+      <td>VICHADA</td>
+      <td>PUERTO CARREÑO</td>
+      <td>10</td>
+      <td>36190</td>
+      <td>27.631943</td>
+    </tr>
+    <tr>
+      <th>1121</th>
+      <td>99624</td>
+      <td>VICHADA</td>
+      <td>SANTA ROSALÍA</td>
+      <td>1</td>
+      <td>6847</td>
+      <td>14.604936</td>
+    </tr>
+  </tbody>
+</table>
+<p>1017 rows × 6 columns</p>
+</div></div></div>
+</div>
+<p>Ahora, veamos el panorama general de la tasa de mortalidad municipal en Colombia por cáncer de mama en mujeres mayores de 40 años en el rango de años de 2009 a 2023</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Resultados: mayor, menor y promedio</span>
+<span class="n">mayor</span> <span class="o">=</span> <span class="n">tasa_mortalidad</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">tasa_mortalidad</span><span class="p">[</span><span class="s1">&#39;Tasa_Mortalidad&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">idxmax</span><span class="p">()]</span>
+<span class="n">menor</span> <span class="o">=</span> <span class="n">tasa_mortalidad</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">tasa_mortalidad</span><span class="p">[</span><span class="s1">&#39;Tasa_Mortalidad&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">idxmin</span><span class="p">()]</span>
+<span class="n">promedio</span> <span class="o">=</span> <span class="n">tasa_mortalidad</span><span class="p">[</span><span class="s1">&#39;Tasa_Mortalidad&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Mayor tasa municipal:&quot;</span><span class="p">,</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">mayor</span><span class="p">[</span><span class="s1">&#39;DPNOM&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2"> - </span><span class="si">{</span><span class="n">mayor</span><span class="p">[</span><span class="s1">&#39;DPMP&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">mayor</span><span class="p">[</span><span class="s1">&#39;Tasa_Mortalidad&#39;</span><span class="p">]</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Menor tasa municipal:&quot;</span><span class="p">,</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">menor</span><span class="p">[</span><span class="s1">&#39;DPNOM&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2"> - </span><span class="si">{</span><span class="n">menor</span><span class="p">[</span><span class="s1">&#39;DPMP&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">menor</span><span class="p">[</span><span class="s1">&#39;Tasa_Mortalidad&#39;</span><span class="p">]</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Tasa promedio municipal:&quot;</span><span class="p">,</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">promedio</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Mayor tasa municipal: SANTANDER - BUCARAMANGA 67.22
+Menor tasa municipal: AMAZONAS - EL ENCANTO 0.00
+Tasa promedio municipal: 15.40
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="analisis-de-autocorrelacion-espacial-con-el-indice-de-moran">
+<h2><strong>Análisis de Autocorrelación Espacial con el Índice de Moran</strong><a class="headerlink" href="#analisis-de-autocorrelacion-espacial-con-el-indice-de-moran" title="Link to this heading">#</a></h2>
+<p>Para poder realizar el cálculo del índice de moran, inicialmente concatenamos los dataframe que contienen la tasa de mortalidad junto con los datos espaciales de cada municipio</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">tasa_mortalidad_geo</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">tasa_mortalidad</span><span class="p">,</span> <span class="n">mdata_mun</span><span class="p">[[</span><span class="s1">&#39;MPIO&#39;</span><span class="p">,</span> <span class="s1">&#39;GEOMETRY&#39;</span><span class="p">]],</span> <span class="n">on</span><span class="o">=</span><span class="s1">&#39;MPIO&#39;</span><span class="p">,</span> <span class="n">how</span><span class="o">=</span><span class="s1">&#39;left&#39;</span><span class="p">)</span>
+<span class="n">tasa_mortalidad_geo</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Para evaluar la existencia de autocorrelación espacial en las tasas crudas de los municipios, se utilizará el <strong>índice de Moran (I)</strong>, definido como:</p>
+<div class="math notranslate nohighlight">
+\[
+I = \frac{n \sum_{i=1}^{n} \sum_{j=1}^{n} w_{ij}(z_i - \bar{z})(z_j - \bar{z})}{S_0 \sum_{i=1}^{n} (z_i - \bar{z})^2}
+\]</div>
+<p>donde:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(z_i\)</span>: Tasa cruda del municipio <span class="math notranslate nohighlight">\(i\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\bar{z}\)</span>: Media de las tasas crudas</p></li>
+<li><p><span class="math notranslate nohighlight">\(w_{ij}\)</span>: Elemento de la matriz de pesos espaciales, definido como:</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+w_{ij} =
+\begin{cases}
+1 &amp; \text{si los municipios } i \text{ y } j \text{ comparten frontera} \\
+0 &amp; \text{en cualquier otro caso}
+\end{cases}
+\end{split}\]</div>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(S_0 = \sum_{i=1}^{n} \sum_{j=1}^{n} w_{ij}\)</span>: Suma total de los pesos espaciales</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">tasa_mortalidad</span><span class="p">[</span><span class="s1">&#39;MPIO&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">tasa_mortalidad</span><span class="p">[</span><span class="s1">&#39;MPIO&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">str</span><span class="p">)</span>
+<span class="c1"># Diccionario de tasas: {mpio: tasa}</span>
+<span class="n">tasas</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="nb">zip</span><span class="p">(</span><span class="n">tasa_mortalidad</span><span class="p">[</span><span class="s1">&#39;MPIO&#39;</span><span class="p">],</span> <span class="n">tasa_mortalidad</span><span class="p">[</span><span class="s1">&#39;Tasa_Mortalidad&#39;</span><span class="p">]))</span>
+<span class="c1"># Media de la tasa</span>
+<span class="n">z_bar</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">tasas</span><span class="o">.</span><span class="n">values</span><span class="p">()))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">numerador</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">tasas</span><span class="p">:</span>
+    <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="n">vecinos_mun</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="p">[]):</span>
+        <span class="k">if</span> <span class="n">j</span> <span class="ow">in</span> <span class="n">tasas</span><span class="p">:</span>
+            <span class="n">numerador</span> <span class="o">+=</span> <span class="p">(</span><span class="n">tasas</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">-</span> <span class="n">z_bar</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="n">tasas</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">-</span> <span class="n">z_bar</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">denominador</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">((</span><span class="n">zi</span> <span class="o">-</span> <span class="n">z_bar</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span> <span class="k">for</span> <span class="n">zi</span> <span class="ow">in</span> <span class="n">tasas</span><span class="o">.</span><span class="n">values</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">S0</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="nb">len</span><span class="p">([</span><span class="n">j</span> <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="n">vecinos_mun</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="p">[])</span> <span class="k">if</span> <span class="n">j</span> <span class="ow">in</span> <span class="n">tasas</span><span class="p">])</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">tasas</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">n</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">tasas</span><span class="p">)</span>
+<span class="n">I</span> <span class="o">=</span> <span class="p">(</span><span class="n">n</span> <span class="o">/</span> <span class="n">S0</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="n">numerador</span> <span class="o">/</span> <span class="n">denominador</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Índice de Moran I:&quot;</span><span class="p">,</span> <span class="n">I</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Índice de Moran I: 0.14309674177856324
+</pre></div>
+</div>
+</div>
+</div>
+<p>El valor del índice de Moran obtenido fue <strong>I = 0.143</strong>, lo que indica una <strong>autocorrelación espacial positiva moderada</strong> en las tasas de cáncer de mama en mujeres mayores de 40 años en los municipios de Colombia entre los años 2009 y 2023. Este resultado sugiere que <strong>los municipios con tasas similares (ya sean altas o bajas) tienden a agruparse geográficamente</strong>, es decir, no están distribuidos de manera aleatoria en el territorio. En términos prácticos, podría haber <strong>zonas específicas del país donde se concentra una mayor carga de la enfermedad</strong>, lo cual es relevante para orientar estrategias de prevención, diagnóstico temprano y asignación de recursos en salud pública. La identificación de estos patrones espaciales permite una <strong>planificación más focalizada y efectiva</strong> en los territorios que presentan mayor riesgo o vulnerabilidad frente al cáncer de mama.</p>
+<section id="p-valor-indice-de-moran">
+<h3><strong>P-valor índice de Moran</strong><a class="headerlink" href="#p-valor-indice-de-moran" title="Link to this heading">#</a></h3>
+<section id="hipotesis">
+<h4><strong>Hipótesis</strong><a class="headerlink" href="#hipotesis" title="Link to this heading">#</a></h4>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(H_0\)</span>: No hay correlación espacial (autocorrelación espacial nula)</p></li>
+<li><p><span class="math notranslate nohighlight">\(H_1\)</span>: Hay correlación espacial positiva</p></li>
+</ul>
+</section>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="tasas.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title"><strong>Tasas de mortalidad</strong></p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="mapas.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title"><strong>Mapas</strong></p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#librerias-y-modulos-necesarios"><strong>Librerías y modulos necesarios</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data"><strong>Data</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tasa-de-mortalidad-cruda-por-municipio"><strong>Tasa de mortalidad cruda por municipio</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#analisis-de-autocorrelacion-espacial-con-el-indice-de-moran"><strong>Análisis de Autocorrelación Espacial con el Índice de Moran</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#p-valor-indice-de-moran"><strong>P-valor índice de Moran</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#hipotesis"><strong>Hipótesis</strong></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Kanery Camargo. Emanuel Carbonell. Sebastián Pérez.
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

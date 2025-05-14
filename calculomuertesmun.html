@@ -1,0 +1,2388 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>&lt;no title&gt; &#8212; Proyecto Final - Seminario Investigativo</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'calculomuertesmun';</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/uninorte.jpg" class="logo__image only-light" alt="Proyecto Final - Seminario Investigativo - Home"/>
+    <script>document.write(`<img src="_static/uninorte.jpg" class="logo__image only-dark" alt="Proyecto Final - Seminario Investigativo - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    Proyecto Final - Seminario Investigativo
+                </a>
+            </li>
+        </ul>
+        <ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="context.html"><strong>Contextualización</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="etl.html"><strong>ETL: Limpieza y preparación de los datos</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="eda.html"><strong>EDA: Caracterización y distribución de los datos</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="tasas.html"><strong>Tasas de mortalidad</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="moranindex.html"><strong>Índice de Moran</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="mapas.html"><strong>Mapas</strong></a></li>
+
+
+<li class="toctree-l1"><a class="reference internal" href="diccionario.html"><strong>Diccionario de variables</strong></a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/kmarcela11/ProyectoFinal_SeminarioInvestigativo" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/kmarcela11/ProyectoFinal_SeminarioInvestigativo/issues/new?title=Issue%20on%20page%20%2Fcalculomuertesmun.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/calculomuertesmun.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1><no title></h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="simple visible nav section-nav flex-column">
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;data_to_tasas.csv&#39;</span><span class="p">)</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;Unnamed: 0&#39;</span><span class="p">])</span>
+<span class="n">data</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>region_Def</th>
+      <th>Nombre_Departamento_Def</th>
+      <th>Nombre_Municipio_Def</th>
+      <th>Nombre_Departamento_Res</th>
+      <th>Nombre_Municipio_Res</th>
+      <th>sitio_def</th>
+      <th>año_def</th>
+      <th>mes_def</th>
+      <th>sexo</th>
+      <th>estado_civil</th>
+      <th>grupo_edad</th>
+      <th>nivel_edu</th>
+      <th>seg_social</th>
+      <th>asistencia_med</th>
+      <th>causa_basica</th>
+      <th>Fecha</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Andina</td>
+      <td>ANTIOQUIA</td>
+      <td>MEDELLÍN</td>
+      <td>ANTIOQUIA</td>
+      <td>MEDELLÍN</td>
+      <td>Casa</td>
+      <td>2009</td>
+      <td>1</td>
+      <td>Femenino</td>
+      <td>Unión Libre, Divorciado/Otro</td>
+      <td>40-54 años</td>
+      <td>Secundaria</td>
+      <td>Subsidiado</td>
+      <td>SI</td>
+      <td>Parte no especificada</td>
+      <td>2009-01</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Andina</td>
+      <td>ANTIOQUIA</td>
+      <td>MEDELLÍN</td>
+      <td>ANTIOQUIA</td>
+      <td>MEDELLÍN</td>
+      <td>Casa</td>
+      <td>2009</td>
+      <td>1</td>
+      <td>Femenino</td>
+      <td>Viudo</td>
+      <td>65-74 años</td>
+      <td>Primaria</td>
+      <td>Contributivo</td>
+      <td>SI</td>
+      <td>Parte no especificada</td>
+      <td>2009-01</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Andina</td>
+      <td>ANTIOQUIA</td>
+      <td>MEDELLÍN</td>
+      <td>ANTIOQUIA</td>
+      <td>SABANETA</td>
+      <td>Hospital o Clínica</td>
+      <td>2009</td>
+      <td>1</td>
+      <td>Femenino</td>
+      <td>Casado</td>
+      <td>40-54 años</td>
+      <td>Secundaria</td>
+      <td>Contributivo</td>
+      <td>SI</td>
+      <td>Parte no especificada</td>
+      <td>2009-01</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Andina</td>
+      <td>ANTIOQUIA</td>
+      <td>MEDELLÍN</td>
+      <td>ANTIOQUIA</td>
+      <td>BELLO</td>
+      <td>Hospital o Clínica</td>
+      <td>2009</td>
+      <td>1</td>
+      <td>Femenino</td>
+      <td>Casado</td>
+      <td>40-54 años</td>
+      <td>Secundaria</td>
+      <td>Contributivo</td>
+      <td>SI</td>
+      <td>Parte no especificada</td>
+      <td>2009-01</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>Andina</td>
+      <td>ANTIOQUIA</td>
+      <td>MEDELLÍN</td>
+      <td>ANTIOQUIA</td>
+      <td>MEDELLÍN</td>
+      <td>Casa</td>
+      <td>2009</td>
+      <td>1</td>
+      <td>Femenino</td>
+      <td>Unión Libre, Divorciado/Otro</td>
+      <td>40-54 años</td>
+      <td>Secundaria</td>
+      <td>Contributivo</td>
+      <td>SI</td>
+      <td>Parte no especificada</td>
+      <td>2009-01</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>41605</th>
+      <td>Pacífica</td>
+      <td>VALLE DEL CAUCA</td>
+      <td>CALI</td>
+      <td>VALLE DEL CAUCA</td>
+      <td>CALI</td>
+      <td>Hospital o Clínica</td>
+      <td>2023</td>
+      <td>1</td>
+      <td>Femenino</td>
+      <td>Soltero</td>
+      <td>55-64 años</td>
+      <td>No especificado</td>
+      <td>Contributivo</td>
+      <td>SI</td>
+      <td>Parte no especificada</td>
+      <td>2023-01</td>
+    </tr>
+    <tr>
+      <th>41606</th>
+      <td>Pacífica</td>
+      <td>VALLE DEL CAUCA</td>
+      <td>CALI</td>
+      <td>VALLE DEL CAUCA</td>
+      <td>CALI</td>
+      <td>Hospital o Clínica</td>
+      <td>2023</td>
+      <td>1</td>
+      <td>Femenino</td>
+      <td>Unión Libre, Divorciado/Otro</td>
+      <td>55-64 años</td>
+      <td>No especificado</td>
+      <td>Contributivo</td>
+      <td>SI</td>
+      <td>Parte no especificada</td>
+      <td>2023-01</td>
+    </tr>
+    <tr>
+      <th>41607</th>
+      <td>Pacífica</td>
+      <td>VALLE DEL CAUCA</td>
+      <td>CALI</td>
+      <td>VALLE DEL CAUCA</td>
+      <td>CALI</td>
+      <td>Hospital o Clínica</td>
+      <td>2023</td>
+      <td>12</td>
+      <td>Femenino</td>
+      <td>Soltero</td>
+      <td>55-64 años</td>
+      <td>No especificado</td>
+      <td>Contributivo</td>
+      <td>SI</td>
+      <td>Parte no especificada</td>
+      <td>2023-12</td>
+    </tr>
+    <tr>
+      <th>41608</th>
+      <td>Andina</td>
+      <td>ANTIOQUIA</td>
+      <td>MEDELLÍN</td>
+      <td>ANTIOQUIA</td>
+      <td>MEDELLÍN</td>
+      <td>Otro Sitio</td>
+      <td>2023</td>
+      <td>12</td>
+      <td>Femenino</td>
+      <td>Viudo</td>
+      <td>75+ años</td>
+      <td>Primaria</td>
+      <td>Contributivo</td>
+      <td>SI</td>
+      <td>Parte no especificada</td>
+      <td>2023-12</td>
+    </tr>
+    <tr>
+      <th>41609</th>
+      <td>Andina</td>
+      <td>CUNDINAMARCA</td>
+      <td>FACATATIVÁ</td>
+      <td>CUNDINAMARCA</td>
+      <td>BOGOTA DC</td>
+      <td>Hospital o Clínica</td>
+      <td>2023</td>
+      <td>11</td>
+      <td>Femenino</td>
+      <td>Viudo</td>
+      <td>65-74 años</td>
+      <td>Secundaria</td>
+      <td>Contributivo</td>
+      <td>SI</td>
+      <td>Parte no especificada</td>
+      <td>2023-11</td>
+    </tr>
+  </tbody>
+</table>
+<p>41610 rows × 16 columns</p>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;Nombre_Departamento_Res&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;BOGOTA DC&#39;</span><span class="p">,</span> <span class="s1">&#39;Nombre_Departamento_Res&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;CUNDINAMARCA&#39;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;Nombre_Departamento_Res&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([&#39;ANTIOQUIA&#39;, &#39;CHOCÓ&#39;, &#39;ATLÁNTICO&#39;, &#39;CUNDINAMARCA&#39;, &#39;TOLIMA&#39;,
+       &#39;BOYACÁ&#39;, &#39;BOLÍVAR&#39;, &#39;CALDAS&#39;, &#39;CAQUETÁ&#39;, &#39;CAUCA&#39;, &#39;CESAR&#39;,
+       &#39;CÓRDOBA&#39;, &#39;HUILA&#39;, &#39;LA GUAJIRA&#39;, &#39;MAGDALENA&#39;, &#39;META&#39;, &#39;NARIÑO&#39;,
+       &#39;NORTE DE SANTANDER&#39;, &#39;QUINDIO&#39;, &#39;RISARALDA&#39;, &#39;SANTANDER&#39;, &#39;SUCRE&#39;,
+       &#39;VALLE DEL CAUCA&#39;, &#39;CASANARE&#39;,
+       &#39;ARCHIPIÉLAGO DE SAN ANDRÉS Y PROVIDENCIA Y SANTA CATALINA&#39;,
+       &#39;ARAUCA&#39;, &#39;PUTUMAYO&#39;, &#39;GUAVIARE&#39;, &#39;AMAZONAS&#39;, &#39;VICHADA&#39;, &#39;GUAINÍA&#39;,
+       &#39;VAUPÉS&#39;], dtype=object)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># data.query(&quot;Nombre_Municipio_Res.str.startswith(&#39;BOGOTA&#39;)&quot;, engine=&#39;python&#39;)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>region_Def</th>
+      <th>Nombre_Departamento_Def</th>
+      <th>Nombre_Municipio_Def</th>
+      <th>Nombre_Departamento_Res</th>
+      <th>Nombre_Municipio_Res</th>
+      <th>sitio_def</th>
+      <th>año_def</th>
+      <th>mes_def</th>
+      <th>sexo</th>
+      <th>estado_civil</th>
+      <th>grupo_edad</th>
+      <th>nivel_edu</th>
+      <th>seg_social</th>
+      <th>asistencia_med</th>
+      <th>causa_basica</th>
+      <th>Fecha</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>40</th>
+      <td>Andina</td>
+      <td>BOGOTA DC</td>
+      <td>BOGOTA DC</td>
+      <td>CUNDINAMARCA</td>
+      <td>BOGOTA DC</td>
+      <td>Casa</td>
+      <td>2009</td>
+      <td>1</td>
+      <td>Femenino</td>
+      <td>Viudo</td>
+      <td>75+ años</td>
+      <td>Primaria</td>
+      <td>Subsidiado</td>
+      <td>SI</td>
+      <td>Parte no especificada</td>
+      <td>2009-01</td>
+    </tr>
+    <tr>
+      <th>41</th>
+      <td>Andina</td>
+      <td>BOGOTA DC</td>
+      <td>BOGOTA DC</td>
+      <td>CUNDINAMARCA</td>
+      <td>BOGOTA DC</td>
+      <td>Casa</td>
+      <td>2009</td>
+      <td>1</td>
+      <td>Femenino</td>
+      <td>Unión Libre, Divorciado/Otro</td>
+      <td>65-74 años</td>
+      <td>Primaria</td>
+      <td>Contributivo</td>
+      <td>SI</td>
+      <td>Parte no especificada</td>
+      <td>2009-01</td>
+    </tr>
+    <tr>
+      <th>43</th>
+      <td>Andina</td>
+      <td>BOGOTA DC</td>
+      <td>BOGOTA DC</td>
+      <td>CUNDINAMARCA</td>
+      <td>BOGOTA DC</td>
+      <td>Hospital o Clínica</td>
+      <td>2009</td>
+      <td>1</td>
+      <td>Femenino</td>
+      <td>Unión Libre, Divorciado/Otro</td>
+      <td>40-54 años</td>
+      <td>Superior</td>
+      <td>Contributivo</td>
+      <td>SI</td>
+      <td>Parte no especificada</td>
+      <td>2009-01</td>
+    </tr>
+    <tr>
+      <th>44</th>
+      <td>Andina</td>
+      <td>BOGOTA DC</td>
+      <td>BOGOTA DC</td>
+      <td>CUNDINAMARCA</td>
+      <td>BOGOTA DC</td>
+      <td>Hospital o Clínica</td>
+      <td>2009</td>
+      <td>1</td>
+      <td>Femenino</td>
+      <td>Casado</td>
+      <td>55-64 años</td>
+      <td>Primaria</td>
+      <td>Contributivo</td>
+      <td>SI</td>
+      <td>Parte no especificada</td>
+      <td>2009-01</td>
+    </tr>
+    <tr>
+      <th>45</th>
+      <td>Andina</td>
+      <td>BOGOTA DC</td>
+      <td>BOGOTA DC</td>
+      <td>CUNDINAMARCA</td>
+      <td>BOGOTA DC</td>
+      <td>Hospital o Clínica</td>
+      <td>2009</td>
+      <td>1</td>
+      <td>Femenino</td>
+      <td>Viudo</td>
+      <td>75+ años</td>
+      <td>Primaria</td>
+      <td>Contributivo</td>
+      <td>SI</td>
+      <td>Parte no especificada</td>
+      <td>2009-01</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>41590</th>
+      <td>Andina</td>
+      <td>BOGOTA DC</td>
+      <td>BOGOTA DC</td>
+      <td>CUNDINAMARCA</td>
+      <td>BOGOTA DC</td>
+      <td>Hospital o Clínica</td>
+      <td>2023</td>
+      <td>7</td>
+      <td>Femenino</td>
+      <td>Soltero</td>
+      <td>40-54 años</td>
+      <td>Secundaria</td>
+      <td>Contributivo</td>
+      <td>SI</td>
+      <td>Parte no especificada</td>
+      <td>2023-07</td>
+    </tr>
+    <tr>
+      <th>41594</th>
+      <td>Andina</td>
+      <td>BOGOTA DC</td>
+      <td>BOGOTA DC</td>
+      <td>CUNDINAMARCA</td>
+      <td>BOGOTA DC</td>
+      <td>Hospital o Clínica</td>
+      <td>2023</td>
+      <td>1</td>
+      <td>Femenino</td>
+      <td>Unión Libre, Divorciado/Otro</td>
+      <td>75+ años</td>
+      <td>No especificado</td>
+      <td>Contributivo</td>
+      <td>SI</td>
+      <td>Parte no especificada</td>
+      <td>2023-01</td>
+    </tr>
+    <tr>
+      <th>41595</th>
+      <td>Andina</td>
+      <td>BOGOTA DC</td>
+      <td>BOGOTA DC</td>
+      <td>CUNDINAMARCA</td>
+      <td>BOGOTA DC</td>
+      <td>Hospital o Clínica</td>
+      <td>2023</td>
+      <td>1</td>
+      <td>Femenino</td>
+      <td>Casado</td>
+      <td>55-64 años</td>
+      <td>No especificado</td>
+      <td>Contributivo</td>
+      <td>SI</td>
+      <td>Parte no especificada</td>
+      <td>2023-01</td>
+    </tr>
+    <tr>
+      <th>41599</th>
+      <td>Orinoquía</td>
+      <td>META</td>
+      <td>PUERTO LÓPEZ</td>
+      <td>CUNDINAMARCA</td>
+      <td>BOGOTA DC</td>
+      <td>Hospital o Clínica</td>
+      <td>2023</td>
+      <td>11</td>
+      <td>Femenino</td>
+      <td>Casado</td>
+      <td>75+ años</td>
+      <td>Superior</td>
+      <td>Contributivo</td>
+      <td>SI</td>
+      <td>Parte no especificada</td>
+      <td>2023-11</td>
+    </tr>
+    <tr>
+      <th>41609</th>
+      <td>Andina</td>
+      <td>CUNDINAMARCA</td>
+      <td>FACATATIVÁ</td>
+      <td>CUNDINAMARCA</td>
+      <td>BOGOTA DC</td>
+      <td>Hospital o Clínica</td>
+      <td>2023</td>
+      <td>11</td>
+      <td>Femenino</td>
+      <td>Viudo</td>
+      <td>65-74 años</td>
+      <td>Secundaria</td>
+      <td>Contributivo</td>
+      <td>SI</td>
+      <td>Parte no especificada</td>
+      <td>2023-11</td>
+    </tr>
+  </tbody>
+</table>
+<p>7437 rows × 16 columns</p>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">muertes_municipio</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s1">&#39;Nombre_Departamento_Res&#39;</span><span class="p">,</span> <span class="s1">&#39;Nombre_Municipio_Res&#39;</span><span class="p">,</span> <span class="s1">&#39;año_def&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">size</span><span class="p">()</span>
+<span class="n">muertes_municipio</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Nombre_Departamento_Res  Nombre_Municipio_Res  año_def
+AMAZONAS                 LA PEDRERA            2014       1
+                         LETICIA               2009       1
+                                               2011       1
+                                               2013       1
+                                               2015       3
+                                                         ..
+VICHADA                  PUERTO CARREÑO        2017       1
+                                               2020       1
+                                               2021       2
+                                               2023       2
+                         SANTA ROSALÍA         2011       1
+Length: 5307, dtype: int64
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">muertes_municipio_df</span> <span class="o">=</span> <span class="n">muertes_municipio</span><span class="o">.</span><span class="n">reset_index</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;conteo_muertes&#39;</span><span class="p">)</span>
+<span class="n">muertes_municipio_df</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Nombre_Departamento_Res</th>
+      <th>Nombre_Municipio_Res</th>
+      <th>año_def</th>
+      <th>conteo_muertes</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>AMAZONAS</td>
+      <td>LA PEDRERA</td>
+      <td>2014</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>AMAZONAS</td>
+      <td>LETICIA</td>
+      <td>2009</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>AMAZONAS</td>
+      <td>LETICIA</td>
+      <td>2011</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>AMAZONAS</td>
+      <td>LETICIA</td>
+      <td>2013</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>AMAZONAS</td>
+      <td>LETICIA</td>
+      <td>2015</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>5302</th>
+      <td>VICHADA</td>
+      <td>PUERTO CARREÑO</td>
+      <td>2017</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>5303</th>
+      <td>VICHADA</td>
+      <td>PUERTO CARREÑO</td>
+      <td>2020</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>5304</th>
+      <td>VICHADA</td>
+      <td>PUERTO CARREÑO</td>
+      <td>2021</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <th>5305</th>
+      <td>VICHADA</td>
+      <td>PUERTO CARREÑO</td>
+      <td>2023</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <th>5306</th>
+      <td>VICHADA</td>
+      <td>SANTA ROSALÍA</td>
+      <td>2011</td>
+      <td>1</td>
+    </tr>
+  </tbody>
+</table>
+<p>5307 rows × 4 columns</p>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">gj_info</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_excel</span><span class="p">(</span><span class="s1">&#39;metadata_mun_col.xlsx&#39;</span><span class="p">)</span>
+<span class="n">gj_info</span><span class="o">.</span><span class="n">info</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;class &#39;pandas.core.frame.DataFrame&#39;&gt;
+RangeIndex: 1121 entries, 0 to 1120
+Data columns (total 4 columns):
+ #   Column    Non-Null Count  Dtype 
+---  ------    --------------  ----- 
+ 0   MpCodigo  1121 non-null   int64 
+ 1   MpNombre  1121 non-null   object
+ 2   Depto     1121 non-null   object
+ 3   geometry  1121 non-null   object
+dtypes: int64(1), object(3)
+memory usage: 35.2+ KB
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">municipios_completos</span> <span class="o">=</span> <span class="n">gj_info</span><span class="p">[[</span><span class="s1">&#39;MpNombre&#39;</span><span class="p">,</span> <span class="s1">&#39;Depto&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+<span class="n">municipios_completos</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>MpNombre</th>
+      <th>Depto</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>LA CHORRERA</td>
+      <td>AMAZONAS</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>SANTANDER</td>
+      <td>AMAZONAS</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>MIRITÍ-PARANÁ</td>
+      <td>AMAZONAS</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>LA VICTORIA</td>
+      <td>AMAZONAS</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>POTOSÍ</td>
+      <td>NARIÑO</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>1116</th>
+      <td>LA CALERA</td>
+      <td>CUNDINAMARCA</td>
+    </tr>
+    <tr>
+      <th>1117</th>
+      <td>BOGOTA DC</td>
+      <td>CUNDINAMARCA</td>
+    </tr>
+    <tr>
+      <th>1118</th>
+      <td>COTA</td>
+      <td>CUNDINAMARCA</td>
+    </tr>
+    <tr>
+      <th>1119</th>
+      <td>CHÍA</td>
+      <td>CUNDINAMARCA</td>
+    </tr>
+    <tr>
+      <th>1120</th>
+      <td>SOPÓ</td>
+      <td>CUNDINAMARCA</td>
+    </tr>
+  </tbody>
+</table>
+<p>1121 rows × 2 columns</p>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">municipios_completos</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s2">&quot;Depto == &#39;VALLE DEL CAUCA&#39; and  MpNombre == &#39;BUGA&#39;&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>MpNombre</th>
+      <th>Depto</th>
+    </tr>
+  </thead>
+  <tbody>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">municipios_completos</span> <span class="o">=</span> <span class="n">gj_info</span><span class="p">[[</span><span class="s1">&#39;MpNombre&#39;</span><span class="p">,</span> <span class="s1">&#39;Depto&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+
+<span class="n">municipios_completos</span> <span class="o">=</span> <span class="n">municipios_completos</span><span class="o">.</span><span class="n">drop_duplicates</span><span class="p">()</span>
+
+<span class="n">años</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s1">&#39;Año&#39;</span><span class="p">:</span> <span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">2009</span><span class="p">,</span> <span class="mi">2024</span><span class="p">))})</span>
+
+<span class="n">municipios_expandidos</span> <span class="o">=</span> <span class="n">municipios_completos</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">años</span><span class="p">,</span> <span class="n">how</span><span class="o">=</span><span class="s1">&#39;cross&#39;</span><span class="p">)</span>
+
+<span class="n">municipios_expandidos</span><span class="p">[</span><span class="s1">&#39;Fallecidas&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
+
+<span class="n">municipios_expandidos</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>MpNombre</th>
+      <th>Depto</th>
+      <th>Año</th>
+      <th>Fallecidas</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>LA CHORRERA</td>
+      <td>AMAZONAS</td>
+      <td>2009</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>LA CHORRERA</td>
+      <td>AMAZONAS</td>
+      <td>2010</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>LA CHORRERA</td>
+      <td>AMAZONAS</td>
+      <td>2011</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>LA CHORRERA</td>
+      <td>AMAZONAS</td>
+      <td>2012</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>LA CHORRERA</td>
+      <td>AMAZONAS</td>
+      <td>2013</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>16810</th>
+      <td>SOPÓ</td>
+      <td>CUNDINAMARCA</td>
+      <td>2019</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>16811</th>
+      <td>SOPÓ</td>
+      <td>CUNDINAMARCA</td>
+      <td>2020</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>16812</th>
+      <td>SOPÓ</td>
+      <td>CUNDINAMARCA</td>
+      <td>2021</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>16813</th>
+      <td>SOPÓ</td>
+      <td>CUNDINAMARCA</td>
+      <td>2022</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>16814</th>
+      <td>SOPÓ</td>
+      <td>CUNDINAMARCA</td>
+      <td>2023</td>
+      <td>0</td>
+    </tr>
+  </tbody>
+</table>
+<p>16815 rows × 4 columns</p>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">muertes_municipio_df</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s2">&quot;Nombre_Departamento_Res == &#39;VALLE DEL CAUCA&#39; and  Nombre_Municipio_Res == &#39;GUADALAJARA DE BUGA&#39;&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Nombre_Departamento_Res</th>
+      <th>Nombre_Municipio_Res</th>
+      <th>año_def</th>
+      <th>conteo_muertes</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>5115</th>
+      <td>VALLE DEL CAUCA</td>
+      <td>GUADALAJARA DE BUGA</td>
+      <td>2009</td>
+      <td>10</td>
+    </tr>
+    <tr>
+      <th>5116</th>
+      <td>VALLE DEL CAUCA</td>
+      <td>GUADALAJARA DE BUGA</td>
+      <td>2010</td>
+      <td>11</td>
+    </tr>
+    <tr>
+      <th>5117</th>
+      <td>VALLE DEL CAUCA</td>
+      <td>GUADALAJARA DE BUGA</td>
+      <td>2011</td>
+      <td>6</td>
+    </tr>
+    <tr>
+      <th>5118</th>
+      <td>VALLE DEL CAUCA</td>
+      <td>GUADALAJARA DE BUGA</td>
+      <td>2012</td>
+      <td>10</td>
+    </tr>
+    <tr>
+      <th>5119</th>
+      <td>VALLE DEL CAUCA</td>
+      <td>GUADALAJARA DE BUGA</td>
+      <td>2013</td>
+      <td>13</td>
+    </tr>
+    <tr>
+      <th>5120</th>
+      <td>VALLE DEL CAUCA</td>
+      <td>GUADALAJARA DE BUGA</td>
+      <td>2014</td>
+      <td>9</td>
+    </tr>
+    <tr>
+      <th>5121</th>
+      <td>VALLE DEL CAUCA</td>
+      <td>GUADALAJARA DE BUGA</td>
+      <td>2015</td>
+      <td>12</td>
+    </tr>
+    <tr>
+      <th>5122</th>
+      <td>VALLE DEL CAUCA</td>
+      <td>GUADALAJARA DE BUGA</td>
+      <td>2016</td>
+      <td>13</td>
+    </tr>
+    <tr>
+      <th>5123</th>
+      <td>VALLE DEL CAUCA</td>
+      <td>GUADALAJARA DE BUGA</td>
+      <td>2017</td>
+      <td>10</td>
+    </tr>
+    <tr>
+      <th>5124</th>
+      <td>VALLE DEL CAUCA</td>
+      <td>GUADALAJARA DE BUGA</td>
+      <td>2018</td>
+      <td>8</td>
+    </tr>
+    <tr>
+      <th>5125</th>
+      <td>VALLE DEL CAUCA</td>
+      <td>GUADALAJARA DE BUGA</td>
+      <td>2019</td>
+      <td>9</td>
+    </tr>
+    <tr>
+      <th>5126</th>
+      <td>VALLE DEL CAUCA</td>
+      <td>GUADALAJARA DE BUGA</td>
+      <td>2020</td>
+      <td>8</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">municipios_join</span> <span class="o">=</span> <span class="n">municipios_expandidos</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span>
+    <span class="n">muertes_municipio_df</span><span class="p">,</span>
+    <span class="n">left_on</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;Depto&#39;</span><span class="p">,</span> <span class="s1">&#39;MpNombre&#39;</span><span class="p">,</span> <span class="s1">&#39;Año&#39;</span><span class="p">],</span>
+    <span class="n">right_on</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;Nombre_Departamento_Res&#39;</span><span class="p">,</span> <span class="s1">&#39;Nombre_Municipio_Res&#39;</span><span class="p">,</span> <span class="s1">&#39;año_def&#39;</span><span class="p">],</span>
+    <span class="n">how</span><span class="o">=</span><span class="s1">&#39;left&#39;</span>
+<span class="p">)</span>
+<span class="n">municipios_join</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>MpNombre</th>
+      <th>Depto</th>
+      <th>Año</th>
+      <th>Fallecidas</th>
+      <th>Nombre_Departamento_Res</th>
+      <th>Nombre_Municipio_Res</th>
+      <th>año_def</th>
+      <th>conteo_muertes</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>LA CHORRERA</td>
+      <td>AMAZONAS</td>
+      <td>2009</td>
+      <td>0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>LA CHORRERA</td>
+      <td>AMAZONAS</td>
+      <td>2010</td>
+      <td>0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>LA CHORRERA</td>
+      <td>AMAZONAS</td>
+      <td>2011</td>
+      <td>0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>LA CHORRERA</td>
+      <td>AMAZONAS</td>
+      <td>2012</td>
+      <td>0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>LA CHORRERA</td>
+      <td>AMAZONAS</td>
+      <td>2013</td>
+      <td>0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>16810</th>
+      <td>SOPÓ</td>
+      <td>CUNDINAMARCA</td>
+      <td>2019</td>
+      <td>0</td>
+      <td>CUNDINAMARCA</td>
+      <td>SOPÓ</td>
+      <td>2019.0</td>
+      <td>1.0</td>
+    </tr>
+    <tr>
+      <th>16811</th>
+      <td>SOPÓ</td>
+      <td>CUNDINAMARCA</td>
+      <td>2020</td>
+      <td>0</td>
+      <td>CUNDINAMARCA</td>
+      <td>SOPÓ</td>
+      <td>2020.0</td>
+      <td>2.0</td>
+    </tr>
+    <tr>
+      <th>16812</th>
+      <td>SOPÓ</td>
+      <td>CUNDINAMARCA</td>
+      <td>2021</td>
+      <td>0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>16813</th>
+      <td>SOPÓ</td>
+      <td>CUNDINAMARCA</td>
+      <td>2022</td>
+      <td>0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>16814</th>
+      <td>SOPÓ</td>
+      <td>CUNDINAMARCA</td>
+      <td>2023</td>
+      <td>0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+  </tbody>
+</table>
+<p>16815 rows × 8 columns</p>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">muertes_mun_f</span> <span class="o">=</span> <span class="n">municipios_join</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">muertes_mun_f</span><span class="p">[</span><span class="s1">&#39;conteo_muertes&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">muertes_mun_f</span><span class="p">[</span><span class="s1">&#39;conteo_muertes&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">muertes_mun_f</span><span class="p">[</span><span class="s1">&#39;Total_Fallecidas&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">muertes_mun_f</span><span class="p">[</span><span class="s1">&#39;Fallecidas&#39;</span><span class="p">]</span> <span class="o">+</span> <span class="n">muertes_mun_f</span><span class="p">[</span><span class="s1">&#39;conteo_muertes&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># muertes_mun_f = muertes_mun_f[[&#39;MpNombre&#39;, &#39;Depto&#39;, &#39;Año&#39;, &#39;Total_Fallecidas&#39;]]</span>
+<span class="c1"># muertes_mun_f = muertes_mun_f.rename(columns={&#39;Año&#39;: &#39;Anio&#39;})</span>
+<span class="n">muertes_mun_f</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>MpNombre</th>
+      <th>Depto</th>
+      <th>Anio</th>
+      <th>Total_Fallecidas</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>LA CHORRERA</td>
+      <td>AMAZONAS</td>
+      <td>2009</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>LA CHORRERA</td>
+      <td>AMAZONAS</td>
+      <td>2010</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>LA CHORRERA</td>
+      <td>AMAZONAS</td>
+      <td>2011</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>LA CHORRERA</td>
+      <td>AMAZONAS</td>
+      <td>2012</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>LA CHORRERA</td>
+      <td>AMAZONAS</td>
+      <td>2013</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>16810</th>
+      <td>SOPÓ</td>
+      <td>CUNDINAMARCA</td>
+      <td>2019</td>
+      <td>1.0</td>
+    </tr>
+    <tr>
+      <th>16811</th>
+      <td>SOPÓ</td>
+      <td>CUNDINAMARCA</td>
+      <td>2020</td>
+      <td>2.0</td>
+    </tr>
+    <tr>
+      <th>16812</th>
+      <td>SOPÓ</td>
+      <td>CUNDINAMARCA</td>
+      <td>2021</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>16813</th>
+      <td>SOPÓ</td>
+      <td>CUNDINAMARCA</td>
+      <td>2022</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>16814</th>
+      <td>SOPÓ</td>
+      <td>CUNDINAMARCA</td>
+      <td>2023</td>
+      <td>0.0</td>
+    </tr>
+  </tbody>
+</table>
+<p>16815 rows × 4 columns</p>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">muertes_mun_f</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s2">&quot; Depto	 == &#39;AMAZONAS&#39; and MpNombre == &#39;EL ENCANTO&#39; &quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>MpNombre</th>
+      <th>Depto</th>
+      <th>Anio</th>
+      <th>Total_Fallecidas</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>15660</th>
+      <td>EL ENCANTO</td>
+      <td>AMAZONAS</td>
+      <td>2009</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>15661</th>
+      <td>EL ENCANTO</td>
+      <td>AMAZONAS</td>
+      <td>2010</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>15662</th>
+      <td>EL ENCANTO</td>
+      <td>AMAZONAS</td>
+      <td>2011</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>15663</th>
+      <td>EL ENCANTO</td>
+      <td>AMAZONAS</td>
+      <td>2012</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>15664</th>
+      <td>EL ENCANTO</td>
+      <td>AMAZONAS</td>
+      <td>2013</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>15665</th>
+      <td>EL ENCANTO</td>
+      <td>AMAZONAS</td>
+      <td>2014</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>15666</th>
+      <td>EL ENCANTO</td>
+      <td>AMAZONAS</td>
+      <td>2015</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>15667</th>
+      <td>EL ENCANTO</td>
+      <td>AMAZONAS</td>
+      <td>2016</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>15668</th>
+      <td>EL ENCANTO</td>
+      <td>AMAZONAS</td>
+      <td>2017</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>15669</th>
+      <td>EL ENCANTO</td>
+      <td>AMAZONAS</td>
+      <td>2018</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>15670</th>
+      <td>EL ENCANTO</td>
+      <td>AMAZONAS</td>
+      <td>2019</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>15671</th>
+      <td>EL ENCANTO</td>
+      <td>AMAZONAS</td>
+      <td>2020</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>15672</th>
+      <td>EL ENCANTO</td>
+      <td>AMAZONAS</td>
+      <td>2021</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>15673</th>
+      <td>EL ENCANTO</td>
+      <td>AMAZONAS</td>
+      <td>2022</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>15674</th>
+      <td>EL ENCANTO</td>
+      <td>AMAZONAS</td>
+      <td>2023</td>
+      <td>0.0</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">muertes_mun_f</span><span class="o">.</span><span class="n">info</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;class &#39;pandas.core.frame.DataFrame&#39;&gt;
+RangeIndex: 16815 entries, 0 to 16814
+Data columns (total 4 columns):
+ #   Column            Non-Null Count  Dtype  
+---  ------            --------------  -----  
+ 0   MpNombre          16815 non-null  object 
+ 1   Depto             16815 non-null  object 
+ 2   Anio              16815 non-null  int64  
+ 3   Total_Fallecidas  16815 non-null  float64
+dtypes: float64(1), int64(1), object(2)
+memory usage: 525.6+ KB
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">muertes_mun_f</span><span class="o">.</span><span class="n">to_excel</span><span class="p">(</span><span class="s1">&#39;MUERTES-CANMAMA-M40-MUN-COL.xlsx&#39;</span><span class="p">,</span><span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">muertes_mun_f</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s1">&#39;Total_Fallecidas &gt; 0&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>MpNombre</th>
+      <th>Depto</th>
+      <th>Anio</th>
+      <th>Total_Fallecidas</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>60</th>
+      <td>POTOSÍ</td>
+      <td>NARIÑO</td>
+      <td>2009</td>
+      <td>1.0</td>
+    </tr>
+    <tr>
+      <th>66</th>
+      <td>POTOSÍ</td>
+      <td>NARIÑO</td>
+      <td>2015</td>
+      <td>1.0</td>
+    </tr>
+    <tr>
+      <th>70</th>
+      <td>POTOSÍ</td>
+      <td>NARIÑO</td>
+      <td>2019</td>
+      <td>1.0</td>
+    </tr>
+    <tr>
+      <th>71</th>
+      <td>POTOSÍ</td>
+      <td>NARIÑO</td>
+      <td>2020</td>
+      <td>1.0</td>
+    </tr>
+    <tr>
+      <th>83</th>
+      <td>PUERTO CAICEDO</td>
+      <td>PUTUMAYO</td>
+      <td>2017</td>
+      <td>1.0</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>16807</th>
+      <td>SOPÓ</td>
+      <td>CUNDINAMARCA</td>
+      <td>2016</td>
+      <td>2.0</td>
+    </tr>
+    <tr>
+      <th>16808</th>
+      <td>SOPÓ</td>
+      <td>CUNDINAMARCA</td>
+      <td>2017</td>
+      <td>1.0</td>
+    </tr>
+    <tr>
+      <th>16809</th>
+      <td>SOPÓ</td>
+      <td>CUNDINAMARCA</td>
+      <td>2018</td>
+      <td>3.0</td>
+    </tr>
+    <tr>
+      <th>16810</th>
+      <td>SOPÓ</td>
+      <td>CUNDINAMARCA</td>
+      <td>2019</td>
+      <td>1.0</td>
+    </tr>
+    <tr>
+      <th>16811</th>
+      <td>SOPÓ</td>
+      <td>CUNDINAMARCA</td>
+      <td>2020</td>
+      <td>2.0</td>
+    </tr>
+  </tbody>
+</table>
+<p>5307 rows × 4 columns</p>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">muertes_mun_f</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s2">&quot;Depto == &#39;VALLE DEL CAUCA&#39; and  MpNombre == &#39;GUADALAJARA DE BUGA&#39;&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>MpNombre</th>
+      <th>Depto</th>
+      <th>Anio</th>
+      <th>Total_Fallecidas</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>3105</th>
+      <td>GUADALAJARA DE BUGA</td>
+      <td>VALLE DEL CAUCA</td>
+      <td>2009</td>
+      <td>10.0</td>
+    </tr>
+    <tr>
+      <th>3106</th>
+      <td>GUADALAJARA DE BUGA</td>
+      <td>VALLE DEL CAUCA</td>
+      <td>2010</td>
+      <td>11.0</td>
+    </tr>
+    <tr>
+      <th>3107</th>
+      <td>GUADALAJARA DE BUGA</td>
+      <td>VALLE DEL CAUCA</td>
+      <td>2011</td>
+      <td>6.0</td>
+    </tr>
+    <tr>
+      <th>3108</th>
+      <td>GUADALAJARA DE BUGA</td>
+      <td>VALLE DEL CAUCA</td>
+      <td>2012</td>
+      <td>10.0</td>
+    </tr>
+    <tr>
+      <th>3109</th>
+      <td>GUADALAJARA DE BUGA</td>
+      <td>VALLE DEL CAUCA</td>
+      <td>2013</td>
+      <td>13.0</td>
+    </tr>
+    <tr>
+      <th>3110</th>
+      <td>GUADALAJARA DE BUGA</td>
+      <td>VALLE DEL CAUCA</td>
+      <td>2014</td>
+      <td>9.0</td>
+    </tr>
+    <tr>
+      <th>3111</th>
+      <td>GUADALAJARA DE BUGA</td>
+      <td>VALLE DEL CAUCA</td>
+      <td>2015</td>
+      <td>12.0</td>
+    </tr>
+    <tr>
+      <th>3112</th>
+      <td>GUADALAJARA DE BUGA</td>
+      <td>VALLE DEL CAUCA</td>
+      <td>2016</td>
+      <td>13.0</td>
+    </tr>
+    <tr>
+      <th>3113</th>
+      <td>GUADALAJARA DE BUGA</td>
+      <td>VALLE DEL CAUCA</td>
+      <td>2017</td>
+      <td>10.0</td>
+    </tr>
+    <tr>
+      <th>3114</th>
+      <td>GUADALAJARA DE BUGA</td>
+      <td>VALLE DEL CAUCA</td>
+      <td>2018</td>
+      <td>8.0</td>
+    </tr>
+    <tr>
+      <th>3115</th>
+      <td>GUADALAJARA DE BUGA</td>
+      <td>VALLE DEL CAUCA</td>
+      <td>2019</td>
+      <td>9.0</td>
+    </tr>
+    <tr>
+      <th>3116</th>
+      <td>GUADALAJARA DE BUGA</td>
+      <td>VALLE DEL CAUCA</td>
+      <td>2020</td>
+      <td>8.0</td>
+    </tr>
+    <tr>
+      <th>3117</th>
+      <td>GUADALAJARA DE BUGA</td>
+      <td>VALLE DEL CAUCA</td>
+      <td>2021</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>3118</th>
+      <td>GUADALAJARA DE BUGA</td>
+      <td>VALLE DEL CAUCA</td>
+      <td>2022</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>3119</th>
+      <td>GUADALAJARA DE BUGA</td>
+      <td>VALLE DEL CAUCA</td>
+      <td>2023</td>
+      <td>0.0</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Filtrar las filas con Total_Fallecidas &gt; 0</span>
+<span class="n">muertes_mun_f_pos</span> <span class="o">=</span> <span class="n">muertes_mun_f</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s1">&#39;Total_Fallecidas &gt; 0&#39;</span><span class="p">)</span>
+
+<span class="c1"># Hacer merge para encontrar diferencias</span>
+<span class="n">diferencia</span> <span class="o">=</span> <span class="n">muertes_municipio_df</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span>
+    <span class="n">muertes_mun_f_pos</span><span class="p">,</span>
+    <span class="n">left_on</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;Nombre_Municipio_Res&#39;</span><span class="p">,</span> <span class="s1">&#39;Nombre_Departamento_Res&#39;</span><span class="p">,</span> <span class="s1">&#39;año_def&#39;</span><span class="p">],</span>
+    <span class="n">right_on</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;MpNombre&#39;</span><span class="p">,</span> <span class="s1">&#39;Depto&#39;</span><span class="p">,</span> <span class="s1">&#39;Anio&#39;</span><span class="p">],</span>
+    <span class="n">how</span><span class="o">=</span><span class="s1">&#39;left&#39;</span><span class="p">,</span>
+    <span class="n">indicator</span><span class="o">=</span><span class="kc">True</span>
+<span class="p">)</span>
+
+<span class="c1"># Filtrar las filas que están solo en muertes_municipio_df</span>
+<span class="n">solo_en_muertes_municipio_df</span> <span class="o">=</span> <span class="n">diferencia</span><span class="p">[</span><span class="n">diferencia</span><span class="p">[</span><span class="s1">&#39;_merge&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;left_only&#39;</span><span class="p">]</span>
+
+<span class="c1"># Resultado final sin columnas auxiliares del merge</span>
+<span class="n">solo_en_muertes_municipio_df</span> <span class="o">=</span> <span class="n">solo_en_muertes_municipio_df</span><span class="p">[</span><span class="n">muertes_municipio_df</span><span class="o">.</span><span class="n">columns</span><span class="p">]</span>
+<span class="n">solo_en_muertes_municipio_df</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Nombre_Departamento_Res</th>
+      <th>Nombre_Municipio_Res</th>
+      <th>año_def</th>
+      <th>conteo_muertes</th>
+    </tr>
+  </thead>
+  <tbody>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># correciones = solo_en_muertes_municipio_df[[&#39;Nombre_Departamento_Res&#39;, &#39;Nombre_Municipio_Res&#39;]].drop_duplicates()</span>
+<span class="c1"># correciones.shape</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(0, 2)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># correciones.to_excel(&#39;correciones_municipios.xlsx&#39;, index=False)</span>
+</pre></div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="simple visible nav section-nav flex-column">
+</ul>
+
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Kanery Camargo. Emanuel Carbonell. Sebastián Pérez.
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

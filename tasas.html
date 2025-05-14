@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Tasas crudas de mortalidad &#8212; Proyecto Final - Seminario Investigativo</title>
+    <title>Tasas de mortalidad &#8212; Proyecto Final - Seminario Investigativo</title>
   
   
   
@@ -63,6 +63,8 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Índice de Moran" href="moranindex.html" />
+    <link rel="prev" title="EDA: Caracterización y distribución de los datos" href="eda.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -125,8 +127,6 @@
       
       
       
-        
-      
       <div class="bd-sidebar-primary bd-sidebar">
         
 
@@ -182,10 +182,15 @@
                 </a>
             </li>
         </ul>
-        <ul class="nav bd-sidenav">
+        <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="context.html"><strong>Contextualización</strong></a></li>
 <li class="toctree-l1"><a class="reference internal" href="etl.html"><strong>ETL: Limpieza y preparación de los datos</strong></a></li>
 <li class="toctree-l1"><a class="reference internal" href="eda.html"><strong>EDA: Caracterización y distribución de los datos</strong></a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#"><strong>Tasas de mortalidad</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="moranindex.html"><strong>Índice de Moran</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="mapas.html"><strong>Mapas</strong></a></li>
+
+
 <li class="toctree-l1"><a class="reference internal" href="diccionario.html"><strong>Diccionario de variables</strong></a></li>
 </ul>
 
@@ -372,7 +377,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Tasas crudas de mortalidad</h1>
+    <h1>Tasas de mortalidad</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -382,18 +387,15 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#"><strong>Tasas crudas de mortalidad</strong></a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#tasas-ajustadas-por-edad"><strong>Tasas ajustadas por edad</strong></a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#smr-standard-mortality-rate"><strong>SMR: Standard Mortality Rate</strong></a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#smr-por-departamento"><strong>SMR Por departamento</strong></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#interpretacion-del-smr"><strong>Interpretación del SMR</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#librerias-y-modulos-necesarios"><strong>Librerías y modulos necesarios</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tasas-crudas-de-mortalidad"><strong>Tasas crudas de mortalidad</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tasas-ajustadas-por-edad"><strong>Tasas ajustadas por edad</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#smr-standard-mortality-rate"><strong>SMR: Standard Mortality Rate</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#smr-por-departamento"><strong>SMR Por departamento</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#interpretacion-del-smr"><strong>Interpretación del SMR</strong></a></li>
 </ul>
 </li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#suavizado-de-tasas"><strong>Suavizado de tasas</strong></a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#indice-de-moran"><strong>ÍNDICE DE MORAN</strong></a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#modelos-geograficamente-ponderados"><strong>Modelos geográficamente ponderados</strong></a></li>
 </ul>
-
             </nav>
         </div>
     </div>
@@ -404,7 +406,11 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <div class="cell docutils container">
+  <section class="tex2jax_ignore mathjax_ignore" id="tasas-de-mortalidad">
+<h1><strong>Tasas de mortalidad</strong><a class="headerlink" href="#tasas-de-mortalidad" title="Link to this heading">#</a></h1>
+<section id="librerias-y-modulos-necesarios">
+<h2><strong>Librerías y modulos necesarios</strong><a class="headerlink" href="#librerias-y-modulos-necesarios" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">warnings</span>
 <span class="kn">import</span> <span class="nn">itertools</span>
@@ -417,8 +423,9 @@ document.write(`
 </div>
 </div>
 </div>
+</section>
 <section id="tasas-crudas-de-mortalidad">
-<h1><strong>Tasas crudas de mortalidad</strong><a class="headerlink" href="#tasas-crudas-de-mortalidad" title="Link to this heading">#</a></h1>
+<h2><strong>Tasas crudas de mortalidad</strong><a class="headerlink" href="#tasas-crudas-de-mortalidad" title="Link to this heading">#</a></h2>
 <p>Se calcularon las tasas crudas de mortalidad por cada 100.000 personas, para cada departamento y por año, utilizando la siguiente fórmula:</p>
 <div class="math notranslate nohighlight">
 \[
@@ -437,25 +444,13 @@ T_{kj} = \left( \frac{n_{kj}}{p_j} \right) \times k
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">url_muertes</span> <span class="o">=</span> <span class="s1">&#39;https://github.com/sePerezAlbor/Data/blob/main/MUERTES-CAN-MAMA-2009-2023.xlsx?raw=true&#39;</span>
-<span class="n">url_poblacion</span> <span class="o">=</span> <span class="s1">&#39;https://github.com/sePerezAlbor/Data/blob/main/POB-M40-DEP-2009-2023.xlsx?raw=true&#39;</span>  
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">url_muertes</span> <span class="o">=</span> <span class="s1">&#39;https://github.com/sePerezAlbor/Data/blob/main/data_to_tasas.csv?raw=true&#39;</span>
+<span class="n">url_poblacion</span> <span class="o">=</span> <span class="s1">&#39;https://github.com/sePerezAlbor/Data/blob/main/POB-M40-DEP-2009-2023.xlsx?raw=true&#39;</span>
 
-<span class="n">muertes</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_excel</span><span class="p">(</span><span class="n">url_muertes</span><span class="p">)</span>
+<span class="n">muertes</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">url_muertes</span><span class="p">)</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;Unnamed: 0&#39;</span><span class="p">])</span>
 <span class="n">poblacion</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_excel</span><span class="p">(</span><span class="n">url_poblacion</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">poblacion</span><span class="p">[</span><span class="s1">&#39;DPNOM&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">poblacion</span><span class="p">[</span><span class="s1">&#39;DPNOM&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">equivalencias</span> <span class="o">=</span> <span class="p">{</span>
+
+<span class="n">equivalencias</span> <span class="o">=</span> <span class="p">{</span>
     <span class="s1">&#39;SANTAFE DE BOGOTA D.C&#39;</span><span class="p">:</span> <span class="s1">&#39;BOGOTA DC&#39;</span><span class="p">,</span>
     <span class="s1">&#39;BOGOTÁ, D.C.&#39;</span><span class="p">:</span> <span class="s1">&#39;BOGOTA DC&#39;</span><span class="p">,</span>
     <span class="s1">&#39;ARCHIPIELAGO DE SAN ANDRES PROVIDENCIA Y SANTA CATALINA&#39;</span><span class="p">:</span> <span class="s1">&#39;ARCHIPIÉLAGO DE SAN ANDRÉS&#39;</span><span class="p">,</span>
@@ -470,323 +465,52 @@ T_{kj} = \left( \frac{n_{kj}}{p_j} \right) \times k
     <span class="s1">&#39;NORTE DE SANTANDER&#39;</span><span class="p">:</span> <span class="s1">&#39;NORTE DE SANTANDER&#39;</span><span class="p">,</span>
     <span class="s1">&#39;CHOCÓ&#39;</span><span class="p">:</span> <span class="s1">&#39;CHOCÓ&#39;</span>
 <span class="p">}</span>
+
+<span class="n">muertes</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;Nombre_Departamento_Def&#39;</span><span class="p">:</span> <span class="s1">&#39;DPNOM&#39;</span><span class="p">,</span> <span class="s1">&#39;año_def&#39;</span><span class="p">:</span> <span class="s1">&#39;ANIO&#39;</span><span class="p">},</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 <span class="n">muertes</span><span class="p">[</span><span class="s1">&#39;DPNOM&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">muertes</span><span class="p">[</span><span class="s1">&#39;DPNOM&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="n">equivalencias</span><span class="p">)</span>
-<span class="n">poblacion</span><span class="p">[</span><span class="s1">&#39;DPNOM&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">poblacion</span><span class="p">[</span><span class="s1">&#39;DPNOM&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="n">equivalencias</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">muertes</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
+<span class="n">muertes</span><span class="p">[</span><span class="s1">&#39;Nombre_Departamento_Res&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">muertes</span><span class="p">[</span><span class="s1">&#39;Nombre_Departamento_Res&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="n">equivalencias</span><span class="p">)</span>
 
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
+<span class="n">poblacion</span><span class="p">[</span><span class="s1">&#39;DPNOM&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">poblacion</span><span class="p">[</span><span class="s1">&#39;DPNOM&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="n">equivalencias</span><span class="p">)</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span>
 
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>DPNOM</th>
-      <th>ANIO</th>
-      <th>FALLECIDAS</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>AMAZONAS</td>
-      <td>2009</td>
-      <td>0</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>AMAZONAS</td>
-      <td>2010</td>
-      <td>0</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>AMAZONAS</td>
-      <td>2011</td>
-      <td>1</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>AMAZONAS</td>
-      <td>2012</td>
-      <td>0</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>AMAZONAS</td>
-      <td>2013</td>
-      <td>1</td>
-    </tr>
-  </tbody>
-</table>
-</div></div></div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Crea una nueva columna con el total de mujeres mayores de 40</span>
+<span class="n">cond</span> <span class="o">=</span> <span class="p">(</span><span class="n">muertes</span><span class="p">[</span><span class="s1">&#39;DPNOM&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;BOGOTA DC&#39;</span><span class="p">)</span> <span class="o">|</span> <span class="p">(</span><span class="n">muertes</span><span class="p">[</span><span class="s1">&#39;Nombre_Departamento_Res&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;BOGOTA DC&#39;</span><span class="p">)</span>
+<span class="n">muertes</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">cond</span><span class="p">,</span> <span class="p">[</span><span class="s1">&#39;DPNOM&#39;</span><span class="p">,</span> <span class="s1">&#39;Nombre_Departamento_Res&#39;</span><span class="p">]]</span> <span class="o">=</span> <span class="s1">&#39;CUNDINAMARCA&#39;</span>
+
+<span class="n">años</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">2009</span><span class="p">,</span> <span class="mi">2024</span><span class="p">))</span>
+<span class="n">departamentos</span> <span class="o">=</span> <span class="n">muertes</span><span class="p">[</span><span class="s1">&#39;DPNOM&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">()</span>
+<span class="n">combinaciones</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">itertools</span><span class="o">.</span><span class="n">product</span><span class="p">(</span><span class="n">departamentos</span><span class="p">,</span> <span class="n">años</span><span class="p">)),</span> <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;DPNOM&#39;</span><span class="p">,</span> <span class="s1">&#39;ANIO&#39;</span><span class="p">])</span>
+
+<span class="n">muertes_agg</span> <span class="o">=</span> <span class="n">muertes</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s1">&#39;DPNOM&#39;</span><span class="p">,</span> <span class="s1">&#39;ANIO&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">size</span><span class="p">()</span><span class="o">.</span><span class="n">reset_index</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;FALLECIDAS&#39;</span><span class="p">)</span>
+<span class="n">muertes_completa</span> <span class="o">=</span> <span class="n">combinaciones</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">muertes_agg</span><span class="p">,</span> <span class="n">on</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;DPNOM&#39;</span><span class="p">,</span> <span class="s1">&#39;ANIO&#39;</span><span class="p">],</span> <span class="n">how</span><span class="o">=</span><span class="s1">&#39;left&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">muertes_completa</span><span class="p">[</span><span class="s1">&#39;FALLECIDAS&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">muertes_completa</span><span class="p">[</span><span class="s1">&#39;FALLECIDAS&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">int</span><span class="p">)</span>
+
+<span class="n">muertes</span> <span class="o">=</span> <span class="n">muertes_completa</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+
 <span class="n">cols_mujeres</span> <span class="o">=</span> <span class="p">[</span><span class="n">col</span> <span class="k">for</span> <span class="n">col</span> <span class="ow">in</span> <span class="n">poblacion</span><span class="o">.</span><span class="n">columns</span> <span class="k">if</span> <span class="n">col</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s1">&#39;Mujeres_&#39;</span><span class="p">)]</span>
 <span class="n">poblacion</span><span class="p">[</span><span class="s1">&#39;TOTAL_MUJERES&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">poblacion</span><span class="p">[</span><span class="n">cols_mujeres</span><span class="p">]</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;,&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">regex</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">float</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">poblacion</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
 
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
+<span class="n">departamentos_amazona</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;AMAZONAS&#39;</span><span class="p">,</span> <span class="s1">&#39;GUAINÍA&#39;</span><span class="p">,</span> <span class="s1">&#39;GUAVIARE&#39;</span><span class="p">,</span> <span class="s1">&#39;VAUPÉS&#39;</span><span class="p">,</span> <span class="s1">&#39;VICHADA&#39;</span><span class="p">]</span>
 
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>DP</th>
-      <th>DPNOM</th>
-      <th>ANIO</th>
-      <th>Mujeres_40</th>
-      <th>Mujeres_41</th>
-      <th>Mujeres_42</th>
-      <th>Mujeres_43</th>
-      <th>Mujeres_44</th>
-      <th>Mujeres_45</th>
-      <th>Mujeres_46</th>
-      <th>...</th>
-      <th>Mujeres_77</th>
-      <th>Mujeres_78</th>
-      <th>Mujeres_79</th>
-      <th>Mujeres_80</th>
-      <th>Mujeres_81</th>
-      <th>Mujeres_82</th>
-      <th>Mujeres_83</th>
-      <th>Mujeres_84</th>
-      <th>Mujeres_85 y más</th>
-      <th>TOTAL_MUJERES</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>5</td>
-      <td>ANTIOQUIA</td>
-      <td>2009</td>
-      <td>42534</td>
-      <td>43316</td>
-      <td>43935</td>
-      <td>44189</td>
-      <td>43894</td>
-      <td>43221</td>
-      <td>42324</td>
-      <td>...</td>
-      <td>7752</td>
-      <td>7247</td>
-      <td>6762</td>
-      <td>6304</td>
-      <td>5837</td>
-      <td>5342</td>
-      <td>4875</td>
-      <td>4391</td>
-      <td>24849</td>
-      <td>1055525.0</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>5</td>
-      <td>ANTIOQUIA</td>
-      <td>2010</td>
-      <td>41697</td>
-      <td>42555</td>
-      <td>43320</td>
-      <td>43923</td>
-      <td>44161</td>
-      <td>43850</td>
-      <td>43166</td>
-      <td>...</td>
-      <td>7925</td>
-      <td>7402</td>
-      <td>6892</td>
-      <td>6401</td>
-      <td>5937</td>
-      <td>5469</td>
-      <td>4979</td>
-      <td>4519</td>
-      <td>26098</td>
-      <td>1085742.0</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>5</td>
-      <td>ANTIOQUIA</td>
-      <td>2011</td>
-      <td>40942</td>
-      <td>41718</td>
-      <td>42560</td>
-      <td>43309</td>
-      <td>43896</td>
-      <td>44117</td>
-      <td>43794</td>
-      <td>...</td>
-      <td>8097</td>
-      <td>7568</td>
-      <td>7032</td>
-      <td>6519</td>
-      <td>6022</td>
-      <td>5556</td>
-      <td>5089</td>
-      <td>4608</td>
-      <td>27312</td>
-      <td>1114816.0</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>5</td>
-      <td>ANTIOQUIA</td>
-      <td>2012</td>
-      <td>40363</td>
-      <td>40957</td>
-      <td>41717</td>
-      <td>42543</td>
-      <td>43276</td>
-      <td>43848</td>
-      <td>44058</td>
-      <td>...</td>
-      <td>8274</td>
-      <td>7735</td>
-      <td>7189</td>
-      <td>6641</td>
-      <td>6126</td>
-      <td>5627</td>
-      <td>5162</td>
-      <td>4701</td>
-      <td>28444</td>
-      <td>1142775.0</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>5</td>
-      <td>ANTIOQUIA</td>
-      <td>2013</td>
-      <td>39973</td>
-      <td>40383</td>
-      <td>40962</td>
-      <td>41704</td>
-      <td>42514</td>
-      <td>43230</td>
-      <td>43792</td>
-      <td>...</td>
-      <td>8557</td>
-      <td>7909</td>
-      <td>7351</td>
-      <td>6790</td>
-      <td>6234</td>
-      <td>5720</td>
-      <td>5224</td>
-      <td>4760</td>
-      <td>29503</td>
-      <td>1169906.0</td>
-    </tr>
-  </tbody>
-</table>
-<p>5 rows × 50 columns</p>
-</div></div></div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">departamentos_amazona</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;AMAZONAS&#39;</span><span class="p">,</span> <span class="s1">&#39;GUAINÍA&#39;</span><span class="p">,</span> <span class="s1">&#39;GUAVIARE&#39;</span><span class="p">,</span> <span class="s1">&#39;VAUPÉS&#39;</span><span class="p">,</span> <span class="s1">&#39;VICHADA&#39;</span><span class="p">]</span>
+<span class="k">def</span> <span class="nf">agrupar_grupo</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">cols_sum</span><span class="p">,</span> <span class="n">nombre_grupo</span><span class="p">):</span>
+    <span class="n">agrupado</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;DPNOM&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">isin</span><span class="p">(</span><span class="n">departamentos_amazona</span><span class="p">)]</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;ANIO&#39;</span><span class="p">,</span> <span class="n">as_index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">numeric_only</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">agrupado</span><span class="p">[</span><span class="s1">&#39;DPNOM&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">nombre_grupo</span>
+    <span class="n">cols</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;DPNOM&#39;</span><span class="p">,</span> <span class="s1">&#39;ANIO&#39;</span><span class="p">]</span> <span class="o">+</span> <span class="p">[</span><span class="n">col</span> <span class="k">for</span> <span class="n">col</span> <span class="ow">in</span> <span class="n">agrupado</span><span class="o">.</span><span class="n">columns</span> <span class="k">if</span> <span class="n">col</span> <span class="ow">not</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;DPNOM&#39;</span><span class="p">,</span> <span class="s1">&#39;ANIO&#39;</span><span class="p">]]</span>
+    <span class="k">return</span> <span class="n">agrupado</span><span class="p">[</span><span class="n">cols</span><span class="p">]</span>
 
-<span class="n">amazona_df</span> <span class="o">=</span> <span class="n">poblacion</span><span class="p">[</span><span class="n">poblacion</span><span class="p">[</span><span class="s1">&#39;DPNOM&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">isin</span><span class="p">(</span><span class="n">departamentos_amazona</span><span class="p">)]</span>
-<span class="n">amazona_muertes</span> <span class="o">=</span> <span class="n">muertes</span><span class="p">[</span><span class="n">muertes</span><span class="p">[</span><span class="s1">&#39;DPNOM&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">isin</span><span class="p">(</span><span class="n">departamentos_amazona</span><span class="p">)]</span>
+<span class="n">amazona_poblacion</span> <span class="o">=</span> <span class="n">agrupar_grupo</span><span class="p">(</span><span class="n">poblacion</span><span class="p">,</span> <span class="n">cols_mujeres</span> <span class="o">+</span> <span class="p">[</span><span class="s1">&#39;TOTAL_MUJERES&#39;</span><span class="p">],</span> <span class="s1">&#39;GRUPO AMAZONA&#39;</span><span class="p">)</span>
+<span class="n">amazona_muertes</span> <span class="o">=</span> <span class="n">agrupar_grupo</span><span class="p">(</span><span class="n">muertes</span><span class="p">,</span> <span class="p">[</span><span class="s1">&#39;FALLECIDAS&#39;</span><span class="p">],</span> <span class="s1">&#39;GRUPO AMAZONA&#39;</span><span class="p">)</span>
 
-<span class="n">suma_por_año</span> <span class="o">=</span> <span class="p">(</span><span class="n">amazona_df</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;ANIO&#39;</span><span class="p">,</span> <span class="n">as_index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">numeric_only</span><span class="o">=</span><span class="kc">True</span><span class="p">))</span>
-<span class="n">suma_por_año_muertes</span> <span class="o">=</span> <span class="p">(</span><span class="n">amazona_muertes</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;ANIO&#39;</span><span class="p">,</span> <span class="n">as_index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">numeric_only</span><span class="o">=</span><span class="kc">True</span><span class="p">))</span>
+<span class="n">poblacion</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">poblacion</span><span class="p">[</span><span class="o">~</span><span class="n">poblacion</span><span class="p">[</span><span class="s1">&#39;DPNOM&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">isin</span><span class="p">(</span><span class="n">departamentos_amazona</span><span class="p">)],</span> <span class="n">amazona_poblacion</span><span class="p">],</span> <span class="n">ignore_index</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">muertes</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">muertes</span><span class="p">[</span><span class="o">~</span><span class="n">muertes</span><span class="p">[</span><span class="s1">&#39;DPNOM&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">isin</span><span class="p">(</span><span class="n">departamentos_amazona</span><span class="p">)],</span> <span class="n">amazona_muertes</span><span class="p">],</span> <span class="n">ignore_index</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 
-<span class="n">suma_por_año</span><span class="p">[</span><span class="s1">&#39;DPNOM&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;GRUPO AMAZONA&#39;</span>
-<span class="n">suma_por_año_muertes</span><span class="p">[</span><span class="s1">&#39;DPNOM&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;GRUPO AMAZONA&#39;</span>
-
-<span class="n">cols</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;DPNOM&#39;</span><span class="p">,</span> <span class="s1">&#39;ANIO&#39;</span><span class="p">]</span> <span class="o">+</span> <span class="p">[</span><span class="n">col</span> <span class="k">for</span> <span class="n">col</span> <span class="ow">in</span> <span class="n">suma_por_año</span><span class="o">.</span><span class="n">columns</span> <span class="k">if</span> <span class="n">col</span> <span class="ow">not</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;DPNOM&#39;</span><span class="p">,</span> <span class="s1">&#39;ANIO&#39;</span><span class="p">]]</span>
-<span class="n">suma_por_año</span> <span class="o">=</span> <span class="n">suma_por_año</span><span class="p">[</span><span class="n">cols</span><span class="p">]</span>
-
-<span class="n">cols_muertes</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;DPNOM&#39;</span><span class="p">,</span> <span class="s1">&#39;ANIO&#39;</span><span class="p">]</span> <span class="o">+</span> <span class="p">[</span><span class="n">col</span> <span class="k">for</span> <span class="n">col</span> <span class="ow">in</span> <span class="n">suma_por_año_muertes</span><span class="o">.</span><span class="n">columns</span> <span class="k">if</span> <span class="n">col</span> <span class="ow">not</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;DPNOM&#39;</span><span class="p">,</span> <span class="s1">&#39;ANIO&#39;</span><span class="p">]]</span>
-<span class="n">suma_por_año_muertes</span> <span class="o">=</span> <span class="n">suma_por_año_muertes</span><span class="p">[</span><span class="n">cols_muertes</span><span class="p">]</span>
-
-<span class="n">poblacion_con_grupo</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">poblacion</span><span class="p">,</span> <span class="n">suma_por_año</span><span class="p">],</span> <span class="n">ignore_index</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-<span class="n">poblacion_con_grupo_muertes</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">muertes</span><span class="p">,</span> <span class="n">suma_por_año_muertes</span><span class="p">],</span> <span class="n">ignore_index</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-
-<span class="n">poblacion_solo_con_grupo</span> <span class="o">=</span> <span class="n">poblacion_con_grupo</span><span class="p">[</span><span class="o">~</span><span class="n">poblacion_con_grupo</span><span class="p">[</span><span class="s1">&#39;DPNOM&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">isin</span><span class="p">(</span><span class="n">departamentos_amazona</span><span class="p">)]</span>
-<span class="n">poblacion_solo_con_grupo_muertes</span> <span class="o">=</span> <span class="n">poblacion_con_grupo_muertes</span><span class="p">[</span><span class="o">~</span><span class="n">poblacion_con_grupo_muertes</span><span class="p">[</span><span class="s1">&#39;DPNOM&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">isin</span><span class="p">(</span><span class="n">departamentos_amazona</span><span class="p">)]</span>
-
-<span class="n">muertes</span> <span class="o">=</span> <span class="n">poblacion_solo_con_grupo_muertes</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
-<span class="n">poblacion</span> <span class="o">=</span> <span class="n">poblacion_solo_con_grupo</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">calcular_tasa_mortalidad</span><span class="p">(</span><span class="n">muertes</span><span class="p">,</span> <span class="n">poblacion</span><span class="p">,</span> <span class="n">año_inicio</span><span class="o">=</span><span class="mi">2009</span><span class="p">,</span> <span class="n">año_fin</span><span class="o">=</span><span class="mi">2023</span><span class="p">,</span> <span class="n">k</span><span class="o">=</span><span class="mi">100000</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">    Calcula la tasa cruda de mortalidad por departamento para mujeres mayores de 40 años.</span>
-
-<span class="sd">    Parámetros:</span>
-<span class="sd">    - muertes: DataFrame con columnas [&#39;DPNOM&#39;, &#39;ANIO&#39;, &#39;FALLECIDAS&#39;]</span>
-<span class="sd">    - poblacion: DataFrame con columnas [&#39;DPNOM&#39;, &#39;ANIO&#39;, &#39;TOTAL_MUJERES&#39;]</span>
-<span class="sd">    - año_inicio: Año inicial del periodo (int)</span>
-<span class="sd">    - año_fin: Año final del periodo (int)</span>
-<span class="sd">    - k: Factor de estandarización (int, default 100000)</span>
-
-<span class="sd">    Retorna:</span>
-<span class="sd">    - DataFrame con columnas [&#39;DPNOM&#39;, &#39;FALLECIDAS&#39;, &#39;TOTAL_MUJERES&#39;, &#39;Tasa_Mortalidad&#39;]</span>
-<span class="sd">    &quot;&quot;&quot;</span>
-    <span class="c1"># Filtrado de años</span>
+<span class="k">def</span> <span class="nf">calcular_tasa_mortalidad</span><span class="p">(</span><span class="n">muertes</span><span class="p">,</span> <span class="n">poblacion</span><span class="p">,</span> <span class="n">año_inicio</span><span class="o">=</span><span class="mi">2009</span><span class="p">,</span> <span class="n">año_fin</span><span class="o">=</span><span class="mi">2023</span><span class="p">,</span> <span class="n">k</span><span class="o">=</span><span class="mi">100000</span><span class="p">):</span>
     <span class="n">muertes_filtrado</span> <span class="o">=</span> <span class="n">muertes</span><span class="p">[(</span><span class="n">muertes</span><span class="p">[</span><span class="s1">&#39;ANIO&#39;</span><span class="p">]</span> <span class="o">&gt;=</span> <span class="n">año_inicio</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">muertes</span><span class="p">[</span><span class="s1">&#39;ANIO&#39;</span><span class="p">]</span> <span class="o">&lt;=</span> <span class="n">año_fin</span><span class="p">)]</span>
     <span class="n">pob_filtrada</span> <span class="o">=</span> <span class="n">poblacion</span><span class="p">[(</span><span class="n">poblacion</span><span class="p">[</span><span class="s1">&#39;ANIO&#39;</span><span class="p">]</span> <span class="o">&gt;=</span> <span class="n">año_inicio</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">poblacion</span><span class="p">[</span><span class="s1">&#39;ANIO&#39;</span><span class="p">]</span> <span class="o">&lt;=</span> <span class="n">año_fin</span><span class="p">)]</span>
 
-    <span class="c1"># Agrupación de muertes</span>
     <span class="n">muertes_agg</span> <span class="o">=</span> <span class="n">muertes_filtrado</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;DPNOM&#39;</span><span class="p">,</span> <span class="n">as_index</span><span class="o">=</span><span class="kc">False</span><span class="p">)[</span><span class="s1">&#39;FALLECIDAS&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+    <span class="n">pob_agg</span> <span class="o">=</span> <span class="n">pob_filtrada</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;DPNOM&#39;</span><span class="p">,</span> <span class="n">as_index</span><span class="o">=</span><span class="kc">False</span><span class="p">)[</span><span class="s1">&#39;TOTAL_MUJERES&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
 
-    <span class="c1"># # Agrupación de población</span>
-    <span class="k">if</span> <span class="n">año_inicio</span> <span class="o">==</span> <span class="n">año_fin</span><span class="p">:</span>
-        <span class="n">pob_agg</span> <span class="o">=</span> <span class="n">pob_filtrada</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;DPNOM&#39;</span><span class="p">,</span> <span class="n">as_index</span><span class="o">=</span><span class="kc">False</span><span class="p">)[</span><span class="s1">&#39;TOTAL_MUJERES&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
-    <span class="k">else</span><span class="p">:</span>
-        <span class="n">pob_agg</span> <span class="o">=</span> <span class="n">pob_filtrada</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;DPNOM&#39;</span><span class="p">,</span> <span class="n">as_index</span><span class="o">=</span><span class="kc">False</span><span class="p">)[</span><span class="s1">&#39;TOTAL_MUJERES&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">median</span><span class="p">()</span>
-
-    <span class="c1"># Unión y cálculo de la tasa</span>
     <span class="n">tasa</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">muertes_agg</span><span class="p">,</span> <span class="n">pob_agg</span><span class="p">,</span> <span class="n">on</span><span class="o">=</span><span class="s1">&#39;DPNOM&#39;</span><span class="p">)</span>
-    <span class="n">tasa</span><span class="p">[</span><span class="s1">&#39;Tasa_Mortalidad&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">tasa</span><span class="p">[</span><span class="s1">&#39;FALLECIDAS&#39;</span><span class="p">]</span> <span class="o">/</span> <span class="n">tasa</span><span class="p">[</span><span class="s1">&#39;TOTAL_MUJERES&#39;</span><span class="p">])</span> <span class="o">*</span> <span class="n">k</span>
+    <span class="n">tasa</span><span class="p">[</span><span class="s1">&#39;Tasa_Mortalidad&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">tasa</span><span class="p">[</span><span class="s1">&#39;FALLECIDAS&#39;</span><span class="p">]</span> <span class="o">/</span> <span class="n">tasa</span><span class="p">[</span><span class="s1">&#39;TOTAL_MUJERES&#39;</span><span class="p">])</span> <span class="o">*</span> <span class="n">k</span> 
 
     <span class="k">return</span> <span class="n">tasa</span>
 </pre></div>
@@ -835,191 +559,191 @@ T_{kj} = \left( \frac{n_{kj}}{p_j} \right) \times k
     <tr>
       <th>0</th>
       <td>ANTIOQUIA</td>
-      <td>6879</td>
-      <td>1252145.0</td>
-      <td>549.377269</td>
+      <td>6185</td>
+      <td>19011651.0</td>
+      <td>32.532682</td>
     </tr>
     <tr>
       <th>1</th>
       <td>ARAUCA</td>
-      <td>147</td>
-      <td>34028.0</td>
-      <td>431.997179</td>
+      <td>137</td>
+      <td>543874.0</td>
+      <td>25.189658</td>
     </tr>
     <tr>
       <th>2</th>
-      <td>ARCHIPIÉLAGO DE SAN ANDRÉS</td>
-      <td>36</td>
-      <td>12514.0</td>
-      <td>287.677801</td>
+      <td>ATLÁNTICO</td>
+      <td>3122</td>
+      <td>6773319.0</td>
+      <td>46.092617</td>
     </tr>
     <tr>
       <th>3</th>
-      <td>ATLÁNTICO</td>
-      <td>3483</td>
-      <td>441159.0</td>
-      <td>789.511265</td>
+      <td>BOLÍVAR</td>
+      <td>1588</td>
+      <td>5135499.0</td>
+      <td>30.922019</td>
     </tr>
     <tr>
       <th>4</th>
-      <td>BOGOTA DC</td>
-      <td>9169</td>
-      <td>1474342.0</td>
-      <td>621.904551</td>
+      <td>BOYACÁ</td>
+      <td>748</td>
+      <td>3751470.0</td>
+      <td>19.938851</td>
     </tr>
     <tr>
       <th>5</th>
-      <td>BOLÍVAR</td>
-      <td>1758</td>
-      <td>336762.0</td>
-      <td>522.030395</td>
+      <td>CALDAS</td>
+      <td>1012</td>
+      <td>3393571.0</td>
+      <td>29.821094</td>
     </tr>
     <tr>
       <th>6</th>
-      <td>BOYACÁ</td>
-      <td>820</td>
-      <td>247768.0</td>
-      <td>330.954764</td>
+      <td>CAQUETÁ</td>
+      <td>203</td>
+      <td>852787.0</td>
+      <td>23.804303</td>
     </tr>
     <tr>
       <th>7</th>
-      <td>CALDAS</td>
-      <td>1120</td>
-      <td>224800.0</td>
-      <td>498.220641</td>
+      <td>CASANARE</td>
+      <td>159</td>
+      <td>862417.0</td>
+      <td>18.436557</td>
     </tr>
     <tr>
       <th>8</th>
-      <td>CASANARE</td>
-      <td>175</td>
-      <td>56366.0</td>
-      <td>310.470851</td>
+      <td>CAUCA</td>
+      <td>631</td>
+      <td>3713294.0</td>
+      <td>16.992999</td>
     </tr>
     <tr>
       <th>9</th>
-      <td>CAUCA</td>
-      <td>705</td>
-      <td>244525.0</td>
-      <td>288.314078</td>
+      <td>CESAR</td>
+      <td>743</td>
+      <td>2578697.0</td>
+      <td>28.813001</td>
     </tr>
     <tr>
       <th>10</th>
-      <td>CESAR</td>
-      <td>820</td>
-      <td>166946.0</td>
-      <td>491.176788</td>
+      <td>CHOCÓ</td>
+      <td>51</td>
+      <td>1033862.0</td>
+      <td>4.932960</td>
     </tr>
     <tr>
       <th>11</th>
       <td>CUNDINAMARCA</td>
-      <td>1354</td>
-      <td>506441.0</td>
-      <td>267.355921</td>
+      <td>9471</td>
+      <td>7787730.0</td>
+      <td>121.614386</td>
     </tr>
     <tr>
       <th>12</th>
       <td>CÓRDOBA</td>
-      <td>1122</td>
-      <td>295175.0</td>
-      <td>380.113492</td>
+      <td>1021</td>
+      <td>4453938.0</td>
+      <td>22.923534</td>
     </tr>
     <tr>
       <th>13</th>
       <td>GRUPO AMAZONA</td>
-      <td>41</td>
-      <td>33700.0</td>
-      <td>121.661721</td>
+      <td>39</td>
+      <td>521805.0</td>
+      <td>7.474056</td>
     </tr>
     <tr>
       <th>14</th>
       <td>HUILA</td>
-      <td>1056</td>
-      <td>180628.0</td>
-      <td>584.626968</td>
+      <td>954</td>
+      <td>2722786.0</td>
+      <td>35.037642</td>
     </tr>
     <tr>
       <th>15</th>
       <td>LA GUAJIRA</td>
-      <td>269</td>
-      <td>102861.0</td>
-      <td>261.517971</td>
+      <td>247</td>
+      <td>1614157.0</td>
+      <td>15.302105</td>
     </tr>
     <tr>
       <th>16</th>
       <td>MAGDALENA</td>
-      <td>982</td>
-      <td>202522.0</td>
-      <td>484.885593</td>
+      <td>884</td>
+      <td>3108562.0</td>
+      <td>28.437586</td>
     </tr>
     <tr>
       <th>17</th>
       <td>META</td>
-      <td>762</td>
-      <td>161983.0</td>
-      <td>470.419735</td>
+      <td>697</td>
+      <td>2451468.0</td>
+      <td>28.431944</td>
     </tr>
     <tr>
       <th>18</th>
       <td>NARIÑO</td>
-      <td>985</td>
-      <td>299366.0</td>
-      <td>329.028681</td>
+      <td>879</td>
+      <td>4523184.0</td>
+      <td>19.433213</td>
     </tr>
     <tr>
       <th>19</th>
       <td>NORTE DE SANTANDER</td>
-      <td>1417</td>
-      <td>254034.0</td>
-      <td>557.799350</td>
+      <td>1282</td>
+      <td>3949801.0</td>
+      <td>32.457331</td>
     </tr>
     <tr>
       <th>20</th>
       <td>PUTUMAYO</td>
-      <td>94</td>
-      <td>46567.0</td>
-      <td>201.859686</td>
+      <td>87</td>
+      <td>711318.0</td>
+      <td>12.230817</td>
     </tr>
     <tr>
       <th>21</th>
       <td>QUINDIO</td>
-      <td>702</td>
-      <td>123338.0</td>
-      <td>569.167653</td>
+      <td>624</td>
+      <td>1856017.0</td>
+      <td>33.620382</td>
     </tr>
     <tr>
       <th>22</th>
       <td>RISARALDA</td>
-      <td>1389</td>
-      <td>205034.0</td>
-      <td>677.448618</td>
+      <td>1260</td>
+      <td>3083911.0</td>
+      <td>40.857210</td>
     </tr>
     <tr>
       <th>23</th>
       <td>SANTANDER</td>
-      <td>2465</td>
-      <td>423379.0</td>
-      <td>582.220658</td>
+      <td>2209</td>
+      <td>6428298.0</td>
+      <td>34.363684</td>
     </tr>
     <tr>
       <th>24</th>
       <td>SUCRE</td>
-      <td>591</td>
-      <td>147221.0</td>
-      <td>401.437295</td>
+      <td>529</td>
+      <td>2245948.0</td>
+      <td>23.553528</td>
     </tr>
     <tr>
       <th>25</th>
       <td>TOLIMA</td>
-      <td>1292</td>
-      <td>271597.0</td>
-      <td>475.704813</td>
+      <td>1165</td>
+      <td>4086695.0</td>
+      <td>28.507143</td>
     </tr>
     <tr>
       <th>26</th>
       <td>VALLE DEL CAUCA</td>
-      <td>6312</td>
-      <td>921259.0</td>
-      <td>685.149345</td>
+      <td>5653</td>
+      <td>13901078.0</td>
+      <td>40.665911</td>
     </tr>
   </tbody>
 </table>
@@ -1027,8 +751,7 @@ T_{kj} = \left( \frac{n_{kj}}{p_j} \right) \times k
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Resultados: mayor, menor y promedio</span>
-<span class="n">mayor</span> <span class="o">=</span> <span class="n">tasa_mortalidad</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">tasa_mortalidad</span><span class="p">[</span><span class="s1">&#39;Tasa_Mortalidad&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">idxmax</span><span class="p">()]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mayor</span> <span class="o">=</span> <span class="n">tasa_mortalidad</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">tasa_mortalidad</span><span class="p">[</span><span class="s1">&#39;Tasa_Mortalidad&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">idxmax</span><span class="p">()]</span>
 <span class="n">menor</span> <span class="o">=</span> <span class="n">tasa_mortalidad</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">tasa_mortalidad</span><span class="p">[</span><span class="s1">&#39;Tasa_Mortalidad&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">idxmin</span><span class="p">()]</span>
 <span class="n">promedio</span> <span class="o">=</span> <span class="n">tasa_mortalidad</span><span class="p">[</span><span class="s1">&#39;Tasa_Mortalidad&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
 
@@ -1039,16 +762,16 @@ T_{kj} = \left( \frac{n_{kj}}{p_j} \right) \times k
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Mayor tasa: ATLÁNTICO 789.51
-Menor tasa: GRUPO AMAZONA 121.66
-Promedio: 450.82
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Mayor tasa: CUNDINAMARCA 121.61
+Menor tasa: CHOCÓ 4.93
+Promedio: 29.72
 </pre></div>
 </div>
 </div>
 </div>
 </section>
 <section id="tasas-ajustadas-por-edad">
-<h1><strong>Tasas ajustadas por edad</strong><a class="headerlink" href="#tasas-ajustadas-por-edad" title="Link to this heading">#</a></h1>
+<h2><strong>Tasas ajustadas por edad</strong><a class="headerlink" href="#tasas-ajustadas-por-edad" title="Link to this heading">#</a></h2>
 <p>Para estimar tasas ajustadas de mortalidad por cáncer y poder realizar comparaciones válidas entre diferentes regiones o periodos de tiempo, se utilizó el método directo de ajuste por edad, tomando como referencia la <strong>población estándar de Segi (1960)</strong>. Esta población fue diseñada para facilitar la comparación internacional de tasas de mortalidad y morbilidad, y se basa en una distribución teórica de población que representa una media ponderada de estructuras poblacionales de distintas regiones del mundo en ese momento.<br />
 El ajuste por edad corrige las posibles distorsiones generadas por diferencias en la estructura etaria de las poblaciones observadas, haciendo más precisa la comparación del riesgo de morir por una causa específica, como el cáncer, entre distintos departamentos o periodos.<br />
 La tasa ajustada se expresa por cada <strong>100.000 habitantes</strong>, lo cual es un estándar internacional que facilita la comunicación y análisis de datos epidemiológicos.</p>
@@ -1082,403 +805,129 @@ La tasa ajustada se expresa por cada <strong>100.000 habitantes</strong>, lo cua
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">url_muertes_complete</span> <span class="o">=</span> <span class="s1">&#39;https://github.com/sePerezAlbor/Data/blob/main/data_to_tasas.csv?raw=true&#39;</span>
-<span class="n">muertes_complete</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">url_muertes_complete</span><span class="p">)</span>
-<span class="n">muertes_complete</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;Unnamed: 0&#39;</span><span class="p">],</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span> <span class="c1"># Eliminar la columna innecesaria</span>
-<span class="n">muertes_complete</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">procesar_tasas_por_periodo</span><span class="p">(</span><span class="n">año_inicio</span><span class="p">,</span> <span class="n">año_fin</span><span class="p">):</span>
+    <span class="c1"># Cargar datos de muertes</span>
+    <span class="n">url_muertes_complete</span> <span class="o">=</span> <span class="s1">&#39;https://github.com/sePerezAlbor/Data/blob/main/data_to_tasas.csv?raw=true&#39;</span>
+    <span class="n">muertes_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">url_muertes_complete</span><span class="p">)</span>
+    <span class="k">if</span> <span class="s1">&#39;Unnamed: 0&#39;</span> <span class="ow">in</span> <span class="n">muertes_df</span><span class="o">.</span><span class="n">columns</span><span class="p">:</span>
+        <span class="n">muertes_df</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;Unnamed: 0&#39;</span><span class="p">],</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
+    <span class="n">condicion</span> <span class="o">=</span> <span class="p">(</span><span class="n">muertes_df</span><span class="p">[</span><span class="s1">&#39;Nombre_Departamento_Def&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;BOGOTA DC&#39;</span><span class="p">)</span> <span class="o">|</span> <span class="p">(</span><span class="n">muertes_df</span><span class="p">[</span><span class="s1">&#39;Nombre_Departamento_Res&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;BOGOTA DC&#39;</span><span class="p">)</span>
 
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>region_Def</th>
-      <th>Nombre_Departamento_Def</th>
-      <th>Nombre_Municipio_Def</th>
-      <th>Nombre_Departamento_Res</th>
-      <th>Nombre_Municipio_Res</th>
-      <th>sitio_def</th>
-      <th>año_def</th>
-      <th>mes_def</th>
-      <th>sexo</th>
-      <th>estado_civil</th>
-      <th>grupo_edad</th>
-      <th>nivel_edu</th>
-      <th>seg_social</th>
-      <th>asistencia_med</th>
-      <th>causa_basica</th>
-      <th>Fecha</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>Andina</td>
-      <td>ANTIOQUIA</td>
-      <td>MEDELLÍN</td>
-      <td>ANTIOQUIA</td>
-      <td>MEDELLÍN</td>
-      <td>Casa</td>
-      <td>2009</td>
-      <td>1</td>
-      <td>Femenino</td>
-      <td>Unión Libre, Divorciado/Otro</td>
-      <td>40-54 años</td>
-      <td>Secundaria</td>
-      <td>Subsidiado</td>
-      <td>SI</td>
-      <td>Parte no especificada</td>
-      <td>2009-01</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>Andina</td>
-      <td>ANTIOQUIA</td>
-      <td>MEDELLÍN</td>
-      <td>ANTIOQUIA</td>
-      <td>MEDELLÍN</td>
-      <td>Casa</td>
-      <td>2009</td>
-      <td>1</td>
-      <td>Femenino</td>
-      <td>Viudo</td>
-      <td>65-74 años</td>
-      <td>Primaria</td>
-      <td>Contributivo</td>
-      <td>SI</td>
-      <td>Parte no especificada</td>
-      <td>2009-01</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>Andina</td>
-      <td>ANTIOQUIA</td>
-      <td>MEDELLÍN</td>
-      <td>ANTIOQUIA</td>
-      <td>SABANETA</td>
-      <td>Hospital o Clínica</td>
-      <td>2009</td>
-      <td>1</td>
-      <td>Femenino</td>
-      <td>Casado</td>
-      <td>40-54 años</td>
-      <td>Secundaria</td>
-      <td>Contributivo</td>
-      <td>SI</td>
-      <td>Parte no especificada</td>
-      <td>2009-01</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>Andina</td>
-      <td>ANTIOQUIA</td>
-      <td>MEDELLÍN</td>
-      <td>ANTIOQUIA</td>
-      <td>BELLO</td>
-      <td>Hospital o Clínica</td>
-      <td>2009</td>
-      <td>1</td>
-      <td>Femenino</td>
-      <td>Casado</td>
-      <td>40-54 años</td>
-      <td>Secundaria</td>
-      <td>Contributivo</td>
-      <td>SI</td>
-      <td>Parte no especificada</td>
-      <td>2009-01</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>Andina</td>
-      <td>ANTIOQUIA</td>
-      <td>MEDELLÍN</td>
-      <td>ANTIOQUIA</td>
-      <td>MEDELLÍN</td>
-      <td>Casa</td>
-      <td>2009</td>
-      <td>1</td>
-      <td>Femenino</td>
-      <td>Unión Libre, Divorciado/Otro</td>
-      <td>40-54 años</td>
-      <td>Secundaria</td>
-      <td>Contributivo</td>
-      <td>SI</td>
-      <td>Parte no especificada</td>
-      <td>2009-01</td>
-    </tr>
-  </tbody>
-</table>
-</div></div></div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">columnas_interes</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Nombre_Departamento_Def&#39;</span><span class="p">,</span> <span class="s1">&#39;año_def&#39;</span><span class="p">,</span> <span class="s1">&#39;grupo_edad&#39;</span><span class="p">]</span>
-<span class="n">muertes_simple</span> <span class="o">=</span> <span class="n">muertes_complete</span><span class="p">[</span><span class="n">columnas_interes</span><span class="p">]</span>
-<span class="n">conteos</span> <span class="o">=</span> <span class="p">(</span><span class="n">muertes_simple</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s1">&#39;Nombre_Departamento_Def&#39;</span><span class="p">,</span> <span class="s1">&#39;grupo_edad&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">size</span><span class="p">()</span><span class="o">.</span><span class="n">reset_index</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;count&#39;</span><span class="p">))</span>
-<span class="n">muertes_complete</span> <span class="o">=</span> <span class="n">conteos</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
-<span class="n">muertes_complete</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
+    <span class="c1"># Aplicar los cambios a las columnas DPNOM y Nombre_Departamento_Res para las filas que cumplen la condición</span>
+    <span class="n">muertes_df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">condicion</span><span class="p">,</span> <span class="p">[</span><span class="s1">&#39;Nombre_Departamento_Def&#39;</span><span class="p">,</span> <span class="s1">&#39;Nombre_Departamento_Res&#39;</span><span class="p">]]</span> <span class="o">=</span> <span class="s1">&#39;CUNDINAMARCA&#39;</span>
 
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
+    <span class="n">muertes_df</span> <span class="o">=</span> <span class="n">muertes_df</span><span class="p">[(</span><span class="n">muertes_df</span><span class="p">[</span><span class="s1">&#39;año_def&#39;</span><span class="p">]</span> <span class="o">&gt;=</span> <span class="n">año_inicio</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">muertes_df</span><span class="p">[</span><span class="s1">&#39;año_def&#39;</span><span class="p">]</span> <span class="o">&lt;=</span> <span class="n">año_fin</span><span class="p">)]</span>
 
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>Nombre_Departamento_Def</th>
-      <th>grupo_edad</th>
-      <th>count</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>AMAZONAS</td>
-      <td>40-54 años</td>
-      <td>7</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>AMAZONAS</td>
-      <td>55-64 años</td>
-      <td>1</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>AMAZONAS</td>
-      <td>65-74 años</td>
-      <td>1</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>AMAZONAS</td>
-      <td>75+ años</td>
-      <td>2</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>ANTIOQUIA</td>
-      <td>40-54 años</td>
-      <td>1284</td>
-    </tr>
-  </tbody>
-</table>
-</div></div></div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">departamentos_amazona</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;AMAZONAS&#39;</span><span class="p">,</span> <span class="s1">&#39;GUAINÍA&#39;</span><span class="p">,</span> <span class="s1">&#39;GUAVIARE&#39;</span><span class="p">,</span> <span class="s1">&#39;VAUPÉS&#39;</span><span class="p">,</span> <span class="s1">&#39;VICHADA&#39;</span><span class="p">]</span>
-<span class="n">amazona_df</span> <span class="o">=</span> <span class="n">muertes_complete</span><span class="p">[</span><span class="n">muertes_complete</span><span class="p">[</span><span class="s1">&#39;Nombre_Departamento_Def&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">isin</span><span class="p">(</span><span class="n">departamentos_amazona</span><span class="p">)]</span>
-<span class="n">amazona_df</span> <span class="o">=</span> <span class="p">(</span><span class="n">amazona_df</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span> <span class="s1">&#39;grupo_edad&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">numeric_only</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span><span class="o">.</span><span class="n">reset_index</span><span class="p">())</span>
-<span class="n">amazona_df</span><span class="p">[</span><span class="s1">&#39;Nombre_Departamento_Def&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;GRUPO AMAZONA&#39;</span>
-<span class="n">orden_columnas</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Nombre_Departamento_Def&#39;</span><span class="p">,</span> <span class="s1">&#39;grupo_edad&#39;</span><span class="p">,</span> <span class="s1">&#39;count&#39;</span><span class="p">]</span>
-<span class="n">amazona_df</span> <span class="o">=</span> <span class="n">amazona_df</span><span class="p">[</span><span class="n">orden_columnas</span><span class="p">]</span>
-<span class="n">amazona_df</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
+    <span class="n">columnas_muertes</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Nombre_Departamento_Def&#39;</span><span class="p">,</span> <span class="s1">&#39;grupo_edad&#39;</span><span class="p">]</span>
+    <span class="n">conteos_muertes</span> <span class="o">=</span> <span class="n">muertes_df</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="n">columnas_muertes</span><span class="p">,</span> <span class="n">observed</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span><span class="o">.</span><span class="n">size</span><span class="p">()</span><span class="o">.</span><span class="n">reset_index</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;count&#39;</span><span class="p">)</span>
 
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
+    <span class="c1"># Agrupar departamentos amazónicos</span>
+    <span class="n">departamentos_amazona</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;AMAZONAS&#39;</span><span class="p">,</span> <span class="s1">&#39;GUAINÍA&#39;</span><span class="p">,</span> <span class="s1">&#39;GUAVIARE&#39;</span><span class="p">,</span> <span class="s1">&#39;VAUPÉS&#39;</span><span class="p">,</span> <span class="s1">&#39;VICHADA&#39;</span><span class="p">]</span>
+    <span class="n">amazona_muertes_df</span> <span class="o">=</span> <span class="n">conteos_muertes</span><span class="p">[</span><span class="n">conteos_muertes</span><span class="p">[</span><span class="s1">&#39;Nombre_Departamento_Def&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">isin</span><span class="p">(</span><span class="n">departamentos_amazona</span><span class="p">)]</span>
+    
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">amazona_muertes_df</span><span class="o">.</span><span class="n">empty</span><span class="p">:</span>
+        <span class="n">amazona_sum_df</span> <span class="o">=</span> <span class="n">amazona_muertes_df</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s1">&#39;grupo_edad&#39;</span><span class="p">],</span> <span class="n">observed</span><span class="o">=</span><span class="kc">False</span><span class="p">)[</span><span class="s1">&#39;count&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span>
+        <span class="n">amazona_sum_df</span><span class="p">[</span><span class="s1">&#39;Nombre_Departamento_Def&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;GRUPO AMAZONA&#39;</span>
+        <span class="n">conteos_muertes</span> <span class="o">=</span> <span class="n">conteos_muertes</span><span class="p">[</span><span class="o">~</span><span class="n">conteos_muertes</span><span class="p">[</span><span class="s1">&#39;Nombre_Departamento_Def&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">isin</span><span class="p">(</span><span class="n">departamentos_amazona</span><span class="p">)]</span>
+        <span class="n">conteos_muertes</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">conteos_muertes</span><span class="p">,</span> <span class="n">amazona_sum_df</span><span class="p">[[</span><span class="s1">&#39;Nombre_Departamento_Def&#39;</span><span class="p">,</span> <span class="s1">&#39;grupo_edad&#39;</span><span class="p">,</span> <span class="s1">&#39;count&#39;</span><span class="p">]]],</span> <span class="n">ignore_index</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>Nombre_Departamento_Def</th>
-      <th>grupo_edad</th>
-      <th>count</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>GRUPO AMAZONA</td>
-      <td>40-54 años</td>
-      <td>21</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>GRUPO AMAZONA</td>
-      <td>55-64 años</td>
-      <td>7</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>GRUPO AMAZONA</td>
-      <td>65-74 años</td>
-      <td>4</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>GRUPO AMAZONA</td>
-      <td>75+ años</td>
-      <td>7</td>
-    </tr>
-  </tbody>
-</table>
-</div></div></div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">muertes_complete</span> <span class="o">=</span> <span class="n">muertes_complete</span><span class="p">[</span><span class="o">~</span><span class="n">muertes_complete</span><span class="p">[</span><span class="s1">&#39;Nombre_Departamento_Def&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">isin</span><span class="p">(</span><span class="n">departamentos_amazona</span><span class="p">)]</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
-<span class="n">muertes_complete</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">muertes_complete</span><span class="p">,</span> <span class="n">amazona_df</span><span class="p">],</span> <span class="n">ignore_index</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">grupos_edad_estandar</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;40-54 años&#39;</span><span class="p">,</span> <span class="s1">&#39;55-64 años&#39;</span><span class="p">,</span> <span class="s1">&#39;65-74 años&#39;</span><span class="p">,</span> <span class="s1">&#39;75+ años&#39;</span><span class="p">]</span>
+    <span class="n">departamentos_unicos</span> <span class="o">=</span> <span class="n">conteos_muertes</span><span class="p">[</span><span class="s1">&#39;Nombre_Departamento_Def&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">()</span>
+
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">departamentos_unicos</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span> <span class="c1"># No hay datos de muertes para el período</span>
+        <span class="n">cols_resumen</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;DPNOM&#39;</span><span class="p">,</span> <span class="s1">&#39;FALLECIDAS&#39;</span><span class="p">,</span> <span class="s1">&#39;TOTAL_MUJERES&#39;</span><span class="p">,</span> <span class="s1">&#39;Tasa_Mortalidad_Cruda&#39;</span><span class="p">,</span> <span class="s1">&#39;TAE&#39;</span><span class="p">]</span>
+        <span class="n">cols_detalle</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;DPNOM&#39;</span><span class="p">,</span> <span class="s1">&#39;grupo_edad&#39;</span><span class="p">,</span> <span class="s1">&#39;count&#39;</span><span class="p">,</span> <span class="s1">&#39;poblacion&#39;</span><span class="p">]</span>
+        <span class="k">return</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="n">cols_resumen</span><span class="p">),</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="n">cols_detalle</span><span class="p">)</span>
+
+
+    <span class="n">all_combinations</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">itertools</span><span class="o">.</span><span class="n">product</span><span class="p">(</span><span class="n">departamentos_unicos</span><span class="p">,</span> <span class="n">grupos_edad_estandar</span><span class="p">)),</span> <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;Nombre_Departamento_Def&#39;</span><span class="p">,</span> <span class="s1">&#39;grupo_edad&#39;</span><span class="p">])</span>
+    
+    <span class="c1"># Si los &#39;grupo_edad&#39; de &#39;conteos_muertes&#39; no están en el formato estándar, el siguiente merge podría no ser efectivo.</span>
+    <span class="c1"># Se recomienda pre-procesar &#39;grupo_edad&#39; en &#39;muertes_df&#39; para que coincida con &#39;grupos_edad_estandar&#39;.</span>
+    <span class="n">muertes_completas_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">all_combinations</span><span class="p">,</span> <span class="n">conteos_muertes</span><span class="p">,</span> <span class="n">on</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;Nombre_Departamento_Def&#39;</span><span class="p">,</span> <span class="s1">&#39;grupo_edad&#39;</span><span class="p">],</span> <span class="n">how</span><span class="o">=</span><span class="s1">&#39;left&#39;</span><span class="p">)</span>
+    <span class="n">muertes_completas_df</span><span class="p">[</span><span class="s1">&#39;count&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">muertes_completas_df</span><span class="p">[</span><span class="s1">&#39;count&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">int</span><span class="p">)</span>
+    <span class="n">muertes_completas_df</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;Nombre_Departamento_Def&#39;</span><span class="p">:</span> <span class="s1">&#39;DPNOM&#39;</span><span class="p">},</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">muertes_completas_df</span><span class="o">.</span><span class="n">replace</span><span class="p">({</span><span class="s1">&#39;DPNOM&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;ARCHIPIÉLAGO DE SAN ANDRÉS Y PROVIDENCIA Y SANTA CATALINA&#39;</span><span class="p">:</span> <span class="s1">&#39;ARCHIPIÉLAGO DE SAN ANDRÉS&#39;</span><span class="p">}},</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+    <span class="c1"># Procesamiento de Población (requiere &#39;poblacion&#39; y &#39;cols_mujeres&#39; globales)</span>
+    <span class="n">poblacion_df_filtrada</span> <span class="o">=</span> <span class="n">poblacion</span><span class="p">[(</span><span class="n">poblacion</span><span class="p">[</span><span class="s1">&#39;ANIO&#39;</span><span class="p">]</span> <span class="o">&gt;=</span> <span class="n">año_inicio</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">poblacion</span><span class="p">[</span><span class="s1">&#39;ANIO&#39;</span><span class="p">]</span> <span class="o">&lt;=</span> <span class="n">año_fin</span><span class="p">)]</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+    
+    <span class="k">for</span> <span class="n">col</span> <span class="ow">in</span> <span class="n">cols_mujeres</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">col</span> <span class="ow">in</span> <span class="n">poblacion_df_filtrada</span><span class="o">.</span><span class="n">columns</span><span class="p">:</span>
+            <span class="n">poblacion_df_filtrada</span><span class="p">[</span><span class="n">col</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_numeric</span><span class="p">(</span><span class="n">poblacion_df_filtrada</span><span class="p">[</span><span class="n">col</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">str</span><span class="p">)</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;,&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">regex</span><span class="o">=</span><span class="kc">False</span><span class="p">),</span> <span class="n">errors</span><span class="o">=</span><span class="s1">&#39;coerce&#39;</span><span class="p">)</span>
+    
+    <span class="n">poblacion_df_filtrada</span><span class="p">[</span><span class="s1">&#39;40-54 años&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">poblacion_df_filtrada</span><span class="p">[[</span><span class="sa">f</span><span class="s1">&#39;Mujeres_</span><span class="si">{</span><span class="n">edad</span><span class="si">}</span><span class="s1">&#39;</span> <span class="k">for</span> <span class="n">edad</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">40</span><span class="p">,</span> <span class="mi">55</span><span class="p">)</span> <span class="k">if</span> <span class="sa">f</span><span class="s1">&#39;Mujeres_</span><span class="si">{</span><span class="n">edad</span><span class="si">}</span><span class="s1">&#39;</span> <span class="ow">in</span> <span class="n">poblacion_df_filtrada</span><span class="o">.</span><span class="n">columns</span><span class="p">]]</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+    <span class="n">poblacion_df_filtrada</span><span class="p">[</span><span class="s1">&#39;55-64 años&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">poblacion_df_filtrada</span><span class="p">[[</span><span class="sa">f</span><span class="s1">&#39;Mujeres_</span><span class="si">{</span><span class="n">edad</span><span class="si">}</span><span class="s1">&#39;</span> <span class="k">for</span> <span class="n">edad</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">55</span><span class="p">,</span> <span class="mi">65</span><span class="p">)</span> <span class="k">if</span> <span class="sa">f</span><span class="s1">&#39;Mujeres_</span><span class="si">{</span><span class="n">edad</span><span class="si">}</span><span class="s1">&#39;</span> <span class="ow">in</span> <span class="n">poblacion_df_filtrada</span><span class="o">.</span><span class="n">columns</span><span class="p">]]</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+    <span class="n">poblacion_df_filtrada</span><span class="p">[</span><span class="s1">&#39;65-74 años&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">poblacion_df_filtrada</span><span class="p">[[</span><span class="sa">f</span><span class="s1">&#39;Mujeres_</span><span class="si">{</span><span class="n">edad</span><span class="si">}</span><span class="s1">&#39;</span> <span class="k">for</span> <span class="n">edad</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">65</span><span class="p">,</span> <span class="mi">75</span><span class="p">)</span> <span class="k">if</span> <span class="sa">f</span><span class="s1">&#39;Mujeres_</span><span class="si">{</span><span class="n">edad</span><span class="si">}</span><span class="s1">&#39;</span> <span class="ow">in</span> <span class="n">poblacion_df_filtrada</span><span class="o">.</span><span class="n">columns</span><span class="p">]]</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+    
+    <span class="n">cols_edad_75_mas</span> <span class="o">=</span> <span class="p">[</span><span class="sa">f</span><span class="s1">&#39;Mujeres_</span><span class="si">{</span><span class="n">edad</span><span class="si">}</span><span class="s1">&#39;</span> <span class="k">for</span> <span class="n">edad</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">75</span><span class="p">,</span> <span class="mi">85</span><span class="p">)</span> <span class="k">if</span> <span class="sa">f</span><span class="s1">&#39;Mujeres_</span><span class="si">{</span><span class="n">edad</span><span class="si">}</span><span class="s1">&#39;</span> <span class="ow">in</span> <span class="n">poblacion_df_filtrada</span><span class="o">.</span><span class="n">columns</span><span class="p">]</span>
+    <span class="k">if</span> <span class="s1">&#39;Mujeres_85 y más&#39;</span> <span class="ow">in</span> <span class="n">poblacion_df_filtrada</span><span class="o">.</span><span class="n">columns</span><span class="p">:</span>
+        <span class="n">cols_edad_75_mas</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">&#39;Mujeres_85 y más&#39;</span><span class="p">)</span>
+    <span class="n">poblacion_df_filtrada</span><span class="p">[</span><span class="s1">&#39;75+ años&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">poblacion_df_filtrada</span><span class="p">[</span><span class="n">cols_edad_75_mas</span><span class="p">]</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+
+    <span class="n">columnas_pob_interes</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;DPNOM&#39;</span><span class="p">]</span> <span class="o">+</span> <span class="n">grupos_edad_estandar</span> <span class="c1"># DPNOM debe existir en poblacion_df_filtrada</span>
+    <span class="n">poblacion_seleccionada_df</span> <span class="o">=</span> <span class="n">poblacion_df_filtrada</span><span class="p">[</span><span class="n">columnas_pob_interes</span><span class="p">]</span>
+
+    <span class="n">poblacion_melted_df</span> <span class="o">=</span> <span class="n">poblacion_seleccionada_df</span><span class="o">.</span><span class="n">melt</span><span class="p">(</span><span class="n">id_vars</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;DPNOM&#39;</span><span class="p">],</span> <span class="n">value_vars</span><span class="o">=</span><span class="n">grupos_edad_estandar</span><span class="p">,</span>
+                                                         <span class="n">var_name</span><span class="o">=</span><span class="s1">&#39;grupo_edad&#39;</span><span class="p">,</span> <span class="n">value_name</span><span class="o">=</span><span class="s1">&#39;poblacion_sum_anios&#39;</span><span class="p">)</span>
+    
+    <span class="n">poblacion_agrupada_df</span> <span class="o">=</span> <span class="n">poblacion_melted_df</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s1">&#39;DPNOM&#39;</span><span class="p">,</span> <span class="s1">&#39;grupo_edad&#39;</span><span class="p">],</span> <span class="n">observed</span><span class="o">=</span><span class="kc">False</span><span class="p">)[</span><span class="s1">&#39;poblacion_sum_anios&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span>
+    <span class="n">poblacion_agrupada_df</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;poblacion_sum_anios&#39;</span><span class="p">:</span> <span class="s1">&#39;poblacion&#39;</span><span class="p">},</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="c1"># Asegurar consistencia en DPNOM para el merge</span>
+    <span class="n">poblacion_agrupada_df</span><span class="o">.</span><span class="n">replace</span><span class="p">({</span><span class="s1">&#39;DPNOM&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;ARCHIPIÉLAGO DE SAN ANDRÉS Y PROVIDENCIA Y SANTA CATALINA&#39;</span><span class="p">:</span> <span class="s1">&#39;ARCHIPIÉLAGO DE SAN ANDRÉS&#39;</span><span class="p">}},</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+    <span class="n">data_final_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">muertes_completas_df</span><span class="p">,</span> <span class="n">poblacion_agrupada_df</span><span class="p">,</span> <span class="n">on</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;DPNOM&#39;</span><span class="p">,</span> <span class="s1">&#39;grupo_edad&#39;</span><span class="p">],</span> <span class="n">how</span><span class="o">=</span><span class="s1">&#39;left&#39;</span><span class="p">)</span>
+    <span class="n">data_final_df</span><span class="p">[</span><span class="s1">&#39;poblacion&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">data_final_df</span><span class="p">[</span><span class="s1">&#39;poblacion&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span> 
+
+    <span class="n">tabla_detalle</span> <span class="o">=</span> <span class="n">data_final_df</span><span class="p">[[</span><span class="s1">&#39;DPNOM&#39;</span><span class="p">,</span> <span class="s1">&#39;grupo_edad&#39;</span><span class="p">,</span> <span class="s1">&#39;count&#39;</span><span class="p">,</span> <span class="s1">&#39;poblacion&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+
+    <span class="n">proporcion_segi</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;40-54 años&#39;</span><span class="p">:</span> <span class="mi">12</span><span class="p">,</span><span class="s1">&#39;55-64 años&#39;</span><span class="p">:</span> <span class="mi">9</span><span class="p">,</span><span class="s1">&#39;65-74 años&#39;</span><span class="p">:</span> <span class="mi">7</span><span class="p">,</span><span class="s1">&#39;75+ años&#39;</span><span class="p">:</span> <span class="mi">4</span><span class="p">}</span>
+    <span class="n">total_p_segi</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="n">proporcion_segi</span><span class="o">.</span><span class="n">values</span><span class="p">())</span>
+    <span class="n">proporcion_segi_normalizada</span> <span class="o">=</span> <span class="p">{</span><span class="n">k</span><span class="p">:</span> <span class="n">v</span> <span class="o">/</span> <span class="n">total_p_segi</span> <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">proporcion_segi</span><span class="o">.</span><span class="n">items</span><span class="p">()}</span>
+
+    <span class="n">data_final_df</span><span class="p">[</span><span class="s1">&#39;proporcion_segi&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">data_final_df</span><span class="p">[</span><span class="s1">&#39;grupo_edad&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="n">proporcion_segi_normalizada</span><span class="p">)</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+
+    <span class="n">data_final_df</span><span class="p">[</span><span class="s1">&#39;tasa_cruda_estrato&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mf">0.0</span>
+    <span class="n">mask_poblacion_valida</span> <span class="o">=</span> <span class="n">data_final_df</span><span class="p">[</span><span class="s1">&#39;poblacion&#39;</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">0</span>
+    <span class="k">if</span> <span class="n">mask_poblacion_valida</span><span class="o">.</span><span class="n">any</span><span class="p">():</span> <span class="c1"># Solo calcular si hay alguna población válida</span>
+        <span class="n">data_final_df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">mask_poblacion_valida</span><span class="p">,</span> <span class="s1">&#39;tasa_cruda_estrato&#39;</span><span class="p">]</span> <span class="o">=</span> \
+            <span class="n">data_final_df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">mask_poblacion_valida</span><span class="p">,</span> <span class="s1">&#39;count&#39;</span><span class="p">]</span> <span class="o">/</span> <span class="n">data_final_df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">mask_poblacion_valida</span><span class="p">,</span> <span class="s1">&#39;poblacion&#39;</span><span class="p">]</span>
+    
+    <span class="n">data_final_df</span><span class="p">[</span><span class="s1">&#39;tasa_ajustada_parcial&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">data_final_df</span><span class="p">[</span><span class="s1">&#39;proporcion_segi&#39;</span><span class="p">]</span> <span class="o">*</span> <span class="n">data_final_df</span><span class="p">[</span><span class="s1">&#39;tasa_cruda_estrato&#39;</span><span class="p">]</span>
+    <span class="n">data_final_df</span><span class="p">[</span><span class="s1">&#39;tasa_ajustada_parcial&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_numeric</span><span class="p">(</span><span class="n">data_final_df</span><span class="p">[</span><span class="s1">&#39;tasa_ajustada_parcial&#39;</span><span class="p">],</span> <span class="n">errors</span><span class="o">=</span><span class="s1">&#39;coerce&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+
+    <span class="n">tae_por_departamento_df</span> <span class="o">=</span> <span class="n">data_final_df</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;DPNOM&#39;</span><span class="p">,</span> <span class="n">observed</span><span class="o">=</span><span class="kc">False</span><span class="p">)[</span><span class="s1">&#39;tasa_ajustada_parcial&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span><span class="o">.</span><span class="n">reset_index</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;TAE&#39;</span><span class="p">)</span>
+    <span class="n">tae_por_departamento_df</span><span class="p">[</span><span class="s1">&#39;TAE&#39;</span><span class="p">]</span> <span class="o">*=</span> <span class="mi">100000</span>
+
+    <span class="n">mortalidad_agregada_df</span> <span class="o">=</span> <span class="n">data_final_df</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;DPNOM&#39;</span><span class="p">,</span> <span class="n">observed</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span><span class="o">.</span><span class="n">agg</span><span class="p">(</span>
+        <span class="n">FALLECIDAS</span><span class="o">=</span><span class="p">(</span><span class="s1">&#39;count&#39;</span><span class="p">,</span> <span class="s1">&#39;sum&#39;</span><span class="p">),</span>
+        <span class="n">TOTAL_MUJERES</span><span class="o">=</span><span class="p">(</span><span class="s1">&#39;poblacion&#39;</span><span class="p">,</span> <span class="s1">&#39;sum&#39;</span><span class="p">)</span>
+    <span class="p">)</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span>
+    
+    <span class="n">mortalidad_agregada_df</span><span class="p">[</span><span class="s1">&#39;Tasa_Mortalidad_Cruda&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mf">0.0</span>
+    <span class="n">mask_pob_total_valida</span> <span class="o">=</span> <span class="n">mortalidad_agregada_df</span><span class="p">[</span><span class="s1">&#39;TOTAL_MUJERES&#39;</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">0</span>
+    <span class="k">if</span> <span class="n">mask_pob_total_valida</span><span class="o">.</span><span class="n">any</span><span class="p">():</span>
+        <span class="n">mortalidad_agregada_df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">mask_pob_total_valida</span><span class="p">,</span> <span class="s1">&#39;Tasa_Mortalidad_Cruda&#39;</span><span class="p">]</span> <span class="o">=</span> \
+            <span class="p">(</span><span class="n">mortalidad_agregada_df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">mask_pob_total_valida</span><span class="p">,</span> <span class="s1">&#39;FALLECIDAS&#39;</span><span class="p">]</span> <span class="o">/</span> <span class="n">mortalidad_agregada_df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">mask_pob_total_valida</span><span class="p">,</span> <span class="s1">&#39;TOTAL_MUJERES&#39;</span><span class="p">])</span> <span class="o">*</span> <span class="mi">100000</span>
+
+    <span class="n">resumen_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">mortalidad_agregada_df</span><span class="p">,</span> <span class="n">tae_por_departamento_df</span><span class="p">,</span> <span class="n">on</span><span class="o">=</span><span class="s1">&#39;DPNOM&#39;</span><span class="p">,</span> <span class="n">how</span><span class="o">=</span><span class="s1">&#39;left&#39;</span><span class="p">)</span>
+    
+    <span class="k">return</span> <span class="n">resumen_df</span><span class="p">,</span> <span class="n">tabla_detalle</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">departamentos</span> <span class="o">=</span> <span class="n">muertes_complete</span><span class="p">[</span><span class="s1">&#39;Nombre_Departamento_Def&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">()</span>
-<span class="n">grupos_edad</span> <span class="o">=</span> <span class="n">muertes_complete</span><span class="p">[</span><span class="s1">&#39;grupo_edad&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">()</span>
-<span class="n">combinaciones</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">itertools</span><span class="o">.</span><span class="n">product</span><span class="p">(</span><span class="n">departamentos</span><span class="p">,</span> <span class="n">grupos_edad</span><span class="p">)),</span> <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;Nombre_Departamento_Def&#39;</span><span class="p">,</span><span class="s1">&#39;grupo_edad&#39;</span><span class="p">])</span>
-<span class="n">resultado_completo</span> <span class="o">=</span> <span class="n">combinaciones</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">muertes_complete</span><span class="p">,</span><span class="n">on</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;Nombre_Departamento_Def&#39;</span><span class="p">,</span>  <span class="s1">&#39;grupo_edad&#39;</span><span class="p">],</span><span class="n">how</span><span class="o">=</span><span class="s1">&#39;left&#39;</span><span class="p">)</span>
-<span class="n">resultado_completo</span><span class="p">[</span><span class="s1">&#39;count&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">resultado_completo</span><span class="p">[</span><span class="s1">&#39;count&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">int</span><span class="p">)</span>
-<span class="n">resultado_completo</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>Nombre_Departamento_Def</th>
-      <th>grupo_edad</th>
-      <th>count</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>ANTIOQUIA</td>
-      <td>40-54 años</td>
-      <td>1284</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>ANTIOQUIA</td>
-      <td>55-64 años</td>
-      <td>1620</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>ANTIOQUIA</td>
-      <td>65-74 años</td>
-      <td>1571</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>ANTIOQUIA</td>
-      <td>75+ años</td>
-      <td>1711</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>ARAUCA</td>
-      <td>40-54 años</td>
-      <td>46</td>
-    </tr>
-  </tbody>
-</table>
-</div></div></div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">resultado_completo</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;Nombre_Departamento_Def&#39;</span><span class="p">:</span> <span class="s1">&#39;DPNOM&#39;</span><span class="p">},</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-<span class="n">resultado_completo</span><span class="o">.</span><span class="n">replace</span><span class="p">({</span><span class="s1">&#39;DPNOM&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;ARCHIPIÉLAGO DE SAN ANDRÉS Y PROVIDENCIA Y SANTA CATALINA&#39;</span><span class="p">:</span> <span class="s1">&#39;ARCHIPIÉLAGO DE SAN ANDRÉS&#39;</span><span class="p">}},</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">tasas</span><span class="p">,</span> <span class="n">resumen</span> <span class="o">=</span> <span class="n">procesar_tasas_por_periodo</span><span class="p">(</span><span class="mi">2009</span><span class="p">,</span> <span class="mi">2023</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">poblacion</span><span class="p">[</span><span class="n">cols_mujeres</span><span class="p">]</span> <span class="o">=</span> <span class="n">poblacion</span><span class="p">[</span><span class="n">cols_mujeres</span><span class="p">]</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;,&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">regex</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">float</span><span class="p">)</span>
-
-<span class="n">poblacion</span><span class="p">[</span><span class="s1">&#39;Grupo_edad1&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">poblacion</span><span class="p">[[</span><span class="sa">f</span><span class="s1">&#39;Mujeres_</span><span class="si">{</span><span class="n">edad</span><span class="si">}</span><span class="s1">&#39;</span> <span class="k">for</span> <span class="n">edad</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">40</span><span class="p">,</span> <span class="mi">55</span><span class="p">)]]</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
-<span class="n">poblacion</span><span class="p">[</span><span class="s1">&#39;Grupo_edad2&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">poblacion</span><span class="p">[[</span><span class="sa">f</span><span class="s1">&#39;Mujeres_</span><span class="si">{</span><span class="n">edad</span><span class="si">}</span><span class="s1">&#39;</span> <span class="k">for</span> <span class="n">edad</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">55</span><span class="p">,</span> <span class="mi">65</span><span class="p">)]]</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
-<span class="n">poblacion</span><span class="p">[</span><span class="s1">&#39;Grupo_edad3&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">poblacion</span><span class="p">[[</span><span class="sa">f</span><span class="s1">&#39;Mujeres_</span><span class="si">{</span><span class="n">edad</span><span class="si">}</span><span class="s1">&#39;</span> <span class="k">for</span> <span class="n">edad</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">65</span><span class="p">,</span> <span class="mi">75</span><span class="p">)]]</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
-
-<span class="n">cols_edad4</span> <span class="o">=</span> <span class="p">[</span><span class="sa">f</span><span class="s1">&#39;Mujeres_</span><span class="si">{</span><span class="n">edad</span><span class="si">}</span><span class="s1">&#39;</span> <span class="k">for</span> <span class="n">edad</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">75</span><span class="p">,</span> <span class="mi">85</span><span class="p">)]</span> <span class="o">+</span> <span class="p">[</span><span class="s1">&#39;Mujeres_85 y más&#39;</span><span class="p">]</span>
-<span class="n">poblacion</span><span class="p">[</span><span class="s1">&#39;Grupo_edad4&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">poblacion</span><span class="p">[</span><span class="n">cols_edad4</span><span class="p">]</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">columnas_interes</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;DPNOM&#39;</span><span class="p">,</span><span class="s1">&#39;Grupo_edad1&#39;</span><span class="p">,</span> <span class="s1">&#39;Grupo_edad2&#39;</span><span class="p">,</span> <span class="s1">&#39;Grupo_edad3&#39;</span><span class="p">,</span> <span class="s1">&#39;Grupo_edad4&#39;</span><span class="p">,</span> <span class="s1">&#39;TOTAL_MUJERES&#39;</span><span class="p">]</span>
-<span class="n">poblacion_interes</span> <span class="o">=</span> <span class="n">poblacion</span><span class="p">[</span><span class="n">columnas_interes</span><span class="p">]</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Paso 2: Reformatear la base de población (melt)</span>
-<span class="n">poblacion_melted</span> <span class="o">=</span> <span class="n">poblacion_interes</span><span class="o">.</span><span class="n">melt</span><span class="p">(</span><span class="n">id_vars</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;DPNOM&#39;</span><span class="p">],</span><span class="n">value_vars</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;Grupo_edad1&#39;</span><span class="p">,</span> <span class="s1">&#39;Grupo_edad2&#39;</span><span class="p">,</span> <span class="s1">&#39;Grupo_edad3&#39;</span><span class="p">,</span> <span class="s1">&#39;Grupo_edad4&#39;</span><span class="p">],</span>
-                                          <span class="n">var_name</span><span class="o">=</span><span class="s1">&#39;grupo_edad&#39;</span><span class="p">,</span><span class="n">value_name</span><span class="o">=</span><span class="s1">&#39;poblacion&#39;</span><span class="p">)</span>
-
-<span class="c1"># Paso 3: Mapear nombres de grupo de edad (para que coincidan con los de resultado_completo)</span>
-<span class="n">grupo_mapping</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;Grupo_edad1&#39;</span><span class="p">:</span> <span class="s1">&#39;40-54 años&#39;</span><span class="p">,</span><span class="s1">&#39;Grupo_edad2&#39;</span><span class="p">:</span> <span class="s1">&#39;55-64 años&#39;</span><span class="p">,</span><span class="s1">&#39;Grupo_edad3&#39;</span><span class="p">:</span> <span class="s1">&#39;65-74 años&#39;</span><span class="p">,</span><span class="s1">&#39;Grupo_edad4&#39;</span><span class="p">:</span> <span class="s1">&#39;75+ años&#39;</span><span class="p">}</span>
-<span class="n">poblacion_melted</span><span class="p">[</span><span class="s1">&#39;grupo_edad&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">poblacion_melted</span><span class="p">[</span><span class="s1">&#39;grupo_edad&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="n">grupo_mapping</span><span class="p">)</span>
-<span class="n">poblacion_melted</span> <span class="o">=</span> <span class="n">poblacion_melted</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s1">&#39;DPNOM&#39;</span><span class="p">,</span> <span class="s1">&#39;grupo_edad&#39;</span><span class="p">],</span> <span class="n">as_index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span><span class="o">.</span><span class="n">median</span><span class="p">(</span><span class="n">numeric_only</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-<span class="n">poblacion_melted</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">resumen</span>
 </pre></div>
 </div>
 </div>
@@ -1503,6 +952,7 @@ La tasa ajustada se expresa por cada <strong>100.000 habitantes</strong>, lo cua
       <th></th>
       <th>DPNOM</th>
       <th>grupo_edad</th>
+      <th>count</th>
       <th>poblacion</th>
     </tr>
   </thead>
@@ -1511,370 +961,87 @@ La tasa ajustada se expresa por cada <strong>100.000 habitantes</strong>, lo cua
       <th>0</th>
       <td>ANTIOQUIA</td>
       <td>40-54 años</td>
-      <td>625833.0</td>
+      <td>1283</td>
+      <td>9466112</td>
     </tr>
     <tr>
       <th>1</th>
       <td>ANTIOQUIA</td>
       <td>55-64 años</td>
-      <td>327265.0</td>
+      <td>1620</td>
+      <td>4916940</td>
     </tr>
     <tr>
       <th>2</th>
       <td>ANTIOQUIA</td>
       <td>65-74 años</td>
-      <td>186605.0</td>
+      <td>1571</td>
+      <td>2863150</td>
     </tr>
     <tr>
       <th>3</th>
       <td>ANTIOQUIA</td>
       <td>75+ años</td>
-      <td>112442.0</td>
+      <td>1711</td>
+      <td>1765449</td>
     </tr>
     <tr>
       <th>4</th>
       <td>ARAUCA</td>
       <td>40-54 años</td>
-      <td>19801.0</td>
+      <td>46</td>
+      <td>312290</td>
     </tr>
     <tr>
       <th>...</th>
       <td>...</td>
       <td>...</td>
       <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>107</th>
+      <td>VALLE DEL CAUCA</td>
+      <td>75+ años</td>
+      <td>1461</td>
+      <td>1482090</td>
+    </tr>
+    <tr>
+      <th>108</th>
+      <td>GRUPO AMAZONA</td>
+      <td>40-54 años</td>
+      <td>21</td>
+      <td>311721</td>
+    </tr>
+    <tr>
+      <th>109</th>
+      <td>GRUPO AMAZONA</td>
+      <td>55-64 años</td>
+      <td>7</td>
+      <td>117144</td>
+    </tr>
+    <tr>
+      <th>110</th>
+      <td>GRUPO AMAZONA</td>
+      <td>65-74 años</td>
+      <td>4</td>
+      <td>57190</td>
     </tr>
     <tr>
       <th>111</th>
-      <td>TOLIMA</td>
-      <td>75+ años</td>
-      <td>30921.0</td>
-    </tr>
-    <tr>
-      <th>112</th>
-      <td>VALLE DEL CAUCA</td>
-      <td>40-54 años</td>
-      <td>448714.0</td>
-    </tr>
-    <tr>
-      <th>113</th>
-      <td>VALLE DEL CAUCA</td>
-      <td>55-64 años</td>
-      <td>236331.0</td>
-    </tr>
-    <tr>
-      <th>114</th>
-      <td>VALLE DEL CAUCA</td>
-      <td>65-74 años</td>
-      <td>142252.0</td>
-    </tr>
-    <tr>
-      <th>115</th>
-      <td>VALLE DEL CAUCA</td>
-      <td>75+ años</td>
-      <td>96737.0</td>
-    </tr>
-  </tbody>
-</table>
-<p>116 rows × 3 columns</p>
-</div></div></div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">poblacion_melted</span><span class="p">[</span><span class="n">poblacion_melted</span><span class="p">[</span><span class="s1">&#39;DPNOM&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;ANTIOQUIA&#39;</span><span class="p">]</span>
-<span class="n">data_resumen</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">resultado_completo</span><span class="p">,</span> <span class="n">poblacion_melted</span><span class="p">,</span> <span class="n">on</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;DPNOM&#39;</span><span class="p">,</span> <span class="s1">&#39;grupo_edad&#39;</span><span class="p">],</span> <span class="n">how</span><span class="o">=</span><span class="s1">&#39;left&#39;</span><span class="p">)</span>
-<span class="n">data_resumen</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>DPNOM</th>
-      <th>grupo_edad</th>
-      <th>count</th>
-      <th>poblacion</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>ANTIOQUIA</td>
-      <td>40-54 años</td>
-      <td>1284</td>
-      <td>625833.0</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>ANTIOQUIA</td>
-      <td>55-64 años</td>
-      <td>1620</td>
-      <td>327265.0</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>ANTIOQUIA</td>
-      <td>65-74 años</td>
-      <td>1571</td>
-      <td>186605.0</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>ANTIOQUIA</td>
-      <td>75+ años</td>
-      <td>1711</td>
-      <td>112442.0</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>ARAUCA</td>
-      <td>40-54 años</td>
-      <td>46</td>
-      <td>19801.0</td>
-    </tr>
-  </tbody>
-</table>
-</div></div></div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">datos_tasa_edad</span> <span class="o">=</span> <span class="n">data_resumen</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">proporcion_segi</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="s1">&#39;40-54 años&#39;</span><span class="p">:</span> <span class="mi">12</span><span class="p">,</span>
-    <span class="s1">&#39;55-64 años&#39;</span><span class="p">:</span> <span class="mi">9</span><span class="p">,</span>
-    <span class="s1">&#39;65-74 años&#39;</span><span class="p">:</span> <span class="mi">7</span><span class="p">,</span>
-    <span class="s1">&#39;75+ años&#39;</span><span class="p">:</span> <span class="mi">4</span>
-<span class="p">}</span>
-
-<span class="c1"># Normalizamos la proporción Segi</span>
-<span class="n">total_p</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="n">proporcion_segi</span><span class="o">.</span><span class="n">values</span><span class="p">())</span>
-<span class="n">proporcion_segi_normalizada</span> <span class="o">=</span> <span class="p">{</span><span class="n">k</span><span class="p">:</span> <span class="n">v</span> <span class="o">/</span> <span class="n">total_p</span> <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">proporcion_segi</span><span class="o">.</span><span class="n">items</span><span class="p">()}</span>
-<span class="n">proporcion_segi_normalizada</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;40-54 años&#39;: 0.375,
- &#39;55-64 años&#39;: 0.28125,
- &#39;65-74 años&#39;: 0.21875,
- &#39;75+ años&#39;: 0.125}
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Añadimos la proporción Segi y calculamos la tasa específica por grupo etario</span>
-<span class="n">datos_tasa_edad</span><span class="p">[</span><span class="s1">&#39;proporcion_segi&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">datos_tasa_edad</span><span class="p">[</span><span class="s1">&#39;grupo_edad&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="n">proporcion_segi_normalizada</span><span class="p">)</span>
-<span class="n">datos_tasa_edad</span><span class="p">[</span><span class="s1">&#39;tasa_cruda&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">datos_tasa_edad</span><span class="p">[</span><span class="s1">&#39;count&#39;</span><span class="p">]</span> <span class="o">/</span> <span class="n">datos_tasa_edad</span><span class="p">[</span><span class="s1">&#39;poblacion&#39;</span><span class="p">]</span>
-<span class="n">datos_tasa_edad</span><span class="p">[</span><span class="s1">&#39;tasa_ajustada_parcial&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">datos_tasa_edad</span><span class="p">[</span><span class="s1">&#39;proporcion_segi&#39;</span><span class="p">]</span> <span class="o">*</span> <span class="n">datos_tasa_edad</span><span class="p">[</span><span class="s1">&#39;tasa_cruda&#39;</span><span class="p">]</span>
-
-<span class="c1"># Agrupamos por departamento y multiplicamos por 100000</span>
-<span class="n">tae_por_departamento</span> <span class="o">=</span> <span class="n">datos_tasa_edad</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;DPNOM&#39;</span><span class="p">)[</span><span class="s1">&#39;tasa_ajustada_parcial&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span> 
-<span class="n">tae_por_departamento</span> <span class="o">=</span> <span class="n">tae_por_departamento</span> <span class="o">*</span> <span class="mi">100000</span>
-<span class="n">tae_por_departamento</span> <span class="o">=</span> <span class="n">tae_por_departamento</span><span class="o">.</span><span class="n">reset_index</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;TAE&#39;</span><span class="p">)</span>
-<span class="n">tae_por_departamento</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>DPNOM</th>
-      <th>TAE</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>ANTIOQUIA</td>
-      <td>590.531071</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>ARAUCA</td>
-      <td>494.872446</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>ARCHIPIÉLAGO DE SAN ANDRÉS</td>
-      <td>420.434978</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>ATLÁNTICO</td>
-      <td>836.909500</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>BOGOTA DC</td>
-      <td>679.403134</td>
-    </tr>
-    <tr>
-      <th>5</th>
-      <td>BOLÍVAR</td>
-      <td>547.514060</td>
-    </tr>
-    <tr>
-      <th>6</th>
-      <td>BOYACÁ</td>
-      <td>329.271414</td>
-    </tr>
-    <tr>
-      <th>7</th>
-      <td>CALDAS</td>
-      <td>502.813331</td>
-    </tr>
-    <tr>
-      <th>8</th>
-      <td>CAQUETÁ</td>
-      <td>439.002864</td>
-    </tr>
-    <tr>
-      <th>9</th>
-      <td>CASANARE</td>
-      <td>366.925311</td>
-    </tr>
-    <tr>
-      <th>10</th>
-      <td>CAUCA</td>
-      <td>289.526946</td>
-    </tr>
-    <tr>
-      <th>11</th>
-      <td>CESAR</td>
-      <td>556.981627</td>
-    </tr>
-    <tr>
-      <th>12</th>
-      <td>CHOCÓ</td>
-      <td>87.209972</td>
-    </tr>
-    <tr>
-      <th>13</th>
-      <td>CUNDINAMARCA</td>
-      <td>278.093671</td>
-    </tr>
-    <tr>
-      <th>14</th>
-      <td>CÓRDOBA</td>
-      <td>398.952197</td>
-    </tr>
-    <tr>
-      <th>15</th>
       <td>GRUPO AMAZONA</td>
-      <td>128.166748</td>
-    </tr>
-    <tr>
-      <th>16</th>
-      <td>HUILA</td>
-      <td>617.186465</td>
-    </tr>
-    <tr>
-      <th>17</th>
-      <td>LA GUAJIRA</td>
-      <td>296.335475</td>
-    </tr>
-    <tr>
-      <th>18</th>
-      <td>MAGDALENA</td>
-      <td>518.701834</td>
-    </tr>
-    <tr>
-      <th>19</th>
-      <td>META</td>
-      <td>543.471696</td>
-    </tr>
-    <tr>
-      <th>20</th>
-      <td>NARIÑO</td>
-      <td>329.086168</td>
-    </tr>
-    <tr>
-      <th>21</th>
-      <td>NORTE DE SANTANDER</td>
-      <td>582.154571</td>
-    </tr>
-    <tr>
-      <th>22</th>
-      <td>PUTUMAYO</td>
-      <td>240.385013</td>
-    </tr>
-    <tr>
-      <th>23</th>
-      <td>QUINDIO</td>
-      <td>563.257398</td>
-    </tr>
-    <tr>
-      <th>24</th>
-      <td>RISARALDA</td>
-      <td>692.329172</td>
-    </tr>
-    <tr>
-      <th>25</th>
-      <td>SANTANDER</td>
-      <td>588.958663</td>
-    </tr>
-    <tr>
-      <th>26</th>
-      <td>SUCRE</td>
-      <td>413.381497</td>
-    </tr>
-    <tr>
-      <th>27</th>
-      <td>TOLIMA</td>
-      <td>470.667319</td>
-    </tr>
-    <tr>
-      <th>28</th>
-      <td>VALLE DEL CAUCA</td>
-      <td>689.347255</td>
+      <td>75+ años</td>
+      <td>7</td>
+      <td>35750</td>
     </tr>
   </tbody>
 </table>
+<p>112 rows × 4 columns</p>
 </div></div></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">tasas</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">tasa_mortalidad</span><span class="p">,</span> <span class="n">tae_por_departamento</span><span class="p">,</span> <span class="n">on</span><span class="o">=</span><span class="s1">&#39;DPNOM&#39;</span><span class="p">,</span> <span class="n">how</span><span class="o">=</span><span class="s1">&#39;left&#39;</span><span class="p">)</span>
-<span class="n">tasas</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">tasas</span>
 </pre></div>
 </div>
 </div>
@@ -1900,7 +1067,7 @@ La tasa ajustada se expresa por cada <strong>100.000 habitantes</strong>, lo cua
       <th>DPNOM</th>
       <th>FALLECIDAS</th>
       <th>TOTAL_MUJERES</th>
-      <th>Tasa_Mortalidad</th>
+      <th>Tasa_Mortalidad_Cruda</th>
       <th>TAE</th>
     </tr>
   </thead>
@@ -1908,218 +1075,226 @@ La tasa ajustada se expresa por cada <strong>100.000 habitantes</strong>, lo cua
     <tr>
       <th>0</th>
       <td>ANTIOQUIA</td>
-      <td>6879</td>
-      <td>1252145.0</td>
-      <td>549.377269</td>
-      <td>590.531071</td>
+      <td>6185</td>
+      <td>19011651</td>
+      <td>32.532682</td>
+      <td>38.466253</td>
     </tr>
     <tr>
       <th>1</th>
       <td>ARAUCA</td>
-      <td>147</td>
-      <td>34028.0</td>
-      <td>431.997179</td>
-      <td>494.872446</td>
+      <td>137</td>
+      <td>543874</td>
+      <td>25.189658</td>
+      <td>30.488575</td>
     </tr>
     <tr>
       <th>2</th>
       <td>ARCHIPIÉLAGO DE SAN ANDRÉS</td>
-      <td>36</td>
-      <td>12514.0</td>
-      <td>287.677801</td>
-      <td>420.434978</td>
+      <td>30</td>
+      <td>189144</td>
+      <td>15.860931</td>
+      <td>26.424814</td>
     </tr>
     <tr>
       <th>3</th>
       <td>ATLÁNTICO</td>
-      <td>3483</td>
-      <td>441159.0</td>
-      <td>789.511265</td>
-      <td>836.909500</td>
+      <td>3122</td>
+      <td>6773319</td>
+      <td>46.092617</td>
+      <td>54.323739</td>
     </tr>
     <tr>
       <th>4</th>
-      <td>BOGOTA DC</td>
-      <td>9169</td>
-      <td>1474342.0</td>
-      <td>621.904551</td>
-      <td>679.403134</td>
+      <td>BOLÍVAR</td>
+      <td>1588</td>
+      <td>5135499</td>
+      <td>30.922019</td>
+      <td>35.703283</td>
     </tr>
     <tr>
       <th>5</th>
-      <td>BOLÍVAR</td>
-      <td>1758</td>
-      <td>336762.0</td>
-      <td>522.030395</td>
-      <td>547.514060</td>
+      <td>BOYACÁ</td>
+      <td>748</td>
+      <td>3751470</td>
+      <td>19.938851</td>
+      <td>21.533421</td>
     </tr>
     <tr>
       <th>6</th>
-      <td>BOYACÁ</td>
-      <td>820</td>
-      <td>247768.0</td>
-      <td>330.954764</td>
-      <td>329.271414</td>
+      <td>CALDAS</td>
+      <td>1012</td>
+      <td>3393571</td>
+      <td>29.821094</td>
+      <td>33.117195</td>
     </tr>
     <tr>
       <th>7</th>
-      <td>CALDAS</td>
-      <td>1120</td>
-      <td>224800.0</td>
-      <td>498.220641</td>
-      <td>502.813331</td>
+      <td>CAQUETÁ</td>
+      <td>203</td>
+      <td>852787</td>
+      <td>23.804303</td>
+      <td>28.849114</td>
     </tr>
     <tr>
       <th>8</th>
       <td>CASANARE</td>
-      <td>175</td>
-      <td>56366.0</td>
-      <td>310.470851</td>
-      <td>366.925311</td>
+      <td>159</td>
+      <td>862417</td>
+      <td>18.436557</td>
+      <td>23.606235</td>
     </tr>
     <tr>
       <th>9</th>
       <td>CAUCA</td>
-      <td>705</td>
-      <td>244525.0</td>
-      <td>288.314078</td>
-      <td>289.526946</td>
+      <td>631</td>
+      <td>3713294</td>
+      <td>16.992999</td>
+      <td>19.036951</td>
     </tr>
     <tr>
       <th>10</th>
       <td>CESAR</td>
-      <td>820</td>
-      <td>166946.0</td>
-      <td>491.176788</td>
-      <td>556.981627</td>
+      <td>743</td>
+      <td>2578697</td>
+      <td>28.813001</td>
+      <td>35.733376</td>
     </tr>
     <tr>
       <th>11</th>
-      <td>CUNDINAMARCA</td>
-      <td>1354</td>
-      <td>506441.0</td>
-      <td>267.355921</td>
-      <td>278.093671</td>
+      <td>CHOCÓ</td>
+      <td>51</td>
+      <td>1033862</td>
+      <td>4.932960</td>
+      <td>5.629636</td>
     </tr>
     <tr>
       <th>12</th>
-      <td>CÓRDOBA</td>
-      <td>1122</td>
-      <td>295175.0</td>
-      <td>380.113492</td>
-      <td>398.952197</td>
+      <td>CUNDINAMARCA</td>
+      <td>9471</td>
+      <td>7787730</td>
+      <td>121.614386</td>
+      <td>141.167201</td>
     </tr>
     <tr>
       <th>13</th>
-      <td>GRUPO AMAZONA</td>
-      <td>41</td>
-      <td>33700.0</td>
-      <td>121.661721</td>
-      <td>128.166748</td>
+      <td>CÓRDOBA</td>
+      <td>1021</td>
+      <td>4453938</td>
+      <td>22.923534</td>
+      <td>26.272880</td>
     </tr>
     <tr>
       <th>14</th>
-      <td>HUILA</td>
-      <td>1056</td>
-      <td>180628.0</td>
-      <td>584.626968</td>
-      <td>617.186465</td>
+      <td>GRUPO AMAZONA</td>
+      <td>39</td>
+      <td>521805</td>
+      <td>7.474056</td>
+      <td>8.184462</td>
     </tr>
     <tr>
       <th>15</th>
-      <td>LA GUAJIRA</td>
-      <td>269</td>
-      <td>102861.0</td>
-      <td>261.517971</td>
-      <td>296.335475</td>
+      <td>HUILA</td>
+      <td>954</td>
+      <td>2722786</td>
+      <td>35.037642</td>
+      <td>40.751545</td>
     </tr>
     <tr>
       <th>16</th>
-      <td>MAGDALENA</td>
-      <td>982</td>
-      <td>202522.0</td>
-      <td>484.885593</td>
-      <td>518.701834</td>
+      <td>LA GUAJIRA</td>
+      <td>247</td>
+      <td>1614157</td>
+      <td>15.302105</td>
+      <td>18.957726</td>
     </tr>
     <tr>
       <th>17</th>
-      <td>META</td>
-      <td>762</td>
-      <td>161983.0</td>
-      <td>470.419735</td>
-      <td>543.471696</td>
+      <td>MAGDALENA</td>
+      <td>884</td>
+      <td>3108562</td>
+      <td>28.437586</td>
+      <td>33.583236</td>
     </tr>
     <tr>
       <th>18</th>
-      <td>NARIÑO</td>
-      <td>985</td>
-      <td>299366.0</td>
-      <td>329.028681</td>
-      <td>329.086168</td>
+      <td>META</td>
+      <td>697</td>
+      <td>2451468</td>
+      <td>28.431944</td>
+      <td>35.316892</td>
     </tr>
     <tr>
       <th>19</th>
-      <td>NORTE DE SANTANDER</td>
-      <td>1417</td>
-      <td>254034.0</td>
-      <td>557.799350</td>
-      <td>582.154571</td>
+      <td>NARIÑO</td>
+      <td>879</td>
+      <td>4523184</td>
+      <td>19.433213</td>
+      <td>21.731691</td>
     </tr>
     <tr>
       <th>20</th>
-      <td>PUTUMAYO</td>
-      <td>94</td>
-      <td>46567.0</td>
-      <td>201.859686</td>
-      <td>240.385013</td>
+      <td>NORTE DE SANTANDER</td>
+      <td>1282</td>
+      <td>3949801</td>
+      <td>32.457331</td>
+      <td>37.325233</td>
     </tr>
     <tr>
       <th>21</th>
-      <td>QUINDIO</td>
-      <td>702</td>
-      <td>123338.0</td>
-      <td>569.167653</td>
-      <td>563.257398</td>
+      <td>PUTUMAYO</td>
+      <td>87</td>
+      <td>711318</td>
+      <td>12.230817</td>
+      <td>15.561311</td>
     </tr>
     <tr>
       <th>22</th>
-      <td>RISARALDA</td>
-      <td>1389</td>
-      <td>205034.0</td>
-      <td>677.448618</td>
-      <td>692.329172</td>
+      <td>QUINDIO</td>
+      <td>624</td>
+      <td>1856017</td>
+      <td>33.620382</td>
+      <td>37.278988</td>
     </tr>
     <tr>
       <th>23</th>
-      <td>SANTANDER</td>
-      <td>2465</td>
-      <td>423379.0</td>
-      <td>582.220658</td>
-      <td>588.958663</td>
+      <td>RISARALDA</td>
+      <td>1260</td>
+      <td>3083911</td>
+      <td>40.857210</td>
+      <td>45.914002</td>
     </tr>
     <tr>
       <th>24</th>
-      <td>SUCRE</td>
-      <td>591</td>
-      <td>147221.0</td>
-      <td>401.437295</td>
-      <td>413.381497</td>
+      <td>SANTANDER</td>
+      <td>2209</td>
+      <td>6428298</td>
+      <td>34.363684</td>
+      <td>38.530616</td>
     </tr>
     <tr>
       <th>25</th>
-      <td>TOLIMA</td>
-      <td>1292</td>
-      <td>271597.0</td>
-      <td>475.704813</td>
-      <td>470.667319</td>
+      <td>SUCRE</td>
+      <td>529</td>
+      <td>2245948</td>
+      <td>23.553528</td>
+      <td>26.969832</td>
     </tr>
     <tr>
       <th>26</th>
+      <td>TOLIMA</td>
+      <td>1165</td>
+      <td>4086695</td>
+      <td>28.507143</td>
+      <td>31.067971</td>
+    </tr>
+    <tr>
+      <th>27</th>
       <td>VALLE DEL CAUCA</td>
-      <td>6312</td>
-      <td>921259.0</td>
-      <td>685.149345</td>
-      <td>689.347255</td>
+      <td>5653</td>
+      <td>13901078</td>
+      <td>40.665911</td>
+      <td>45.505931</td>
     </tr>
   </tbody>
 </table>
@@ -2127,14 +1302,25 @@ La tasa ajustada se expresa por cada <strong>100.000 habitantes</strong>, lo cua
 </div>
 </section>
 <section id="smr-standard-mortality-rate">
-<h1><strong>SMR: Standard Mortality Rate</strong><a class="headerlink" href="#smr-standard-mortality-rate" title="Link to this heading">#</a></h1>
+<h2><strong>SMR: Standard Mortality Rate</strong><a class="headerlink" href="#smr-standard-mortality-rate" title="Link to this heading">#</a></h2>
 <div class="math notranslate nohighlight">
 \[
-\text{SMR} = \frac{\text{Número observado de muertes}}{\text{Número esperado de muertes}}
+\text{SMR} = \frac{\text{Número observado de muertes}}{\text{Número esperado de muertes}} = \frac{y_i}{e_i}
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+e_i = R_T  \times N_i
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+N_i \text{:  tamaño de la población i }
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+R_T = \frac{casos \, totales}{Pob \, total}
 \]</div>
 <section id="smr-por-departamento">
-<h2><strong>SMR Por departamento</strong><a class="headerlink" href="#smr-por-departamento" title="Link to this heading">#</a></h2>
-<p><strong>NOTA:</strong> Más adelante se agregarán covariables para el cálculo del SMR.</p>
+<h3><strong>SMR Por departamento</strong><a class="headerlink" href="#smr-por-departamento" title="Link to this heading">#</a></h3>
 <p>Moraga, P. (s.f.). Indirect standardization to calculate expected cases. Recuperado el 24 de abril de 2025, de <a class="reference external" href="https://www.paulamoraga.com/presentation-course/#/indirect-standardiz.-to-calculate-expected-cases">https://www.paulamoraga.com/presentation-course/#/indirect-standardiz.-to-calculate-expected-cases</a></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -2164,7 +1350,7 @@ La tasa ajustada se expresa por cada <strong>100.000 habitantes</strong>, lo cua
       <th>DPNOM</th>
       <th>FALLECIDAS</th>
       <th>TOTAL_MUJERES</th>
-      <th>Tasa_Mortalidad</th>
+      <th>Tasa_Mortalidad_Cruda</th>
       <th>TAE</th>
     </tr>
   </thead>
@@ -2172,42 +1358,42 @@ La tasa ajustada se expresa por cada <strong>100.000 habitantes</strong>, lo cua
     <tr>
       <th>0</th>
       <td>ANTIOQUIA</td>
-      <td>6879</td>
-      <td>1252145.0</td>
-      <td>549.377269</td>
-      <td>590.531071</td>
+      <td>6185</td>
+      <td>19011651</td>
+      <td>32.532682</td>
+      <td>38.466253</td>
     </tr>
     <tr>
       <th>1</th>
       <td>ARAUCA</td>
-      <td>147</td>
-      <td>34028.0</td>
-      <td>431.997179</td>
-      <td>494.872446</td>
+      <td>137</td>
+      <td>543874</td>
+      <td>25.189658</td>
+      <td>30.488575</td>
     </tr>
     <tr>
       <th>2</th>
       <td>ARCHIPIÉLAGO DE SAN ANDRÉS</td>
-      <td>36</td>
-      <td>12514.0</td>
-      <td>287.677801</td>
-      <td>420.434978</td>
+      <td>30</td>
+      <td>189144</td>
+      <td>15.860931</td>
+      <td>26.424814</td>
     </tr>
     <tr>
       <th>3</th>
       <td>ATLÁNTICO</td>
-      <td>3483</td>
-      <td>441159.0</td>
-      <td>789.511265</td>
-      <td>836.909500</td>
+      <td>3122</td>
+      <td>6773319</td>
+      <td>46.092617</td>
+      <td>54.323739</td>
     </tr>
     <tr>
       <th>4</th>
-      <td>BOGOTA DC</td>
-      <td>9169</td>
-      <td>1474342.0</td>
-      <td>621.904551</td>
-      <td>679.403134</td>
+      <td>BOLÍVAR</td>
+      <td>1588</td>
+      <td>5135499</td>
+      <td>30.922019</td>
+      <td>35.703283</td>
     </tr>
   </tbody>
 </table>
@@ -2215,17 +1401,33 @@ La tasa ajustada se expresa por cada <strong>100.000 habitantes</strong>, lo cua
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">muertes_totales_nal</span> <span class="o">=</span> <span class="n">tasas</span><span class="p">[</span><span class="s1">&#39;FALLECIDAS&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">median</span><span class="p">()</span>
-<span class="n">mujeres_totales_nal</span> <span class="o">=</span> <span class="n">tasas</span><span class="p">[</span><span class="s1">&#39;TOTAL_MUJERES&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">median</span><span class="p">()</span>
-<span class="n">tasa_nacional</span> <span class="o">=</span> <span class="n">muertes_totales_nal</span> <span class="o">/</span> <span class="n">mujeres_totales_nal</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">calcular_SMR</span><span class="p">(</span><span class="n">tasas</span><span class="p">):</span>
+    <span class="n">muertes_totales_nal</span> <span class="o">=</span> <span class="n">tasas</span><span class="p">[</span><span class="s1">&#39;FALLECIDAS&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+    <span class="n">mujeres_totales_nal</span> <span class="o">=</span> <span class="n">tasas</span><span class="p">[</span><span class="s1">&#39;TOTAL_MUJERES&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+    <span class="n">tasa_nacional</span> <span class="o">=</span> <span class="n">muertes_totales_nal</span> <span class="o">/</span> <span class="n">mujeres_totales_nal</span>
+    <span class="n">tasas</span><span class="p">[</span><span class="s1">&#39;MUERTES_ESPERADAS&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">tasa_nacional</span> <span class="o">*</span> <span class="n">tasas</span><span class="p">[</span><span class="s1">&#39;TOTAL_MUJERES&#39;</span><span class="p">]</span>
+    <span class="n">tasas</span><span class="p">[</span><span class="s1">&#39;SMR&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">tasas</span><span class="p">[</span><span class="s1">&#39;FALLECIDAS&#39;</span><span class="p">]</span> <span class="o">/</span> <span class="n">tasas</span><span class="p">[</span><span class="s1">&#39;MUERTES_ESPERADAS&#39;</span><span class="p">]</span> <span class="o">*</span> <span class="mi">100</span>
+    <span class="k">return</span> <span class="n">tasa_nacional</span><span class="p">,</span> <span class="n">tasas</span>
+    
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">tasas</span><span class="p">[</span><span class="s1">&#39;MUERTES_ESPERADAS&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">tasas</span><span class="p">[</span><span class="s1">&#39;TOTAL_MUJERES&#39;</span><span class="p">]</span> <span class="o">*</span> <span class="n">tasa_nacional</span>
-<span class="n">tasas</span><span class="p">[</span><span class="s1">&#39;SMR&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">tasas</span><span class="p">[</span><span class="s1">&#39;FALLECIDAS&#39;</span><span class="p">]</span> <span class="o">/</span> <span class="n">tasas</span><span class="p">[</span><span class="s1">&#39;MUERTES_ESPERADAS&#39;</span><span class="p">]</span><span class="o">*</span><span class="mi">100</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">tasa_nacional</span><span class="p">,</span> <span class="n">tasas</span> <span class="o">=</span> <span class="n">calcular_SMR</span><span class="p">(</span><span class="n">tasas</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">tasa_nacional</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.0003739005349635145
 </pre></div>
 </div>
 </div>
@@ -2258,7 +1460,7 @@ La tasa ajustada se expresa por cada <strong>100.000 habitantes</strong>, lo cua
       <th>DPNOM</th>
       <th>FALLECIDAS</th>
       <th>TOTAL_MUJERES</th>
-      <th>Tasa_Mortalidad</th>
+      <th>Tasa_Mortalidad_Cruda</th>
       <th>TAE</th>
       <th>MUERTES_ESPERADAS</th>
       <th>SMR</th>
@@ -2268,280 +1470,297 @@ La tasa ajustada se expresa por cada <strong>100.000 habitantes</strong>, lo cua
     <tr>
       <th>0</th>
       <td>ANTIOQUIA</td>
-      <td>6879</td>
-      <td>1252145.0</td>
-      <td>549.377269</td>
-      <td>590.531071</td>
-      <td>5486.489435</td>
-      <td>125.380721</td>
+      <td>6185</td>
+      <td>19011651</td>
+      <td>32.532682</td>
+      <td>38.466253</td>
+      <td>7108.466479</td>
+      <td>87.008921</td>
     </tr>
     <tr>
       <th>1</th>
       <td>ARAUCA</td>
-      <td>147</td>
-      <td>34028.0</td>
-      <td>431.997179</td>
-      <td>494.872446</td>
-      <td>149.099555</td>
-      <td>98.591843</td>
+      <td>137</td>
+      <td>543874</td>
+      <td>25.189658</td>
+      <td>30.488575</td>
+      <td>203.354780</td>
+      <td>67.369943</td>
     </tr>
     <tr>
       <th>2</th>
       <td>ARCHIPIÉLAGO DE SAN ANDRÉS</td>
-      <td>36</td>
-      <td>12514.0</td>
-      <td>287.677801</td>
-      <td>420.434978</td>
-      <td>54.832251</td>
-      <td>65.654792</td>
+      <td>30</td>
+      <td>189144</td>
+      <td>15.860931</td>
+      <td>26.424814</td>
+      <td>70.721043</td>
+      <td>42.420189</td>
     </tr>
     <tr>
       <th>3</th>
       <td>ATLÁNTICO</td>
-      <td>3483</td>
-      <td>441159.0</td>
-      <td>789.511265</td>
-      <td>836.909500</td>
-      <td>1933.014302</td>
-      <td>180.184906</td>
+      <td>3122</td>
+      <td>6773319</td>
+      <td>46.092617</td>
+      <td>54.323739</td>
+      <td>2532.547598</td>
+      <td>123.275077</td>
     </tr>
     <tr>
       <th>4</th>
-      <td>BOGOTA DC</td>
-      <td>9169</td>
-      <td>1474342.0</td>
-      <td>621.904551</td>
-      <td>679.403134</td>
-      <td>6460.083941</td>
-      <td>141.933140</td>
+      <td>BOLÍVAR</td>
+      <td>1588</td>
+      <td>5135499</td>
+      <td>30.922019</td>
+      <td>35.703283</td>
+      <td>1920.165823</td>
+      <td>82.701191</td>
     </tr>
     <tr>
       <th>5</th>
-      <td>BOLÍVAR</td>
-      <td>1758</td>
-      <td>336762.0</td>
-      <td>522.030395</td>
-      <td>547.514060</td>
-      <td>1475.580827</td>
-      <td>119.139526</td>
+      <td>BOYACÁ</td>
+      <td>748</td>
+      <td>3751470</td>
+      <td>19.938851</td>
+      <td>21.533421</td>
+      <td>1402.676640</td>
+      <td>53.326617</td>
     </tr>
     <tr>
       <th>6</th>
-      <td>BOYACÁ</td>
-      <td>820</td>
-      <td>247768.0</td>
-      <td>330.954764</td>
-      <td>329.271414</td>
-      <td>1085.638256</td>
-      <td>75.531605</td>
+      <td>CALDAS</td>
+      <td>1012</td>
+      <td>3393571</td>
+      <td>29.821094</td>
+      <td>33.117195</td>
+      <td>1268.858012</td>
+      <td>79.756757</td>
     </tr>
     <tr>
       <th>7</th>
-      <td>CALDAS</td>
-      <td>1120</td>
-      <td>224800.0</td>
-      <td>498.220641</td>
-      <td>502.813331</td>
-      <td>985.000000</td>
-      <td>113.705584</td>
+      <td>CAQUETÁ</td>
+      <td>203</td>
+      <td>852787</td>
+      <td>23.804303</td>
+      <td>28.849114</td>
+      <td>318.857516</td>
+      <td>63.664800</td>
     </tr>
     <tr>
       <th>8</th>
       <td>CASANARE</td>
-      <td>175</td>
-      <td>56366.0</td>
-      <td>310.470851</td>
-      <td>366.925311</td>
-      <td>246.977358</td>
-      <td>70.856698</td>
+      <td>159</td>
+      <td>862417</td>
+      <td>18.436557</td>
+      <td>23.606235</td>
+      <td>322.458178</td>
+      <td>49.308720</td>
     </tr>
     <tr>
       <th>9</th>
       <td>CAUCA</td>
-      <td>705</td>
-      <td>244525.0</td>
-      <td>288.314078</td>
-      <td>289.526946</td>
-      <td>1071.428492</td>
-      <td>65.800005</td>
+      <td>631</td>
+      <td>3713294</td>
+      <td>16.992999</td>
+      <td>19.036951</td>
+      <td>1388.402613</td>
+      <td>45.447912</td>
     </tr>
     <tr>
       <th>10</th>
       <td>CESAR</td>
-      <td>820</td>
-      <td>166946.0</td>
-      <td>491.176788</td>
-      <td>556.981627</td>
-      <td>731.502714</td>
-      <td>112.098012</td>
+      <td>743</td>
+      <td>2578697</td>
+      <td>28.813001</td>
+      <td>35.733376</td>
+      <td>964.176188</td>
+      <td>77.060605</td>
     </tr>
     <tr>
       <th>11</th>
-      <td>CUNDINAMARCA</td>
-      <td>1354</td>
-      <td>506441.0</td>
-      <td>267.355921</td>
-      <td>278.093671</td>
-      <td>2219.058652</td>
-      <td>61.016864</td>
+      <td>CHOCÓ</td>
+      <td>51</td>
+      <td>1033862</td>
+      <td>4.932960</td>
+      <td>5.629636</td>
+      <td>386.561555</td>
+      <td>13.193242</td>
     </tr>
     <tr>
       <th>12</th>
-      <td>CÓRDOBA</td>
-      <td>1122</td>
-      <td>295175.0</td>
-      <td>380.113492</td>
-      <td>398.952197</td>
-      <td>1293.360209</td>
-      <td>86.750775</td>
+      <td>CUNDINAMARCA</td>
+      <td>9471</td>
+      <td>7787730</td>
+      <td>121.614386</td>
+      <td>141.167201</td>
+      <td>2911.836413</td>
+      <td>325.258657</td>
     </tr>
     <tr>
       <th>13</th>
-      <td>GRUPO AMAZONA</td>
-      <td>41</td>
-      <td>33700.0</td>
-      <td>121.661721</td>
-      <td>128.166748</td>
-      <td>147.662367</td>
-      <td>27.766046</td>
+      <td>CÓRDOBA</td>
+      <td>1021</td>
+      <td>4453938</td>
+      <td>22.923534</td>
+      <td>26.272880</td>
+      <td>1665.329801</td>
+      <td>61.309177</td>
     </tr>
     <tr>
       <th>14</th>
-      <td>HUILA</td>
-      <td>1056</td>
-      <td>180628.0</td>
-      <td>584.626968</td>
-      <td>617.186465</td>
-      <td>791.452758</td>
-      <td>133.425525</td>
+      <td>GRUPO AMAZONA</td>
+      <td>39</td>
+      <td>521805</td>
+      <td>7.474056</td>
+      <td>8.184462</td>
+      <td>195.103169</td>
+      <td>19.989424</td>
     </tr>
     <tr>
       <th>15</th>
-      <td>LA GUAJIRA</td>
-      <td>269</td>
-      <td>102861.0</td>
-      <td>261.517971</td>
-      <td>296.335475</td>
-      <td>450.703225</td>
-      <td>59.684507</td>
+      <td>HUILA</td>
+      <td>954</td>
+      <td>2722786</td>
+      <td>35.037642</td>
+      <td>40.751545</td>
+      <td>1018.051142</td>
+      <td>93.708455</td>
     </tr>
     <tr>
       <th>16</th>
-      <td>MAGDALENA</td>
-      <td>982</td>
-      <td>202522.0</td>
-      <td>484.885593</td>
-      <td>518.701834</td>
-      <td>887.385098</td>
-      <td>110.662214</td>
+      <td>LA GUAJIRA</td>
+      <td>247</td>
+      <td>1614157</td>
+      <td>15.302105</td>
+      <td>18.957726</td>
+      <td>603.534166</td>
+      <td>40.925604</td>
     </tr>
     <tr>
       <th>17</th>
-      <td>META</td>
-      <td>762</td>
-      <td>161983.0</td>
-      <td>470.419735</td>
-      <td>543.471696</td>
-      <td>709.756472</td>
-      <td>107.360768</td>
+      <td>MAGDALENA</td>
+      <td>884</td>
+      <td>3108562</td>
+      <td>28.437586</td>
+      <td>33.583236</td>
+      <td>1162.292995</td>
+      <td>76.056554</td>
     </tr>
     <tr>
       <th>18</th>
-      <td>NARIÑO</td>
-      <td>985</td>
-      <td>299366.0</td>
-      <td>329.028681</td>
-      <td>329.086168</td>
-      <td>1311.723799</td>
-      <td>75.092028</td>
+      <td>META</td>
+      <td>697</td>
+      <td>2451468</td>
+      <td>28.431944</td>
+      <td>35.316892</td>
+      <td>916.605197</td>
+      <td>76.041463</td>
     </tr>
     <tr>
       <th>19</th>
-      <td>NORTE DE SANTANDER</td>
-      <td>1417</td>
-      <td>254034.0</td>
-      <td>557.799350</td>
-      <td>582.154571</td>
-      <td>1113.093817</td>
-      <td>127.302836</td>
+      <td>NARIÑO</td>
+      <td>879</td>
+      <td>4523184</td>
+      <td>19.433213</td>
+      <td>21.731691</td>
+      <td>1691.220917</td>
+      <td>51.974286</td>
     </tr>
     <tr>
       <th>20</th>
-      <td>PUTUMAYO</td>
-      <td>94</td>
-      <td>46567.0</td>
-      <td>201.859686</td>
-      <td>240.385013</td>
-      <td>204.041348</td>
-      <td>46.069094</td>
+      <td>NORTE DE SANTANDER</td>
+      <td>1282</td>
+      <td>3949801</td>
+      <td>32.457331</td>
+      <td>37.325233</td>
+      <td>1476.832707</td>
+      <td>86.807395</td>
     </tr>
     <tr>
       <th>21</th>
-      <td>QUINDIO</td>
-      <td>702</td>
-      <td>123338.0</td>
-      <td>569.167653</td>
-      <td>563.257398</td>
-      <td>540.426735</td>
-      <td>129.897349</td>
+      <td>PUTUMAYO</td>
+      <td>87</td>
+      <td>711318</td>
+      <td>12.230817</td>
+      <td>15.561311</td>
+      <td>265.962181</td>
+      <td>32.711418</td>
     </tr>
     <tr>
       <th>22</th>
-      <td>RISARALDA</td>
-      <td>1389</td>
-      <td>205034.0</td>
-      <td>677.448618</td>
-      <td>692.329172</td>
-      <td>898.391859</td>
-      <td>154.609593</td>
+      <td>QUINDIO</td>
+      <td>624</td>
+      <td>1856017</td>
+      <td>33.620382</td>
+      <td>37.278988</td>
+      <td>693.965749</td>
+      <td>89.917982</td>
     </tr>
     <tr>
       <th>23</th>
-      <td>SANTANDER</td>
-      <td>2465</td>
-      <td>423379.0</td>
-      <td>582.220658</td>
-      <td>588.958663</td>
-      <td>1855.108163</td>
-      <td>132.876349</td>
+      <td>RISARALDA</td>
+      <td>1260</td>
+      <td>3083911</td>
+      <td>40.857210</td>
+      <td>45.914002</td>
+      <td>1153.075973</td>
+      <td>109.272939</td>
     </tr>
     <tr>
       <th>24</th>
-      <td>SUCRE</td>
-      <td>591</td>
-      <td>147221.0</td>
-      <td>401.437295</td>
-      <td>413.381497</td>
-      <td>645.074222</td>
-      <td>91.617364</td>
+      <td>SANTANDER</td>
+      <td>2209</td>
+      <td>6428298</td>
+      <td>34.363684</td>
+      <td>38.530616</td>
+      <td>2403.544061</td>
+      <td>91.905950</td>
     </tr>
     <tr>
       <th>25</th>
-      <td>TOLIMA</td>
-      <td>1292</td>
-      <td>271597.0</td>
-      <td>475.704813</td>
-      <td>470.667319</td>
-      <td>1190.049133</td>
-      <td>108.566946</td>
+      <td>SUCRE</td>
+      <td>529</td>
+      <td>2245948</td>
+      <td>23.553528</td>
+      <td>26.969832</td>
+      <td>839.761159</td>
+      <td>62.994102</td>
     </tr>
     <tr>
       <th>26</th>
+      <td>TOLIMA</td>
+      <td>1165</td>
+      <td>4086695</td>
+      <td>28.507143</td>
+      <td>31.067971</td>
+      <td>1528.017447</td>
+      <td>76.242585</td>
+    </tr>
+    <tr>
+      <th>27</th>
       <td>VALLE DEL CAUCA</td>
-      <td>6312</td>
-      <td>921259.0</td>
-      <td>685.149345</td>
-      <td>689.347255</td>
-      <td>4036.655316</td>
-      <td>156.367079</td>
+      <td>5653</td>
+      <td>13901078</td>
+      <td>40.665911</td>
+      <td>45.505931</td>
+      <td>5197.620501</td>
+      <td>108.761307</td>
     </tr>
   </tbody>
 </table>
 </div></div></div>
 </div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">tasas</span><span class="o">.</span><span class="n">to_excel</span><span class="p">(</span><span class="s1">&#39;tasas_final.xlsx&#39;</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
 </section>
 <section id="interpretacion-del-smr">
-<h2><strong>Interpretación del SMR</strong><a class="headerlink" href="#interpretacion-del-smr" title="Link to this heading">#</a></h2>
+<h3><strong>Interpretación del SMR</strong><a class="headerlink" href="#interpretacion-del-smr" title="Link to this heading">#</a></h3>
 <ul class="simple">
 <li><p><strong>SMR = 100</strong>: Mortalidad observada igual a la esperada.</p></li>
 <li><p><strong>SMR &gt; 100</strong>: Más muertes de las esperadas (mayor riesgo).</p></li>
@@ -2549,14 +1768,6 @@ La tasa ajustada se expresa por cada <strong>100.000 habitantes</strong>, lo cua
 </ul>
 </section>
 </section>
-<section id="suavizado-de-tasas">
-<h1><strong>Suavizado de tasas</strong><a class="headerlink" href="#suavizado-de-tasas" title="Link to this heading">#</a></h1>
-</section>
-<section id="indice-de-moran">
-<h1><strong>ÍNDICE DE MORAN</strong><a class="headerlink" href="#indice-de-moran" title="Link to this heading">#</a></h1>
-</section>
-<section id="modelos-geograficamente-ponderados">
-<h1><strong>Modelos geográficamente ponderados</strong><a class="headerlink" href="#modelos-geograficamente-ponderados" title="Link to this heading">#</a></h1>
 </section>
 
     <script type="text/x-thebe-config">
@@ -2589,6 +1800,24 @@ La tasa ajustada se expresa por cada <strong>100.000 habitantes</strong>, lo cua
                 <footer class="prev-next-footer d-print-none">
                   
 <div class="prev-next-area">
+    <a class="left-prev"
+       href="eda.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title"><strong>EDA: Caracterización y distribución de los datos</strong></p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="moranindex.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title"><strong>Índice de Moran</strong></p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
 </div>
                 </footer>
               
@@ -2605,18 +1834,15 @@ La tasa ajustada se expresa por cada <strong>100.000 habitantes</strong>, lo cua
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#"><strong>Tasas crudas de mortalidad</strong></a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#tasas-ajustadas-por-edad"><strong>Tasas ajustadas por edad</strong></a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#smr-standard-mortality-rate"><strong>SMR: Standard Mortality Rate</strong></a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#smr-por-departamento"><strong>SMR Por departamento</strong></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#interpretacion-del-smr"><strong>Interpretación del SMR</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#librerias-y-modulos-necesarios"><strong>Librerías y modulos necesarios</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tasas-crudas-de-mortalidad"><strong>Tasas crudas de mortalidad</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tasas-ajustadas-por-edad"><strong>Tasas ajustadas por edad</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#smr-standard-mortality-rate"><strong>SMR: Standard Mortality Rate</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#smr-por-departamento"><strong>SMR Por departamento</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#interpretacion-del-smr"><strong>Interpretación del SMR</strong></a></li>
 </ul>
 </li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#suavizado-de-tasas"><strong>Suavizado de tasas</strong></a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#indice-de-moran"><strong>ÍNDICE DE MORAN</strong></a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#modelos-geograficamente-ponderados"><strong>Modelos geográficamente ponderados</strong></a></li>
 </ul>
-
   </nav></div>
 
 </div></div>
