@@ -1,0 +1,1126 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Implementación de modelos &#8212; Proyecto Final - Seminario Investigativo</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'modelos';</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/uninorte.jpg" class="logo__image only-light" alt="Proyecto Final - Seminario Investigativo - Home"/>
+    <script>document.write(`<img src="_static/uninorte.jpg" class="logo__image only-dark" alt="Proyecto Final - Seminario Investigativo - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    Proyecto Final - Seminario Investigativo
+                </a>
+            </li>
+        </ul>
+        <ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="context.html"><strong>Contextualización</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="etl.html"><strong>ETL: Limpieza y preparación de los datos</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="eda.html"><strong>EDA: Caracterización y distribución de los datos</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="tasas.html"><strong>Tasas de mortalidad</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="moraninde.html"><strong>Índice de Moran</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="mapas.html"><strong>Mapas</strong></a></li>
+
+
+<li class="toctree-l1"><a class="reference internal" href="diccionario.html"><strong>Diccionario de variables</strong></a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/kmarcela11/ProyectoFinal_SeminarioInvestigativo" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/kmarcela11/ProyectoFinal_SeminarioInvestigativo/issues/new?title=Issue%20on%20page%20%2Fmodelos.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/modelos.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Implementación de modelos</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#librerias-y-modulos-necesarios"><strong>Librerías y modulos necesarios</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#modelo-de-series-de-tiempo"><strong>Modelo de Series de tiempo</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#modelo-geoespacial"><strong>Modelo GeoEspacial</strong></a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="implementacion-de-modelos">
+<h1><strong>Implementación de modelos</strong><a class="headerlink" href="#implementacion-de-modelos" title="Link to this heading">#</a></h1>
+<section id="librerias-y-modulos-necesarios">
+<h2><strong>Librerías y modulos necesarios</strong><a class="headerlink" href="#librerias-y-modulos-necesarios" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">warnings</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="n">warnings</span><span class="o">.</span><span class="n">filterwarnings</span><span class="p">(</span><span class="s1">&#39;ignore&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="modelo-de-series-de-tiempo">
+<h2><strong>Modelo de Series de tiempo</strong><a class="headerlink" href="#modelo-de-series-de-tiempo" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;../data_tasas/data_to_models.csv&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Unnamed: 0</th>
+      <th>region_Def</th>
+      <th>Nombre_Departamento_Def</th>
+      <th>Nombre_Municipio_Def</th>
+      <th>Nombre_Departamento_Res</th>
+      <th>Nombre_Municipio_Res</th>
+      <th>sitio_def</th>
+      <th>año_def</th>
+      <th>mes_def</th>
+      <th>sexo</th>
+      <th>estado_civil</th>
+      <th>grupo_edad</th>
+      <th>nivel_edu</th>
+      <th>seg_social</th>
+      <th>asistencia_med</th>
+      <th>causa_basica</th>
+      <th>Fecha</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>32246</td>
+      <td>Andina</td>
+      <td>ANTIOQUIA</td>
+      <td>MEDELLÍN</td>
+      <td>ANTIOQUIA</td>
+      <td>MEDELLÍN</td>
+      <td>Casa</td>
+      <td>2009</td>
+      <td>1</td>
+      <td>Femenino</td>
+      <td>Unión Libre, Divorciado/Otro</td>
+      <td>40-54 años</td>
+      <td>Secundaria</td>
+      <td>Subsidiado</td>
+      <td>SI</td>
+      <td>Parte no especificada</td>
+      <td>2009-01</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>32247</td>
+      <td>Andina</td>
+      <td>ANTIOQUIA</td>
+      <td>MEDELLÍN</td>
+      <td>ANTIOQUIA</td>
+      <td>MEDELLÍN</td>
+      <td>Casa</td>
+      <td>2009</td>
+      <td>1</td>
+      <td>Femenino</td>
+      <td>Viudo</td>
+      <td>65-74 años</td>
+      <td>Primaria</td>
+      <td>Contributivo</td>
+      <td>SI</td>
+      <td>Parte no especificada</td>
+      <td>2009-01</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>32248</td>
+      <td>Andina</td>
+      <td>ANTIOQUIA</td>
+      <td>MEDELLÍN</td>
+      <td>ANTIOQUIA</td>
+      <td>SABANETA</td>
+      <td>Hospital o Clínica</td>
+      <td>2009</td>
+      <td>1</td>
+      <td>Femenino</td>
+      <td>Casado</td>
+      <td>40-54 años</td>
+      <td>Secundaria</td>
+      <td>Contributivo</td>
+      <td>SI</td>
+      <td>Parte no especificada</td>
+      <td>2009-01</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>32249</td>
+      <td>Andina</td>
+      <td>ANTIOQUIA</td>
+      <td>MEDELLÍN</td>
+      <td>ANTIOQUIA</td>
+      <td>BELLO</td>
+      <td>Hospital o Clínica</td>
+      <td>2009</td>
+      <td>1</td>
+      <td>Femenino</td>
+      <td>Casado</td>
+      <td>40-54 años</td>
+      <td>Secundaria</td>
+      <td>Contributivo</td>
+      <td>SI</td>
+      <td>Parte no especificada</td>
+      <td>2009-01</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>32250</td>
+      <td>Andina</td>
+      <td>ANTIOQUIA</td>
+      <td>MEDELLÍN</td>
+      <td>ANTIOQUIA</td>
+      <td>MEDELLÍN</td>
+      <td>Casa</td>
+      <td>2009</td>
+      <td>1</td>
+      <td>Femenino</td>
+      <td>Unión Libre, Divorciado/Otro</td>
+      <td>40-54 años</td>
+      <td>Secundaria</td>
+      <td>Contributivo</td>
+      <td>SI</td>
+      <td>Parte no especificada</td>
+      <td>2009-01</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data_sin_2023</span> <span class="o">=</span> <span class="n">data</span><span class="p">[(</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;año_def&#39;</span><span class="p">]</span> <span class="o">&gt;=</span> <span class="mi">2009</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;año_def&#39;</span><span class="p">]</span> <span class="o">&lt;=</span> <span class="mi">2022</span><span class="p">)]</span>
+<span class="n">data_2023</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;año_def&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="mi">2023</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Crea una columna tipo fecha</span>
+<span class="n">data_sin_2023</span><span class="p">[</span><span class="s1">&#39;fecha&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span><span class="n">data_sin_2023</span><span class="p">[</span><span class="s1">&#39;año_def&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">str</span><span class="p">)</span> <span class="o">+</span> <span class="s1">&#39;-&#39;</span> <span class="o">+</span> <span class="n">data_sin_2023</span><span class="p">[</span><span class="s1">&#39;mes_def&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">str</span><span class="p">)</span> <span class="o">+</span> <span class="s1">&#39;-01&#39;</span><span class="p">)</span>
+
+<span class="c1"># Agrupa por mes y cuenta cuántas muertes hubo</span>
+<span class="n">df_ts</span> <span class="o">=</span> <span class="n">data_sin_2023</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;fecha&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">size</span><span class="p">()</span><span class="o">.</span><span class="n">reset_index</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;y&#39;</span><span class="p">)</span>
+
+<span class="c1"># Prophet necesita que las columnas se llamen &#39;ds&#39; (fecha) y &#39;y&#39; (valor)</span>
+<span class="n">df_ts</span> <span class="o">=</span> <span class="n">df_ts</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;fecha&#39;</span><span class="p">:</span> <span class="s1">&#39;ds&#39;</span><span class="p">})</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_ts</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>ds</th>
+      <th>y</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>2009-01-01</td>
+      <td>174</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2009-02-01</td>
+      <td>140</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>2009-03-01</td>
+      <td>169</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>2009-04-01</td>
+      <td>147</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>2009-05-01</td>
+      <td>173</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>163</th>
+      <td>2022-08-01</td>
+      <td>274</td>
+    </tr>
+    <tr>
+      <th>164</th>
+      <td>2022-09-01</td>
+      <td>267</td>
+    </tr>
+    <tr>
+      <th>165</th>
+      <td>2022-10-01</td>
+      <td>300</td>
+    </tr>
+    <tr>
+      <th>166</th>
+      <td>2022-11-01</td>
+      <td>248</td>
+    </tr>
+    <tr>
+      <th>167</th>
+      <td>2022-12-01</td>
+      <td>286</td>
+    </tr>
+  </tbody>
+</table>
+<p>168 rows × 2 columns</p>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Crea una columna tipo fecha</span>
+<span class="n">data_2023</span><span class="p">[</span><span class="s1">&#39;fecha&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span><span class="n">data_2023</span><span class="p">[</span><span class="s1">&#39;año_def&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">str</span><span class="p">)</span> <span class="o">+</span> <span class="s1">&#39;-&#39;</span> <span class="o">+</span> <span class="n">data_2023</span><span class="p">[</span><span class="s1">&#39;mes_def&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">str</span><span class="p">)</span> <span class="o">+</span> <span class="s1">&#39;-01&#39;</span><span class="p">)</span>
+
+<span class="c1"># Agrupa por mes y cuenta cuántas muertes hubo</span>
+<span class="n">df_ts_2023</span> <span class="o">=</span> <span class="n">data_2023</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;fecha&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">size</span><span class="p">()</span><span class="o">.</span><span class="n">reset_index</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;y&#39;</span><span class="p">)</span>
+
+<span class="c1"># Prophet necesita que las columnas se llamen &#39;ds&#39; (fecha) y &#39;y&#39; (valor)</span>
+<span class="n">df_ts_2023</span> <span class="o">=</span> <span class="n">df_ts_2023</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;fecha&#39;</span><span class="p">:</span> <span class="s1">&#39;ds&#39;</span><span class="p">})</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">from</span> <span class="nn">statsmodels.tsa.statespace.sarimax</span> <span class="kn">import</span> <span class="n">SARIMAX</span>
+
+<span class="c1"># Suponiendo que tienes un DataFrame df_ts con columnas: &#39;ds&#39; y &#39;y&#39;</span>
+<span class="n">df_ts</span> <span class="o">=</span> <span class="n">df_ts</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s1">&#39;ds&#39;</span><span class="p">)</span>  <span class="c1"># usar fecha como índice</span>
+
+<span class="c1"># Ajustar modelo SARIMA (parámetros iniciales: orden=(1,1,1), estacional=(1,1,1,12) para datos mensuales)</span>
+<span class="n">model</span> <span class="o">=</span> <span class="n">SARIMAX</span><span class="p">(</span><span class="n">df_ts</span><span class="p">[</span><span class="s1">&#39;y&#39;</span><span class="p">],</span> <span class="n">order</span><span class="o">=</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="n">seasonal_order</span><span class="o">=</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">12</span><span class="p">))</span>
+<span class="n">results</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">fit</span><span class="p">()</span>
+
+<span class="c1"># Predecir 12 meses adelante</span>
+<span class="n">forecast</span> <span class="o">=</span> <span class="n">results</span><span class="o">.</span><span class="n">get_forecast</span><span class="p">(</span><span class="n">steps</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span>
+<span class="n">predicted</span> <span class="o">=</span> <span class="n">forecast</span><span class="o">.</span><span class="n">predicted_mean</span>
+<span class="n">ci</span> <span class="o">=</span> <span class="n">forecast</span><span class="o">.</span><span class="n">conf_int</span><span class="p">()</span>
+
+<span class="c1"># Graficar</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">5</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">df_ts</span><span class="p">[</span><span class="s1">&#39;y&#39;</span><span class="p">],</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Datos observados&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">predicted</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Pronóstico&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">fill_between</span><span class="p">(</span><span class="n">ci</span><span class="o">.</span><span class="n">index</span><span class="p">,</span> <span class="n">ci</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">],</span> <span class="n">ci</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">],</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;pink&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.3</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;SARIMA - Predicción de muertes por cáncer de mama&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/d5a42c860cd539ddab9be13836ff2647bec394eb7c4dd99097eb66cbb0672d11.png" src="_images/d5a42c860cd539ddab9be13836ff2647bec394eb7c4dd99097eb66cbb0672d11.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Convertir a DataFrame con columnas &#39;fecha&#39;, &#39;pronóstico&#39;, &#39;límite_inferior&#39;, &#39;límite_superior&#39;</span>
+<span class="n">df_forecast</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span>
+    <span class="s1">&#39;fecha&#39;</span><span class="p">:</span> <span class="n">predicted</span><span class="o">.</span><span class="n">index</span><span class="p">,</span>
+    <span class="s1">&#39;pronostico&#39;</span><span class="p">:</span> <span class="n">predicted</span><span class="o">.</span><span class="n">values</span><span class="p">,</span>
+    <span class="s1">&#39;limite_inferior&#39;</span><span class="p">:</span> <span class="n">ci</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="p">,</span>
+    <span class="s1">&#39;limite_superior&#39;</span><span class="p">:</span> <span class="n">ci</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">values</span>
+<span class="p">})</span>
+<span class="n">df_forecast</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;fecha&#39;</span><span class="p">:</span> <span class="s1">&#39;ds&#39;</span><span class="p">},</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">df_forecast</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>ds</th>
+      <th>pronostico</th>
+      <th>limite_inferior</th>
+      <th>limite_superior</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>2023-01-01</td>
+      <td>287.891146</td>
+      <td>256.156660</td>
+      <td>319.625633</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2023-02-01</td>
+      <td>275.915856</td>
+      <td>244.110617</td>
+      <td>307.721095</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>2023-03-01</td>
+      <td>290.639751</td>
+      <td>258.675298</td>
+      <td>322.604204</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>2023-04-01</td>
+      <td>281.416158</td>
+      <td>249.297017</td>
+      <td>313.535299</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>2023-05-01</td>
+      <td>293.073255</td>
+      <td>260.800035</td>
+      <td>325.346475</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>2023-06-01</td>
+      <td>286.345971</td>
+      <td>253.919409</td>
+      <td>318.772532</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>2023-07-01</td>
+      <td>295.216699</td>
+      <td>262.637517</td>
+      <td>327.795882</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>2023-08-01</td>
+      <td>294.650299</td>
+      <td>261.919207</td>
+      <td>327.381390</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>2023-09-01</td>
+      <td>281.135691</td>
+      <td>248.253392</td>
+      <td>314.017989</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>2023-10-01</td>
+      <td>291.835979</td>
+      <td>258.803166</td>
+      <td>324.868791</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>2023-11-01</td>
+      <td>279.844240</td>
+      <td>246.661565</td>
+      <td>313.026914</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>2023-12-01</td>
+      <td>300.905681</td>
+      <td>267.574769</td>
+      <td>334.236593</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_ts_2023</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>ds</th>
+      <th>y</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>2023-01-01</td>
+      <td>288</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2023-02-01</td>
+      <td>287</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>2023-03-01</td>
+      <td>273</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>2023-04-01</td>
+      <td>268</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>2023-05-01</td>
+      <td>256</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>2023-06-01</td>
+      <td>290</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>2023-07-01</td>
+      <td>271</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>2023-08-01</td>
+      <td>265</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>2023-09-01</td>
+      <td>287</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>2023-10-01</td>
+      <td>274</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>2023-11-01</td>
+      <td>284</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>2023-12-01</td>
+      <td>329</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Unir reales y predichos</span>
+<span class="n">df_eval</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">df_ts_2023</span><span class="p">,</span> <span class="n">df_forecast</span><span class="p">,</span> <span class="n">on</span><span class="o">=</span><span class="s1">&#39;ds&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="n">mae</span> <span class="o">=</span> <span class="n">mean_absolute_error</span><span class="p">(</span><span class="n">df_eval</span><span class="p">[</span><span class="s1">&#39;y&#39;</span><span class="p">],</span> <span class="n">df_eval</span><span class="p">[</span><span class="s1">&#39;pronostico&#39;</span><span class="p">])</span>
+<span class="n">rmse</span> <span class="o">=</span> <span class="n">mean_squared_error</span><span class="p">(</span><span class="n">df_eval</span><span class="p">[</span><span class="s1">&#39;y&#39;</span><span class="p">],</span> <span class="n">df_eval</span><span class="p">[</span><span class="s1">&#39;pronostico&#39;</span><span class="p">])</span>
+<span class="n">rmse</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">rmse</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;MAE: </span><span class="si">{</span><span class="n">mae</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;RMSE: </span><span class="si">{</span><span class="n">rmse</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>MAE: 16.07
+RMSE: 19.64
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># R^2 Score (coeficiente de determinación)</span>
+<span class="n">r2</span> <span class="o">=</span> <span class="n">r2_score</span><span class="p">(</span><span class="n">df_eval</span><span class="p">[</span><span class="s1">&#39;y&#39;</span><span class="p">],</span> <span class="n">df_eval</span><span class="p">[</span><span class="s1">&#39;pronostico&#39;</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;R^2 Score: </span><span class="si">{</span><span class="n">r2</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>R^2 Score: -0.22
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">5</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">df_eval</span><span class="p">[</span><span class="s1">&#39;ds&#39;</span><span class="p">],</span> <span class="n">df_eval</span><span class="p">[</span><span class="s1">&#39;y&#39;</span><span class="p">],</span> <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;o&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Reales&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">df_eval</span><span class="p">[</span><span class="s1">&#39;ds&#39;</span><span class="p">],</span> <span class="n">df_eval</span><span class="p">[</span><span class="s1">&#39;pronostico&#39;</span><span class="p">],</span> <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;x&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Pronóstico&#39;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Comparación: Valores Reales vs Pronóstico (2023)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Fecha&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Muertes por mes&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/893d52102e51ef7efa2d6f32c8f093e911ab512d926d6359b697d11ae8fa52ba.png" src="_images/893d52102e51ef7efa2d6f32c8f093e911ab512d926d6359b697d11ae8fa52ba.png" />
+</div>
+</div>
+</section>
+<section id="modelo-geoespacial">
+<h2><strong>Modelo GeoEspacial</strong><a class="headerlink" href="#modelo-geoespacial" title="Link to this heading">#</a></h2>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#librerias-y-modulos-necesarios"><strong>Librerías y modulos necesarios</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#modelo-de-series-de-tiempo"><strong>Modelo de Series de tiempo</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#modelo-geoespacial"><strong>Modelo GeoEspacial</strong></a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Kanery Camargo. Emanuel Carbonell. Sebastián Pérez.
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
